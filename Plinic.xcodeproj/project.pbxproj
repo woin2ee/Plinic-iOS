@@ -11,6 +11,8 @@
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
 		D08E27462893A56F00013A12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27452893A56F00013A12 /* Preview Assets.xcassets */; };
+		D08E274F2893C63500013A12 /* thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E274E2893C63400013A12 /* thumbnail.swift */; };
+		D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27502893CF0700013A12 /* playlistInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		D08E27402893A56A00013A12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D08E27422893A56F00013A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D08E27452893A56F00013A12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D08E274E2893C63400013A12 /* thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thumbnail.swift; sourceTree = "<group>"; };
+		D08E27502893CF0700013A12 /* playlistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		D08E273D2893A56A00013A12 /* Plinic */ = {
 			isa = PBXGroup;
 			children = (
+				D08E274C2893C5A200013A12 /* user */,
 				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
 				D08E27402893A56A00013A12 /* ContentView.swift */,
 				D08E27422893A56F00013A12 /* Assets.xcassets */,
@@ -65,6 +70,23 @@
 				D08E27452893A56F00013A12 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D08E274C2893C5A200013A12 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				D08E274D2893C5B100013A12 /* userViews */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		D08E274D2893C5B100013A12 /* userViews */ = {
+			isa = PBXGroup;
+			children = (
+				D08E274E2893C63400013A12 /* thumbnail.swift */,
+				D08E27502893CF0700013A12 /* playlistInfo.swift */,
+			);
+			path = userViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08E274F2893C63500013A12 /* thumbnail.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
+				D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
