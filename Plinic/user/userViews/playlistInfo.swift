@@ -23,7 +23,7 @@ struct PlaylistInfo: View {
                     .font(.system(size: 12))
                     .fontWeight(.heavy)
                     .frame(width: 180, height: 20, alignment: .leading)
-                Text(songs + "곡")
+                Text(songs + " 곡")
                     .font(.system(size: 12))
                     .fontWeight(.medium)
                     .frame(width: 180, height: 20, alignment: .leading)
@@ -57,6 +57,6 @@ struct PlaylistInfo: View {
 
 struct playlistInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistInfo(playlistTitle: "비가 올때 듣고 싶은 플리", songs: "30")
+        PlaylistInfo(playlistTitle: "비가 올때 듣고 싶은 플리", songs: "20")
     }
 }
