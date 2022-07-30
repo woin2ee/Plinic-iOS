@@ -10,6 +10,7 @@
 		91014F162895835C00C58E8B /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F152895835C00C58E8B /* userInfo.swift */; };
 		91014F182895840500C58E8B /* userContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F172895840500C58E8B /* userContents.swift */; };
 		91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F192895841F00C58E8B /* genreInfo.swift */; };
+		91014F1C2895920100C58E8B /* userContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F1B2895920100C58E8B /* userContentView.swift */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		91014F152895835C00C58E8B /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		91014F172895840500C58E8B /* userContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userContents.swift; sourceTree = "<group>"; };
 		91014F192895841F00C58E8B /* genreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genreInfo.swift; sourceTree = "<group>"; };
+		91014F1B2895920100C58E8B /* userContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userContentView.swift; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08E273E2893A56A00013A12 /* PlinicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicApp.swift; sourceTree = "<group>"; };
 		D08E27402893A56A00013A12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		D08E274C2893C5A200013A12 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				91014F1B2895920100C58E8B /* userContentView.swift */,
 				D08E274D2893C5B100013A12 /* userViews */,
 			);
 			path = user;
@@ -173,6 +176,7 @@
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				91014F182895840500C58E8B /* userContents.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
+				91014F1C2895920100C58E8B /* userContentView.swift in Sources */,
 				91014F162895835C00C58E8B /* userInfo.swift in Sources */,
 				D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */,
 			);
