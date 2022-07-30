@@ -22,14 +22,16 @@ struct PlaylistInfo: View {
                 Text(playlistTitle)
                     .font(.system(size: 12))
                     .fontWeight(.heavy)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 180, height: 40)
+                    .frame(width: 180, height: 20, alignment: .leading)
                 Text(songs + "곡")
                     .font(.system(size: 12))
                     .fontWeight(.medium)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 100, height: 30)
-                    .padding(.bottom, 50)
+                    .frame(width: 180, height: 20, alignment: .leading)
+                HStack{
+                    genreInfo(userGenre: "Acoustic")
+                } // HStack
+                .frame(width: 180, height: 30, alignment: .leading)
+                .padding(.bottom, 30)
                 HStack{
                     Image(systemName: "square.and.arrow.up")
                         .font(.system(size: 31))
