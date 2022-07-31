@@ -18,6 +18,7 @@
 		D08E274F2893C63500013A12 /* thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E274E2893C63400013A12 /* thumbnail.swift */; };
 		D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27502893CF0700013A12 /* playlistInfo.swift */; };
 		D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* PlaylistWebView.swift */; };
+		D08E27592896D70300013A12 /* userPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* userPlaylist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D08E27502893CF0700013A12 /* playlistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistInfo.swift; sourceTree = "<group>"; };
 		D08E27522896CBCA00013A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D08E27542896CC3000013A12 /* PlaylistWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWebView.swift; sourceTree = "<group>"; };
+		D08E27582896D70300013A12 /* userPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPlaylist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				D08E274D2893C5B100013A12 /* userViews */,
 				91014F1B2895920100C58E8B /* userContentView.swift */,
+				D08E27582896D70300013A12 /* userPlaylist.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				D08E274F2893C63500013A12 /* thumbnail.swift in Sources */,
 				91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */,
+				D08E27592896D70300013A12 /* userPlaylist.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				91014F182895840500C58E8B /* userContents.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
