@@ -20,7 +20,7 @@ struct userContents: View {
             Text("\(infoTitle) \n\(infoCount)")
                 .fontWeight(.bold)
                 .font(.system(size: 12))
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
                 .tracking(-0.41)
                 .multilineTextAlignment(.center)
                 .frame(width: 80, height: 50, alignment: .center)
