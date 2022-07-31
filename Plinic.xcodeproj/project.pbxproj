@@ -17,6 +17,7 @@
 		D08E27462893A56F00013A12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27452893A56F00013A12 /* Preview Assets.xcassets */; };
 		D08E274F2893C63500013A12 /* thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E274E2893C63400013A12 /* thumbnail.swift */; };
 		D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27502893CF0700013A12 /* playlistInfo.swift */; };
+		D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* PlaylistWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		D08E27452893A56F00013A12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D08E274E2893C63400013A12 /* thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thumbnail.swift; sourceTree = "<group>"; };
 		D08E27502893CF0700013A12 /* playlistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistInfo.swift; sourceTree = "<group>"; };
+		D08E27522896CBCA00013A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D08E27542896CC3000013A12 /* PlaylistWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 		D08E273D2893A56A00013A12 /* Plinic */ = {
 			isa = PBXGroup;
 			children = (
+				D08E27532896CC1000013A12 /* WebViews */,
+				D08E27522896CBCA00013A12 /* Info.plist */,
 				D08E274C2893C5A200013A12 /* user */,
 				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
 				D08E27402893A56A00013A12 /* ContentView.swift */,
@@ -83,8 +88,8 @@
 		D08E274C2893C5A200013A12 /* user */ = {
 			isa = PBXGroup;
 			children = (
-				91014F1B2895920100C58E8B /* userContentView.swift */,
 				D08E274D2893C5B100013A12 /* userViews */,
+				91014F1B2895920100C58E8B /* userContentView.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -99,6 +104,14 @@
 				91014F192895841F00C58E8B /* genreInfo.swift */,
 			);
 			path = userViews;
+			sourceTree = "<group>";
+		};
+		D08E27532896CC1000013A12 /* WebViews */ = {
+			isa = PBXGroup;
+			children = (
+				D08E27542896CC3000013A12 /* PlaylistWebView.swift */,
+			);
+			path = WebViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +189,7 @@
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				91014F182895840500C58E8B /* userContents.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
+				D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */,
 				91014F1C2895920100C58E8B /* userContentView.swift in Sources */,
 				91014F162895835C00C58E8B /* userInfo.swift in Sources */,
 				D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */,
@@ -310,6 +324,7 @@
 				DEVELOPMENT_TEAM = 585F6TK5A8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Plinic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,6 +356,7 @@
 				DEVELOPMENT_TEAM = 585F6TK5A8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Plinic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
