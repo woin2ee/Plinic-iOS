@@ -13,21 +13,26 @@ struct Thumbnail: View {
 //    var title : String // 썸네일 타이틀에 대한 변수
     
     var body: some View {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            VStack{
+                Image(thumbnail)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 170, height: 170)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    .padding(.bottom, 15)
+                    
+    //            Text(title)
+    //                .fontWeight(.semibold)
+    //                .font(.system(size: 15))
+    //                .frame(width: 170, height: 15)
+            } // VStack
+        }
         
-        VStack{
-            Image(thumbnail)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 170, height: 170)
-                .background(Color.green)
-                .cornerRadius(10)
-                .padding(.bottom, 15)
-                
-//            Text(title)
-//                .fontWeight(.semibold)
-//                .font(.system(size: 15))
-//                .frame(width: 170, height: 15)
-        } // VStack
+        
         
     }
 }
