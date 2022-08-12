@@ -158,7 +158,7 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile(profileImg: "random1", name: "돼우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+        UserProfile(profileImg: "random1", name: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
     }
 }
 
