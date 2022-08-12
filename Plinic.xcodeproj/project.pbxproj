@@ -13,6 +13,8 @@
 		91014F1C2895920100C58E8B /* userContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F1B2895920100C58E8B /* userContentView.swift */; };
 		91BC78E228A691CC002C38CF /* userMyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* userMyPlaylist.swift */; };
 		91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* userMyPost.swift */; };
+		D04183E4289D26890045C907 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E3289D26890045C907 /* userProfile.swift */; };
+		D04183E628A00BDD0045C907 /* chooseGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E528A00BDD0045C907 /* chooseGenre.swift */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		91014F1B2895920100C58E8B /* userContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userContentView.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* userMyPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPlaylist.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* userMyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPost.swift; sourceTree = "<group>"; };
+		D04183E3289D26890045C907 /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
+		D04183E528A00BDD0045C907 /* chooseGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseGenre.swift; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08E273E2893A56A00013A12 /* PlinicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicApp.swift; sourceTree = "<group>"; };
 		D08E27402893A56A00013A12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				D08E274D2893C5B100013A12 /* userViews */,
 				91014F1B2895920100C58E8B /* userContentView.swift */,
 				D08E27582896D70300013A12 /* userPlaylist.swift */,
+				D04183E3289D26890045C907 /* userProfile.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				91014F192895841F00C58E8B /* genreInfo.swift */,
 				91BC78E128A691CC002C38CF /* userMyPlaylist.swift */,
 				91BC78E328A6920F002C38CF /* userMyPost.swift */,
+				D04183E528A00BDD0045C907 /* chooseGenre.swift */,
 			);
 			path = userViews;
 			sourceTree = "<group>";
@@ -198,12 +204,14 @@
 				91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */,
 				D08E27592896D70300013A12 /* userPlaylist.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
+				D04183E4289D26890045C907 /* userProfile.swift in Sources */,
 				91014F182895840500C58E8B /* userContents.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
 				D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */,
 				91BC78E228A691CC002C38CF /* userMyPlaylist.swift in Sources */,
 				91014F1C2895920100C58E8B /* userContentView.swift in Sources */,
 				91014F162895835C00C58E8B /* userInfo.swift in Sources */,
+				D04183E628A00BDD0045C907 /* chooseGenre.swift in Sources */,
 				D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
