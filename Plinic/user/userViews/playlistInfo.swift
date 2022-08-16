@@ -49,8 +49,9 @@ struct PlaylistInfo: View {
                                 .toggleStyle(SwitchToggleStyle(tint: Color.green))
                                 .font(.headline)
                                 .foregroundColor(Color.white)
-    //                        someToggle ? Text("확인 되었습니다.") : Text("확인 버튼을 눌러주세요.") // 스위치를 클릭했을 때 백엔드에게 공개 비공개 값을 알려주도록 설정
+    //                        someToggle ? Text("공개 되었습니다.") : Text("비공개 되었습니다.") // 스위치를 클릭했을 때 백엔드에게 공개 비공개 값을 알려주도록 설정
                         }
+                        .padding(.trailing, 10)
                         .frame(width: 106, height: 41)
                         .background(Color(red: 0.149, green: 0.149, blue: 0.149))
                         .cornerRadius(10)
