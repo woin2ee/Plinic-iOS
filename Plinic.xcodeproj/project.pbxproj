@@ -14,7 +14,7 @@
 		91BC78E228A691CC002C38CF /* userMyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* userMyPlaylist.swift */; };
 		91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* userMyPost.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
-		D01C63A728A6D0180037813F /* postThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* postThumbnail.swift */; };
+		D01C63A728A6D0180037813F /* postInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* postInfo.swift */; };
 		D04183E4289D26890045C907 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E3289D26890045C907 /* userProfile.swift */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
@@ -24,6 +24,7 @@
 		D08E27512893CF0800013A12 /* playlistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27502893CF0700013A12 /* playlistInfo.swift */; };
 		D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* PlaylistWebView.swift */; };
 		D08E27592896D70300013A12 /* userPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* userPlaylist.swift */; };
+		D0A54AC528ACA8DA0097010B /* postContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A54AC428ACA8DA0097010B /* postContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,7 @@
 		91BC78E128A691CC002C38CF /* userMyPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPlaylist.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* userMyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPost.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		D01C63A628A6D0180037813F /* postThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postThumbnail.swift; sourceTree = "<group>"; };
+		D01C63A628A6D0180037813F /* postInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postInfo.swift; sourceTree = "<group>"; };
 		D04183E3289D26890045C907 /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08E273E2893A56A00013A12 /* PlinicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicApp.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		D08E27522896CBCA00013A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D08E27542896CC3000013A12 /* PlaylistWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWebView.swift; sourceTree = "<group>"; };
 		D08E27582896D70300013A12 /* userPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPlaylist.swift; sourceTree = "<group>"; };
+		D0A54AC428ACA8DA0097010B /* postContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				D01C63A528A6CFB10037813F /* postViews */,
+				D0A54AC428ACA8DA0097010B /* postContentView.swift */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -70,7 +73,7 @@
 		D01C63A528A6CFB10037813F /* postViews */ = {
 			isa = PBXGroup;
 			children = (
-				D01C63A628A6D0180037813F /* postThumbnail.swift */,
+				D01C63A628A6D0180037813F /* postInfo.swift */,
 			);
 			path = postViews;
 			sourceTree = "<group>";
@@ -219,7 +222,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01C63A728A6D0180037813F /* postThumbnail.swift in Sources */,
+				D0A54AC528ACA8DA0097010B /* postContentView.swift in Sources */,
+				D01C63A728A6D0180037813F /* postInfo.swift in Sources */,
 				D08E274F2893C63500013A12 /* thumbnail.swift in Sources */,
 				91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */,
 				91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */,

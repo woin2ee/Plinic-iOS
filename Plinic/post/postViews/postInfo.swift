@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostThumbnail: View {
+struct postInfo: View {
     
     static let dateFormat : DateFormatter = {
         let formatter = DateFormatter()
@@ -30,6 +30,10 @@ struct PostThumbnail: View {
             Color.black
                 .ignoresSafeArea()
             VStack{
+                Rectangle()
+                         .fill(Color.gray)
+                         .frame(height: 0.5)
+                         .padding(.bottom, 5)
                 HStack{
                     Image(profileImg)
                         .resizable()
@@ -49,7 +53,7 @@ struct PostThumbnail: View {
                         .padding(.leading, 5)
                     // 유저 닉네임
                     
-                    Text("\(today, formatter : PostThumbnail.dateFormat)")
+                    Text("\(today, formatter : postInfo.dateFormat)")
                         .foregroundColor(Color.white)
                         .padding(.trailing, 5)
                     // 날짜
@@ -133,14 +137,17 @@ struct PostThumbnail: View {
                     // 게시글 더보기 버튼
                 }
                     
-                
+//                Rectangle()
+//                         .fill(Color.gray)
+//                         .frame(height: 0.5)
+//                         .padding(.top, 5)
             }
         } // 검은 배경
     }
 }
 
-struct PostThumbnail_Previews: PreviewProvider {
+struct postInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PostThumbnail(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목")
+        postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목")
     }
 }
