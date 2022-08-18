@@ -11,7 +11,7 @@ struct UserProfile: View {
     
     var profileImg : String // 유저의 프로필 사진
     
-    @State var name: String // 유저의 닉네임
+    @State var userName: String // 유저의 닉네임
     
     var genre = ["Aucoustic", "Jazz", "Sad", "Happy"] // 장르의 이름을 담은 배열
     
@@ -54,11 +54,11 @@ struct UserProfile: View {
                 
                 
                 ZStack(alignment: .leading){
-                    if name.isEmpty{
+                    if userName.isEmpty{
                         Text("Enter your Nickname")
                             .foregroundColor(Color.gray)
                     }
-                    TextField("", text: $name)
+                    TextField("", text: $userName)
                         .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                 }
                 .padding(.leading)
@@ -158,7 +158,7 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile(profileImg: "random1", name: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+        UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
     }
 }
 
