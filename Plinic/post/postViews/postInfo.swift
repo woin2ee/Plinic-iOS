@@ -11,7 +11,7 @@ struct postInfo: View {
     
     static let dateFormat : DateFormatter = {
         let formatter = DateFormatter()
-//        formatter.dateFormat = "YYYY.M.D"
+        //        formatter.dateFormat = "YYYY.M.D"
         formatter.dateStyle = .long
         return formatter
     }()
@@ -23,7 +23,9 @@ struct postInfo: View {
     var postContext : String // 게시글 내용
     var postName : String
     
-    @State private var heart = true
+    
+    @State private var heart = false
+    @State private var scrap = false
     
     var body: some View {
         ZStack {
@@ -31,9 +33,9 @@ struct postInfo: View {
                 .ignoresSafeArea()
             VStack{
                 Rectangle()
-                         .fill(Color.gray)
-                         .frame(height: 0.5)
-                         .padding(.bottom, 5)
+                    .fill(Color.gray)
+                    .frame(height: 0.5)
+                    .padding(.bottom, 5)
                 HStack{
                     Image(profileImg)
                         .resizable()
@@ -57,7 +59,7 @@ struct postInfo: View {
                         .foregroundColor(Color.white)
                         .padding(.trailing, 5)
                     // 날짜
-                        
+                    
                     
                 } // 상단의 게시글 작성자 정보
                 .padding(.bottom, 5)
@@ -75,7 +77,8 @@ struct postInfo: View {
                         self.heart.toggle()
                         // 클릭 했을 때 좋아요 기능 구현
                     }, label: {
-                        Image(systemName: "heart")
+                        
+                        Image(systemName: heart ? "heart.fill" : "heart")
                             .font(.system(size: 31))
                             .padding(.trailing,10)
                             .foregroundColor(Color.white)
@@ -99,9 +102,10 @@ struct postInfo: View {
                     Spacer()
                     
                     Button(action: {
+                        self.scrap.toggle()
                         // 내 보관함에 저장기능 구현
                     }, label: {
-                        Image(systemName: "star")
+                        Image(systemName: scrap ? "star.fill" : "star")
                             .font(.system(size: 31))
                             .padding(.trailing,10)
                             .foregroundColor(Color.white)
@@ -120,13 +124,13 @@ struct postInfo: View {
                 HStack{
                     
                     Text("\(postContext)")
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 15, weight: .bold))
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 300, height: 42, alignment: .leading)
-                    .lineLimit(2)
-                    .truncationMode(.tail)
-                    .padding(.trailing, 30)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 15, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .frame(width: 300, height: 42, alignment: .leading)
+                        .lineLimit(2)
+                        .truncationMode(.tail)
+                        .padding(.trailing, 30)
                     // 게시글 내용
                     
                     Button(action: {
@@ -136,11 +140,11 @@ struct postInfo: View {
                     })
                     // 게시글 더보기 버튼
                 }
-                    
-//                Rectangle()
-//                         .fill(Color.gray)
-//                         .frame(height: 0.5)
-//                         .padding(.top, 5)
+                
+                //                Rectangle()
+                //                         .fill(Color.gray)
+                //                         .frame(height: 0.5)
+                //                         .padding(.top, 5)
             }
         } // 검은 배경
     }
