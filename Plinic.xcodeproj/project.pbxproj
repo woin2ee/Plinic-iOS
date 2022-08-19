@@ -11,6 +11,7 @@
 		91014F182895840500C58E8B /* userContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F172895840500C58E8B /* userContents.swift */; };
 		91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F192895841F00C58E8B /* genreInfo.swift */; };
 		91014F1C2895920100C58E8B /* userContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F1B2895920100C58E8B /* userContentView.swift */; };
+		9113806928AFDDD4006CD66A /* playlistCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113806828AFDDD4006CD66A /* playlistCreate.swift */; };
 		91BC78E228A691CC002C38CF /* userMyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* userMyPlaylist.swift */; };
 		91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* userMyPost.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
@@ -30,6 +31,7 @@
 		91014F172895840500C58E8B /* userContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userContents.swift; sourceTree = "<group>"; };
 		91014F192895841F00C58E8B /* genreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genreInfo.swift; sourceTree = "<group>"; };
 		91014F1B2895920100C58E8B /* userContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userContentView.swift; sourceTree = "<group>"; };
+		9113806828AFDDD4006CD66A /* playlistCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistCreate.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* userMyPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPlaylist.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* userMyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPost.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		D08E27322893A56A00013A12 = {
 			isa = PBXGroup;
 			children = (
+				D01C63A228A6B2280037813F /* .gitignore */,
 				D08E273D2893A56A00013A12 /* Plinic */,
 				D08E273C2893A56A00013A12 /* Products */,
 			);
@@ -83,7 +86,6 @@
 				D08E27402893A56A00013A12 /* ContentView.swift */,
 				D08E27422893A56F00013A12 /* Assets.xcassets */,
 				D08E27442893A56F00013A12 /* Preview Content */,
-				D01C63A228A6B2280037813F /* .gitignore */,
 			);
 			path = Plinic;
 			sourceTree = "<group>";
@@ -103,6 +105,7 @@
 				91014F1B2895920100C58E8B /* userContentView.swift */,
 				D08E27582896D70300013A12 /* userPlaylist.swift */,
 				D04183E3289D26890045C907 /* userProfile.swift */,
+				9113806828AFDDD4006CD66A /* playlistCreate.swift */,
 			);
 			path = user;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				D08E274F2893C63500013A12 /* thumbnail.swift in Sources */,
 				91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */,
 				91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */,
+				9113806928AFDDD4006CD66A /* playlistCreate.swift in Sources */,
 				D08E27592896D70300013A12 /* userPlaylist.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D04183E4289D26890045C907 /* userProfile.swift in Sources */,

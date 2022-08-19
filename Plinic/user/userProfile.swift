@@ -83,7 +83,7 @@ struct UserProfile: View {
                                 .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                         }
                     }
-                    .pickerStyle(.menu)
+                    .pickerStyle(.wheel)
                     .frame(width: 350, height: 44)
                     .background(Color(red: 0.108, green: 0.109, blue: 0.119))
                     .cornerRadius(15)
@@ -94,9 +94,10 @@ struct UserProfile: View {
                         ForEach(genre, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
+                                .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                         }
                     }
-                    .pickerStyle(.menu)
+                    .pickerStyle(.wheel)
                     .frame(width: 350, height: 44)
                     .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                     .background(Color(red: 0.108, green: 0.109, blue: 0.119))
@@ -107,10 +108,11 @@ struct UserProfile: View {
                         ForEach(genre, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
+                                .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                         }
                     }
                     .font(.system(size: 20))
-                    .pickerStyle(.menu)
+                    .pickerStyle(.wheel)
                     .frame(width: 350, height: 44)
                     .background(Color(red: 0.108, green: 0.109, blue: 0.119))
                     .cornerRadius(15)
