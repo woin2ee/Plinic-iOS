@@ -18,6 +18,7 @@
 		D04183E4289D26890045C907 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E3289D26890045C907 /* userProfile.swift */; };
 		D04E4A6228AF664700D04543 /* postDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6128AF664700D04543 /* postDetailInfo.swift */; };
 		D04E4A6428AF69E400D04543 /* postDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6328AF69E400D04543 /* postDetail.swift */; };
+		D06539B728AFCDBF008B5199 /* postCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06539B628AFCDBF008B5199 /* postCreate.swift */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		D04183E3289D26890045C907 /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
 		D04E4A6128AF664700D04543 /* postDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetailInfo.swift; sourceTree = "<group>"; };
 		D04E4A6328AF69E400D04543 /* postDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetail.swift; sourceTree = "<group>"; };
+		D06539B628AFCDBF008B5199 /* postCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCreate.swift; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08E273E2893A56A00013A12 /* PlinicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicApp.swift; sourceTree = "<group>"; };
 		D08E27402893A56A00013A12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				D01C63A528A6CFB10037813F /* postViews */,
 				D0A54AC428ACA8DA0097010B /* postContentView.swift */,
 				D04E4A6328AF69E400D04543 /* postDetail.swift */,
+				D06539B628AFCDBF008B5199 /* postCreate.swift */,
 			);
 			path = post;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				D0A54AC528ACA8DA0097010B /* postContentView.swift in Sources */,
 				D01C63A728A6D0180037813F /* postInfo.swift in Sources */,
 				D08E274F2893C63500013A12 /* thumbnail.swift in Sources */,
+				D06539B728AFCDBF008B5199 /* postCreate.swift in Sources */,
 				91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */,
 				D04E4A6228AF664700D04543 /* postDetailInfo.swift in Sources */,
 				91014F1A2895841F00C58E8B /* genreInfo.swift in Sources */,
