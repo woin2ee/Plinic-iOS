@@ -11,7 +11,7 @@ struct postInfo: View {
     
     static let dateFormat : DateFormatter = {
         let formatter = DateFormatter()
-        //        formatter.dateFormat = "YYYY.M.D"
+        //        formatter.dateFormat = "YYYY.MM.DD"
         formatter.dateStyle = .long
         return formatter
     }()
@@ -22,6 +22,7 @@ struct postInfo: View {
     var thumbnail : String // 게시글 썸네일 이미지
     var postContext : String // 게시글 내용
     var postName : String
+    var heartCnt : String
     
     
     @State private var heart = false
@@ -80,38 +81,42 @@ struct postInfo: View {
                         
                         Image(systemName: heart ? "heart.fill" : "heart")
                             .font(.system(size: 31))
-                            .padding(.trailing,10)
+//                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
                             .frame(width: 42, height: 42)
                     })
-                    .padding(.leading, 5)
+//                    .padding(.leading, 5)
                     // 좋아요 버튼
                     
+                    Text("좋아요 \(heartCnt)개")
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 15, weight: .semibold))
+                        .frame(width: 150, height: 42, alignment: .leading)
+//                        .padding(.leading, 5)
+                    // 좋아요 개수 표시
                     
+                    
+                    Spacer()
                     Button(action: {
                         // 클릭 했을 때 공유기능 구현
                     }, label: {
                         Image(systemName: "square.and.arrow.up")
                             .font(.system(size: 31))
-                            .padding(.trailing,10)
+//                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
                             .frame(width: 42, height: 42)
                     })
                     // 공유 버튼
                     
-                    Spacer()
-                    
                     Button(action: {
                         self.scrap.toggle()
                         // 내 보관함에 저장기능 구현
                     }, label: {
-                        Image(systemName: scrap ? "star.fill" : "star")
+                        Image(systemName: scrap ? "bookmark.fill" : "bookmark")
                             .font(.system(size: 31))
-                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
                             .frame(width: 42, height: 42)
                     })
-                    .padding(.trailing, 5)
                     // 스크랩 버튼
                 } // 게시글 하단의 버튼
                 
@@ -141,10 +146,6 @@ struct postInfo: View {
                     // 게시글 더보기 버튼
                 }
                 
-                //                Rectangle()
-                //                         .fill(Color.gray)
-                //                         .frame(height: 0.5)
-                //                         .padding(.top, 5)
             }
         } // 검은 배경
     }
@@ -152,6 +153,6 @@ struct postInfo: View {
 
 struct postInfo_Previews: PreviewProvider {
     static var previews: some View {
-        postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목")
+        postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
     }
 }
