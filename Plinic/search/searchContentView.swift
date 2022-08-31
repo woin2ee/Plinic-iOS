@@ -18,8 +18,13 @@ struct SearchContentView: View {
                 .ignoresSafeArea()
             VStack{
                 NavigationView {
-                    Text("Searching for \(searchText)")
-                        .searchable(text: $searchText, prompt: "검색어를 입력하세요.")
+                    ZStack {
+                        Color.black
+                            .ignoresSafeArea()
+                        Text("Searching for \(searchText)")
+                            .searchable(text: $searchText, prompt: "검색어를 입력하세요.")
+                            .foregroundColor(Color.white)
+                    }
                 } // SearchBar
                 
                 ScrollView{
