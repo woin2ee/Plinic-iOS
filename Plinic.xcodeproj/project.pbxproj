@@ -31,6 +31,7 @@
 		D08E27592896D70300013A12 /* userPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* userPlaylist.swift */; };
 		D0A54AC528ACA8DA0097010B /* postContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A54AC428ACA8DA0097010B /* postContentView.swift */; };
 		D0C176B428BE13EF007CB43F /* searchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B228BE1360007CB43F /* searchContentView.swift */; };
+		D0C176B628C73419007CB43F /* searchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B528C73418007CB43F /* searchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		D08E27582896D70300013A12 /* userPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPlaylist.swift; sourceTree = "<group>"; };
 		D0A54AC428ACA8DA0097010B /* postContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postContentView.swift; sourceTree = "<group>"; };
 		D0C176B228BE1360007CB43F /* searchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 1; name = searchContentView.swift; path = Plinic/search/searchContentView.swift; sourceTree = SOURCE_ROOT; usesTabs = 0; };
+		D0C176B528C73418007CB43F /* searchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D052589228BC8E0300EDF8C4 /* genreThumbnail.swift */,
+				D0C176B528C73418007CB43F /* searchBar.swift */,
 			);
 			path = searchViews;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A54AC528ACA8DA0097010B /* postContentView.swift in Sources */,
+				D0C176B628C73419007CB43F /* searchBar.swift in Sources */,
 				D01C63A728A6D0180037813F /* postInfo.swift in Sources */,
 				D08E274F2893C63500013A12 /* thumbnail.swift in Sources */,
 				D06539B728AFCDBF008B5199 /* postCreate.swift in Sources */,

@@ -17,16 +17,8 @@ struct SearchContentView: View {
             Color.black
                 .ignoresSafeArea()
             VStack{
-                NavigationView {
-                    ZStack {
-                        Color.black
-                            .ignoresSafeArea()
-                        Text("Searching for \(searchText)")
-                            .searchable(text: $searchText, prompt: "검색어를 입력하세요.")
-                            .foregroundColor(Color.white)
-                    }
-                } // SearchBar
-                
+                SearchBar()
+                    .frame(height: 50)
                 ScrollView{
                     VStack{
                         ForEach( Array(stride(from: 0, to: self.genre.count, by: 2)), id: \.self) { index in
@@ -42,7 +34,7 @@ struct SearchContentView: View {
                         } //Foreach 0부터 시작해서 2의 간격으로 index를 출력 (이때, genre안에 있는 요소가 짝수가 아닌 홀수 일때에 오류가 남) <- 오류처리 필요
                     } // VStack
                 } // ScrollView
-            }
+            } // VStack
             
         } // ZStack
     }
@@ -53,3 +45,12 @@ struct SearchContentView_Previews: PreviewProvider {
         SearchContentView()
     }
 }
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
+// 화면 터치시에 키보드 내려가는 코드 구현
