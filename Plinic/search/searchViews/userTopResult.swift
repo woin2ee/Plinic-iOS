@@ -14,6 +14,7 @@ struct userTopResult: View {
         HStack{
             userResult(profileImg:"random1", nickName: "watashi").scaleEffect(1.2)
             userContents(infoTitle: "플레이리스트", infoCount: "000")
+                .padding(.leading, 10.0)
         }//HStack
 
     }
