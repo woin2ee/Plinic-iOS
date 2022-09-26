@@ -20,7 +20,6 @@
 		91BC78E428A6920F002C38CF /* userMyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* userMyPost.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* postInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* postInfo.swift */; };
-		D022C58328D6FD4E00E4EFEA /* bg_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D022C58228D6FD4E00E4EFEA /* bg_video.mp4 */; };
 		D022C58628D6FDA300E4EFEA /* VideoBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */; };
 		D022C58928D704DA00E4EFEA /* loginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58828D704DA00E4EFEA /* loginButton.swift */; };
 		D04183E4289D26890045C907 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E3289D26890045C907 /* userProfile.swift */; };
@@ -28,6 +27,7 @@
 		D04E4A6428AF69E400D04543 /* postDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6328AF69E400D04543 /* postDetail.swift */; };
 		D052589328BC8E0300EDF8C4 /* genreThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052589228BC8E0300EDF8C4 /* genreThumbnail.swift */; };
 		D06539B728AFCDBF008B5199 /* postCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06539B628AFCDBF008B5199 /* postCreate.swift */; };
+		D06F2DA428E1ADAE002982F6 /* bg_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D06F2DA328E1ADAE002982F6 /* bg_video.mp4 */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
@@ -56,7 +56,6 @@
 		91BC78E328A6920F002C38CF /* userMyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userMyPost.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* postInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postInfo.swift; sourceTree = "<group>"; };
-		D022C58228D6FD4E00E4EFEA /* bg_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg_video.mp4; sourceTree = "<group>"; };
 		D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackgroundView.swift; sourceTree = "<group>"; };
 		D022C58828D704DA00E4EFEA /* loginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginButton.swift; sourceTree = "<group>"; };
 		D04183E3289D26890045C907 /* userProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		D04E4A6328AF69E400D04543 /* postDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetail.swift; sourceTree = "<group>"; };
 		D052589228BC8E0300EDF8C4 /* genreThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genreThumbnail.swift; sourceTree = "<group>"; };
 		D06539B628AFCDBF008B5199 /* postCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCreate.swift; sourceTree = "<group>"; };
+		D06F2DA328E1ADAE002982F6 /* bg_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bg_video.mp4; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08E273E2893A56A00013A12 /* PlinicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicApp.swift; sourceTree = "<group>"; };
 		D08E27402893A56A00013A12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				D01C63A228A6B2280037813F /* .gitignore */,
 				D08E273D2893A56A00013A12 /* Plinic */,
 				D08E27422893A56F00013A12 /* Assets.xcassets */,
-				D022C58228D6FD4E00E4EFEA /* bg_video.mp4 */,
+				D06F2DA328E1ADAE002982F6 /* bg_video.mp4 */,
 				D08E273C2893A56A00013A12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -296,8 +296,8 @@
 			files = (
 				D08E27462893A56F00013A12 /* Preview Assets.xcassets in Resources */,
 				D01C63A328A6B2280037813F /* .gitignore in Resources */,
+				D06F2DA428E1ADAE002982F6 /* bg_video.mp4 in Resources */,
 				D08E27432893A56F00013A12 /* Assets.xcassets in Resources */,
-				D022C58328D6FD4E00E4EFEA /* bg_video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

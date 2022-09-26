@@ -83,10 +83,11 @@ struct UserProfile: View {
                                 .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                         }
                     }
-                    .pickerStyle(.wheel)
-                    .frame(width: 350, height: 44)
+                    .pickerStyle(.menu)
+                    .frame(width: 350, height: 50)
                     .background(Color(red: 0.108, green: 0.109, blue: 0.119))
                     .cornerRadius(15)
+                    .padding(.bottom, 10)
                     
                 } // 좋아하는 장르 선택 1
                 VStack {
@@ -97,11 +98,12 @@ struct UserProfile: View {
                                 .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                         }
                     }
-                    .pickerStyle(.wheel)
-                    .frame(width: 350, height: 44)
+                    .pickerStyle(.menu)
+                    .frame(width: 350, height: 50)
                     .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
                     .background(Color(red: 0.108, green: 0.109, blue: 0.119))
                     .cornerRadius(15)
+                    .padding(.bottom, 10)
                 } // 좋아하는 장르 선택 2
                 VStack {
                     Picker("Choose a third genre", selection: $genre3) {
@@ -112,10 +114,11 @@ struct UserProfile: View {
                         }
                     }
                     .font(.system(size: 20))
-                    .pickerStyle(.wheel)
-                    .frame(width: 350, height: 44)
+                    .pickerStyle(.menu)
+                    .frame(width: 350, height: 50)
                     .background(Color(red: 0.108, green: 0.109, blue: 0.119))
                     .cornerRadius(15)
+                    .padding(.bottom, 10)
                 } // 좋아하는 장르 선택 1
                 
                 HStack{
@@ -160,7 +163,11 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+        Group {
+            UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+            UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+                .previewDevice("iPhone SE (3rd generation)")
+        }
     }
 }
 

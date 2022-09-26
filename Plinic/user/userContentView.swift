@@ -16,50 +16,66 @@ struct userContentView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            VStack(spacing:0) {
-                HStack(spacing:0) {
-                    Text("\(nickName)")
-                        .fontWeight(.bold)
-                        .font(.system(size: 20))
-                        .foregroundColor(Color.white)
-                        .tracking(-0.41)
-                        .frame(width: 270, height: 42, alignment: .leading)
-                    //유저 이름
-                    Image(systemName: "plus.circle")
-                        .font(.system(size: 35))
-                        .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
-                        .padding(.trailing, 15.0)
-                    Button(action: {
-                        self.postTransform.toggle()
-                    }, label: {
-                        Image(systemName: "music.note.list")
-                            .padding(.trailing, 10.0)
-                            .font(.system(size: 35))
-                            .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
-                        
-                    })
-                    
-                   
-
-                }
-                .padding(.leading, 10.0)
-                //HStack
-                userInfo()
-                    .padding(.top, 10.0)
-                if(self.postTransform) {
-                    userMyPlaylist(playlistTitle: "플레이리스트 제목")
-                } else {
-                    userMyPost(postTitle: "게시글 제목")
-                }
+            VStack{
                 
-            }//VStack
+                GeometryReader{ geometry in
+                    VStack(spacing:0) {
+                        HStack(spacing:0) {
+                            Text("\(nickName)")
+                                .fontWeight(.bold)
+                                .font(.system(size: 20))
+                                .foregroundColor(Color.white)
+                                .tracking(-0.41)
+                                .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.05, alignment: .leading)
+                            //유저 이름
+                            Image(systemName: "plus.circle")
+                                .font(.system(size: 35))
+                                .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
+                                .padding(.trailing, 15.0)
+                            Button(action: {
+                                self.postTransform.toggle()
+                            }, label: {
+                                Image(systemName: "music.note.list")
+                                    .padding(.trailing, 10.0)
+                                    .font(.system(size: 35))
+                                    .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
+                            })
+                        }
+                        .padding(.leading, 10.0)
+                        //HStack
+                        
+                        VStack{
+                            userInfo(profileImg: "random1")
+                                .frame(height: geometry.size.height * 0.25)
+                                .padding(.top, 10.0)
+                            if(self.postTransform) {
+                                userMyPlaylist(playlistTitle: "플레이리스트 제목")
+                                    .frame(height: geometry.size.height * 0.65)
+                                Spacer()
+                                    .frame(height: geometry.size.height * 0.15)
+                            } else {
+                                userMyPost(postTitle: "게시글 제목")
+                                    .frame(height: geometry.size.height * 0.65)
+                                    
+                            }
+                        }
+                    }
+                    
+                    
+                }//VStack
+            }
+            
         }//ZStack
     }
 }
 
 struct userContentView_Previews: PreviewProvider {
     static var previews: some View {
-        userContentView(nickName: "살려줘요")
+        Group {
+            userContentView(nickName: "안녕")
+            userContentView(nickName: "안녕하세요~~~입니다")
+                .previewDevice("iPhone 8")
+        }
     }
 }
 

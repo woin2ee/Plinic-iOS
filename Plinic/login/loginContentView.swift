@@ -13,7 +13,7 @@ struct LoginContentView : View {
     var body: some View{
         ZStack{
             LoginButton()
-                .background(VideoBackgroundView())
+//                .background(VideoBackgroundView())
         }
     }
 }
