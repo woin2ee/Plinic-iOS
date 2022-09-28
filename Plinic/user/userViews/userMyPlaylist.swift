@@ -15,84 +15,94 @@ struct userMyPlaylist: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            VStack {
-                VStack(spacing:0) {
-                    Text("공개된 플레이리스트")
-                        .foregroundColor(Color.white)
-                        .fontWeight(.bold)
-                        .font(.system(size: 20))
-                        .frame(width: 390, height: 20, alignment: .leading)
-                    ScrollView(.horizontal) {
-                        HStack(spacing:40) {
-                            VStack(spacing:0) {
-                                Thumbnail(thumbnail: "defaultImg")
-                                Text("\(playlistTitle)")
-                                    .foregroundColor(Color.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 15))
-                            }//VStack
-                            VStack(spacing:0) {
-                                Thumbnail(thumbnail: "defaultImg")
-                                Text("\(playlistTitle)")
-                                    .foregroundColor(Color.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 15))
-                            }//VStack
-                            VStack(spacing:0) {
-                                Thumbnail(thumbnail: "defaultImg")
-                                Text("\(playlistTitle)")
-                                    .foregroundColor(Color.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 15))
-                            }//VStack
-                        }//HSTack
-                    }
-                    .frame(width: 380, height: 200, alignment: .leading)
+            GeometryReader{ geo in
+                VStack {
+                    VStack() {
+                        Text("공개된 플레이리스트")
+                            .foregroundColor(Color.white)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
+                            .frame(width: geo.size.width, height: geo.size.height * 0.04, alignment: .leading)
+                        
+                        ScrollView(.horizontal) {
+                            HStack() {
+                                VStack() {
+                                    Thumbnail(thumbnail: "defaultImg")
+                                        .padding(.bottom, 5)
+                                    Text("\(playlistTitle)")
+                                        .foregroundColor(Color.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                }//VStack
+                                VStack() {
+                                    Thumbnail(thumbnail: "defaultImg")
+                                        .padding(.bottom, 5)
+                                    Text("\(playlistTitle)")
+                                        .foregroundColor(Color.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                }//VStack
+                                VStack() {
+                                    Thumbnail(thumbnail: "defaultImg")
+                                        .padding(.bottom, 5)
+                                    Text("\(playlistTitle)")
+                                        .foregroundColor(Color.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                }//VStack
+                            }//HSTack
+                            .padding(.top, 5)
+                        } // ScrollView
+                        
+                        .padding([.top, .leading, .bottom], 5)
+                    }//VStack
                     .padding(.leading, 10.0)
-                    .padding(.top, 10.0)
-                }//VStack
-                .frame(width: 380, height: 235, alignment: .leading)
-                .padding(.leading, 10.0)
-                .padding(.top, 20.0)
-                VStack(spacing:0) {
-                    Text("비공개된 플레이리스트")
-                        .foregroundColor(Color.white)
-                        .fontWeight(.bold)
-                        .font(.system(size: 20))
-                        .frame(width: 390, height: 20, alignment: .leading)
-                    ScrollView(.horizontal) {
-                        HStack(spacing:40) {
-                            VStack(spacing:0) {
-                                Thumbnail(thumbnail: "defaultImg")
-                                Text("\(playlistTitle)")
-                                    .foregroundColor(Color.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 15))
-                            }//VStack
-                            VStack(spacing:0) {
-                                Thumbnail(thumbnail: "defaultImg")
-                                Text("\(playlistTitle)")
-                                    .foregroundColor(Color.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 15))
-                            }//VStack
-                            VStack(spacing:0) {
-                                Thumbnail(thumbnail: "defaultImg")
-                                Text("\(playlistTitle)")
-                                    .foregroundColor(Color.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 15))
-                            }//VStack
-                        }//HSTack
-                    }
-                    .frame(width: 380, height: 200, alignment: .leading)
+//                    .padding(.top, 10)
+                    
+                    VStack() {
+                        Text("비공개된 플레이리스트")
+                            .foregroundColor(Color.white)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
+                            .frame(width: geo.size.width, height: geo.size.height * 0.04, alignment: .leading)
+                        
+                        ScrollView(.horizontal) {
+                            HStack() {
+                                VStack() {
+                                    Thumbnail(thumbnail: "defaultImg")
+                                        .padding(.bottom, 5)
+                                    Text("\(playlistTitle)")
+                                        .foregroundColor(Color.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                }//VStack
+                                VStack() {
+                                    Thumbnail(thumbnail: "defaultImg")
+                                        .padding(.bottom, 5)
+                                    Text("\(playlistTitle)")
+                                        .foregroundColor(Color.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                }//VStack
+                                VStack() {
+                                    Thumbnail(thumbnail: "defaultImg")
+                                        .padding(.bottom, 5)
+                                    Text("\(playlistTitle)")
+                                        .foregroundColor(Color.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 15))
+                                }//VStack
+                            }//HSTack
+                            .padding(.top, 5)
+                        } // ScrollView
+                        
+                        .padding([.top, .leading, .bottom], 5)
+                    }//VStack
                     .padding(.leading, 10.0)
-                    .padding(.top, 10.0)
-                }//VStack
-                .frame(width: 380, height: 235, alignment: .leading)
-                .padding(.leading, 10.0)
-                .padding(.top, 25.0)
-            }//VStack
+//                    .padding(.top, 20.0)
+                }
+            }
+            
         }// ZStack
     }
 }

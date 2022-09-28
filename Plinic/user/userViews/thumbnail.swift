@@ -20,15 +20,11 @@ struct Thumbnail: View {
                 Image(thumbnail)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 170, height: 170)
+//                    .frame(width: 170, height: 170)
                     .background(Color.green)
                     .cornerRadius(10)
-                    .padding(.bottom, 15)
+//                    .padding(.bottom, 15)
                     
-    //            Text(title)
-    //                .fontWeight(.semibold)
-    //                .font(.system(size: 15))
-    //                .frame(width: 170, height: 15)
             } // VStack
         }
         
