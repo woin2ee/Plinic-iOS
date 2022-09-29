@@ -31,7 +31,7 @@ struct postContentView: View {
                             .font(.system(size: 15))
                             .fontWeight(.bold)
                             .padding(.all, 5)
-                            .frame(width: 300, height: 32)
+                            .frame(maxWidth: 300, maxHeight: 32)
                             .background(Color(red: 0.192, green: 0.192, blue: 0.201))
                             .foregroundColor(Color.gray)
                             .cornerRadius(10)
@@ -47,7 +47,7 @@ struct postContentView: View {
                     })
                     .padding(.trailing, 5)
                 } // 상단바 구현
-                .frame(width: 390, height: 46)
+                .frame(maxWidth: 390, maxHeight: 46)
                 .foregroundColor(Color(red: 0.106, green: 0.106, blue: 0.106))
                 .padding(.top, 2)
                 
@@ -71,6 +71,10 @@ struct postContentView: View {
 
 struct postContentView_Previews: PreviewProvider {
     static var previews: some View {
-        postContentView(topNotice : "공지 제목입니다")
+        Group {
+            postContentView(topNotice : "공지 제목입니다")
+            postContentView(topNotice : "공지 제목입니다")
+                .previewDevice("iPhone 8")
+        }
     }
 }

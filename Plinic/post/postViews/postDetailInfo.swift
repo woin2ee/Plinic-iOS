@@ -38,7 +38,7 @@ struct PostDetailInfo: View {
                         .aspectRatio(contentMode: .fill)
                         .overlay(Circle()
                             .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 5))
-                        .frame(width: 42, height: 42)
+                        .frame(maxWidth: 44, maxHeight: 44)
                         .background(Color.green)
                         .clipShape(Circle())
                         .padding(.leading, 5)
@@ -47,7 +47,7 @@ struct PostDetailInfo: View {
                     Text("\(userName)")
                         .font(.system(size: 17))
                         .foregroundColor(Color.white)
-                        .frame(width: 180, height: 42, alignment: .leading)
+                        .frame(maxWidth: 200, maxHeight: 42, alignment: .leading)
                         .padding(.leading, 5)
                     // 유저 닉네임
                     Button(action: {
@@ -59,7 +59,7 @@ struct PostDetailInfo: View {
                             .font(.system(size: 31))
                         //                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
-                            .frame(width: 42, height: 42)
+                            .frame(maxWidth: 44, maxHeight: 44)
                     })
                     //                    .padding(.leading, 5)
                     // 좋아요 버튼
@@ -71,7 +71,7 @@ struct PostDetailInfo: View {
                             .font(.system(size: 31))
                         //                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
-                            .frame(width: 42, height: 42)
+                            .frame(maxWidth: 44, maxHeight: 44)
                     })
                     // 공유 버튼
                     
@@ -82,7 +82,7 @@ struct PostDetailInfo: View {
                         Image(systemName: scrap ? "bookmark.fill" : "bookmark")
                             .font(.system(size: 31))
                             .foregroundColor(Color.white)
-                            .frame(width: 42, height: 42)
+                            .frame(maxWidth: 44, maxHeight: 44)
                     })
                     // 스크랩 버튼
                     
@@ -96,13 +96,14 @@ struct PostDetailInfo: View {
                     Text("좋아요 \(heartCnt)개")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .semibold))
-                        .frame(width: 150, height: 42, alignment: .leading)
+                        .frame(maxWidth: 200, maxHeight: 44, alignment: .leading)
                     // 좋아요 개수 표시
                     
                     Spacer()
                     
                     Text("\(today, formatter : postInfo.dateFormat)")
                         .foregroundColor(Color.white)
+                        .frame(maxWidth: 200, maxHeight: 44, alignment: .trailing)
                         .padding(.trailing, 5)
                     // 날짜
                     
@@ -112,7 +113,7 @@ struct PostDetailInfo: View {
                     .foregroundColor(Color.white)
                     .font(.system(size: 20, weight: .heavy))
                     .multilineTextAlignment(.leading)
-                    .frame(width: 390, height: 42, alignment: .leading)
+                    .frame(maxWidth: 500, maxHeight: 44, alignment: .leading)
                 // 게시글 제목
                 HStack{
                     
@@ -120,7 +121,7 @@ struct PostDetailInfo: View {
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .bold))
                         .multilineTextAlignment(.leading)
-                        .frame(width: 380, height: 130, alignment: .topLeading)
+                        .frame(maxWidth: 500,minHeight: 140, maxHeight: 150, alignment: .top)
                     // 게시글 내용
                     
                 }
