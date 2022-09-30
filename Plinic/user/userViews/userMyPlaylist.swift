@@ -10,6 +10,8 @@ import SwiftUI
 struct userMyPlaylist: View {
     
     var playlistTitle : String
+    let openPlaylist = Array(1...12)
+    let unOpenPlaylist = Array(1...17)
     
     var body: some View {
         ZStack {
@@ -26,84 +28,56 @@ struct userMyPlaylist: View {
                         
                         ScrollView(.horizontal) {
                             HStack() {
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                        .padding(.bottom, 5)
-                                    Text("\(playlistTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                        .padding(.bottom, 5)
-                                    Text("\(playlistTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                        .padding(.bottom, 5)
-                                    Text("\(playlistTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                            }//HSTack
-                            .padding(.top, 5)
-                        } // ScrollView
+                                ForEach(openPlaylist, id: \.self) {i in
+                                    VStack() {
+                                        Thumbnail(thumbnail: "defaultImg")
+                                            .padding(.bottom, 5)
+                                        Text("\(playlistTitle)")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .font(.system(size: 15))
+                                    }//VStack
+                                    .frame(maxWidth: 180, maxHeight: 200)
+                                }
+                                .padding(.top, 5)
+                            } // ScrollView
+                            .padding([.top, .leading, .bottom], 5)
+                        }//VStack
+                        .padding(.leading, 10.0)
+                        //                    .padding(.top, 10)
                         
-                        .padding([.top, .leading, .bottom], 5)
-                    }//VStack
-                    .padding(.leading, 10.0)
-//                    .padding(.top, 10)
+                        VStack() {
+                            Text("비공개된 플레이리스트")
+                                .foregroundColor(Color.white)
+                                .fontWeight(.bold)
+                                .font(.system(size: 20))
+                                .frame(width: geo.size.width, height: geo.size.height * 0.04, alignment: .leading)
+                            
+                            ScrollView(.horizontal) {
+                                HStack() {
+                                    ForEach(unOpenPlaylist, id: \.self) {i in
+                                        VStack() {
+                                            Thumbnail(thumbnail: "defaultImg")
+                                                .padding(.bottom, 5)
+                                            Text("\(playlistTitle)")
+                                                .foregroundColor(Color.white)
+                                                .fontWeight(.bold)
+                                                .font(.system(size: 15))
+                                        }//VStack
+                                        .frame(maxWidth: 180, maxHeight: 200)
+                                    } //ForEach
+                                    .padding(.top, 5)
+                                } // ScrollView
+                                .padding([.top, .leading, .bottom], 5)
+                            }//VStack
+                            .padding(.leading, 10.0)
+                            //                    .padding(.top, 20.0)
+                        }
+                    }
                     
-                    VStack() {
-                        Text("비공개된 플레이리스트")
-                            .foregroundColor(Color.white)
-                            .fontWeight(.bold)
-                            .font(.system(size: 20))
-                            .frame(width: geo.size.width, height: geo.size.height * 0.04, alignment: .leading)
-                        
-                        ScrollView(.horizontal) {
-                            HStack() {
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                        .padding(.bottom, 5)
-                                    Text("\(playlistTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                        .padding(.bottom, 5)
-                                    Text("\(playlistTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                        .padding(.bottom, 5)
-                                    Text("\(playlistTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                            }//HSTack
-                            .padding(.top, 5)
-                        } // ScrollView
-                        
-                        .padding([.top, .leading, .bottom], 5)
-                    }//VStack
-                    .padding(.leading, 10.0)
-//                    .padding(.top, 20.0)
-                }
+                }// ZStack
             }
-            
-        }// ZStack
+        }
     }
 }
 struct userMyPlaylist_Previews: PreviewProvider {

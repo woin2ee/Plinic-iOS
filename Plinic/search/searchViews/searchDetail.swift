@@ -42,8 +42,8 @@ struct userDetail: View {
                             .resizable()
                             .clipShape(Circle())
                             .overlay(Circle()
-                                .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 5))
-                            .frame(width: 80, height: 80, alignment: .center)
+                                .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
+                            .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
                             .frame(width: 100, height: 100, alignment: .center)
                         
                         VStack(alignment: .leading){
@@ -51,16 +51,16 @@ struct userDetail: View {
                             Text("\(user.userName)")
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
-                                .font(.system(size: 15))
+                                .font(.system(size: 25))
                                 .padding(.bottom, 5)
                             Text("플레이리스트: \(user.playlistCount)")
-                                .foregroundColor(.white)
+                                .foregroundColor(.gray)
                                 .fontWeight(.bold)
-                                .font(.system(size: 15))
+                                .font(.system(size: 20))
                             Spacer()
                         }//VStack
                     }//HStack
-                }//For
+                }//ForEach
                 .padding(.leading, 10)
                 .listRowBackground(Color.black)
                 .listRowInsets(EdgeInsets())

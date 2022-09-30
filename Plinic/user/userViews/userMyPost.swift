@@ -39,7 +39,7 @@ struct userMyPost: View {
                                         .fontWeight(.bold)
                                         .font(.system(size: 15))
                                 }//VStack
-                                .padding(10)
+                                .padding([.trailing], 10)
                             } // ForEach
                         } //LazyVGrid
                     } //ScrollView

@@ -10,6 +10,7 @@ import SwiftUI
 struct postContentView: View {
     
     var topNotice : String
+    let data = Array(1...17)
     
     var body: some View {
         ZStack {
@@ -52,14 +53,10 @@ struct postContentView: View {
                 .padding(.top, 2)
                 
                 ScrollView{
+                    ForEach(data, id: \.self) {i in
+                        postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt: "300")
+                    } //ForEach
                     
-                    postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt: "300")
-                    
-                    postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt: "300")
-                    
-                    postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt: "300")
-                    
-                    postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt: "300")
                     
                     
                 } // 게시글 구현

@@ -48,15 +48,16 @@ struct userContentView: View {
                             userInfo(profileImg: "random1")
                                 .frame(height: geometry.size.height * 0.25)
                                 .padding([.bottom,.top], 10)
+                            
                             if(self.postTransform) {
                                 userMyPlaylist(playlistTitle: "플레이리스트 제목")
                                     .frame(height: geometry.size.height * 0.65)
                                 Spacer()
                                     .frame(height: geometry.size.height * 0.15)
+
                             } else {
                                 userMyPost(postTitle: "게시글 제목")
                                     .frame(height: geometry.size.height * 0.65)
-                                Spacer()
                             }
                         }
                     }
