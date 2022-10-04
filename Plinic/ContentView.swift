@@ -10,23 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-                    userContentView(nickName: "test")
-                        .tabItem {
-                            Image(systemName: "house")
-                            Text("유저뷰")
-                        }
-                    postContentView(topNotice: "ppap")
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("포스트")
-                        }
-
-                    SearchContentView()
-                        .tabItem {
-                            Image(systemName: "bag")
-                            Text("서치")
-                        }
+            userContentView(nickName: "test")
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
                 }
+            SearchContentView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+            
+            postContentView(topNotice: "ppap")
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("Post")
+                }
+            
+        }
     }
 }
 
