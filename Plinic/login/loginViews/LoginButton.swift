@@ -13,16 +13,14 @@ import SwiftUI
 
 struct LoginButton : View {
     
-//    @UIApplicationDelegateAdaptor var appDelegate : MyAppDelegate
+    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM()
+    
     var body: some View{
         
         Button(action: {
-            
+            kakoAuthVM.handleKakaoLogin()
         }, label: {
-            Text("카카오 로그인")
-//            Image("kakao_login_medium_wide")$
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
+            Image("kakao_login_medium_wide")
         })
     }
     

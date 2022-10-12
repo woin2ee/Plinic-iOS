@@ -26,6 +26,11 @@ struct ContentView: View {
                     Image(systemName: "list.bullet")
                     Text("Post")
                 }
+            LoginContentView()
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("Post")
+                }
             
         }
     }
