@@ -20,7 +20,7 @@ struct UserProfile: View {
     @State  var genre3 : String = ""
     // 유저가 선택한 장르
     
-    
+    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM()
     
     var body: some View {
         ZStack {
@@ -123,6 +123,7 @@ struct UserProfile: View {
                 
                 HStack{
                     Button(action: {
+                        kakoAuthVM.KakaoLogout()
                         // 클릭 했을 때 로그아웃이 되는 코드 작성
                     }, label: {
                         Text("로그아웃")

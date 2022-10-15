@@ -26,6 +26,7 @@
 		D0461A7028F45AD100149F92 /* RxKakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D0461A6F28F45AD100149F92 /* RxKakaoSDK */; };
 		D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6128AF664700D04543 /* PostDetailInfo.swift */; };
 		D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6328AF69E400D04543 /* PostDetail.swift */; };
+		D050ED2A28FAACD50048C20F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D050ED2928FAACD50048C20F /* User.swift */; };
 		D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */; };
 		D06539B728AFCDBF008B5199 /* PostCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06539B628AFCDBF008B5199 /* PostCreate.swift */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
@@ -65,6 +66,7 @@
 		D04183E3289D26890045C907 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		D04E4A6128AF664700D04543 /* PostDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailInfo.swift; sourceTree = "<group>"; };
 		D04E4A6328AF69E400D04543 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		D050ED2928FAACD50048C20F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreThumbnail.swift; sourceTree = "<group>"; };
 		D06539B628AFCDBF008B5199 /* PostCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreate.swift; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D050ED2828FAACBA0048C20F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D050ED2928FAACD50048C20F /* User.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		D052589028BC8BB900EDF8C4 /* search */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 				D08E27522896CBCA00013A12 /* Info.plist */,
 				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
 				D08E27402893A56A00013A12 /* ContentView.swift */,
+				D050ED2828FAACBA0048C20F /* Navigation */,
 				D022C58428D6FD8500E4EFEA /* videoBackground */,
 				D08E27532896CC1000013A12 /* WebViews */,
 				D08E274C2893C5A200013A12 /* user */,
@@ -363,6 +374,7 @@
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
 				9113807228C79836006CD66A /* SearchResult.swift in Sources */,
 				D08E27512893CF0800013A12 /* PlaylistInfo.swift in Sources */,
+				D050ED2A28FAACD50048C20F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

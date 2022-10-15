@@ -54,10 +54,13 @@ struct userInfo: View {
                             .frame(width: 330, height: 40)
                             .cornerRadius(5)
                         
-                        Text("프로필 편집")
-                            .fontWeight(.bold)
-                            .font(.system(size: 12))
-                            .foregroundColor(Color.white)
+                        NavigationLink(destination: UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")){
+                            Text("프로필 편집")
+                                .fontWeight(.bold)
+                                .font(.system(size: 12))
+                                .foregroundColor(Color.white)
+                        }
+                        
                     }
                 })
                 
