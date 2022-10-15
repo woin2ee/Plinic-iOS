@@ -15,13 +15,25 @@ struct LoginButton : View {
     
     @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM()
     
+    let loginStatusInfo : (Bool) -> String = { isLogedIn in
+        return isLogedIn ? "로그인 상태" : "로그아웃 상태"
+    }
+    
     var body: some View{
+        VStack{
+            Button(action: {
+                kakoAuthVM.handleKakaoLogin()
+            }, label: {
+                Image("kakao_login_medium_wide")
+            })
+            Button(action: {
+                kakoAuthVM.KakaoLogout()
+            }, label: {
+                Text("카카오 로그아웃")
+            })
+            Text(loginStatusInfo(kakoAuthVM.isLogedIn)) // 로그인 상태를 보여주는 텍스트
+        }
         
-        Button(action: {
-            kakoAuthVM.handleKakaoLogin()
-        }, label: {
-            Image("kakao_login_medium_wide")
-        })
     }
     
 }
