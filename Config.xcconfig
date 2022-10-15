@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  Plinic
+//
+//  Created by MacBook Air on 2022/10/08.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+KAKAO_NATIVE_APP_KEY = 369685bcb7e5c2bfffc3b88a9dfbc165

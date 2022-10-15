@@ -11,7 +11,11 @@ import SwiftUI
 struct LoginContentView : View {
     
     var body: some View{
-        ZStack{
+        VStack{
+            Image("플리닉로고")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: 300, maxHeight: 200, alignment: .center)
             LoginButton()
 //                .background(VideoBackgroundView())
         }

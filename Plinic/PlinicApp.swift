@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct PlinicApp: App {
+    
+    @UIApplicationDelegateAdaptor var appDelegate : MyAppDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

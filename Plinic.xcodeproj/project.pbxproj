@@ -23,6 +23,7 @@
 		D022C58628D6FDA300E4EFEA /* VideoBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */; };
 		D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58828D704DA00E4EFEA /* LoginButton.swift */; };
 		D04183E4289D26890045C907 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E3289D26890045C907 /* UserProfile.swift */; };
+		D0461A7028F45AD100149F92 /* RxKakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D0461A6F28F45AD100149F92 /* RxKakaoSDK */; };
 		D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6128AF664700D04543 /* PostDetailInfo.swift */; };
 		D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6328AF69E400D04543 /* PostDetail.swift */; };
 		D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */; };
@@ -36,6 +37,9 @@
 		D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* PlaylistWebView.swift */; };
 		D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* UserPlaylist.swift */; };
 		D0A54AC528ACA8DA0097010B /* PostContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A54AC428ACA8DA0097010B /* PostContentView.swift */; };
+		D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */; };
+		D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */; };
+		D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */; };
 		D0C176B428BE13EF007CB43F /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B228BE1360007CB43F /* SearchContentView.swift */; };
 		D0C176B628C73419007CB43F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B528C73418007CB43F /* SearchBar.swift */; };
 		D0C176B928D21A45007CB43F /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B828D21A45007CB43F /* LoginContentView.swift */; };
@@ -57,6 +61,7 @@
 		D01C63A628A6D0180037813F /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
 		D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackgroundView.swift; sourceTree = "<group>"; };
 		D022C58828D704DA00E4EFEA /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		D031829828F18BF40092267C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D04183E3289D26890045C907 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		D04E4A6128AF664700D04543 /* PostDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailInfo.swift; sourceTree = "<group>"; };
 		D04E4A6328AF69E400D04543 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
@@ -73,6 +78,9 @@
 		D08E27542896CC3000013A12 /* PlaylistWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWebView.swift; sourceTree = "<group>"; };
 		D08E27582896D70300013A12 /* UserPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaylist.swift; sourceTree = "<group>"; };
 		D0A54AC428ACA8DA0097010B /* PostContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentView.swift; sourceTree = "<group>"; };
+		D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
+		D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySceneDelegate.swift; sourceTree = "<group>"; };
+		D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthVM.swift; sourceTree = "<group>"; };
 		D0C176B228BE1360007CB43F /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 1; name = SearchContentView.swift; path = Plinic/search/SearchContentView.swift; sourceTree = SOURCE_ROOT; usesTabs = 0; };
 		D0C176B528C73418007CB43F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D0C176B828D21A45007CB43F /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0461A7028F45AD100149F92 /* RxKakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +134,13 @@
 			path = loginViews;
 			sourceTree = "<group>";
 		};
+		D0461A6E28F45AC500149F92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D052589028BC8BB900EDF8C4 /* search */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,10 +166,12 @@
 		D08E27322893A56A00013A12 = {
 			isa = PBXGroup;
 			children = (
+				D031829828F18BF40092267C /* Config.xcconfig */,
 				D01C63A228A6B2280037813F /* .gitignore */,
 				D08E273D2893A56A00013A12 /* Plinic */,
 				D08E27422893A56F00013A12 /* Assets.xcassets */,
 				D08E273C2893A56A00013A12 /* Products */,
+				D0461A6E28F45AC500149F92 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,6 +247,9 @@
 			children = (
 				D022C58728D704BC00E4EFEA /* loginViews */,
 				D0C176B828D21A45007CB43F /* LoginContentView.swift */,
+				D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */,
+				D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */,
+				D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -249,6 +270,9 @@
 			dependencies = (
 			);
 			name = Plinic;
+			packageProductDependencies = (
+				D0461A6F28F45AD100149F92 /* RxKakaoSDK */,
+			);
 			productName = Plinic;
 			productReference = D08E273B2893A56A00013A12 /* Plinic.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +301,9 @@
 				Base,
 			);
 			mainGroup = D08E27322893A56A00013A12;
+			packageReferences = (
+				D0461A6B28F4591C00149F92 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
+			);
 			productRefGroup = D08E273C2893A56A00013A12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,6 +339,7 @@
 				D08E274F2893C63500013A12 /* Thumbnail.swift in Sources */,
 				914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */,
 				D06539B728AFCDBF008B5199 /* PostCreate.swift in Sources */,
+				D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
 				91BC78E428A6920F002C38CF /* UserMyPost.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */,
@@ -326,8 +354,10 @@
 				9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
 				D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */,
+				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
 				91BC78E228A691CC002C38CF /* UserMyPlaylist.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
+				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfo.swift in Sources */,
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
@@ -341,6 +371,7 @@
 /* Begin XCBuildConfiguration section */
 		D08E27472893A56F00013A12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D031829828F18BF40092267C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -401,6 +432,7 @@
 		};
 		D08E27482893A56F00013A12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D031829828F18BF40092267C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -455,6 +487,7 @@
 		};
 		D08E274A2893A56F00013A12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D031829828F18BF40092267C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -487,6 +520,7 @@
 		};
 		D08E274B2893A56F00013A12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D031829828F18BF40092267C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -539,6 +573,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0461A6B28F4591C00149F92 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk-rx";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0461A6F28F45AD100149F92 /* RxKakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0461A6B28F4591C00149F92 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D08E27332893A56A00013A12 /* Project object */;
 }
