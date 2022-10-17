@@ -31,7 +31,7 @@ struct UserProfile: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .overlay(Circle()
-                        .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 5))
+                        .stroke(Color.MainColor, lineWidth: 5))
                     .frame(width: 100, height: 100)
                     .background(Color.green)
                     .clipShape(Circle())
@@ -45,10 +45,10 @@ struct UserProfile: View {
                     Text("프로필 사진 변경")
                         .frame(width: 102, height: 22)
                         .padding(.all, 5)
-                        .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                        .foregroundColor(Color.MainColor)
                         .font(.system(size: 15))
                         .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 1))
+                            .stroke(Color.MainColor, lineWidth: 1))
                         .padding(.bottom, 50)
                 }) // 프로필 사진 변경하고 싶을 때 누르는 버튼
                 
@@ -59,19 +59,23 @@ struct UserProfile: View {
                             .foregroundColor(Color.gray)
                     }
                     TextField("", text: $userName)
-                        .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                        .foregroundColor(Color.MainColor)
                 }
                 .padding(.leading)
                 .frame(width: 350, height: 44)
-                .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                .background(Color.BackgroundSubColor)
                 .overlay(RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 1))
+                    .stroke(Color.MainColor, lineWidth: 1))
                 .padding(.bottom, 20)
+                .onSubmit {
+                    userName = "\(userName)"
+                    print("유저 닉네임 : \(userName)")
+                }
                 // 닉네임을 변경하고 싶을 때 사용하는 텍스트 필드
                 
                 Text("Genre")
                     .font(.system(size: 25))
-                    .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                    .foregroundColor(Color.MainColor)
                     .padding(.trailing, 290)
                 
                 
@@ -80,28 +84,28 @@ struct UserProfile: View {
                         ForEach(genre, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
-                                .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                                .foregroundColor(Color.MainColor)
                         }
                     }
                     .pickerStyle(.menu)
                     .frame(width: 350, height: 50)
-                    .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                    .background(Color.BackgroundSubColor)
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                     
                 } // 좋아하는 장르 선택 1
+                
                 VStack {
                     Picker("Choose a second genre", selection: $genre2) {
                         ForEach(genre, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
-                                .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                                .foregroundColor(Color.MainColor)
                         }
                     }
                     .pickerStyle(.menu)
                     .frame(width: 350, height: 50)
-                    .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
-                    .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                    .background(Color.BackgroundSubColor)
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                 } // 좋아하는 장르 선택 2
@@ -110,13 +114,12 @@ struct UserProfile: View {
                         ForEach(genre, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
-                                .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                                .foregroundColor(Color.MainColor)
                         }
                     }
-                    .font(.system(size: 20))
                     .pickerStyle(.menu)
                     .frame(width: 350, height: 50)
-                    .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                    .background(Color.BackgroundSubColor)
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                 } // 좋아하는 장르 선택 1
@@ -127,9 +130,9 @@ struct UserProfile: View {
                         // 클릭 했을 때 로그아웃이 되는 코드 작성
                     }, label: {
                         Text("로그아웃")
-                            .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                            .foregroundColor(Color.MainColor)
                             .frame(width: 110, height: 50)
-                            .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                            .background(Color.BackgroundSubColor)
                             .cornerRadius(30)
                     })
                     
@@ -137,9 +140,9 @@ struct UserProfile: View {
                         // 클릭 했을 때 회원 탈퇴 절차를 밟는 코드 작성
                     }, label: {
                         Text("회원 탈퇴")
-                            .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                            .foregroundColor(Color.MainColor)
                             .frame(width: 110, height: 50)
-                            .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                            .background(Color.BackgroundSubColor)
                             .cornerRadius(30)
                     })
                     
@@ -147,14 +150,17 @@ struct UserProfile: View {
                         // 클릭 했을 때 변경된 정보들을 저장하고 넘어가는 코드 작성
                     }, label: {
                         Text("확인")
-                            .foregroundColor(Color(red: 0.501, green: 0.93, blue: 0.601))
+                            .foregroundColor(Color.MainColor)
                             .frame(width: 110, height: 50)
-                            .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                            .background(Color.BackgroundSubColor)
                             .cornerRadius(30)
                     })
                 } // 하단 버튼 모음
                 .padding(.top, 20)
             } // VStack
+            .onTapGesture {
+                HideKeyboard()
+            } // 화면 터치 했을 때 키보드 내리기
         } // ZStack
     }
     

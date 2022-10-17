@@ -37,7 +37,7 @@ struct PostDetailInfo: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .overlay(Circle()
-                            .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 5))
+                            .stroke(Color.MainColor, lineWidth: 5))
                         .frame(maxWidth: 44, maxHeight: 44)
                         .background(Color.green)
                         .clipShape(Circle())

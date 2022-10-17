@@ -21,7 +21,7 @@ struct userInfo: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .overlay(Circle()
-                            .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 5))
+                            .stroke(Color.MainColor, lineWidth: 5))
                         .frame(width: 100, height: 100)
                         .background(Color.green)
                         .clipShape(Circle())
@@ -45,24 +45,25 @@ struct userInfo: View {
                     } //VStack
                 } //HStack
                 
-                Button(action: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.MainColor)
+                        .frame(width: 330, height: 40)
+                        .cornerRadius(5)
                     
-                }, label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(#colorLiteral(red: 0.11249999701976776, green: 0.11249999701976776, blue: 0.11249999701976776, alpha: 1)))
-                            .frame(width: 330, height: 40)
-                            .cornerRadius(5)
-                        
-                        NavigationLink(destination: UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")){
+                    NavigationLink(destination: UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")){
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.BackgroundSubColor)
+                                .frame(width: 330, height: 40)
+                                .cornerRadius(5)
                             Text("프로필 편집")
                                 .fontWeight(.bold)
                                 .font(.system(size: 12))
                                 .foregroundColor(Color.white)
                         }
-                        
                     }
-                })
+                }
                 
                 //프로필 편집
             } //VStack

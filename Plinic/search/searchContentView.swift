@@ -24,11 +24,18 @@ struct SearchContentView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(genre, id: \.self) {i in
-                            GenreThumbnail(genreImg: "defaultImg", genreName: "\(i)")
-                        } //Foreach 0부터 시작해서 2의 간격으로 index를 출력 (이때, genre안에 있는 요소가 짝수가 아닌 홀수 일때에 오류가 남) <- 오류처리 필요
+                            NavigationLink(destination: postContentView(topNotice : "공지 제목입니다")){
+                                GenreThumbnail(genreImg: "defaultImg", genreName: "\(i)")
+                            } // NavigationLink
+                            .navigationBarTitleDisplayMode(.inline)
+//                            .navigationTitle("\(i)")
+                        } //Foreach
                     } // VStack
                 } // ScrollView
             } // VStack
+            .onTapGesture {
+                HideKeyboard()
+            } // 화면 터치 했을 때 키보드 내리기
             
         } // ZStack
     }
@@ -39,12 +46,3 @@ struct SearchContentView_Previews: PreviewProvider {
         SearchContentView()
     }
 }
-
-#if canImport(UIKit)
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-#endif
-// 화면 터치시에 키보드 내려가는 코드 구현

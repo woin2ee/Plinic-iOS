@@ -13,13 +13,13 @@ struct Thumbnail: View {
     //    var title : String // 썸네일 타이틀에 대한 변수
     
     var body: some View {
-        NavigationLink(destination: UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")){
+        
             Image(thumbnail)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .background(Color.green)
                 .cornerRadius(10)
-        }
+        
     }
 }
 

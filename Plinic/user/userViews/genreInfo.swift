@@ -15,13 +15,13 @@ struct genreInfo: View {
         ZStack {
         //장르
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color(#colorLiteral(red: 0.11249999701976776, green: 0.11249999701976776, blue: 0.11249999701976776, alpha: 1)))
+                .fill(Color.BackgroundSubColor)
             .frame(width: 65, height: 30)
         //Acoustic
             Text(userGenre)
                 .fontWeight(.bold)
                 .font(.system(size: 9))
-                .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
+                .foregroundColor(Color.MainColor)
                 .multilineTextAlignment(.center)
 
         }

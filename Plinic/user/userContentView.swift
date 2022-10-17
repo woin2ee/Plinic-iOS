@@ -33,7 +33,7 @@ struct userContentView: View {
                             NavigationLink(destination: playlistCreate()){
                                 Image(systemName: "plus.circle")
                                     .font(.system(size: 35))
-                                    .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
+                                    .foregroundColor(Color.MainColor)
                                     .padding(.trailing, 15.0)
                             }
                             // 플레이리스트 추가버튼
@@ -44,7 +44,7 @@ struct userContentView: View {
                                 Image(systemName: "music.note.list")
                                     .padding(.trailing, 10.0)
                                     .font(.system(size: 35))
-                                    .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
+                                    .foregroundColor(Color.MainColor)
                             })
                         }
                         .padding(.leading, 10.0)

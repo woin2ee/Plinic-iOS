@@ -14,7 +14,7 @@ struct userMyPost: View {
     
     //화면을 그리드형식으로 꽉채워줌
     var columns = [GridItem(.fixed(180)), GridItem(.fixed(180))]
-//    GridItem(.adaptive(minimum: 100)
+    //    GridItem(.adaptive(minimum: 100)
     var body: some View {
         ZStack {
             Color.black
@@ -32,14 +32,16 @@ struct userMyPost: View {
                         LazyVGrid(columns: columns) {
                             ForEach(data, id: \.self) {i in
                                 //VStack으로 도형추가
-                                VStack() {
-                                    Thumbnail(thumbnail: "defaultImg")
-                                    Text("\(postTitle)")
-                                        .foregroundColor(Color.white)
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 15))
-                                }//VStack
-                                .padding([.trailing], 10)
+                                NavigationLink(destination: PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")){
+                                    VStack() {
+                                        Thumbnail(thumbnail: "defaultImg")
+                                        Text("\(postTitle)")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .font(.system(size: 15))
+                                    }//VStack
+                                    .padding([.trailing], 10)
+                                } // NavigationLink
                             } // ForEach
                         } //LazyVGrid
                     } //ScrollView

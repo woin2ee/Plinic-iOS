@@ -21,7 +21,7 @@ struct postContentView: View {
                 HStack{
                     Image(systemName: "megaphone.fill")
                         .font(.system(size: 24))
-                        .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
+                        .foregroundColor(Color.MainColor)
                         .frame(width: 42, height: 42)
                         .padding(.leading, 2)
                     
@@ -33,23 +33,21 @@ struct postContentView: View {
                             .fontWeight(.bold)
                             .padding(.all, 5)
                             .frame(maxWidth: 300, maxHeight: 32)
-                            .background(Color(red: 0.192, green: 0.192, blue: 0.201))
+                            .background(Color.BackgroundSubColor)
                             .foregroundColor(Color.gray)
                             .cornerRadius(10)
                     })
                     
-                    Button(action: {
-                        // 버튼을 클릭 했을 때 게시글 작성하는 페이지로 이동하는 코드 작성
-                    }, label: {
+                    NavigationLink(destination: PostCreate(postName: "", postContext : "")){
                         Image(systemName: "plus.circle")
                             .font(.system(size: 35))
                             .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
                             .frame(width: 42, height: 42)
-                    })
+                    }
                     .padding(.trailing, 5)
                 } // 상단바 구현
                 .frame(maxWidth: 390, maxHeight: 46)
-                .foregroundColor(Color(red: 0.106, green: 0.106, blue: 0.106))
+                .foregroundColor(Color.MainColor)
                 .padding(.top, 2)
                 
                 ScrollView{

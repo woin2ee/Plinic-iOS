@@ -36,15 +36,19 @@ struct PostCreate: View {
                     } // ZStack
                     .padding(.leading)
                     .frame(width: geo.size.width * 0.95, height: geo.size.height * 0.05)
-                    .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                    .background(Color.BackgroundSubColor)
                     .cornerRadius(10)
+                    .onSubmit {
+                        postName = "\(postName)"
+                        print("게시물 제목 : \(postName)")
+                    }
                     // 게시글 제목 텍스트 필드
                     
                     ZStack(alignment: .topLeading) {
                         TextEditor(text: $postContext)
                             .font(.body)
                             .opacity(self.postContext.isEmpty ? 0.25 : 1)
-                            .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                            .background(Color.BackgroundSubColor)
                             .foregroundColor(Color.white)
                             .onAppear() {
                                 UITextView.appearance().backgroundColor = .clear
@@ -60,9 +64,13 @@ struct PostCreate: View {
                                 .padding(15)
                         }// placeholder
                     } // TextEditor
-                    .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+                    .background(Color.BackgroundSubColor)
                     .cornerRadius(10)
                     .frame(width: geo.size.width * 0.95, height: geo.size.height * 0.5)
+                    .onSubmit {
+                        postContext = "\(postContext)"
+                        print("게시물 내용 : \(postContext)")
+                    }
                     
                     Text("공개된 플레이리스트")
                         .foregroundColor(Color.white)
@@ -97,6 +105,9 @@ struct PostCreate: View {
                     
                 } // VStack
             }
+            .onTapGesture {
+                HideKeyboard()
+            } // 화면 터치 했을 때 키보드 내리기
         } // ZStack
         
     }
