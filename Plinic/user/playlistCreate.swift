@@ -65,13 +65,14 @@ struct playlistCreate: View {
                                         .padding(.bottom, 10)
                                 })
                                 Toggle("공개/비공개", isOn: $someToggle)
-                                    .padding(.leading, 5.0)
+                                    .padding([.trailing, .leading], 5)
                                     .toggleStyle(SwitchToggleStyle(tint: Color.green))
                                     .font(.headline)
                                     .foregroundColor(Color.white)
                                     .frame(width: geo.size.width * 0.4, height: geo.size.height * 0.067, alignment: .center)
                                     .background(Color(red: 0.149, green: 0.149, blue: 0.149))
                                     .cornerRadius(10)
+                                    .padding(5)
                                     .overlay(RoundedRectangle(cornerRadius: 5)
                                         .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 1))
                                 //                            someToggle ? Text("확인 되었습니다.") : Text("확인 버튼을 눌러주세요.") // 스위치를 클릭했을 때 백엔드에게 공개 비공개 값을 알려주도록 설정
@@ -112,7 +113,7 @@ struct playlistCreate: View {
                             .cornerRadius(15)
                             .overlay(RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 1))
-                            .padding(.bottom, 30)
+                            .padding([.top, .bottom], 30)
                             
                             HStack{
                                 Button(action: {
@@ -154,7 +155,7 @@ struct playlistCreate_Previews: PreviewProvider {
         Group {
             playlistCreate()
             playlistCreate()
-                .previewDevice("iPhone 8")
+                .previewDevice("iPhone 12")
         }
     }
 }

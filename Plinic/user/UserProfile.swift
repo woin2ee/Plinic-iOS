@@ -13,7 +13,7 @@ struct UserProfile: View {
     
     @State var userName: String // 유저의 닉네임
     
-    var genre = ["Aucoustic", "Jazz", "Sad", "Happy"] // 장르의 이름을 담은 배열
+    var genre = ["aucoustic", "jazz", "sad", "happy"] // 장르의 이름을 담은 배열
     
     @State  var genre1 : String = ""
     @State  var genre2 : String = ""
