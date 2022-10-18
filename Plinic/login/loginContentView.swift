@@ -11,15 +11,31 @@ import SwiftUI
 struct LoginContentView : View {
     
     var body: some View{
-        VStack{
-            Image("플리닉로고")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: 300, maxHeight: 200, alignment: .center)
-            LoginButton()
-//                .background(VideoBackgroundView())
+        
+        HStack{
+            Spacer()
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                Spacer()
+                    .edgesIgnoringSafeArea(.all)
+                Image("플리닉로고")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: 300, maxHeight: 200, alignment: .center)
+                LoginButton()
+                Spacer()
+                    .edgesIgnoringSafeArea(.all)
+            }
+            Spacer()
+                .edgesIgnoringSafeArea(.all)
         }
+        .background(VideoBackgroundView())
+        
+        
+        
+        
     }
+    
 }
 
 struct LoginContentView_Previews: PreviewProvider {
