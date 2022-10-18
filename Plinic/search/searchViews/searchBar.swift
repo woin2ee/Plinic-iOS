@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     
     @State private var searchText = ""
+    @State var searching: Bool = false
     
     var body: some View {
         ZStack {
@@ -31,7 +32,9 @@ struct SearchBar: View {
                 } // 텍스트 필드
                 .onSubmit {
                     print("\(searchText) (이)가 검색되었습니다.")
+                    searching = true
                 }
+                
                 Button(action: {
                     searchText = ""
                 }, label: {

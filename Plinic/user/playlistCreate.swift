@@ -64,8 +64,8 @@ struct playlistCreate: View {
                                     .frame(width: geo.size.width * 0.4, height: geo.size.height * 0.067, alignment: .center)
                                     .background(Color.BackgroundSubColor)
                                     .cornerRadius(10)
-                                    .overlay(RoundedRectangle(cornerRadius: 5)
-                                        .stroke(Color.MainColor, lineWidth: 1))
+//                                    .overlay(RoundedRectangle(cornerRadius: 5)
+//                                        .stroke(Color.MainColor, lineWidth: 1))
                                     .padding(.bottom, 10)
                             })
                             Toggle("공개/비공개", isOn: $someToggle)
@@ -77,8 +77,8 @@ struct playlistCreate: View {
                                 .background(Color.BackgroundSubColor)
                                 .cornerRadius(10)
                                 .padding(5)
-                                .overlay(RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Color.MainColor, lineWidth: 1))
+//                                .overlay(RoundedRectangle(cornerRadius: 5)
+//                                    .stroke(Color.MainColor, lineWidth: 1))
                             //                            someToggle ? Text("확인 되었습니다.") : Text("확인 버튼을 눌러주세요.") // 스위치를 클릭했을 때 백엔드에게 공개 비공개 값을 알려주도록 설정
                         }//VStack
                     }//HStack
@@ -120,8 +120,8 @@ struct playlistCreate: View {
                         .frame(width: geo.size.width, height: geo.size.height * 0.20)
                         .background(Color.BackgroundSubColor)
                         .cornerRadius(5)
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.MainColor, lineWidth: 1))
+//                        .overlay(RoundedRectangle(cornerRadius: 5)
+//                            .stroke(Color.MainColor, lineWidth: 1))
                         .padding([.top, .bottom], 30)
                         
                         HStack{
@@ -134,8 +134,8 @@ struct playlistCreate: View {
                                     .frame(width: 60, height: 50)
                                     .background(Color.BackgroundSubColor)
                                     .cornerRadius(15)
-                                    .overlay(RoundedRectangle(cornerRadius: 15)
-                                        .stroke(Color.MainColor, lineWidth: 1))
+//                                    .overlay(RoundedRectangle(cornerRadius: 15)
+//                                        .stroke(Color.MainColor, lineWidth: 1))
                             })
                             Button(action: {
                                 // 클릭 했을 때 플리생성 취소
@@ -146,8 +146,8 @@ struct playlistCreate: View {
                                     .frame(width: 60, height: 50)
                                     .background(Color.BackgroundSubColor)
                                     .cornerRadius(15)
-                                    .overlay(RoundedRectangle(cornerRadius: 15)
-                                        .stroke(Color.MainColor, lineWidth: 1))
+//                                    .overlay(RoundedRectangle(cornerRadius: 15)
+//                                        .stroke(Color.MainColor, lineWidth: 1))
                             })
                         }//HStack
                     }//VStack

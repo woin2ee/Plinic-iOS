@@ -44,12 +44,14 @@ struct UserProfile: View {
                 }, label: {
                     Text("프로필 사진 변경")
                         .frame(width: 102, height: 22)
-                        .padding(.all, 5)
+                        .padding(.all, 10)
                         .foregroundColor(Color.MainColor)
+                        .background(Color.BackgroundSubColor)
                         .font(.system(size: 15))
-                        .overlay(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.MainColor, lineWidth: 1))
-                        .padding(.bottom, 50)
+                        .cornerRadius(5)
+//                        .overlay(RoundedRectangle(cornerRadius: 5)
+//                            .stroke(Color.MainColor, lineWidth: 1))
+                        .padding(.bottom, 40)
                 }) // 프로필 사진 변경하고 싶을 때 누르는 버튼
                 
                 
