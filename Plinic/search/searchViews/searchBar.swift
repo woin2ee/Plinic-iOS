@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     
     @State private var searchText = ""
+    @State var searching: Bool = false
     
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct SearchBar: View {
             HStack{
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 24))
-                    .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
+                    .foregroundColor(Color.MainColor)
                     .frame(minWidth: 30, minHeight: 30)
                 ZStack(alignment: .leading){
                     if searchText.isEmpty{
@@ -29,6 +30,11 @@ struct SearchBar: View {
                         .foregroundColor(Color.white)
                         .font(.title2)
                 } // 텍스트 필드
+                .onSubmit {
+                    print("\(searchText) (이)가 검색되었습니다.")
+                    searching = true
+                }
+                
                 Button(action: {
                     searchText = ""
                 }, label: {
@@ -38,7 +44,7 @@ struct SearchBar: View {
             } // 검색어 창
             .padding(.leading)
             .frame(minWidth: 300, minHeight: 44)
-            .background(Color(red: 0.108, green: 0.109, blue: 0.119))
+            .background(Color.BackgroundSubColor)
             .cornerRadius(10)
         }
     }

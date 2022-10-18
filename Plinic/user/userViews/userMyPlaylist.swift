@@ -29,22 +29,23 @@ struct userMyPlaylist: View {
                         ScrollView(.horizontal) {
                             HStack() {
                                 ForEach(openPlaylist, id: \.self) {i in
-                                    VStack() {
-                                        Thumbnail(thumbnail: "defaultImg")
-                                            .padding(.bottom, 5)
-                                        Text("\(playlistTitle)")
-                                            .foregroundColor(Color.white)
-                                            .fontWeight(.bold)
-                                            .font(.system(size: 15))
-                                    }//VStack
-                                    .frame(maxWidth: 180, maxHeight: 200)
+                                    NavigationLink(destination: UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")){
+                                        VStack{
+                                            Thumbnail(thumbnail: "defaultImg")
+                                                .padding(.bottom, 5)
+                                            Text("\(playlistTitle)")
+                                                .foregroundColor(Color.white)
+                                                .fontWeight(.bold)
+                                                .font(.system(size: 15))
+                                        }//VStack
+                                        .frame(maxWidth: 180, maxHeight: 200)
+                                    }
                                 }
                                 .padding(.top, 5)
                             } // ScrollView
                             .padding([.top, .leading, .bottom], 5)
                         }//VStack
                         .padding(.leading, 10.0)
-                        //                    .padding(.top, 10)
                         
                         VStack() {
                             Text("비공개된 플레이리스트")
@@ -56,15 +57,17 @@ struct userMyPlaylist: View {
                             ScrollView(.horizontal) {
                                 HStack() {
                                     ForEach(unOpenPlaylist, id: \.self) {i in
-                                        VStack() {
-                                            Thumbnail(thumbnail: "defaultImg")
-                                                .padding(.bottom, 5)
-                                            Text("\(playlistTitle)")
-                                                .foregroundColor(Color.white)
-                                                .fontWeight(.bold)
-                                                .font(.system(size: 15))
-                                        }//VStack
-                                        .frame(maxWidth: 180, maxHeight: 200)
+                                        NavigationLink(destination: UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")){
+                                            VStack{
+                                                Thumbnail(thumbnail: "defaultImg")
+                                                    .padding(.bottom, 5)
+                                                Text("\(playlistTitle)")
+                                                    .foregroundColor(Color.white)
+                                                    .fontWeight(.bold)
+                                                    .font(.system(size: 15))
+                                            }//VStack
+                                            .frame(maxWidth: 180, maxHeight: 200)
+                                        } // NavigationLink
                                     } //ForEach
                                     .padding(.top, 5)
                                 } // ScrollView

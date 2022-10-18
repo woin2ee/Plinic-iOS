@@ -9,11 +9,16 @@ import SwiftUI
 
 
 struct userTopResult: View {
+    
+    var profileImg : String
+    var nickName : String
+    var infoCount : String
+    
     var body: some View {
         
         HStack{
-            userResult(profileImg:"random1", nickName: "watashi").scaleEffect(1.2)
-            userContents(infoTitle: "플레이리스트", infoCount: "000")
+            userResult(profileImg:"\(profileImg)", nickName: "\(nickName)").scaleEffect(1.2)
+            userContents(infoTitle: "플레이리스트", infoCount: "\(infoCount)")
                 .padding(.leading, 10)
         }//HStack
 
@@ -21,7 +26,7 @@ struct userTopResult: View {
     
     struct userTopResult_Previews: PreviewProvider {
         static var previews: some View {
-            userTopResult()
+            userTopResult(profileImg:"random1", nickName: "watashi", infoCount: "012")
         }
     }
 }

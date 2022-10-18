@@ -16,6 +16,7 @@ struct userContentView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
+            
             VStack{
                 
                 GeometryReader{ geometry in
@@ -28,17 +29,22 @@ struct userContentView: View {
                                 .tracking(-0.41)
                                 .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.05, alignment: .leading)
                             //유저 이름
-                            Image(systemName: "plus.circle")
-                                .font(.system(size: 35))
-                                .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
-                                .padding(.trailing, 15.0)
+                            
+                            NavigationLink(destination: playlistCreate()){
+                                Image(systemName: "plus.circle")
+                                    .font(.system(size: 35))
+                                    .foregroundColor(Color.MainColor)
+                                    .padding(.trailing, 15.0)
+                            }
+                            // 플레이리스트 추가버튼
+                            
                             Button(action: {
                                 self.postTransform.toggle()
                             }, label: {
                                 Image(systemName: "music.note.list")
                                     .padding(.trailing, 10.0)
                                     .font(.system(size: 35))
-                                    .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
+                                    .foregroundColor(Color.MainColor)
                             })
                         }
                         .padding(.leading, 10.0)
@@ -54,7 +60,7 @@ struct userContentView: View {
                                     .frame(height: geometry.size.height * 0.65)
                                 Spacer()
                                     .frame(height: geometry.size.height * 0.15)
-
+                                
                             } else {
                                 userMyPost(postTitle: "게시글 제목")
                                     .frame(height: geometry.size.height * 0.65)

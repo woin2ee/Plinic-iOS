@@ -10,18 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            userContentView(nickName: "test")
+            UserView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            SearchContentView()
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
             
-            postContentView(topNotice: "ppap")
+            PostView()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Post")

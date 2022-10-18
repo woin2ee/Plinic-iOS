@@ -47,13 +47,13 @@ struct postInfo: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .overlay(Circle()
-                            .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 5))
+                            .stroke(Color.MainColor, lineWidth: 5))
                         .background(Color.green)
                         .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
                         .clipShape(Circle())
-//                        .padding([.leading, .trailing], 10)
+                    //                        .padding([.leading, .trailing], 10)
                     
-                    VStack{ 
+                    VStack{
                         Text("\(userName)")
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
@@ -67,13 +67,14 @@ struct postInfo: View {
                     }
                     Spacer()
                 }
-                
-                Image("\(thumbnail)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .background(Color.green)
-                    .frame(maxWidth: 390, maxHeight: 390)
-                // 게시글 썸네일
+                NavigationLink(destination: PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")) {
+                    Image("\(thumbnail)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .background(Color.green)
+                        .frame(maxWidth: 390, maxHeight: 390)
+                    // 게시글 썸네일
+                }
                 
                 HStack{
                     
@@ -145,15 +146,11 @@ struct postInfo: View {
                         .padding(.trailing, 20)
                     // 게시글 내용
                     
-                    Button(action: {
-                        // 자세히 보기 기능 구현
-                    }, label: {
+                    NavigationLink(destination: PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")) {
                         Text("더보기")
                             .padding(.trailing, 5)
-                    })
-                    // 게시글 더보기 버튼
+                    } // 게시글 더보기
                 }
-                
             }
         } // 검은 배경
     }
@@ -163,7 +160,7 @@ struct postInfo: View {
 struct postInfo_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-//            postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
+            //            postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
             postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
                 .previewDevice("iPhone 8")
         }

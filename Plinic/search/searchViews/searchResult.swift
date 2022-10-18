@@ -9,8 +9,7 @@ import SwiftUI
 
 struct searchResult: View {
     
-    var playlistTitle : String
-    let data = Array(1...17)
+    let data = Array(1...3)
     
     var body: some View {
         ZStack  {
@@ -28,15 +27,14 @@ struct searchResult: View {
                             
                             Spacer()
                             
-                            Button(action: {
-                                //클릭시 검색상세페이지로 넘어감
-                            }, label: {
+                            NavigationLink(destination: userDetail()){
                                 Text("검색결과 더보기 ->")
                                     .fontWeight(.bold)
                                     .font(.system(size: 18))
-//                                    .foregroundColor(Color(#colorLiteral(red: 0.5, green: 0.93, blue: 0.6, alpha: 1)))
-                                
-                            })
+                                    .foregroundColor(Color.blue)
+                            }
+                            .navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline)
                             .padding(.trailing, 15)
                         }//HStack
                         
@@ -51,13 +49,15 @@ struct searchResult: View {
                             .font(.system(size: 15))
                             .frame(minWidth: 300, maxHeight: 20, alignment: .leading)
                             .padding([.top, .leading], 10)
-                        HStack(alignment: .bottom){
-                            userTopResult()
-                            userResult(profileImg: "random1", nickName: "ddddd")
-                                .padding(.leading, 10)
-                        }//HStack
-                        .padding()
-                        .padding(.top, 10)
+                        NavigationLink(destination: userContentView(nickName: "안녕")) {
+                            HStack(alignment: .bottom){
+                                userTopResult(profileImg: "random1", nickName: "Hi", infoCount: "012")
+                                userResult(profileImg: "random1", nickName: "ddddd")
+                                    .padding(.leading, 10)
+                            }//HStack
+                            .padding()
+                            .padding(.top, 10)
+                        }
                     }//VStack
                     .padding(.leading, 10)
                 }//HStack
@@ -73,13 +73,14 @@ struct searchResult: View {
                             
                             Spacer()
                             
-                            Button(action: {
-                                //클릭시 검색상세페이지로 넘어감
-                            }, label: {
+                            NavigationLink(destination: postContentView(topNotice : "공지 제목입니다")){
                                 Text("검색결과 더보기 ->")
                                     .fontWeight(.bold)
                                     .font(.system(size: 18))
-                            })
+                                    .foregroundColor(Color.blue)
+                            }
+                            .navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline)
                             .padding(.trailing, 15)
                         }//HStack
                         Rectangle()
@@ -98,7 +99,7 @@ struct searchResult: View {
                                 ForEach(data, id: \.self) {i in
                                     VStack() {
                                         Thumbnail(thumbnail: "defaultImg")
-                                        Text("\(playlistTitle)")
+                                        Text("\(i)")
                                             .foregroundColor(Color.white)
                                             .fontWeight(.bold)
                                             .font(.system(size: 15))
@@ -120,7 +121,7 @@ struct searchResult: View {
 
 struct searchResult_Previews: PreviewProvider {
     static var previews: some View {
-        searchResult(playlistTitle: "dpdpdpdpd")
+        searchResult()
     }
 }
    

@@ -11,7 +11,7 @@ struct PlaylistInfo: View {
     
     var playlistTitle : String
     var songs : String
-//    var open : Bool
+    //    var open : Bool
     @State private var someToggle = true
     
     var body: some View {
@@ -53,11 +53,11 @@ struct PlaylistInfo: View {
                                     .toggleStyle(SwitchToggleStyle(tint: Color.green))
                                     .font(.headline)
                                     .foregroundColor(Color.white)
-        //                        someToggle ? Text("공개 되었습니다.") : Text("비공개 되었습니다.") // 스위치를 클릭했을 때 백엔드에게 공개 비공개 값을 알려주도록 설정
+                                //                        someToggle ? Text("공개 되었습니다.") : Text("비공개 되었습니다.") // 스위치를 클릭했을 때 백엔드에게 공개 비공개 값을 알려주도록 설정
                             }
                             .padding(.trailing, 10)
                             .frame(width: geo.size.width * 0.35, height: 41)
-                            .background(Color(red: 0.149, green: 0.149, blue: 0.149))
+                            .background(Color.BackgroundSubColor)
                             .cornerRadius(10)
                         } // HStack
                     } // VStack
@@ -66,7 +66,7 @@ struct PlaylistInfo: View {
             
         }
         
-       
+        
     }
 }
 
