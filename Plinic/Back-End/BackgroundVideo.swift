@@ -38,7 +38,7 @@ class RequestAPI: ObservableObject {
                 let decoder = JSONDecoder()
                 do{
                     let decodeData = try decoder.decode(BackgroundVideo.self, from: JSONdata)
-
+                    
                     completion(.success(decodeData.backgroundVideo)) // completion을 함수처럼 사용
                     
                 } catch {

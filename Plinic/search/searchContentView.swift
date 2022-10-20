@@ -24,7 +24,7 @@ struct SearchContentView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(genre, id: \.self) {i in
-                            NavigationLink(destination: postContentView(topNotice : "공지 제목입니다")){
+                            NavigationLink(destination: postContentView()){
                                 GenreThumbnail(genreImg: "defaultImg", genreName: "\(i)")
                             } // NavigationLink
                             .navigationBarTitleDisplayMode(.inline)

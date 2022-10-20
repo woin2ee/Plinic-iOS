@@ -15,6 +15,7 @@ import UIKit
 struct VideoBackgroundView : View {
     
     @StateObject var requestAPI: RequestAPI = RequestAPI()
+    
     fileprivate var loopingVideoPlayerView: LoopingVideoPlayerView = LoopingVideoPlayerView()
     
     var body: some View {
