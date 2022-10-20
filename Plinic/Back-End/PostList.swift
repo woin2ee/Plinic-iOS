@@ -46,7 +46,7 @@ struct Post: Hashable ,Codable {
     let title: String
     let isLike: Bool
     let content: String
-    var playlist: Playlist
+    var plInfo: Playlist
 
     enum CodingKeys: String, CodingKey {
         case author
@@ -55,11 +55,11 @@ struct Post: Hashable ,Codable {
         case title
         case isLike = "is_like"
         case content
-        case playlist = "playlist_info"
+        case plInfo = "playlist_info"
     }
     
     static func creatEmpty() -> Post {
-        return Post(author: Author.init(nickname: "NickName", profilePic: "random1"), id: -1, likerCount: 30, title: "Title", isLike: false, content: "This is content", playlist: Playlist.init(id: 2, nickname: "Nickname", title: "Playlist Title", thumbnailImgURL: "defaultImg"))
+        return Post(author: Author.init(nickname: "NickName", profilePic: "random1"), id: -1, likerCount: 30, title: "Title", isLike: false, content: "This is content", plInfo: Playlist.init(id: 2, nickname: "Nickname", title: "Playlist Title", thumbnailImgURL: "defaultImg"))
     }
 }
 
@@ -88,6 +88,7 @@ struct Playlist: Codable {
         case thumbnailImgURL = "thumbnail_img_url"
     }
 }
+
 
 
 class PostListAPI: ObservableObject {
