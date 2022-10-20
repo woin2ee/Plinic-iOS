@@ -10,7 +10,7 @@ import SwiftUI
 struct PostView: View {
     var body: some View {
         NavigationView{
-            postContentView(topNotice : "공지 제목입니다")
+            postContentView()
             
         }
     }

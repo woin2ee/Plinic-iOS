@@ -18,8 +18,10 @@
 		914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* SearchDetail.swift */; };
 		91BC78E228A691CC002C38CF /* UserMyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylist.swift */; };
 		91BC78E428A6920F002C38CF /* UserMyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPost.swift */; };
+		D01AE77129011C6B00117432 /* PostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeader.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostInfo.swift */; };
+		D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */; };
 		D022C58628D6FDA300E4EFEA /* VideoBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */; };
 		D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58828D704DA00E4EFEA /* LoginButton.swift */; };
 		D04183E4289D26890045C907 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04183E3289D26890045C907 /* UserProfile.swift */; };
@@ -28,6 +30,7 @@
 		D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6328AF69E400D04543 /* PostDetail.swift */; };
 		D050ED2A28FAACD50048C20F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D050ED2928FAACD50048C20F /* User.swift */; };
 		D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */; };
+		D063160528FFE80A00636ED1 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063160428FFE80A00636ED1 /* PostList.swift */; };
 		D06539B728AFCDBF008B5199 /* PostCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06539B628AFCDBF008B5199 /* PostCreate.swift */; };
 		D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E273E2893A56A00013A12 /* PlinicApp.swift */; };
 		D08E27412893A56A00013A12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27402893A56A00013A12 /* ContentView.swift */; };
@@ -62,8 +65,10 @@
 		914AF7B128D88E640016C38C /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* UserMyPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylist.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* UserMyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPost.swift; sourceTree = "<group>"; };
+		D01AE77029011C6B00117432 /* PostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeader.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
+		D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideo.swift; sourceTree = "<group>"; };
 		D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackgroundView.swift; sourceTree = "<group>"; };
 		D022C58828D704DA00E4EFEA /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		D031829828F18BF40092267C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		D04E4A6328AF69E400D04543 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		D050ED2928FAACD50048C20F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreThumbnail.swift; sourceTree = "<group>"; };
+		D063160428FFE80A00636ED1 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		D06539B628AFCDBF008B5199 /* PostCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreate.swift; sourceTree = "<group>"; };
 		D08E273B2893A56A00013A12 /* Plinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08E273E2893A56A00013A12 /* PlinicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicApp.swift; sourceTree = "<group>"; };
@@ -124,8 +130,18 @@
 			children = (
 				D01C63A628A6D0180037813F /* PostInfo.swift */,
 				D04E4A6128AF664700D04543 /* PostDetailInfo.swift */,
+				D01AE77029011C6B00117432 /* PostHeader.swift */,
 			);
 			path = postViews;
+			sourceTree = "<group>";
+		};
+		D0229E6128FE8DAC00C5F38C /* Back-End */ = {
+			isa = PBXGroup;
+			children = (
+				D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */,
+				D063160428FFE80A00636ED1 /* PostList.swift */,
+			);
+			path = "Back-End";
 			sourceTree = "<group>";
 		};
 		D022C58428D6FD8500E4EFEA /* videoBackground */ = {
@@ -206,6 +222,7 @@
 		D08E273D2893A56A00013A12 /* Plinic */ = {
 			isa = PBXGroup;
 			children = (
+				D0229E6128FE8DAC00C5F38C /* Back-End */,
 				D0F4D4CD28FD93BE0085EB28 /* Extensions */,
 				D08E27522896CBCA00013A12 /* Info.plist */,
 				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
@@ -375,6 +392,7 @@
 				D0F4D4D328FDA1CB0085EB28 /* Search.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
 				91BC78E428A6920F002C38CF /* UserMyPost.swift in Sources */,
+				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */,
 				91014F1A2895841F00C58E8B /* GenreInfo.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
@@ -395,9 +413,11 @@
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfo.swift in Sources */,
+				D01AE77129011C6B00117432 /* PostHeader.swift in Sources */,
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
 				9113807228C79836006CD66A /* SearchResult.swift in Sources */,
 				D08E27512893CF0800013A12 /* PlaylistInfo.swift in Sources */,
+				D063160528FFE80A00636ED1 /* PostList.swift in Sources */,
 				D050ED2A28FAACD50048C20F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

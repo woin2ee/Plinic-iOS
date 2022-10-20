@@ -101,10 +101,10 @@ struct PostDetailInfo: View {
                     
                     Spacer()
                     
-                    Text("\(today, formatter : postInfo.dateFormat)")
-                        .foregroundColor(Color.white)
-                        .frame(maxWidth: 200, maxHeight: 44, alignment: .trailing)
-                        .padding(.trailing, 5)
+//                    Text("\(today, formatter : postInfo.dateFormat)")
+//                        .foregroundColor(Color.white)
+//                        .frame(maxWidth: 200, maxHeight: 44, alignment: .trailing)
+//                        .padding(.trailing, 5)
                     // 날짜
                     
                 } // 게시글 하단의 버튼

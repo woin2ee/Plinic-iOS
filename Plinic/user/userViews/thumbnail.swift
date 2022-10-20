@@ -17,7 +17,6 @@ struct Thumbnail: View {
             Image(thumbnail)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .background(Color.green)
                 .cornerRadius(10)
         
     }

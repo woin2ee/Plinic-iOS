@@ -9,23 +9,16 @@ import SwiftUI
 
 struct postInfo: View {
     
-    static let dateFormat : DateFormatter = {
-        let formatter = DateFormatter()
-        //        formatter.dateFormat = "YYYY.MM.DD"
-        formatter.dateStyle = .long
-        return formatter
-    }()
-    var today = Date()
+    let profilePic : String // 유저의 프로필 사진
+    let nickname  : String // 유저의 닉네임
+    var thumbnailImgURL : String // 게시글 썸네일 이미지
+    var content : String // 게시글 내용
+    let title : String
+    @State var likerCount: Int = 0
     
-    var profileImg : String // 유저의 프로필 사진
-    var userName  : String // 유저의 닉네임
-    var thumbnail : String // 게시글 썸네일 이미지
-    var postContext : String // 게시글 내용
-    var postName : String
-    var heartCnt : String
+    @State var isLike: Bool = false
     
     
-    @State private var heart = false
     @State private var scrap = false
     
     var body: some View {
@@ -43,35 +36,28 @@ struct postInfo: View {
                 // 상단의 게시글 작성자 정보
                     .padding(.bottom, 5)
                 HStack{
-                    Image(profileImg)
+                    Image(profilePic)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .overlay(Circle()
-                            .stroke(Color.MainColor, lineWidth: 5))
-                        .background(Color.green)
+                            .stroke(Color.MainColor, lineWidth: 3.5))
                         .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
                         .clipShape(Circle())
                     //                        .padding([.leading, .trailing], 10)
                     
                     VStack{
-                        Text("\(userName)")
+                        Text("\(nickname)")
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
                             .frame(minWidth: 100, maxWidth: 300, minHeight: 10, maxHeight: 30, alignment: .leading)
                         // 유저 닉네임
-                        Text("\(today, formatter : postInfo.dateFormat)")
-                            .font(.system(size: 13))
-                            .foregroundColor(Color.gray)
-                            .frame(minWidth: 100, maxWidth: 300, minHeight: 10, maxHeight: 20, alignment: .leading)
-                        // 날짜
                     }
                     Spacer()
                 }
                 NavigationLink(destination: PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")) {
-                    Image("\(thumbnail)")
+                    Image("\(thumbnailImgURL)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .background(Color.green)
                         .frame(maxWidth: 390, maxHeight: 390)
                     // 게시글 썸네일
                 }
@@ -79,11 +65,17 @@ struct postInfo: View {
                 HStack{
                     
                     Button(action: {
-                        self.heart.toggle()
+                        self.isLike.toggle()
+                        if isLike == true{
+                            likerCount += 1
+                        } else {
+                            likerCount -= 1
+                        }
+                        
                         // 클릭 했을 때 좋아요 기능 구현
                     }, label: {
                         
-                        Image(systemName: heart ? "heart.fill" : "heart")
+                        Image(systemName: isLike ? "heart.fill" : "heart")
                             .font(.system(size: 31))
                         //                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
@@ -93,7 +85,7 @@ struct postInfo: View {
                     //                    .padding(.leading, 5)
                     // 좋아요 버튼
                     
-                    Text("좋아요 \(heartCnt)개")
+                    Text("좋아요 \(likerCount)개")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .semibold))
                         .frame(maxWidth: 150, maxHeight: 44, alignment: .leading)
@@ -126,7 +118,7 @@ struct postInfo: View {
                     // 스크랩 버튼
                 } // 게시글 하단의 버튼
                 
-                Text("\(postName)")
+                Text("\(title)")
                     .foregroundColor(Color.white)
                     .font(.system(size: 20, weight: .heavy))
                     .multilineTextAlignment(.leading)
@@ -135,7 +127,7 @@ struct postInfo: View {
                 // 게시글 제목
                 HStack{
                     
-                    Text("\(postContext)")
+                    Text("\(content)")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .bold))
                         .multilineTextAlignment(.leading)
@@ -161,7 +153,7 @@ struct postInfo_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             //            postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
-            postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
+            postInfo(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", likerCount : 12, isLike: false)
                 .previewDevice("iPhone 8")
         }
     }
