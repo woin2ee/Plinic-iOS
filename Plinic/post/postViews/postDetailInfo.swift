@@ -9,23 +9,19 @@ import SwiftUI
 
 struct PostDetailInfo: View {
     
-    static let dateFormat : DateFormatter = {
-        let formatter = DateFormatter()
-        //        formatter.dateFormat = "YYYY.MM.DD"
-        formatter.dateStyle = .long
-        return formatter
-    }()
-    var today = Date()
+    var profilePic: String // 유저의 프로필 사진
+    var nickname : String // 유저의 닉네임
+    var content: String // 게시글 내용
+    let title: String //  게시글 제목
+    let createdAt: String // 생성된 날짜
+    let updatedAt: String // 수정된 날짜
+    let tagSet: [String] // 태그 정보
+    let genreName: String // 장르 정보
     
-    var profileImg : String // 유저의 프로필 사진
-    var userName  : String // 유저의 닉네임
-    var postContext : String // 게시글 내용
-    var postName : String //  게시글 제목
-    var heartCnt : String // 좋아요 개수
-    
-    
-    @State private var heart = false // 좋아요 클릭 했는 지 안했는 지
-    @State private var scrap = false // 스크랩을 했는 지 안했는 지
+    @State var scrapperCount: Int = 0 // 스크랩 개수
+    @State var likerCount: Int = 0 // 좋아요 개수
+    @State var isLike: Bool = false // 좋아요 클릭 했는 지 안했는 지
+    @State var isScrapped: Bool = false // 스크랩 클릭 했는 지 안했는 지
     
     var body: some View {
         ZStack {
@@ -33,7 +29,7 @@ struct PostDetailInfo: View {
                 .ignoresSafeArea()
             VStack{
                 HStack{
-                    Image(profileImg)
+                    Image(profilePic)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .overlay(Circle()
@@ -44,24 +40,26 @@ struct PostDetailInfo: View {
                         .padding(.leading, 5)
                     // 유저 프로필 사진
                     
-                    Text("\(userName)")
+                    Text("\(nickname)")
                         .font(.system(size: 17))
                         .foregroundColor(Color.white)
                         .frame(maxWidth: 200, maxHeight: 42, alignment: .leading)
                         .padding(.leading, 5)
                     // 유저 닉네임
                     Button(action: {
-                        self.heart.toggle()
+                        self.isLike.toggle()
+                        if isLike == true{
+                            likerCount += 1
+                        } else {
+                            likerCount -= 1
+                        }
                         // 클릭 했을 때 좋아요 기능 구현
                     }, label: {
-                        
-                        Image(systemName: heart ? "heart.fill" : "heart")
+                        Image(systemName: isLike ? "heart.fill" : "heart")
                             .font(.system(size: 31))
-                        //                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
                             .frame(maxWidth: 44, maxHeight: 44)
                     })
-                    //                    .padding(.leading, 5)
                     // 좋아요 버튼
                     
                     Button(action: {
@@ -69,69 +67,90 @@ struct PostDetailInfo: View {
                     }, label: {
                         Image(systemName: "square.and.arrow.up")
                             .font(.system(size: 31))
-                        //                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
                             .frame(maxWidth: 44, maxHeight: 44)
                     })
                     // 공유 버튼
                     
                     Button(action: {
-                        self.scrap.toggle()
+                        self.isScrapped.toggle()
+                        if isScrapped == true{
+                            scrapperCount += 1
+                        } else {
+                            scrapperCount -= 1
+                        }
                         // 내 보관함에 저장기능 구현
                     }, label: {
-                        Image(systemName: scrap ? "bookmark.fill" : "bookmark")
+                        Image(systemName: isScrapped ? "bookmark.fill" : "bookmark")
                             .font(.system(size: 31))
                             .foregroundColor(Color.white)
                             .frame(maxWidth: 44, maxHeight: 44)
                     })
                     // 스크랩 버튼
-                    
-                    
-                    
                 } // 상단의 게시글 작성자 정보
                 .padding(.bottom, 5)
                 
                 HStack{
-                    
-                    Text("좋아요 \(heartCnt)개")
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 15, weight: .semibold))
-                        .frame(maxWidth: 200, maxHeight: 44, alignment: .leading)
-                    // 좋아요 개수 표시
-                    
+                    genreInfo(genreName: genreName)
                     Spacer()
+                    VStack{
+                        Text("좋아요 \(likerCount) 개")
+                        // 좋아요 개수 표시
+                        Text("스크랩 \(scrapperCount) 개")
+                        // 스크랩 개수 표시
+                    } // VStack 좋아요, 스크랩 수
+                    .frame(maxWidth: 150, alignment: .trailing)
                     
-//                    Text("\(today, formatter : postInfo.dateFormat)")
-//                        .foregroundColor(Color.white)
-//                        .frame(maxWidth: 200, maxHeight: 44, alignment: .trailing)
-//                        .padding(.trailing, 5)
-                    // 날짜
-                    
-                } // 게시글 하단의 버튼
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 15, weight: .semibold))
+                }
+                .padding(.top, 2)
                 
-                Text("\(postName)")
+                Text("\(title)")
                     .foregroundColor(Color.white)
                     .font(.system(size: 20, weight: .heavy))
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: 500, maxHeight: 44, alignment: .leading)
                 // 게시글 제목
                 HStack{
-                    
-                    Text("\(postContext)")
+                    Text("\(content)")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .bold))
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: 500,minHeight: 140, maxHeight: 150, alignment: .top)
+//                        .multilineTextAlignment(.leading)
+                        .frame(alignment: .topLeading)
                     // 게시글 내용
-                    
+                    Spacer()
                 }
+                HStack{
+                    ForEach(tagSet, id: \.self) { tag in
+                        Text("#\(tag)")
+                    }
+                    .foregroundColor(Color.blue)
+                    Spacer()
+                }
+                .padding(.top, 2)
+                
+                HStack{
+                    
+                    VStack(alignment: .trailing){
+                        Text("생성일자: \(createdAt)")
+                            .frame(maxWidth: 150, alignment: .leading)
+                        Text("수정일자: \(updatedAt)")
+                            .frame(maxWidth: 150, alignment: .leading)
+                    } // VStack 생성일자, 수정일자
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 15, weight: .semibold))
+                    Spacer()
+                }
+                .padding(.top, 1)
             } // VStack
+                
         } // ZStack
     }
 }
 
 struct PostDetailInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailInfo(profileImg: "random1", userName : "userName", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vestibulums. ", postName: "게시글 제목", heartCnt : "200000")
+        PostDetailInfo(profilePic: "random1", nickname: "Nickname", content: "This is content", title: "Title", createdAt: "2022.10.20", updatedAt: "2022.10.20", tagSet: ["1", "2", "3"], genreName: "Jazz")
     }
 }

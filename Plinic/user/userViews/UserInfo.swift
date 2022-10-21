@@ -36,9 +36,9 @@ struct userInfo: View {
                         //                        .frame(width: 260, height: 50, alignment: .center)
                         //HStack
                         HStack(spacing:15){
-                            genreInfo(userGenre: "Acoustic")
-                            genreInfo(userGenre: "Acoustic")
-                            genreInfo(userGenre: "Acoustic")
+                            genreInfo(genreName: "Acoustic")
+                            genreInfo(genreName: "Acoustic")
+                            genreInfo(genreName: "Acoustic")
                         }
                         //                        .frame(width: 225, height: 30, alignment: .center)
                         //HStack

@@ -9,26 +9,23 @@ import SwiftUI
 
 struct genreInfo: View {
     
-    var userGenre : String
+    var genreName : String
     
     var body: some View {
         ZStack {
-        //장르
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.BackgroundSubColor)
-            .frame(width: 65, height: 30)
-        //Acoustic
-            Text(userGenre)
+                .frame(width: 65, height: 30)
+            Text(genreName)
                 .fontWeight(.bold)
                 .font(.system(size: 9))
                 .foregroundColor(Color.MainColor)
                 .multilineTextAlignment(.center)
-
         }
     }
     struct genreInfo_Previews: PreviewProvider {
         static var previews: some View {
-            genreInfo(userGenre: "Acoustic")
+            genreInfo(genreName: "Acoustic")
         }
     }
 }

@@ -35,9 +35,9 @@ struct PlaylistInfo: View {
                             .fontWeight(.medium)
                             .frame(width: geo.size.width * 0.5, height: 20, alignment: .leading)
                         HStack{
-                            genreInfo(userGenre: "Acoustic")
-                            genreInfo(userGenre: "Acoustic")
-                            genreInfo(userGenre: "Acoustic")
+                            genreInfo(genreName: "Acoustic")
+                            genreInfo(genreName: "Acoustic")
+                            genreInfo(genreName: "Acoustic")
                         } // HStack
                         .frame(width: geo.size.width * 0.5, height: 30, alignment: .leading)
                         .padding([.top, .bottom], 10)

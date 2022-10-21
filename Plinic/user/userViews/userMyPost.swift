@@ -32,7 +32,7 @@ struct userMyPost: View {
                         LazyVGrid(columns: columns) {
                             ForEach(data, id: \.self) {i in
                                 //VStack으로 도형추가
-                                NavigationLink(destination: PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")){
+                                NavigationLink(destination: PostDetail(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")){
                                     VStack() {
                                         Thumbnail(thumbnail: "defaultImg")
                                         Text("\(postTitle)")
