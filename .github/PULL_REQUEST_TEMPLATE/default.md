@@ -1,8 +1,3 @@
----
-name: Pull Request
-about: 기본 양식
----
-
 ## 부가 설명
 > 필요시 작성
 
