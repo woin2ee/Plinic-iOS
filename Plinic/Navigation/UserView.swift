@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/10/15.
@@ -16,7 +16,7 @@ struct UserView: View {
     }
 }
 
-struct User_Previews: PreviewProvider {
+struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         UserView()
     }
