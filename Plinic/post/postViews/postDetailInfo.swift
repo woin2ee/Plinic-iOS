@@ -101,7 +101,7 @@ struct PostDetailInfo: View {
                     
                     Spacer()
                     
-//                    Text("\(today, formatter : postInfo.dateFormat)")
+//                    Text("\(today, formatter : PostInfoView.dateFormat)")
 //                        .foregroundColor(Color.white)
 //                        .frame(maxWidth: 200, maxHeight: 44, alignment: .trailing)
 //                        .padding(.trailing, 5)
