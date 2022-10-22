@@ -10,8 +10,7 @@ import SwiftUI
 struct UserView: View {
     var body: some View {
         NavigationView{
-            userContentView(nickName: "안녕")
-            
+            UserContentView(nickName: "안녕")
         }
     }
 }

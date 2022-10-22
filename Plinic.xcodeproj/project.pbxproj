@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91014F162895835C00C58E8B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F152895835C00C58E8B /* UserInfo.swift */; };
+		91014F162895835C00C58E8B /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F152895835C00C58E8B /* UserInfoView.swift */; };
 		91014F182895840500C58E8B /* UserContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F172895840500C58E8B /* UserContents.swift */; };
-		91014F1A2895841F00C58E8B /* GenreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F192895841F00C58E8B /* GenreInfo.swift */; };
+		91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F192895841F00C58E8B /* GenreTagView.swift */; };
 		91014F1C2895920100C58E8B /* UserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F1B2895920100C58E8B /* UserContentView.swift */; };
 		9113806928AFDDD4006CD66A /* PlaylistCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113806828AFDDD4006CD66A /* PlaylistCreate.swift */; };
 		9113807228C79836006CD66A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807128C79836006CD66A /* SearchResult.swift */; };
 		9113807828CF13E0006CD66A /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807728CF13E0006CD66A /* UserResult.swift */; };
 		9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807928CF13F6006CD66A /* UserTopResult.swift */; };
 		914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* SearchDetail.swift */; };
-		91BC78E228A691CC002C38CF /* UserMyPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylist.swift */; };
-		91BC78E428A6920F002C38CF /* UserMyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPost.swift */; };
+		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
+		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
 		D01AE77129011C6B00117432 /* PostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeader.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostInfoView.swift */; };
@@ -54,17 +54,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		91014F152895835C00C58E8B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		91014F152895835C00C58E8B /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		91014F172895840500C58E8B /* UserContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContents.swift; sourceTree = "<group>"; };
-		91014F192895841F00C58E8B /* GenreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreInfo.swift; sourceTree = "<group>"; };
+		91014F192895841F00C58E8B /* GenreTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTagView.swift; sourceTree = "<group>"; };
 		91014F1B2895920100C58E8B /* UserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentView.swift; sourceTree = "<group>"; };
 		9113806828AFDDD4006CD66A /* PlaylistCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCreate.swift; sourceTree = "<group>"; };
 		9113807128C79836006CD66A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		9113807728CF13E0006CD66A /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
 		9113807928CF13F6006CD66A /* UserTopResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopResult.swift; sourceTree = "<group>"; };
 		914AF7B128D88E640016C38C /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
-		91BC78E128A691CC002C38CF /* UserMyPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylist.swift; sourceTree = "<group>"; };
-		91BC78E328A6920F002C38CF /* UserMyPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPost.swift; sourceTree = "<group>"; };
+		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
+		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
 		D01AE77029011C6B00117432 /* PostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeader.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoView.swift; sourceTree = "<group>"; };
@@ -264,11 +264,11 @@
 			children = (
 				D08E274E2893C63400013A12 /* Thumbnail.swift */,
 				D08E27502893CF0700013A12 /* PlaylistInfo.swift */,
-				91014F152895835C00C58E8B /* UserInfo.swift */,
+				91014F152895835C00C58E8B /* UserInfoView.swift */,
 				91014F172895840500C58E8B /* UserContents.swift */,
-				91014F192895841F00C58E8B /* GenreInfo.swift */,
-				91BC78E128A691CC002C38CF /* UserMyPlaylist.swift */,
-				91BC78E328A6920F002C38CF /* UserMyPost.swift */,
+				91014F192895841F00C58E8B /* GenreTagView.swift */,
+				91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */,
+				91BC78E328A6920F002C38CF /* UserMyPostView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -391,10 +391,10 @@
 				D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */,
 				D0F4D4D328FDA1CB0085EB28 /* Search.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
-				91BC78E428A6920F002C38CF /* UserMyPost.swift in Sources */,
+				91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */,
 				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */,
-				91014F1A2895841F00C58E8B /* GenreInfo.swift in Sources */,
+				91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreate.swift in Sources */,
 				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
@@ -408,11 +408,11 @@
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
 				D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */,
 				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
-				91BC78E228A691CC002C38CF /* UserMyPlaylist.swift in Sources */,
+				91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */,
-				91014F162895835C00C58E8B /* UserInfo.swift in Sources */,
+				91014F162895835C00C58E8B /* UserInfoView.swift in Sources */,
 				D01AE77129011C6B00117432 /* PostHeader.swift in Sources */,
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
 				9113807228C79836006CD66A /* SearchResult.swift in Sources */,
