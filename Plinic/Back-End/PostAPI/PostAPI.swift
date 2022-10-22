@@ -9,8 +9,10 @@ import Foundation
 
 final class PostAPI: ObservableObject {
     
-    private let postListURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/"
+    private let postListURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/" // 게시물 목록(GET)
+    private let postDetailURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/30" // FIXME: - 게시물 상세(GET)
     
+    // MARK: - 게시물 목록(GET)
     func getPostList(nextURL: String?, _ completion: @escaping ((Result<PostList, Error>) -> Void)) {
         
         guard let requestUrl = nextURL else {
@@ -34,6 +36,45 @@ final class PostAPI: ObservableObject {
                 let decoder = JSONDecoder()
                 do{
                     let decodeData = try decoder.decode(PostList.self, from: JSONdata)
+                    completion(.success(decodeData))
+                    // completion을 함수처럼 사용
+                } catch {
+                    print(error)
+                    completion(.failure(error))
+                    // 컴플리션 에러처리
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    // MARK: - 게시물 상세(GET)
+    func getPostDetail(_ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
+        
+        //    func getPostDetail(postID: Int?,_ completion: @escaping ((Result<PostDetailAPI, Error>) -> Void)) {
+        // FIXME: - Error : 내가 하고 싶은 것: postDetailURL에 postID를 집어넣어서 requestUrl를 만들어주고 그 값을 받아온다.
+        //        guard let requestUrl = "\(postDetailURL)\(postID)" else {
+        //
+        //            return
+        //        }
+        
+        guard let url = URL(string: "\(postDetailURL)") else {
+            print("invalid URL")
+            return
+        }
+        let session = URLSession(configuration: .default)
+        let task = session .dataTask(with: url) {(data, response, error) in
+            if error != nil{
+                print(error!)
+                completion(.failure(error!)) // 컴플리션 에러처리
+                return
+            }
+            if let JSONdata = data {
+                print(JSONdata)
+                let dataString = String(data:JSONdata, encoding: .utf8)
+                let decoder = JSONDecoder()
+                do{
+                    let decodeData = try decoder.decode(PostDetail.self, from: JSONdata)
                     completion(.success(decodeData))
                     // completion을 함수처럼 사용
                 } catch {

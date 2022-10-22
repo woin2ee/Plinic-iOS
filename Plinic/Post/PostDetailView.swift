@@ -1,5 +1,5 @@
 //
-//  postDetail.swift
+//  PostDetailView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostDetail: View {
+struct PostDetailView: View {
     
     @StateObject var postDetailData: PostDetailData = PostDetailData()
     @State var postDetil : PostDetailAPI = PostDetailAPI.creatEmpty()
@@ -50,7 +50,7 @@ struct PostDetail: View {
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PostDetail(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")
+            PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")
         }
     }
 }
