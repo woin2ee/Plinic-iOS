@@ -24,7 +24,7 @@ struct LoginButton : View {
             Button(action: {
                 kakoAuthVM.handleKakaoLogin()
             }, label: {
-                Image("kakao_login_medium_wide")
+                Image("kakao_login_large_wide")
             })
             Button(action: {
                 kakoAuthVM.KakaoLogout()
