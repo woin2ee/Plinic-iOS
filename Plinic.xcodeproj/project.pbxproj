@@ -114,25 +114,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D01C63A428A6CF970037813F /* post */ = {
+		D01C63A428A6CF970037813F /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				D01C63A528A6CFB10037813F /* postViews */,
+				D01C63A528A6CFB10037813F /* PostViews */,
 				D0A54AC428ACA8DA0097010B /* PostContentView.swift */,
 				D04E4A6328AF69E400D04543 /* PostDetail.swift */,
 				D06539B628AFCDBF008B5199 /* PostCreate.swift */,
 			);
-			path = post;
+			path = Post;
 			sourceTree = "<group>";
 		};
-		D01C63A528A6CFB10037813F /* postViews */ = {
+		D01C63A528A6CFB10037813F /* PostViews */ = {
 			isa = PBXGroup;
 			children = (
 				D01C63A628A6D0180037813F /* PostInfoView.swift */,
 				D04E4A6128AF664700D04543 /* PostDetailInfo.swift */,
 				D01AE77029011C6B00117432 /* PostHeader.swift */,
 			);
-			path = postViews;
+			path = PostViews;
 			sourceTree = "<group>";
 		};
 		D0229E6128FE8DAC00C5F38C /* Back-End */ = {
@@ -144,20 +144,20 @@
 			path = "Back-End";
 			sourceTree = "<group>";
 		};
-		D022C58428D6FD8500E4EFEA /* videoBackground */ = {
+		D022C58428D6FD8500E4EFEA /* VideoBackground */ = {
 			isa = PBXGroup;
 			children = (
 				D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */,
 			);
-			path = videoBackground;
+			path = VideoBackground;
 			sourceTree = "<group>";
 		};
-		D022C58728D704BC00E4EFEA /* loginViews */ = {
+		D022C58728D704BC00E4EFEA /* LoginViews */ = {
 			isa = PBXGroup;
 			children = (
 				D022C58828D704DA00E4EFEA /* LoginButton.swift */,
 			);
-			path = loginViews;
+			path = LoginViews;
 			sourceTree = "<group>";
 		};
 		D0461A6E28F45AC500149F92 /* Frameworks */ = {
@@ -177,16 +177,16 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		D052589028BC8BB900EDF8C4 /* search */ = {
+		D052589028BC8BB900EDF8C4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D052589128BC8BE900EDF8C4 /* searchViews */,
+				D052589128BC8BE900EDF8C4 /* SearchViews */,
 				D0C176B228BE1360007CB43F /* SearchContentView.swift */,
 			);
-			path = search;
+			path = Search;
 			sourceTree = "<group>";
 		};
-		D052589128BC8BE900EDF8C4 /* searchViews */ = {
+		D052589128BC8BE900EDF8C4 /* SearchViews */ = {
 			isa = PBXGroup;
 			children = (
 				D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */,
@@ -196,7 +196,7 @@
 				9113807928CF13F6006CD66A /* UserTopResult.swift */,
 				914AF7B128D88E640016C38C /* SearchDetail.swift */,
 			);
-			path = searchViews;
+			path = SearchViews;
 			sourceTree = "<group>";
 		};
 		D08E27322893A56A00013A12 = {
@@ -228,12 +228,12 @@
 				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
 				D08E27402893A56A00013A12 /* ContentView.swift */,
 				D050ED2828FAACBA0048C20F /* Navigation */,
-				D022C58428D6FD8500E4EFEA /* videoBackground */,
+				D022C58428D6FD8500E4EFEA /* VideoBackground */,
 				D08E27532896CC1000013A12 /* WebViews */,
-				D08E274C2893C5A200013A12 /* user */,
-				D01C63A428A6CF970037813F /* post */,
-				D052589028BC8BB900EDF8C4 /* search */,
-				D0C176B728D21A15007CB43F /* login */,
+				D08E274C2893C5A200013A12 /* User */,
+				D01C63A428A6CF970037813F /* Post */,
+				D052589028BC8BB900EDF8C4 /* Search */,
+				D0C176B728D21A15007CB43F /* Login */,
 				D08E27442893A56F00013A12 /* Preview Content */,
 			);
 			path = Plinic;
@@ -247,19 +247,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D08E274C2893C5A200013A12 /* user */ = {
+		D08E274C2893C5A200013A12 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				D08E274D2893C5B100013A12 /* userViews */,
+				D08E274D2893C5B100013A12 /* UserViews */,
 				91014F1B2895920100C58E8B /* UserContentView.swift */,
 				D08E27582896D70300013A12 /* UserPlaylist.swift */,
 				D04183E3289D26890045C907 /* UserProfile.swift */,
 				9113806828AFDDD4006CD66A /* PlaylistCreate.swift */,
 			);
-			path = user;
+			path = User;
 			sourceTree = "<group>";
 		};
-		D08E274D2893C5B100013A12 /* userViews */ = {
+		D08E274D2893C5B100013A12 /* UserViews */ = {
 			isa = PBXGroup;
 			children = (
 				D08E274E2893C63400013A12 /* Thumbnail.swift */,
@@ -270,7 +270,7 @@
 				91BC78E128A691CC002C38CF /* UserMyPlaylist.swift */,
 				91BC78E328A6920F002C38CF /* UserMyPost.swift */,
 			);
-			path = userViews;
+			path = UserViews;
 			sourceTree = "<group>";
 		};
 		D08E27532896CC1000013A12 /* WebViews */ = {
@@ -281,16 +281,16 @@
 			path = WebViews;
 			sourceTree = "<group>";
 		};
-		D0C176B728D21A15007CB43F /* login */ = {
+		D0C176B728D21A15007CB43F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D022C58728D704BC00E4EFEA /* loginViews */,
+				D022C58728D704BC00E4EFEA /* LoginViews */,
 				D0C176B828D21A45007CB43F /* LoginContentView.swift */,
 				D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */,
 				D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */,
 				D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */,
 			);
-			path = login;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D0F4D4CD28FD93BE0085EB28 /* Extensions */ = {
