@@ -9,7 +9,7 @@ import SwiftUI
 
 struct postContentView: View {
     
-    @StateObject var postListAPI: PostListAPI = PostListAPI()
+    @StateObject var postAPI: PostAPI = PostAPI()
     
     // MARK: - 통신으로 받아오는 데이터
     @State var postData : PostList = PostList.create()
@@ -33,7 +33,7 @@ struct postContentView: View {
                             PostInfoView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title)
                                 .onAppear(){
                                     if let last = self.postList.last, last == post, post.id >= 0{
-                                        postListAPI.getPostList(nextURL: postData.next){ result in
+                                        postAPI.getPostList(nextURL: postData.next){ result in
                                             switch result {
                                             case .success(let success):
                                                 self.postData = success
@@ -52,7 +52,7 @@ struct postContentView: View {
                     
                 }
                 .onAppear(){
-                    postListAPI.getPostList(nextURL: self.postData.next){ result in
+                    postAPI.getPostList(nextURL: self.postData.next){ result in
                         switch result {
                         case .success(let success):
                             self.postList = success.results
