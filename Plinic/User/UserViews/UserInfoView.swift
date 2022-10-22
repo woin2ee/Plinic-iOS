@@ -36,15 +36,9 @@ struct UserInfoView: View {
                         //                        .frame(width: 260, height: 50, alignment: .center)
                         //HStack
                         HStack(spacing:15){
-<<<<<<< HEAD:Plinic/user/userViews/UserInfo.swift
-                            genreInfo(genreName: "Acoustic")
-                            genreInfo(genreName: "Acoustic")
-                            genreInfo(genreName: "Acoustic")
-=======
                             GenreTagView(genreName: "Acoustic")
                             GenreTagView(genreName: "Acoustic")
                             GenreTagView(genreName: "Acoustic")
->>>>>>> develop:Plinic/User/UserViews/UserInfoView.swift
                         }
                         //                        .frame(width: 225, height: 30, alignment: .center)
                         //HStack

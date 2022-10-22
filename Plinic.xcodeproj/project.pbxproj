@@ -16,12 +16,13 @@
 		9113807828CF13E0006CD66A /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807728CF13E0006CD66A /* UserResult.swift */; };
 		9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807928CF13F6006CD66A /* UserTopResult.swift */; };
 		914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* SearchDetail.swift */; };
-		D009B16F29029264005F4982 /* PostDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009B16E29029264005F4982 /* PostDetailData.swift */; };
 		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
 		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
+		D009B16F29029264005F4982 /* PostDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009B16E29029264005F4982 /* PostDetailData.swift */; };
 		D01AE77129011C6B00117432 /* PostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeader.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostInfoView.swift */; };
+		D01F104E290452CB001B61D0 /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01F104D290452CB001B61D0 /* PlaylistInfo.swift */; };
 		D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */; };
 		D022C58628D6FDA300E4EFEA /* VideoBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */; };
 		D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022C58828D704DA00E4EFEA /* LoginButton.swift */; };
@@ -38,7 +39,6 @@
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
 		D08E27462893A56F00013A12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27452893A56F00013A12 /* Preview Assets.xcassets */; };
 		D08E274F2893C63500013A12 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E274E2893C63400013A12 /* Thumbnail.swift */; };
-		D08E27512893CF0800013A12 /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27502893CF0700013A12 /* PlaylistInfo.swift */; };
 		D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* PlaylistWebView.swift */; };
 		D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* UserPlaylist.swift */; };
 		D0A54AC528ACA8DA0097010B /* PostContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A54AC428ACA8DA0097010B /* PostContentView.swift */; };
@@ -64,12 +64,13 @@
 		9113807728CF13E0006CD66A /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
 		9113807928CF13F6006CD66A /* UserTopResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopResult.swift; sourceTree = "<group>"; };
 		914AF7B128D88E640016C38C /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
-		D009B16E29029264005F4982 /* PostDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
+		D009B16E29029264005F4982 /* PostDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
 		D01AE77029011C6B00117432 /* PostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeader.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfoView.swift; sourceTree = "<group>"; };
+		D01F104D290452CB001B61D0 /* PlaylistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
 		D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideo.swift; sourceTree = "<group>"; };
 		D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackgroundView.swift; sourceTree = "<group>"; };
 		D022C58828D704DA00E4EFEA /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		D08E27422893A56F00013A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D08E27452893A56F00013A12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D08E274E2893C63400013A12 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
-		D08E27502893CF0700013A12 /* PlaylistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
 		D08E27522896CBCA00013A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D08E27542896CC3000013A12 /* PlaylistWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWebView.swift; sourceTree = "<group>"; };
 		D08E27582896D70300013A12 /* UserPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaylist.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				D08E274E2893C63400013A12 /* Thumbnail.swift */,
-				D08E27502893CF0700013A12 /* PlaylistInfo.swift */,
+				D01F104D290452CB001B61D0 /* PlaylistInfo.swift */,
 				91014F152895835C00C58E8B /* UserInfoView.swift */,
 				91014F172895840500C58E8B /* UserContents.swift */,
 				91014F192895841F00C58E8B /* GenreTagView.swift */,
@@ -399,6 +399,7 @@
 				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */,
 				91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */,
+				D01F104E290452CB001B61D0 /* PlaylistInfo.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreate.swift in Sources */,
 				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
@@ -420,7 +421,6 @@
 				D01AE77129011C6B00117432 /* PostHeader.swift in Sources */,
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
 				9113807228C79836006CD66A /* SearchResult.swift in Sources */,
-				D08E27512893CF0800013A12 /* PlaylistInfo.swift in Sources */,
 				D063160528FFE80A00636ED1 /* PostList.swift in Sources */,
 				D050ED2A28FAACD50048C20F /* UserView.swift in Sources */,
 			);

@@ -59,16 +59,17 @@ struct PlaylistDetail: Codable {
 
 class PostDetailData: ObservableObject {
     
-    private let postDetailURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/"
-    
-    func getPostDetail(postID: Int?,_ completion: @escaping ((Result<PostDetailAPI, Error>) -> Void)) {
-// MARK: - Error : 내가 하고 싶은 것: postDetailURL에 postID를 집어넣어서 requestUrl를 만들어주고 그 값을 받아온다. 
-        guard let requestUrl = "\(postDetailURL)\(postID)" else {
-
-            return
-        }
+    private let postDetailURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/30"
+    func getPostDetail(_ completion: @escaping ((Result<PostDetailAPI, Error>) -> Void)) {
         
-        guard let url = URL(string: "\(requestUrl)") else {
+//    func getPostDetail(postID: Int?,_ completion: @escaping ((Result<PostDetailAPI, Error>) -> Void)) {
+// MARK: - Error : 내가 하고 싶은 것: postDetailURL에 postID를 집어넣어서 requestUrl를 만들어주고 그 값을 받아온다. 
+//        guard let requestUrl = "\(postDetailURL)\(postID)" else {
+//
+//            return
+//        }
+        
+        guard let url = URL(string: "\(postDetailURL)") else {
             print("invalid URL")
             return
         }

@@ -24,7 +24,7 @@ struct PostDetail: View {
                 ScrollView{
                     PostDetailInfo(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName)
                         .onAppear(){
-                            postDetailData.getPostDetail(postID: postDetil.id){ result in
+                            postDetailData.getPostDetail(){ result in
                                 switch result {
                                 case .success(let success):
                                     self.postDetil = success
