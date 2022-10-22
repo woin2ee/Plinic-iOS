@@ -1,5 +1,5 @@
 //
-//  userMyPlaylist.swift
+//  UserMyPlaylistView.swift
 //  Plinic
 //
 //  Created by 유경덕 on 2022/08/12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct userMyPlaylist: View {
+struct UserMyPlaylistView: View {
     
     var playlistTitle : String
     let openPlaylist = Array(1...12)
@@ -83,8 +83,8 @@ struct userMyPlaylist: View {
         }
     }
 }
-struct userMyPlaylist_Previews: PreviewProvider {
+struct UserMyPlaylistView_Previews: PreviewProvider {
     static var previews: some View {
-        userMyPlaylist(playlistTitle: "플레이리스트 제목")
+        UserMyPlaylistView(playlistTitle: "플레이리스트 제목")
     }
 }

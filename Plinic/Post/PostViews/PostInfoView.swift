@@ -1,5 +1,5 @@
 //
-//  postThumbnail.swift
+//  PostInfoView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct postInfo: View {
+struct PostInfoView: View {
     
     let profilePic : String // 유저의 프로필 사진
     let nickname  : String // 유저의 닉네임
@@ -15,10 +15,7 @@ struct postInfo: View {
     var content : String // 게시글 내용
     let title : String
     @State var likerCount: Int = 0
-    
     @State var isLike: Bool = false
-    
-    
     @State private var scrap = false
     
     var body: some View {
@@ -149,11 +146,11 @@ struct postInfo: View {
 }
 
 
-struct postInfo_Previews: PreviewProvider {
+struct PostInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            //            postInfo(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
-            postInfo(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", likerCount : 12, isLike: false)
+            //            PostInfoView(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
+            PostInfoView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", likerCount : 12, isLike: false)
                 .previewDevice("iPhone 8")
         }
     }

@@ -30,7 +30,7 @@ struct postContentView: View {
                     LazyVStack{
                         ForEach(postList, id: \.self) { post in
                             // MARK: - Refactor
-                            postInfo(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title)
+                            PostInfoView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title)
                                 .onAppear(){
                                     if let last = self.postList.last, last == post, post.id >= 0{
                                         postListAPI.getPostList(nextURL: postData.next){ result in

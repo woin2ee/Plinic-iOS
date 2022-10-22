@@ -161,7 +161,7 @@ struct UserProfile: View {
                 .padding(.top, 20)
             } // VStack
             .onTapGesture {
-                HideKeyboard()
+                hideKeyboard()
             } // 화면 터치 했을 때 키보드 내리기
         } // ZStack
     }

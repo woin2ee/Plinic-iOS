@@ -1,5 +1,5 @@
 //
-//  userContentView.swift
+//  UserContentView.swift
 //  Plinic
 //
 //  Created by 유경덕 on 2022/07/31.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct userContentView: View {
+struct UserContentView: View {
     
     @State private var postTransform = true
     var nickName : String
@@ -51,18 +51,18 @@ struct userContentView: View {
                         //HStack
                         
                         VStack{
-                            userInfo(profileImg: "random1")
+                            UserInfoView(profileImg: "random1")
                                 .frame(height: geometry.size.height * 0.25)
                                 .padding([.bottom,.top], 10)
                             
                             if(self.postTransform) {
-                                userMyPlaylist(playlistTitle: "플레이리스트 제목")
+                                UserMyPlaylistView(playlistTitle: "플레이리스트 제목")
                                     .frame(height: geometry.size.height * 0.65)
                                 Spacer()
                                     .frame(height: geometry.size.height * 0.15)
                                 
                             } else {
-                                userMyPost(postTitle: "게시글 제목")
+                                UserMyPostView(postTitle: "게시글 제목")
                                     .frame(height: geometry.size.height * 0.65)
                             }
                         }
@@ -76,11 +76,11 @@ struct userContentView: View {
     }
 }
 
-struct userContentView_Previews: PreviewProvider {
+struct UserContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            userContentView(nickName: "안녕")
-            userContentView(nickName: "안녕하세요~~~입니다")
+            UserContentView(nickName: "안녕")
+            UserContentView(nickName: "안녕하세요~~~입니다")
                 .previewDevice("iPhone 8")
         }
     }

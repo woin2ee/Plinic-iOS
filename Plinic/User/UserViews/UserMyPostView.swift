@@ -1,5 +1,5 @@
 //
-//  userMyPost.swift
+//  UserMyPostView.swift
 //  Plinic
 //
 //  Created by 유경덕 on 2022/08/12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct userMyPost: View {
+struct UserMyPostView: View {
     
     var postTitle : String
     let data = Array(1...17).map { "목록 \($0)"}
@@ -53,8 +53,8 @@ struct userMyPost: View {
 
 
 
-struct userMyPost_Previews: PreviewProvider {
+struct UserMyPostView_Previews: PreviewProvider {
     static var previews: some View {
-        userMyPost(postTitle: "게시글 제목")
+        UserMyPostView(postTitle: "게시글 제목")
     }
 }

@@ -101,10 +101,20 @@ struct PostDetailInfo: View {
                     } // VStack 좋아요, 스크랩 수
                     .frame(maxWidth: 150, alignment: .trailing)
                     
+<<<<<<< HEAD:Plinic/post/postViews/postDetailInfo.swift
                     .foregroundColor(Color.white)
                     .font(.system(size: 15, weight: .semibold))
                 }
                 .padding(.top, 2)
+=======
+//                    Text("\(today, formatter : PostInfoView.dateFormat)")
+//                        .foregroundColor(Color.white)
+//                        .frame(maxWidth: 200, maxHeight: 44, alignment: .trailing)
+//                        .padding(.trailing, 5)
+                    // 날짜
+                    
+                } // 게시글 하단의 버튼
+>>>>>>> develop:Plinic/Post/PostViews/postDetailInfo.swift
                 
                 Text("\(title)")
                     .foregroundColor(Color.white)

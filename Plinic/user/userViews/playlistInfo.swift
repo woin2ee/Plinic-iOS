@@ -35,9 +35,15 @@ struct PlaylistInfo: View {
                             .fontWeight(.medium)
                             .frame(width: geo.size.width * 0.5, height: 20, alignment: .leading)
                         HStack{
+<<<<<<< HEAD:Plinic/user/userViews/playlistInfo.swift
                             genreInfo(genreName: "Acoustic")
                             genreInfo(genreName: "Acoustic")
                             genreInfo(genreName: "Acoustic")
+=======
+                            GenreTagView(genreName: "Acoustic")
+                            GenreTagView(genreName: "Acoustic")
+                            GenreTagView(genreName: "Acoustic")
+>>>>>>> develop:Plinic/User/UserViews/playlistInfo.swift
                         } // HStack
                         .frame(width: geo.size.width * 0.5, height: 30, alignment: .leading)
                         .padding([.top, .bottom], 10)
