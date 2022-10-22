@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PostDetailView: View {
     
-    @StateObject var postDetailData: PostDetailData = PostDetailData()
-    @State var postDetil : PostDetailAPI = PostDetailAPI.creatEmpty()
+    @StateObject var postAPI: PostAPI = PostAPI()
+    @State var postDetil : PostDetail = PostDetail.creatEmpty()
     @State var totalURL: String
     
     var body: some View {
@@ -24,11 +24,10 @@ struct PostDetailView: View {
                 ScrollView{
                     PostDetailInfo(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName)
                         .onAppear(){
-                            postDetailData.getPostDetail(){ result in
+                            postAPI.getPostDetail(){ result in
                                 switch result {
                                 case .success(let success):
                                     self.postDetil = success
-                                    print(postDetil)
                                 case .failure(let failure):
                                     _ = failure
                                 }

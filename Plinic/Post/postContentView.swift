@@ -38,7 +38,6 @@ struct postContentView: View {
                                             case .success(let success):
                                                 self.postData = success
                                                 self.postList.append(contentsOf: success.results)
-                                                print(postList)
                                             case .failure(let failure):
                                                 _ = failure
                                             }
