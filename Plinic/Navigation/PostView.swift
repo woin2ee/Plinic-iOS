@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  PostView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/10/17.

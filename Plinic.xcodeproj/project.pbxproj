@@ -49,9 +49,14 @@
 		D0C176B628C73419007CB43F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B528C73418007CB43F /* SearchBar.swift */; };
 		D0C176B928D21A45007CB43F /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C176B828D21A45007CB43F /* LoginContentView.swift */; };
 		D0F4D4CF28FD93F90085EB28 /* PlinicColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4D4CE28FD93F90085EB28 /* PlinicColors.swift */; };
-		D0F4D4D128FDA1BE0085EB28 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4D4D028FDA1BE0085EB28 /* Post.swift */; };
+		D0F4D4D128FDA1BE0085EB28 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4D4D028FDA1BE0085EB28 /* PostView.swift */; };
 		D0F4D4D328FDA1CB0085EB28 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4D4D228FDA1CB0085EB28 /* Search.swift */; };
 		D0F4D4D528FDAEB20085EB28 /* Keyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4D4D428FDAEB20085EB28 /* Keyboards.swift */; };
+		E84A3E082903AFB6007FAA78 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E072903AFB6007FAA78 /* PostAPI.swift */; };
+		E84A3E0A2903AFDB007FAA78 /* PlinicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E092903AFDB007FAA78 /* PlinicAPI.swift */; };
+		E84A3E0E2903B274007FAA78 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E0D2903B274007FAA78 /* Post.swift */; };
+		E84A3E102903B294007FAA78 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E0F2903B294007FAA78 /* Author.swift */; };
+		E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E112903B2AD007FAA78 /* Playlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,9 +104,14 @@
 		D0C176B528C73418007CB43F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D0C176B828D21A45007CB43F /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
 		D0F4D4CE28FD93F90085EB28 /* PlinicColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicColors.swift; sourceTree = "<group>"; };
-		D0F4D4D028FDA1BE0085EB28 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D0F4D4D028FDA1BE0085EB28 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		D0F4D4D228FDA1CB0085EB28 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		D0F4D4D428FDAEB20085EB28 /* Keyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboards.swift; sourceTree = "<group>"; };
+		E84A3E072903AFB6007FAA78 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
+		E84A3E092903AFDB007FAA78 /* PlinicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlinicAPI.swift; sourceTree = "<group>"; };
+		E84A3E0D2903B274007FAA78 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E84A3E0F2903B294007FAA78 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		E84A3E112903B2AD007FAA78 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +150,10 @@
 		D0229E6128FE8DAC00C5F38C /* Back-End */ = {
 			isa = PBXGroup;
 			children = (
-				D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */,
-				D063160428FFE80A00636ED1 /* PostList.swift */,
 				D009B16E29029264005F4982 /* PostDetailData.swift */,
+				E84A3E062903AF5D007FAA78 /* PlaylistAPI */,
+				E84A3E052903AF48007FAA78 /* PlinicAPI */,
+				E84A3E032903AF24007FAA78 /* PostAPI */,
 			);
 			path = "Back-End";
 			sourceTree = "<group>";
@@ -174,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				D050ED2928FAACD50048C20F /* UserView.swift */,
-				D0F4D4D028FDA1BE0085EB28 /* Post.swift */,
+				D0F4D4D028FDA1BE0085EB28 /* PostView.swift */,
 				D0F4D4D228FDA1CB0085EB28 /* Search.swift */,
 			);
 			path = Navigation;
@@ -305,6 +316,42 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E84A3E032903AF24007FAA78 /* PostAPI */ = {
+			isa = PBXGroup;
+			children = (
+				E84A3E0C2903B265007FAA78 /* DTO */,
+				E84A3E072903AFB6007FAA78 /* PostAPI.swift */,
+			);
+			path = PostAPI;
+			sourceTree = "<group>";
+		};
+		E84A3E052903AF48007FAA78 /* PlinicAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */,
+				E84A3E092903AFDB007FAA78 /* PlinicAPI.swift */,
+			);
+			path = PlinicAPI;
+			sourceTree = "<group>";
+		};
+		E84A3E062903AF5D007FAA78 /* PlaylistAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlaylistAPI;
+			sourceTree = "<group>";
+		};
+		E84A3E0C2903B265007FAA78 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D063160428FFE80A00636ED1 /* PostList.swift */,
+				E84A3E0D2903B274007FAA78 /* Post.swift */,
+				E84A3E0F2903B294007FAA78 /* Author.swift */,
+				E84A3E112903B2AD007FAA78 /* Playlist.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,7 +436,9 @@
 				D0C176B628C73419007CB43F /* SearchBar.swift in Sources */,
 				D01C63A728A6D0180037813F /* PostInfoView.swift in Sources */,
 				D022C58628D6FDA300E4EFEA /* VideoBackgroundView.swift in Sources */,
+				E84A3E0E2903B274007FAA78 /* Post.swift in Sources */,
 				D08E274F2893C63500013A12 /* Thumbnail.swift in Sources */,
+				E84A3E0A2903AFDB007FAA78 /* PlinicAPI.swift in Sources */,
 				914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */,
 				D06539B728AFCDBF008B5199 /* PostCreate.swift in Sources */,
 				D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */,
@@ -400,13 +449,15 @@
 				D04E4A6228AF664700D04543 /* PostDetailInfo.swift in Sources */,
 				91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */,
 				D01F104E290452CB001B61D0 /* PlaylistInfo.swift in Sources */,
+				E84A3E102903B294007FAA78 /* Author.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreate.swift in Sources */,
 				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D04183E4289D26890045C907 /* UserProfile.swift in Sources */,
 				D0F4D4CF28FD93F90085EB28 /* PlinicColors.swift in Sources */,
-				D0F4D4D128FDA1BE0085EB28 /* Post.swift in Sources */,
+				E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */,
+				D0F4D4D128FDA1BE0085EB28 /* PostView.swift in Sources */,
 				D0C176B428BE13EF007CB43F /* SearchContentView.swift in Sources */,
 				91014F182895840500C58E8B /* UserContents.swift in Sources */,
 				9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */,
@@ -419,6 +470,7 @@
 				D04E4A6428AF69E400D04543 /* PostDetail.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfoView.swift in Sources */,
 				D01AE77129011C6B00117432 /* PostHeader.swift in Sources */,
+				E84A3E082903AFB6007FAA78 /* PostAPI.swift in Sources */,
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
 				9113807228C79836006CD66A /* SearchResult.swift in Sources */,
 				D063160528FFE80A00636ED1 /* PostList.swift in Sources */,
