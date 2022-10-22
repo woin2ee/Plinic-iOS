@@ -10,11 +10,9 @@ import SwiftUI
 import AVFoundation
 import UIKit
 
-
-
 struct VideoBackgroundView : View {
     
-    @StateObject var requestAPI: RequestAPI = RequestAPI()
+    @StateObject var randomAPI: RandomAPI = RandomAPI()
     
     fileprivate var loopingVideoPlayerView: LoopingVideoPlayerView = LoopingVideoPlayerView()
     
@@ -25,7 +23,7 @@ struct VideoBackgroundView : View {
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear() {
-            requestAPI.getBackgroundVideo { result in
+            randomAPI.getBackgroundVideo { result in
                 switch result {
                 case .success(let success): // 성공했을 때
                     loopingVideoPlayerView.loopingVideoPlayerUIView.videoURL = success
@@ -40,13 +38,13 @@ struct VideoBackgroundView : View {
 
 fileprivate struct LoopingVideoPlayerView : UIViewRepresentable {
     
-    @StateObject var requestAPI: RequestAPI = RequestAPI()
     var loopingVideoPlayerUIView : LoopingVideoPlayerUIView = LoopingVideoPlayerUIView(frame: .zero)
     
     func makeUIView(context: Context) -> UIView {
         
         return loopingVideoPlayerUIView
     }
+    
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
 

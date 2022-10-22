@@ -1,22 +1,13 @@
 //
-//  BackgroundVideo.swift
+//  RandomAPI.swift
 //  Plinic
 //
-//  Created by MacBook Air on 2022/10/18.
+//  Created by Jaewon on 2022/10/22.
 //
 
 import Foundation
 
-struct BackgroundVideo: Codable {
-    
-    let backgroundVideo : String
-    
-    enum CodingKeys: String, CodingKey {
-        case backgroundVideo = "background_url"
-    }
-}
-
-class RequestAPI: ObservableObject {
+final class RandomAPI: ObservableObject {
     
     private let backgroundURL : String = "http://35.79.181.245:8000/api/v1/plinic/random-background/"
     
