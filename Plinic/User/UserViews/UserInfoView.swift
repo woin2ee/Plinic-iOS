@@ -1,5 +1,5 @@
 //
-//  userInfo.swift
+//  UserInfoView.swift
 //  Plinic
 //
 //  Created by 유경덕 on 2022/07/31.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct userInfo: View {
+struct UserInfoView: View {
     
     var profileImg : String // 유저의 프로필 사진
     
@@ -36,9 +36,9 @@ struct userInfo: View {
                         //                        .frame(width: 260, height: 50, alignment: .center)
                         //HStack
                         HStack(spacing:15){
-                            genreInfo(userGenre: "Acoustic")
-                            genreInfo(userGenre: "Acoustic")
-                            genreInfo(userGenre: "Acoustic")
+                            GenreTagView(genreName: "Acoustic")
+                            GenreTagView(genreName: "Acoustic")
+                            GenreTagView(genreName: "Acoustic")
                         }
                         //                        .frame(width: 225, height: 30, alignment: .center)
                         //HStack
@@ -71,11 +71,11 @@ struct userInfo: View {
     }
 }
 
-struct userInfo_Previews: PreviewProvider {
+struct UserInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            userInfo(profileImg: "random1")
-            userInfo(profileImg: "random1")
+            UserInfoView(profileImg: "random1")
+            UserInfoView(profileImg: "random1")
                 .previewDevice("iPhone 8")
                 .previewInterfaceOrientation(.portrait)
         }

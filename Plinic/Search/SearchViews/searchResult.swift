@@ -49,7 +49,7 @@ struct searchResult: View {
                             .font(.system(size: 15))
                             .frame(minWidth: 300, maxHeight: 20, alignment: .leading)
                             .padding([.top, .leading], 10)
-                        NavigationLink(destination: userContentView(nickName: "안녕")) {
+                        NavigationLink(destination: UserContentView(nickName: "안녕")) {
                             HStack(alignment: .bottom){
                                 userTopResult(profileImg: "random1", nickName: "Hi", infoCount: "012")
                                 userResult(profileImg: "random1", nickName: "ddddd")

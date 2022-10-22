@@ -20,7 +20,6 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-            
             PostView()
                 .tabItem {
                     Image(systemName: "list.bullet")
@@ -31,7 +30,6 @@ struct ContentView: View {
                     Image(systemName: "list.bullet")
                     Text("Post")
                 }
-            
         }
     }
 }
