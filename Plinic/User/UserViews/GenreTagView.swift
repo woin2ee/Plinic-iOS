@@ -9,21 +9,18 @@ import SwiftUI
 
 struct GenreTagView: View {
     
-    var genreName: String
+    var genreName : String
     
     var body: some View {
         ZStack {
-            //장르
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.BackgroundSubColor)
-            .frame(width: 65, height: 30)
-        //Acoustic
+                .frame(width: 65, height: 30)
             Text(genreName)
                 .fontWeight(.bold)
                 .font(.system(size: 9))
                 .foregroundColor(Color.MainColor)
                 .multilineTextAlignment(.center)
-
         }
     }
     struct GenreTagView_Previews: PreviewProvider {

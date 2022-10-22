@@ -9,7 +9,9 @@ import SwiftUI
 
 struct PostDetail: View {
     
-    var playlistURL : String
+    @StateObject var postDetailData: PostDetailData = PostDetailData()
+    @State var postDetil : PostDetailAPI = PostDetailAPI.creatEmpty()
+    @State var totalURL: String
     
     var body: some View {
         ZStack {
@@ -19,14 +21,24 @@ struct PostDetail: View {
                 
             }
             VStack{
-                
                 ScrollView{
-                    PostDetailInfo(profileImg: "random1", userName : "userName", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vestibulums. ", postName: "게시글 제목", heartCnt : "200000")
+                    PostDetailInfo(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName)
+                        .onAppear(){
+                            postDetailData.getPostDetail(){ result in
+                                switch result {
+                                case .success(let success):
+                                    self.postDetil = success
+                                    print(postDetil)
+                                case .failure(let failure):
+                                    _ = failure
+                                }
+                            }
+                        }
                     Spacer()
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                PlaylistWebView(playlistURL: "\(playlistURL)")
+                PlaylistWebView(playlistURL: "\(postDetil.plInfo.totalURL)")
                     .frame(minHeight: 400)
                 
             } // VStack
@@ -38,9 +50,7 @@ struct PostDetail: View {
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")
-            PostDetail(playlistURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")
-                .previewDevice("iPhone 8")
+            PostDetail(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")
         }
     }
 }
