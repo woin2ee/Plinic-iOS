@@ -14,7 +14,7 @@ struct PostView: View {
     var thumbnailImgURL : String // 게시글 썸네일 이미지
     var content : String // 게시글 내용
     let title : String
-    let postID: Int
+    let id: Int
     @State var likerCount: Int = 0
     @State var isLike: Bool = false
     @State private var scrap = false
@@ -51,7 +51,7 @@ struct PostView: View {
                     }
                     Spacer()
                 }
-                NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", postID: 0)) {
+                NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", id: 0)) {
                     Image("\(thumbnailImgURL)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -135,7 +135,7 @@ struct PostView: View {
                         .padding(.trailing, 20)
                     // 게시글 내용
                     
-                    NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", postID: 0)) {
+                    NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", id: 0)) {
                         Text("더보기")
                             .padding(.trailing, 5)
                     } // 게시글 더보기
@@ -150,7 +150,7 @@ struct PostInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             //            PostInfoView(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
-            PostView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", postID: 0, likerCount : 12, isLike: false)
+            PostView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", id: 0, likerCount : 12, isLike: false)
                 .previewDevice("iPhone 8")
         }
     }

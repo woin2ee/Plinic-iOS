@@ -27,11 +27,11 @@ struct postContentView: View {
                 ScrollView{
                     LazyVStack{
                         ForEach(postList, id: \.self) { post in
-                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, postID: post.postID)
+                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, id: post.id)
                                 .onAppear() {
                                     if let last = self.postList.last,
                                        last == post,
-                                       post.postID >= 0,
+                                       post.id >= 0,
                                        postList.count < postData.count
                                     {
                                         postAPI.getPostList(nextURL: postData.next) { result in

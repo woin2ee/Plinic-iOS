@@ -49,13 +49,8 @@ final class PostAPI: ObservableObject {
     }
     
     // MARK: - 게시물 상세(GET)
-    func getPostDetail(postID: Int?, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
-        // FIXME: - Error : 내가 하고 싶은 것: postDetailURL에 postID를 집어넣어서 requestUrl를 만들어주고 그 값을 받아온다.
-        
-        guard let postID = postID else {
-            return
-        }
-        let postDetailURL = "http:/35.79.181.245:8000/api/v1" + postURL + "\(postID)"
+    func getPostDetail(id: Int, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
+        let postDetailURL = "http:/35.79.181.245:8000/api/v1" + postURL + "\(id)"
         
         guard let url = URL(string: "\(postDetailURL)") else {
             print("invalid URL")
