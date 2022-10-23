@@ -58,6 +58,8 @@
 		E84A3E102903B294007FAA78 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E0F2903B294007FAA78 /* Author.swift */; };
 		E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E112903B2AD007FAA78 /* Playlist.swift */; };
 		E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E152903B894007FAA78 /* NetworkService.swift */; };
+		E8689D96290554CC00D2A03F /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8689D95290554CC00D2A03F /* UserAPI.swift */; };
+		E8689D992905550500D2A03F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8689D982905550500D2A03F /* UserInfo.swift */; };
 		E86ECD56290472090039D8BF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD55290472090039D8BF /* View+.swift */; };
 		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		E84A3E0F2903B294007FAA78 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		E84A3E112903B2AD007FAA78 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		E84A3E152903B894007FAA78 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E8689D95290554CC00D2A03F /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		E8689D982905550500D2A03F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E86ECD55290472090039D8BF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +162,7 @@
 			children = (
 				D047BA52290571B5008CA3E4 /* NoticeAPI */,
 				E84A3E142903B88B007FAA78 /* Network */,
+				E8689D94290554B600D2A03F /* UserAPI */,
 				E84A3E062903AF5D007FAA78 /* PlaylistAPI */,
 				E84A3E052903AF48007FAA78 /* RandomAPI */,
 				E84A3E032903AF24007FAA78 /* PostAPI */,
@@ -385,6 +390,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		E8689D94290554B600D2A03F /* UserAPI */ = {
+			isa = PBXGroup;
+			children = (
+				E8689D95290554CC00D2A03F /* UserAPI.swift */,
+				E8689D97290554DF00D2A03F /* DTO */,
+			);
+			path = UserAPI;
+			sourceTree = "<group>";
+		};
+		E8689D97290554DF00D2A03F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E8689D982905550500D2A03F /* UserInfo.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +507,7 @@
 				E84A3E102903B294007FAA78 /* Author.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreate.swift in Sources */,
+				E8689D96290554CC00D2A03F /* UserAPI.swift in Sources */,
 				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
 				E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */,
 				D047BA5129056B21008CA3E4 /* RecentNotice.swift in Sources */,
@@ -503,6 +526,7 @@
 				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
 				91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
+				E8689D992905550500D2A03F /* UserInfo.swift in Sources */,
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetailView.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfoView.swift in Sources */,

@@ -53,13 +53,14 @@ struct UserContentView: View {
                             
                         }
                         .padding(.leading, 10.0)
-                        // HStack
+                        // HStack : 타이틀 부분
                         
                         VStack{
                             
                             UserInfoView(profileImg: "random1")
                                 .frame(height: geometry.size.height * 0.25)
                                 .padding([.bottom,.top], 10)
+                            // 유저 정보 부분
                             
                             if(self.postTransform) {
                                 UserMyPlaylistView(playlistTitle: "플레이리스트 제목")

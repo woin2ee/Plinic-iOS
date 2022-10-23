@@ -7,27 +7,23 @@
 
 import SwiftUI
 
-
-
 struct userDetail: View {
     
     @State private var sort: Int = 0
     
-    var user = [User(userName: "Leeo",userImg: "random1",playlistCount: 029),
-                User(userName: "Lisa",userImg: "random1",playlistCount: 019),
-                User(userName: "Sven",userImg: "random1",playlistCount: 027),
-                User(userName: "Leeo",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo2",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo3",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo4",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo5",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo6",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo7",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo8",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo9",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo10",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo11",userImg: "random1",playlistCount: 029),
-                User(userName: "Leeo12",userImg: "random1",playlistCount: 029)]
+    var users: [UserInfo] = [
+        UserInfo(id: 1, nickName: "Test1", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 2, nickName: "Test2", profileImageUrl: "random1", myPlaylists: ["1", "2"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 3, nickName: "Test3", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 4, nickName: "Test4", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 5, nickName: "Test5", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 6, nickName: "Test6", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 7, nickName: "Test7", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 8, nickName: "Test8", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 9, nickName: "Test9", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 10, nickName: "Test10", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
+        UserInfo(id: 11, nickName: "Test11", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"])
+    ]
     
     var body: some View {
         List{
@@ -35,36 +31,36 @@ struct userDetail: View {
                 .foregroundColor(.white)
                 .fontWeight(.bold)
                 .font(.system(size: 25))
-                .foregroundColor(Color.black)){
-                ForEach(user, id: \.id) {user in
-                    HStack{
-                        Image("\(user.userImg)")
-                            .resizable()
-                            .clipShape(Circle())
-                            .overlay(Circle()
-                                .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
-                            .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
-                            .frame(width: 100, height: 100, alignment: .center)
-                        
-                        VStack(alignment: .leading){
-                            Spacer()
-                            Text("\(user.userName)")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .font(.system(size: 25))
-                                .padding(.bottom, 5)
-                            Text("플레이리스트: \(user.playlistCount)")
-                                .foregroundColor(.gray)
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                            Spacer()
-                        }//VStack
-                    }//HStack
-                }//ForEach
-                .padding(.leading, 10)
-                .listRowBackground(Color.black)
-                .listRowInsets(EdgeInsets())
-            }//Section
+                .foregroundColor(Color.black)) {
+                    ForEach(users, id: \.uuid) { user in
+                        HStack{
+                            Image("\(user.profileImageUrl)")
+                                .resizable()
+                                .clipShape(Circle())
+                                .overlay(Circle()
+                                    .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
+                                .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
+                                .frame(width: 100, height: 100, alignment: .center)
+                            
+                            VStack(alignment: .leading){
+                                Spacer()
+                                Text("\(user.nickName)")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 25))
+                                    .padding(.bottom, 5)
+                                Text("플레이리스트: \(user.myPlaylists.count)")
+                                    .foregroundColor(.gray)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 20))
+                                Spacer()
+                            }//VStack
+                        }//HStack
+                    }//ForEach
+                    .padding(.leading, 10)
+                    .listRowBackground(Color.black)
+                    .listRowInsets(EdgeInsets())
+                }//Section
         }//List
         .onAppear {
             UITableView.appearance().backgroundColor = .black  // 테이블 뷰 배경 투명
@@ -103,12 +99,3 @@ struct userDetail_Previews: PreviewProvider {
         userDetail()
     }
 }
-
-struct User: Identifiable {
-    var id = UUID()
-    var userName: String
-    var userImg: String
-    var playlistCount: Int
-}
-
-
