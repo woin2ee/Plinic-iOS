@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct PostInfoView: View {
+struct PostView: View {
     
     let profilePic : String // 유저의 프로필 사진
     let nickname  : String // 유저의 닉네임
     var thumbnailImgURL : String // 게시글 썸네일 이미지
     var content : String // 게시글 내용
     let title : String
+    let postID: Int
     @State var likerCount: Int = 0
     @State var isLike: Bool = false
     @State private var scrap = false
@@ -150,7 +151,7 @@ struct PostInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             //            PostInfoView(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
-            PostInfoView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", likerCount : 12, isLike: false)
+            PostView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", postID: 0, likerCount : 12, isLike: false)
                 .previewDevice("iPhone 8")
         }
     }

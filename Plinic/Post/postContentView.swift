@@ -11,8 +11,10 @@ struct postContentView: View {
     
     // MARK: - 통신으로 받아오는 데이터
     @StateObject var postAPI: PostAPI = PostAPI()
+
     @State var postData : PostList = PostList.create()
     @State var postList: [Post] = [Post.creatEmpty()]
+    
     
     var body: some View {
         ZStack {
@@ -20,13 +22,12 @@ struct postContentView: View {
                 .ignoresSafeArea()
             VStack{
                 
-                PostHeader(topNotice : "공지 제목입니다")
-                
+                PostHeader()
                 
                 ScrollView{
                     LazyVStack{
                         ForEach(postList, id: \.self) { post in
-                            PostInfoView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title)
+                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, postID: post.postID)
                                 .onAppear() {
                                     if let last = self.postList.last,
                                        last == post,

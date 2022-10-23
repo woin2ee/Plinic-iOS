@@ -73,9 +73,7 @@ final class NetworkService {
                 completion(.failure(NetworkError.commonError))
                 return
             }
-            
             completion(.success(data))
-            
         }.resume()
     }
 }

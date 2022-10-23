@@ -10,50 +10,63 @@ import SwiftUI
 
 struct PostHeader: View {
     
-    var topNotice : String
-    
-    var body: some View {
-        VStack{
-            HStack{
-                Image(systemName: "megaphone.fill")
-                    .font(.system(size: 24))
-                    .foregroundColor(Color.MainColor)
-                    .frame(width: 42, height: 42)
-                    .padding(.leading, 2)
-                
-                Button(action: {
-                    // 클릭 하면 공지 페이지로 넘어가는 기능 구현
-                }, label: {
-                    Text("\(topNotice)")
-                        .font(.system(size: 15))
-                        .fontWeight(.bold)
-                        .padding(.all, 5)
-                        .frame(maxWidth: 300, maxHeight: 32)
-                        .background(Color.BackgroundSubColor)
-                        .foregroundColor(Color.gray)
-                        .cornerRadius(10)
-                })
-                
-                NavigationLink(destination: PostCreate(postName: "", postContext : "")){
-                    Image(systemName: "plus.circle")
-                        .font(.system(size: 35))
-                        .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
+    // MARK: - 통신으로 받아오는 데이터
+    @StateObject var noticeAPI: NoticeAPI = NoticeAPI()
+    @State var recentNotice: RecentNotice = RecentNotice.creatEmpty()
+        
+        var body: some View {
+            VStack{
+                HStack{
+                    Image(systemName: "megaphone.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(Color.MainColor)
                         .frame(width: 42, height: 42)
+                        .padding(.leading, 2)
+                    
+                    Button(action: {
+                        // 클릭 하면 공지 페이지로 넘어가는 기능 구현
+                    }, label: {
+                        Text("\(recentNotice.noticeTitle)")
+                            .font(.system(size: 15))
+                            .fontWeight(.bold)
+                            .padding(.all, 5)
+                            .frame(maxWidth: 300, maxHeight: 32)
+                            .background(Color.BackgroundSubColor)
+                            .foregroundColor(Color.gray)
+                            .cornerRadius(10)
+                    })
+                    
+                    NavigationLink(destination: PostCreate(postName: "", postContext : "")){
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 35))
+                            .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
+                            .frame(width: 42, height: 42)
+                    }
+                    .padding(.trailing, 5)
+                } // 상단바 구현
+                .frame(maxWidth: 390, maxHeight: 46)
+                .foregroundColor(Color.MainColor)
+                .padding(.top, 2)
+            }
+            .onAppear(){
+                noticeAPI.getRecentNotice() { result in
+                    switch result {
+                    case .success(let success):
+                        self.recentNotice = success
+                        print(recentNotice)
+                    case .failure(let failure):
+                        _ = failure
+                    }
                 }
-                .padding(.trailing, 5)
-            } // 상단바 구현
-            .frame(maxWidth: 390, maxHeight: 46)
-            .foregroundColor(Color.MainColor)
-            .padding(.top, 2)
+            }
+            
+        }
         }
         
-    }
-}
-
-struct PostHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            PostHeader(topNotice : "공지 제목입니다")
+        struct PostHeader_Previews: PreviewProvider {
+            static var previews: some View {
+                Group {
+                    PostHeader()
+                }
+            }
         }
-    }
-}

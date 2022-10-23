@@ -10,26 +10,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            UserView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }
-            PostView()
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("Post")
-                }
-            LoginContentView()
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("Post")
-                }
+            NavigationView{
+                UserContentView(nickName: "Nickname")
+            }
+            .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            }
+            NavigationView{
+                SearchContentView()
+            }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
+            }
+            NavigationView{
+                postContentView()
+            }
+            .tabItem {
+                Image(systemName: "list.bullet")
+                Text("Post")
+            }
+            NavigationView{
+                LoginContentView()
+            }
+            .tabItem {
+                Image(systemName: "list.bullet")
+                Text("Post")
+            }
         }
     }
 }

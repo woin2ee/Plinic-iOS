@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostDetailInfo: View {
+struct PostDetailInfoView: View {
     
     var profilePic: String // 유저의 프로필 사진
     var nickname : String // 유저의 닉네임
@@ -151,6 +151,6 @@ struct PostDetailInfo: View {
 
 struct PostDetailInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailInfo(profilePic: "random1", nickname: "Nickname", content: "This is content", title: "Title", createdAt: "2022.10.20", updatedAt: "2022.10.20", tagSet: ["1", "2", "3"], genreName: "Jazz", postID: 30)
+        PostDetailInfoView(profilePic: "random1", nickname: "Nickname", content: "This is content", title: "Title", createdAt: "2022.10.20", updatedAt: "2022.10.20", tagSet: ["1", "2", "3"], genreName: "Jazz", postID: 30)
     }
 }

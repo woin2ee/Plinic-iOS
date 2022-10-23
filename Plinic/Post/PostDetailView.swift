@@ -18,23 +18,9 @@ struct PostDetailView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            GeometryReader{ geo in
-                
-            }
             VStack{
                 ScrollView{
-                    PostDetailInfo(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName, postID: postDetil.postID)
-                        .onAppear(){
-                            postAPI.getPostDetail(postID: postID){ result in
-                                switch result {
-                                case .success(let success):
-                                    self.postDetil = success
-                                    print("PostDetailView의 onAppear",postDetil)
-                                case .failure(let failure):
-                                    _ = failure
-                                }
-                            }
-                        }
+                    PostDetailInfoView(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName, postID: postDetil.postID)
                     Spacer()
                 } // ScrollView
                 .frame(maxHeight: 200)
@@ -43,6 +29,17 @@ struct PostDetailView: View {
                     .frame(minHeight: 400)
                 
             } // VStack
+            .onAppear(){
+                postAPI.getPostDetail(postID: postID){ result in
+                    switch result {
+                    case .success(let success):
+                        self.postDetil = success
+                        print("PostDetailView의 onAppear",postDetil)
+                    case .failure(let failure):
+                        _ = failure
+                    }
+                }
+            }
         } // ZStack
     }
 }
