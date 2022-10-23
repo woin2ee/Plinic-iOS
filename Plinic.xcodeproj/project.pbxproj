@@ -18,7 +18,7 @@
 		914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* SearchDetail.swift */; };
 		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
 		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
-		D01AE77129011C6B00117432 /* PostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeader.swift */; };
+		D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeaderView.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostView.swift */; };
 		D01F104E290452CB001B61D0 /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01F104D290452CB001B61D0 /* PlaylistInfo.swift */; };
@@ -74,7 +74,7 @@
 		914AF7B128D88E640016C38C /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
-		D01AE77029011C6B00117432 /* PostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeader.swift; sourceTree = "<group>"; };
+		D01AE77029011C6B00117432 /* PostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderView.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		D01F104D290452CB001B61D0 /* PlaylistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			children = (
 				D01C63A628A6D0180037813F /* PostView.swift */,
 				D04E4A6128AF664700D04543 /* PostDetailInfoView.swift */,
-				D01AE77029011C6B00117432 /* PostHeader.swift */,
+				D01AE77029011C6B00117432 /* PostHeaderView.swift */,
 			);
 			path = PostViews;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetailView.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfoView.swift in Sources */,
-				D01AE77129011C6B00117432 /* PostHeader.swift in Sources */,
+				D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */,
 				E84A3E082903AFB6007FAA78 /* PostAPI.swift in Sources */,
 				D022C58928D704DA00E4EFEA /* LoginButton.swift in Sources */,
 				9113807228C79836006CD66A /* SearchResult.swift in Sources */,

@@ -22,7 +22,7 @@ struct postContentView: View {
                 .ignoresSafeArea()
             VStack{
                 
-                PostHeader()
+                PostHeaderView()
                 
                 ScrollView{
                     LazyVStack{

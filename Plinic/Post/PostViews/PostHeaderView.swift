@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct PostHeader: View {
+struct PostHeaderView: View {
     
     // MARK: - 통신으로 받아오는 데이터
     @StateObject var noticeAPI: NoticeAPI = NoticeAPI()
@@ -66,7 +66,7 @@ struct PostHeader: View {
         struct PostHeader_Previews: PreviewProvider {
             static var previews: some View {
                 Group {
-                    PostHeader()
+                    PostHeaderView()
                 }
             }
         }

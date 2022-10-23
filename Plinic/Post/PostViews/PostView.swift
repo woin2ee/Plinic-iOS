@@ -41,7 +41,6 @@ struct PostView: View {
                             .stroke(Color.MainColor, lineWidth: 3.5))
                         .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
                         .clipShape(Circle())
-                    //                        .padding([.leading, .trailing], 10)
                     
                     VStack{
                         Text("\(nickname)")

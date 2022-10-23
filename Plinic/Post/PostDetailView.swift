@@ -27,7 +27,6 @@ struct PostDetailView: View {
                 
                 PlaylistWebView(playlistURL: "\(postDetil.plInfo.totalURL)")
                     .frame(minHeight: 400)
-                
             } // VStack
             .onAppear(){
                 postAPI.getPostDetail(postID: postID){ result in
