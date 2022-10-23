@@ -14,14 +14,18 @@ struct UserContentView: View {
     
     var body: some View {
         ZStack {
+            
             Color.black
                 .ignoresSafeArea()
             
             VStack{
                 
                 GeometryReader{ geometry in
+                    
                     VStack(spacing:0) {
+                        
                         HStack(spacing:0) {
+                            
                             Text("\(nickName)")
                                 .fontWeight(.bold)
                                 .font(.system(size: 20))
@@ -46,11 +50,13 @@ struct UserContentView: View {
                                     .font(.system(size: 35))
                                     .foregroundColor(Color.MainColor)
                             })
+                            
                         }
                         .padding(.leading, 10.0)
-                        //HStack
+                        // HStack
                         
                         VStack{
+                            
                             UserInfoView(profileImg: "random1")
                                 .frame(height: geometry.size.height * 0.25)
                                 .padding([.bottom,.top], 10)
@@ -60,19 +66,21 @@ struct UserContentView: View {
                                     .frame(height: geometry.size.height * 0.65)
                                 Spacer()
                                     .frame(height: geometry.size.height * 0.15)
-                                
                             } else {
                                 UserMyPostView(postTitle: "게시글 제목")
                                     .frame(height: geometry.size.height * 0.65)
                             }
+                            
                         }
+                        // VStack
                     }
-                    
-                    
-                }//VStack
+                    // VStack
+                }
+                // GeometryReader
             }
-            
-        }//ZStack
+            // VStack
+        }
+        // ZStack
     }
 }
 
