@@ -10,7 +10,7 @@ import Foundation
 final class PostAPI: ObservableObject {
     
     private let postURL: String = "/plinic/posts/" // 게시물 목록(GET)
-    private let postDetailURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/30" // FIXME: - 게시물 상세(GET)
+//    private let postDetailURL : String = "/plinic/posts/30" // FIXME: - 게시물 상세(GET)
     
     private let networkService = NetworkService.init()
     
@@ -50,14 +50,13 @@ final class PostAPI: ObservableObject {
     }
     
     // MARK: - 게시물 상세(GET)
-    func getPostDetail(_ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
-        
-        //    func getPostDetail(postID: Int?,_ completion: @escaping ((Result<PostDetailAPI, Error>) -> Void)) {
+    func getPostDetail(postID: Int?, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
         // FIXME: - Error : 내가 하고 싶은 것: postDetailURL에 postID를 집어넣어서 requestUrl를 만들어주고 그 값을 받아온다.
-        //        guard let requestUrl = "\(postDetailURL)\(postID)" else {
-        //
-        //            return
-        //        }
+
+        guard let postID = postID else {
+            return
+        }
+        let postDetailURL = "http:/35.79.181.245:8000/api/v1" + postURL + "\(postID)"
         
         guard let url = URL(string: "\(postDetailURL)") else {
             print("invalid URL")

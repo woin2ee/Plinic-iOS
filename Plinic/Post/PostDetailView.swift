@@ -12,6 +12,7 @@ struct PostDetailView: View {
     @StateObject var postAPI: PostAPI = PostAPI()
     @State var postDetil : PostDetail = PostDetail.creatEmpty()
     @State var totalURL: String
+    @State var postID : Int
     
     var body: some View {
         ZStack {
@@ -22,12 +23,13 @@ struct PostDetailView: View {
             }
             VStack{
                 ScrollView{
-                    PostDetailInfo(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName)
+                    PostDetailInfo(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName, postID: postDetil.postID)
                         .onAppear(){
-                            postAPI.getPostDetail(){ result in
+                            postAPI.getPostDetail(postID: postID){ result in
                                 switch result {
                                 case .success(let success):
                                     self.postDetil = success
+                                    print("PostDetailView의 onAppear",postDetil)
                                 case .failure(let failure):
                                     _ = failure
                                 }
@@ -49,7 +51,7 @@ struct PostDetailView: View {
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")
+            PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", postID: 30)
         }
     }
 }

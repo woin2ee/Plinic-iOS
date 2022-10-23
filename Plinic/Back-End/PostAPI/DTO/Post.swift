@@ -10,7 +10,7 @@ import Foundation
 struct Post: Hashable ,Codable {
     
     var author: Author
-    let id : Int
+    let postID : Int
     let likerCount: Int
     let title: String
     let isLike: Bool
@@ -19,7 +19,7 @@ struct Post: Hashable ,Codable {
     
     enum CodingKeys: String, CodingKey {
         case author
-        case id
+        case postID = "id"
         case likerCount = "liker_count"
         case title
         case isLike = "is_like"
@@ -30,7 +30,7 @@ struct Post: Hashable ,Codable {
     static func creatEmpty() -> Post {
         return Post(
             author: Author.init(nickname: "NickName", profilePic: "random1"),
-            id: -1,
+            postID: -1,
             likerCount: 30,
             title: "Title",
             isLike: false,
@@ -40,7 +40,7 @@ struct Post: Hashable ,Codable {
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(postID)
         hasher.combine(likerCount)
         hasher.combine(title)
         hasher.combine(isLike)
@@ -48,6 +48,6 @@ struct Post: Hashable ,Codable {
     }
     
     static func == (lhs: Post, rhs: Post) -> Bool {
-        return lhs.id == rhs.id
-    } // id를 1:1 대응 시켜줌
+        return lhs.postID == rhs.postID
+    } // postID를 1:1 대응 시켜줌
 }

@@ -51,7 +51,7 @@ struct PostInfoView: View {
                     }
                     Spacer()
                 }
-                NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")) {
+                NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", postID: 0)) {
                     Image("\(thumbnailImgURL)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -135,7 +135,7 @@ struct PostInfoView: View {
                         .padding(.trailing, 20)
                     // 게시글 내용
                     
-                    NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q")) {
+                    NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", postID: 0)) {
                         Text("더보기")
                             .padding(.trailing, 5)
                     } // 게시글 더보기

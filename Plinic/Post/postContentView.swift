@@ -9,13 +9,10 @@ import SwiftUI
 
 struct postContentView: View {
     
-    @StateObject var postAPI: PostAPI = PostAPI()
-    
     // MARK: - 통신으로 받아오는 데이터
+    @StateObject var postAPI: PostAPI = PostAPI()
     @State var postData : PostList = PostList.create()
     @State var postList: [Post] = [Post.creatEmpty()]
-    
-    //    let data = Array(1...17)
     
     var body: some View {
         ZStack {
@@ -33,7 +30,7 @@ struct postContentView: View {
                                 .onAppear() {
                                     if let last = self.postList.last,
                                        last == post,
-                                       post.id >= 0,
+                                       post.postID >= 0,
                                        postList.count < postData.count
                                     {
                                         postAPI.getPostList(nextURL: postData.next) { result in
