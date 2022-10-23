@@ -19,7 +19,7 @@ struct Post: Hashable ,Codable {
     
     enum CodingKeys: String, CodingKey {
         case author
-        case id
+        case id = "id"
         case likerCount = "liker_count"
         case title
         case isLike = "is_like"
@@ -49,5 +49,5 @@ struct Post: Hashable ,Codable {
     
     static func == (lhs: Post, rhs: Post) -> Bool {
         return lhs.id == rhs.id
-    } // id를 1:1 대응 시켜줌
+    } // postID를 1:1 대응 시켜줌
 }

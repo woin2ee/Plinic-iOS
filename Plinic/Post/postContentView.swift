@@ -9,13 +9,12 @@ import SwiftUI
 
 struct postContentView: View {
     
-    @StateObject var postAPI: PostAPI = PostAPI()
-    
     // MARK: - 통신으로 받아오는 데이터
+    @StateObject var postAPI: PostAPI = PostAPI()
+
     @State var postData : PostList = PostList.create()
     @State var postList: [Post] = [Post.creatEmpty()]
     
-    //    let data = Array(1...17)
     
     var body: some View {
         ZStack {
@@ -23,13 +22,12 @@ struct postContentView: View {
                 .ignoresSafeArea()
             VStack{
                 
-                PostHeader(topNotice : "공지 제목입니다")
-                
+                PostHeaderView()
                 
                 ScrollView{
                     LazyVStack{
                         ForEach(postList, id: \.self) { post in
-                            PostInfoView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title)
+                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, id: post.id)
                                 .onAppear() {
                                     if let last = self.postList.last,
                                        last == post,
@@ -41,7 +39,6 @@ struct postContentView: View {
                                             case .success(let success):
                                                 self.postData = success
                                                 self.postList.append(contentsOf: success.results)
-                                                print(postList)
                                             case .failure(let failure):
                                                 _ = failure
                                             }

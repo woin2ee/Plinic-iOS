@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostDetailInfo: View {
+struct PostDetailInfoView: View {
     
     var profilePic: String // 유저의 프로필 사진
     var nickname : String // 유저의 닉네임
@@ -17,6 +17,7 @@ struct PostDetailInfo: View {
     let updatedAt: String // 수정된 날짜
     let tagSet: [String] // 태그 정보
     let genreName: String // 장르 정보
+    let id: Int
     
     @State var scrapperCount: Int = 0 // 스크랩 개수
     @State var likerCount: Int = 0 // 좋아요 개수
@@ -150,6 +151,6 @@ struct PostDetailInfo: View {
 
 struct PostDetailInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailInfo(profilePic: "random1", nickname: "Nickname", content: "This is content", title: "Title", createdAt: "2022.10.20", updatedAt: "2022.10.20", tagSet: ["1", "2", "3"], genreName: "Jazz")
+        PostDetailInfoView(profilePic: "random1", nickname: "Nickname", content: "This is content", title: "Title", createdAt: "2022.10.20", updatedAt: "2022.10.20", tagSet: ["1", "2", "3"], genreName: "Jazz", id: 30)
     }
 }
