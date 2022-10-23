@@ -9,43 +9,44 @@ import Foundation
 
 final class PostAPI: ObservableObject {
     
-    private let postListURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/" // 게시물 목록(GET)
+    private let postURL: String = "/plinic/posts/" // 게시물 목록(GET)
     private let postDetailURL : String = "http://35.79.181.245:8000/api/v1/plinic/posts/30" // FIXME: - 게시물 상세(GET)
+    
+    private let networkService = NetworkService.init()
+    
+    
     
     // MARK: - 게시물 목록(GET)
     func getPostList(nextURL: String?, _ completion: @escaping ((Result<PostList, Error>) -> Void)) {
-        
-        guard let requestUrl = nextURL else {
-            return
-        }
-        
-        guard let url = URL(string: "\(requestUrl)") else {
-            print("invalid URL")
-            return
-        }
-        let session = URLSession(configuration: .default)
-        let task = session .dataTask(with: url) {(data, response, error) in
-            if error != nil{
-                print(error!)
-                completion(.failure(error!)) // 컴플리션 에러처리
-                return
-            }
-            if let JSONdata = data {
-                print(JSONdata)
-                let dataString = String(data:JSONdata, encoding: .utf8)
-                let decoder = JSONDecoder()
-                do{
-                    let decodeData = try decoder.decode(PostList.self, from: JSONdata)
-                    completion(.success(decodeData))
-                    // completion을 함수처럼 사용
-                } catch {
-                    print(error)
+        if let absoluteURL = nextURL {
+            networkService.request(absolutePath: absoluteURL) { result in
+                switch result {
+                case .success(let data):
+                    do {
+                        let postList = try JSONDecoder.init().decode(PostList.self, from: data)
+                        completion(.success(postList))
+                    } catch let error {
+                        completion(.failure(error))
+                    }
+                case .failure(let error):
                     completion(.failure(error))
-                    // 컴플리션 에러처리
+                }
+            }
+        } else {
+            networkService.request(path: postURL) { result in
+                switch result {
+                case .success(let data):
+                    do {
+                        let postList = try JSONDecoder.init().decode(PostList.self, from: data)
+                        completion(.success(postList))
+                    } catch let error {
+                        completion(.failure(error))
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
                 }
             }
         }
-        task.resume()
     }
     
     // MARK: - 게시물 상세(GET)

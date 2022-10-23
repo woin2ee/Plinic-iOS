@@ -58,6 +58,9 @@
 		E84A3E0E2903B274007FAA78 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E0D2903B274007FAA78 /* Post.swift */; };
 		E84A3E102903B294007FAA78 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E0F2903B294007FAA78 /* Author.swift */; };
 		E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E112903B2AD007FAA78 /* Playlist.swift */; };
+		E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84A3E152903B894007FAA78 /* NetworkService.swift */; };
+		E86ECD56290472090039D8BF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD55290472090039D8BF /* View+.swift */; };
+		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +117,9 @@
 		E84A3E0D2903B274007FAA78 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E84A3E0F2903B294007FAA78 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		E84A3E112903B2AD007FAA78 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		E84A3E152903B894007FAA78 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E86ECD55290472090039D8BF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,8 @@
 		D0229E6128FE8DAC00C5F38C /* Back-End */ = {
 			isa = PBXGroup;
 			children = (
+				D009B16E29029264005F4982 /* PostDetailData.swift */,
+				E84A3E142903B88B007FAA78 /* Network */,
 				E84A3E062903AF5D007FAA78 /* PlaylistAPI */,
 				E84A3E052903AF48007FAA78 /* RandomAPI */,
 				E84A3E032903AF24007FAA78 /* PostAPI */,
@@ -313,6 +321,8 @@
 			children = (
 				D0F4D4CE28FD93F90085EB28 /* PlinicColors.swift */,
 				D0F4D4D428FDAEB20085EB28 /* Keyboards.swift */,
+				E86ECD55290472090039D8BF /* View+.swift */,
+				E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +371,14 @@
 				D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		E84A3E142903B88B007FAA78 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E84A3E152903B894007FAA78 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,10 +483,13 @@
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreate.swift in Sources */,
 				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
+				E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D04183E4289D26890045C907 /* UserProfile.swift in Sources */,
 				D0F4D4CF28FD93F90085EB28 /* PlinicColors.swift in Sources */,
+				E86ECD56290472090039D8BF /* View+.swift in Sources */,
 				E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */,
+				E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */,
 				D0F4D4D128FDA1BE0085EB28 /* PostView.swift in Sources */,
 				D0C176B428BE13EF007CB43F /* SearchContentView.swift in Sources */,
 				91014F182895840500C58E8B /* UserContents.swift in Sources */,
