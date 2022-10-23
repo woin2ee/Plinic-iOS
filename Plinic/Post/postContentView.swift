@@ -29,11 +29,14 @@ struct postContentView: View {
                 ScrollView{
                     LazyVStack{
                         ForEach(postList, id: \.self) { post in
-                            // MARK: - Refactor
                             PostInfoView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title)
-                                .onAppear(){
-                                    if let last = self.postList.last, last == post, post.id >= 0{
-                                        postAPI.getPostList(nextURL: postData.next){ result in
+                                .onAppear() {
+                                    if let last = self.postList.last,
+                                       last == post,
+                                       post.id >= 0,
+                                       postList.count < postData.count
+                                    {
+                                        postAPI.getPostList(nextURL: postData.next) { result in
                                             switch result {
                                             case .success(let success):
                                                 self.postData = success
@@ -43,16 +46,13 @@ struct postContentView: View {
                                                 _ = failure
                                             }
                                         }
-                                        
                                     }
                                 }
-                            
                         }
                     } //ForEach
-                    
                 }
-                .onAppear(){
-                    postAPI.getPostList(nextURL: self.postData.next){ result in
+                .onLoad() {
+                    postAPI.getPostList(nextURL: self.postData.next) { result in
                         switch result {
                         case .success(let success):
                             self.postList = success.results
@@ -62,7 +62,7 @@ struct postContentView: View {
                         }
                         
                     }
-                } // onAppear
+                }
             }
             
         } // VStack

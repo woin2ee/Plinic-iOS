@@ -8,3 +8,4 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 KAKAO_NATIVE_APP_KEY = 369685bcb7e5c2bfffc3b88a9dfbc165
+API_REQUEST_BASE_URL = http:/${}/35.79.181.245:8000/api/v1
