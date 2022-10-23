@@ -9,35 +9,24 @@ import Foundation
 
 final class RandomAPI: ObservableObject {
     
-    private let backgroundURL : String = "http://35.79.181.245:8000/api/v1/plinic/random-background/"
+    private let randomBackgroundPath: String = "/plinic/random-background/"
     
-    func getBackgroundVideo(_ completion: @escaping ((Result<String, Error>) -> Void)) { // @escaping (Result<String, Error>)
-        guard let url = URL(string: "\(backgroundURL)") else {
-            print("invalid URL")
-            return
-        }
-        let session = URLSession(configuration: .default)
-        let task = session .dataTask(with: url) {(data, response, error) in
-            if error != nil{
-                print(error!)
-                completion(.failure(error!)) // 컴플리션 에러처리
-                return
-            }
-            if let JSONdata = data {
-                print(JSONdata)
-                let dataString = String(data:JSONdata, encoding: .utf8)
-                let decoder = JSONDecoder()
-                do{
-                    let decodeData = try decoder.decode(BackgroundVideo.self, from: JSONdata)
-                    
-                    completion(.success(decodeData.backgroundVideo)) // completion을 함수처럼 사용
-                    
-                } catch {
-                    print(error)
-                    completion(.failure(error)) // 컴플리션 에러처리
+    private let networkService = NetworkService.init()
+    
+    /// 백그라운드에서 실행할 비디오를 랜덤으로 가져오는 함수
+    func getBackgroundVideo(_ completion: @escaping ((Result<String, Error>) -> Void)) {
+        networkService.request(path: randomBackgroundPath, method: .get) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let backgroundVideo = try JSONDecoder.init().decode(BackgroundVideo.self, from: data)
+                    completion(.success(backgroundVideo.backgroundVideoURL))
+                } catch let error {
+                    completion(.failure(error))
                 }
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
-        task.resume()
     }
 }

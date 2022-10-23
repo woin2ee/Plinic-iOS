@@ -9,8 +9,8 @@ import Foundation
 
 final class PostAPI: ObservableObject {
     
-    private let postURL: String = "/plinic/posts/" // 게시물 목록(GET)
-    //    private let postDetailURL : String = "/plinic/posts/30" // FIXME: - 게시물 상세(GET)
+    private let postURL: String = "/plinic/posts/" // 기본 path
+    
     private let networkService = NetworkService.init()
     
     
@@ -32,7 +32,7 @@ final class PostAPI: ObservableObject {
                 }
             }
         } else {
-            networkService.request(path: postURL) { result in
+            networkService.request(path: postPath) { result in
                 switch result {
                 case .success(let data):
                     do {
