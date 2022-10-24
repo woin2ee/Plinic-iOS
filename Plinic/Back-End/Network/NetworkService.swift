@@ -58,6 +58,9 @@ final class NetworkService {
         urlRequest.httpMethod = method.rawValue
         urlRequest.timeoutInterval = .init(10)
         
+        let authData = ("Lami" + ":" + "Lami").data(using: .utf8)!.base64EncodedString()
+        urlRequest.setValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
+        
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
