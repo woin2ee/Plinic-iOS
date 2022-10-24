@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct searchResult: View {
+struct SearchResultView: View {
     
     let data = Array(1...3)
     
@@ -119,9 +119,9 @@ struct searchResult: View {
     }
 }
 
-struct searchResult_Previews: PreviewProvider {
+struct SearchResultView_Previews: PreviewProvider {
     static var previews: some View {
-        searchResult()
+        SearchResultView()
     }
 }
    
