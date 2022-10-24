@@ -8,26 +8,26 @@
 import SwiftUI
 import WebKit
 
-struct PlaylistWebView : UIViewRepresentable {
+struct WebView : UIViewRepresentable {
     
     // UIKit의 UIView를 사용할 수 있게 함
     
-    var playlistURL : String
+    var requestURL : String
     
     func makeUIView(context: Context) -> some WKWebView {
         
-        guard let plURL = URL(string: self.playlistURL) else {
+        guard let url = URL(string: self.requestURL) else {
             return WKWebView()
         } // 플레이리스트에 대한 URL 데이터 옵셔널 언래핑
         
-        let playlistWebView = WKWebView()
+        let webView = WKWebView()
         // playlistWebView 인스턴스 생성
         
-        playlistWebView.load(URLRequest(url: plURL)) // playlistWebView를 로드
+        webView.load(URLRequest(url: url)) // WebView를 로드
         
-        return playlistWebView // playlistWebView 반환
+        return webView // WebView 반환
     }
-    func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<PlaylistWebView>) {
+    func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<WebView>) {
         
     }
     
@@ -35,7 +35,7 @@ struct PlaylistWebView : UIViewRepresentable {
 
 struct PlaylistWebView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistWebView(playlistURL: "https://www.naver.com")
+        WebView(requestURL: "https://www.naver.com")
         
     }
 }

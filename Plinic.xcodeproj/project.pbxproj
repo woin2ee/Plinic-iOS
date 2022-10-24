@@ -39,7 +39,7 @@
 		D08E27432893A56F00013A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27422893A56F00013A12 /* Assets.xcassets */; };
 		D08E27462893A56F00013A12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27452893A56F00013A12 /* Preview Assets.xcassets */; };
 		D08E274F2893C63500013A12 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E274E2893C63400013A12 /* Thumbnail.swift */; };
-		D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* PlaylistWebView.swift */; };
+		D08E27552896CC3000013A12 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* WebView.swift */; };
 		D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* UserPlaylist.swift */; };
 		D0A54AC528ACA8DA0097010B /* PostContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A54AC428ACA8DA0097010B /* PostContentView.swift */; };
 		D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */; };
@@ -97,7 +97,7 @@
 		D08E27452893A56F00013A12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D08E274E2893C63400013A12 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		D08E27522896CBCA00013A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D08E27542896CC3000013A12 /* PlaylistWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWebView.swift; sourceTree = "<group>"; };
+		D08E27542896CC3000013A12 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D08E27582896D70300013A12 /* UserPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaylist.swift; sourceTree = "<group>"; };
 		D0A54AC428ACA8DA0097010B /* PostContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentView.swift; sourceTree = "<group>"; };
 		D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 		D08E27532896CC1000013A12 /* WebViews */ = {
 			isa = PBXGroup;
 			children = (
-				D08E27542896CC3000013A12 /* PlaylistWebView.swift */,
+				D08E27542896CC3000013A12 /* WebView.swift */,
 			);
 			path = WebViews;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 				91014F182895840500C58E8B /* UserContents.swift in Sources */,
 				9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
-				D08E27552896CC3000013A12 /* PlaylistWebView.swift in Sources */,
+				D08E27552896CC3000013A12 /* WebView.swift in Sources */,
 				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
 				91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
