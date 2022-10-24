@@ -25,7 +25,7 @@ struct PostDetailView: View {
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                PlaylistWebView(playlistURL: "\(postDetil.plInfo.totalURL)")
+                WebView(requestURL: "\(postDetil.plInfo.totalURL)")
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){
