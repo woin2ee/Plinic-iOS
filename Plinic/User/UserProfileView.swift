@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct UserProfileEditView: View {
+struct UserProfileView: View {
     
     @StateObject var genreAPI: GenreAPI = GenreAPI()
-    @State var genres: [String]
+    @State var genres: [String]?
     
-    @Binding var userInfo: UserInfo
+    var profileImg : String // 유저의 프로필 사진
     
-    @State var userName: String
+    @State var userName: String // 유저의 닉네임
+    
+    var chooseGenre = ["genre1", "genre2", "genre3"] // 장르의 이름을 담은 배열
     
     @State var genre1 : String = ""
     @State var genre2 : String = ""
     @State var genre3 : String = ""
-    
-    var chooseGenre = ["genre1", "genre2", "genre3"]
+    // 유저가 선택한 장르
     
     @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
@@ -29,16 +30,17 @@ struct UserProfileEditView: View {
             Color.black
                 .ignoresSafeArea()
             VStack{
-                AsyncImage(url: URL(string: userInfo.profileImageUrl))
+                Image(profileImg)
+                    .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
                     .overlay(Circle()
                         .stroke(Color.MainColor, lineWidth: 5))
+                    .frame(width: 100, height: 100)
                     .background(Color.green)
                     .clipShape(Circle())
                     .padding(.bottom, 20)
                 // 프로필 사진을 보여줌
+                
                 
                 Button(action: {
                     // 이미지피커를 이용하여 작성할 코드
@@ -50,8 +52,6 @@ struct UserProfileEditView: View {
                         .background(Color.BackgroundSubColor)
                         .font(.system(size: 15))
                         .cornerRadius(5)
-                    //                        .overlay(RoundedRectangle(cornerRadius: 5)
-                    //                            .stroke(Color.MainColor, lineWidth: 1))
                         .padding(.bottom, 40)
                 }) // 프로필 사진 변경하고 싶을 때 누르는 버튼
                 
@@ -81,11 +81,10 @@ struct UserProfileEditView: View {
                     .foregroundColor(Color.MainColor)
                     .padding(.trailing, 290)
                 
-                
                 VStack {
                     Picker("Choose a first genre", selection: $genre1) {
-                        ForEach(genres, id: \.self) {
-                            Text($0)
+                        ForEach(genres!, id: \.self) { genre in
+                            Text(genre)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.MainColor)
                         }
@@ -100,8 +99,8 @@ struct UserProfileEditView: View {
                 
                 VStack {
                     Picker("Choose a second genre", selection: $genre2) {
-                        ForEach(genres, id: \.self) {
-                            Text($0)
+                        ForEach(genres!, id: \.self) { genre in
+                            Text(genre)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.MainColor)
                         }
@@ -114,8 +113,8 @@ struct UserProfileEditView: View {
                 } // 좋아하는 장르 선택 2
                 VStack {
                     Picker("Choose a third genre", selection: $genre3) {
-                        ForEach(genres, id: \.self) {
-                            Text($0)
+                        ForEach(genres!, id: \.self) { genre in
+                            Text(genre)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.MainColor)
                         }
@@ -160,6 +159,7 @@ struct UserProfileEditView: View {
                     })
                     
                     Button(action: {
+                        print(genre1)
                         // 클릭 했을 때 변경된 정보들을 저장하고 넘어가는 코드 작성
                     }, label: {
                         Text("확인")
@@ -184,23 +184,9 @@ struct UserProfileEditView: View {
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserProfileEditView(
-                genres: [""],
-                userInfo: .constant(.createMock()),
-                userName: "Test",
-                genre1: "Aucoustic",
-                genre2: "Sad",
-                genre3: "Happy"
-            )
-            UserProfileEditView(
-                genres: [""],
-                userInfo: .constant(.createMock()),
-                userName: "Test",
-                genre1: "Aucoustic",
-                genre2: "Sad",
-                genre3: "Happy"
-            )
-            .previewDevice("iPhone SE (3rd generation)")
+            UserProfileView(genres: [""], profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+            UserProfileView(genres: [""], profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+                .previewDevice("iPhone SE (3rd generation)")
         }
     }
 }

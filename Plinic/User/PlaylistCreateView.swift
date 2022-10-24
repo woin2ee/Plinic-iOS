@@ -25,7 +25,7 @@ struct PlaylistCreateView: View {
             GeometryReader{ geo in
                 VStack {
                     HStack {
-                        Thumbnail(thumbnail: "defaultImg")
+                        ThumbnailView(thumbnail: "defaultImg")
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.MainColor, lineWidth: 1))
                             .frame(width: geo.size.width * 0.5, height: geo.size.height * 0.25)
@@ -117,7 +117,7 @@ struct PlaylistCreateView: View {
                         .cornerRadius(5)
                         .padding([.top, .bottom], 30)
                         .onAppear(){
-                            genreAPI.getPostList() { result in
+                            genreAPI.getGenres() { result in
                                 switch result {
                                 case .success(let success):
                                     self.genres = success

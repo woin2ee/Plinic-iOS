@@ -38,7 +38,7 @@ struct UserMyPostView: View {
                             NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", id: 0))
                             {
                                 VStack {
-                                    Thumbnail(thumbnail: "defaultImg")
+                                    ThumbnailView(thumbnail: "defaultImg")
                                     Text("\(postTitle)")
                                         .foregroundColor(Color.white)
                                         .fontWeight(.bold)

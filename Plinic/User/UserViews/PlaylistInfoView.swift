@@ -1,5 +1,5 @@
 //
-//  playlistInfo.swift
+//  PlaylistInfoView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/07/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlaylistInfo: View {
+struct PlaylistInfoView: View {
     
     var playlistTitle : String
     var songs : String
@@ -20,7 +20,7 @@ struct PlaylistInfo: View {
                 .ignoresSafeArea()
             GeometryReader{ geo in
                 HStack{
-                    Thumbnail(thumbnail: "defaultImg")
+                    ThumbnailView(thumbnail: "defaultImg")
                         .frame(width: geo.size.width * 0.4, height: geo.size.height * 0.2)
                         .padding(.leading, 10)
                     VStack{
@@ -72,6 +72,6 @@ struct PlaylistInfo: View {
 
 struct playlistInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistInfo(playlistTitle: "비가 올때 듣고 싶은 플리", songs: "20")
+        PlaylistInfoView(playlistTitle: "비가 올때 듣고 싶은 플리", songs: "20")
     }
 }
