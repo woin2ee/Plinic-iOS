@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     
     @State private var searchText = ""
-    @State var searching: Bool = false
+    @State var isActive: Bool = false
     
     var body: some View {
         ZStack {
@@ -21,6 +21,7 @@ struct SearchBar: View {
                     .font(.system(size: 24))
                     .foregroundColor(Color.MainColor)
                     .frame(minWidth: 30, minHeight: 30)
+
                 ZStack(alignment: .leading){
                     if searchText.isEmpty{
                         Text("검색어를 입력하세요.")
@@ -29,11 +30,12 @@ struct SearchBar: View {
                     TextField("", text: $searchText)
                         .foregroundColor(Color.white)
                         .font(.title2)
+                        .keyboardType(.webSearch)
+                        .onSubmit() {
+                            self.isActive = true
+                            print("\(searchText) (이)가 검색되었습니다. \(isActive)")
+                        }
                 } // 텍스트 필드
-                .onSubmit {
-                    print("\(searchText) (이)가 검색되었습니다.")
-                    searching = true
-                }
                 
                 Button(action: {
                     searchText = ""
@@ -46,6 +48,11 @@ struct SearchBar: View {
             .frame(minWidth: 300, minHeight: 44)
             .background(Color.BackgroundSubColor)
             .cornerRadius(10)
+        }
+        .onAppear(){
+            self.isActive = false
+            searchText = ""
+            print(isActive)
         }
     }
 }
