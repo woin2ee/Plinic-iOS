@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SearchContentView: View {
     
-    @State var genre: Genre = Genre.createMock()
-    
+    @StateObject var genreAPI: GenreAPI = GenreAPI()
+    //    @State var genre: Genre = Genre.createMock()
+    @State var genres: [String]
     var columns = [GridItem(.fixed(180)), GridItem(.fixed(180))]
     
     @State private var searchText = ""
@@ -24,13 +25,21 @@ struct SearchContentView: View {
                     .frame(height: 50)
                 ScrollView {
                     LazyVGrid(columns: columns) {
-                        ForEach(genre.names, id: \.self) {name in
-                            NavigationLink(destination: postContentView()){
-                                GenreThumbnail(genreImg: "defaultImg", genreName: "\(name)")
+                        ForEach(genres, id: \.self) { genre in
+                            NavigationLink(destination: GenreSearchView(genreName: genre)){
+                                GenreThumbnail(genreImg: "defaultImg", genreName: genre)
                             } // NavigationLink
-                            .navigationBarTitleDisplayMode(.inline)
-                            //                            .navigationTitle("\(i)")
                         } //Foreach
+                        .onAppear(){
+                            genreAPI.getPostList() { result in
+                                switch result {
+                                case .success(let success):
+                                    self.genres = success
+                                case .failure(let failure):
+                                    _ = failure
+                                }
+                            }
+                        }
                     } // VStack
                 } // ScrollView
             } // VStack
@@ -44,6 +53,6 @@ struct SearchContentView: View {
 
 struct SearchContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchContentView()
+        SearchContentView(genres: [""])
     }
 }

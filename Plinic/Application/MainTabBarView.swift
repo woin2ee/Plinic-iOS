@@ -19,7 +19,7 @@ struct MainTabBarView: View {
             }
             
             NavigationView{
-                SearchContentView()
+                SearchContentView(genres: [""])
             }
             .tabItem {
                 Image(systemName: "magnifyingglass")
