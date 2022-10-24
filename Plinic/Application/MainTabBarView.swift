@@ -11,7 +11,7 @@ struct MainTabBarView: View {
     var body: some View {
         TabView {
             NavigationView{
-                UserContentView(nickName: "Nickname")
+                UserContentView()
             }
             .tabItem {
                 Image(systemName: "house")

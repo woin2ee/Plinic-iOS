@@ -12,17 +12,8 @@ struct userDetail: View {
     @State private var sort: Int = 0
     
     var users: [UserInfo] = [
-        UserInfo(id: 1, nickName: "Test1", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 2, nickName: "Test2", profileImageUrl: "random1", myPlaylists: ["1", "2"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 3, nickName: "Test3", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 4, nickName: "Test4", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 5, nickName: "Test5", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 6, nickName: "Test6", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 7, nickName: "Test7", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 8, nickName: "Test8", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 9, nickName: "Test9", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 10, nickName: "Test10", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"]),
-        UserInfo(id: 11, nickName: "Test11", profileImageUrl: "random1", myPlaylists: ["1"], scrappedPlaylists: ["1"])
+        .createMock(),
+        .createMock()
     ]
     
     var body: some View {
@@ -49,7 +40,7 @@ struct userDetail: View {
                                     .fontWeight(.bold)
                                     .font(.system(size: 25))
                                     .padding(.bottom, 5)
-                                Text("플레이리스트: \(user.myPlaylists.count)")
+                                Text("플레이리스트: \(user.publicPlaylists.count)")
                                     .foregroundColor(.gray)
                                     .fontWeight(.bold)
                                     .font(.system(size: 20))

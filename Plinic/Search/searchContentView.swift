@@ -31,7 +31,7 @@ struct SearchContentView: View {
                             } // NavigationLink
                         } //Foreach
                         .onAppear(){
-                            genreAPI.getPostList() { result in
+                            genreAPI.getGenres() { result in
                                 switch result {
                                 case .success(let success):
                                     self.genres = success

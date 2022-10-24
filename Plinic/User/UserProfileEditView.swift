@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct UserProfile: View {
+struct UserProfileEditView: View {
     
-    var profileImg : String // 유저의 프로필 사진
+    @Binding var userInfo: UserInfo
     
-    @State var userName: String // 유저의 닉네임
+    @State var userName: String
     
-    var genre = ["aucoustic", "jazz", "sad", "happy"] // 장르의 이름을 담은 배열
+    // FIXME: GenreAPI 이용해서 데이터 받아오기
+    var genres = ["aucoustic", "jazz", "sad", "happy"]
     
-    @State  var genre1 : String = ""
-    @State  var genre2 : String = ""
-    @State  var genre3 : String = ""
+    @State var genre1 : String = ""
+    @State var genre2 : String = ""
+    @State var genre3 : String = ""
     // 유저가 선택한 장르
     
     @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
@@ -27,9 +28,7 @@ struct UserProfile: View {
             Color.black
                 .ignoresSafeArea()
             VStack{
-                Image(profileImg)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
+                AsyncImage(url: URL(string: userInfo.profileImageUrl))
                     .overlay(Circle()
                         .stroke(Color.MainColor, lineWidth: 5))
                     .frame(width: 100, height: 100)
@@ -37,7 +36,6 @@ struct UserProfile: View {
                     .clipShape(Circle())
                     .padding(.bottom, 20)
                 // 프로필 사진을 보여줌
-                
                 
                 Button(action: {
                     // 이미지피커를 이용하여 작성할 코드
@@ -83,7 +81,7 @@ struct UserProfile: View {
                 
                 VStack {
                     Picker("Choose a first genre", selection: $genre1) {
-                        ForEach(genre, id: \.self) {
+                        ForEach(genres, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.MainColor)
@@ -99,7 +97,7 @@ struct UserProfile: View {
                 
                 VStack {
                     Picker("Choose a second genre", selection: $genre2) {
-                        ForEach(genre, id: \.self) {
+                        ForEach(genres, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.MainColor)
@@ -113,7 +111,7 @@ struct UserProfile: View {
                 } // 좋아하는 장르 선택 2
                 VStack {
                     Picker("Choose a third genre", selection: $genre3) {
-                        ForEach(genre, id: \.self) {
+                        ForEach(genres, id: \.self) {
                             Text($0)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.MainColor)
@@ -173,9 +171,21 @@ struct UserProfile: View {
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
-            UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
-                .previewDevice("iPhone SE (3rd generation)")
+            UserProfileEditView(
+                userInfo: .constant(.createMock()),
+                userName: "Test",
+                genre1: "Aucoustic",
+                genre2: "Sad",
+                genre3: "Happy"
+            )
+            UserProfileEditView(
+                userInfo: .constant(.createMock()),
+                userName: "Test",
+                genre1: "Aucoustic",
+                genre2: "Sad",
+                genre3: "Happy"
+            )
+            .previewDevice("iPhone SE (3rd generation)")
         }
     }
 }
