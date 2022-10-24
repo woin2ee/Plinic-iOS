@@ -56,7 +56,7 @@ final class NetworkService {
         
         var urlRequest = URLRequest.init(url: url)
         urlRequest.httpMethod = method.rawValue
-        urlRequest.timeoutInterval = .init(5)
+        urlRequest.timeoutInterval = .init(10)
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
