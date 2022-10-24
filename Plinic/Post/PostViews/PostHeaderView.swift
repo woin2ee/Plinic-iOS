@@ -49,8 +49,8 @@ struct PostHeaderView: View {
         .onAppear(){
             noticeAPI.getRecentNotice() { result in
                 switch result {
-                case .success(let success):
-                    self.recentNotice = success
+                case .success(let notice):
+                    self.recentNotice = notice
                     print(recentNotice)
                 case .failure(let failure):
                     _ = failure
