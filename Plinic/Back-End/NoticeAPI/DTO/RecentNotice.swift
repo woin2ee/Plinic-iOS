@@ -8,15 +8,15 @@
 import Foundation
 
 struct RecentNotice: Codable {
-    let noticeID: Int
-    let noticeTitle: String
+    let id: Int
+    let title: String
     
     enum CodingKeys: String, CodingKey {
-        case noticeID = "id"
-        case noticeTitle = "title"
+        case id = "id"
+        case title = "title"
     }
     
     static func creatEmpty() -> RecentNotice {
-        return RecentNotice(noticeID: -1, noticeTitle: "noticeTitle")
+        return RecentNotice(id: -1, title: "noticeTitle")
     }
 }

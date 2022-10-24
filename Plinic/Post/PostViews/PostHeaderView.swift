@@ -23,8 +23,8 @@ struct PostHeaderView: View {
                     .frame(width: 42, height: 42)
                     .padding(.leading, 2)
                 
-                NavigationLink(destination: WebView(requestURL: "https://plinic.netlify.app/notices/\(recentNotice.noticeID)")){
-                    Text("\(recentNotice.noticeTitle)")
+                NavigationLink(destination: WebView(requestURL: "https://plinic.netlify.app/notices/\(recentNotice.id)")){
+                    Text("\(recentNotice.title)")
                         .font(.system(size: 15))
                         .fontWeight(.bold)
                         .padding(.all, 5)
