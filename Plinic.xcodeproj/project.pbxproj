@@ -63,6 +63,7 @@
 		E8689D992905550500D2A03F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8689D982905550500D2A03F /* UserInfo.swift */; };
 		E86ECD56290472090039D8BF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD55290472090039D8BF /* View+.swift */; };
 		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
+		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		E8689D982905550500D2A03F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E86ECD55290472090039D8BF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
+		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,8 +279,7 @@
 				D0229E6128FE8DAC00C5F38C /* Back-End */,
 				D0F4D4CD28FD93BE0085EB28 /* Extensions */,
 				D08E27522896CBCA00013A12 /* Info.plist */,
-				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
-				D08E27402893A56A00013A12 /* ContentView.swift */,
+				E8C4A3752906C52700425064 /* Application */,
 				D022C58428D6FD8500E4EFEA /* VideoBackground */,
 				D08E27532896CC1000013A12 /* WebViews */,
 				D08E274C2893C5A200013A12 /* User */,
@@ -337,8 +338,6 @@
 			children = (
 				D022C58728D704BC00E4EFEA /* LoginViews */,
 				D0C176B828D21A45007CB43F /* LoginContentView.swift */,
-				D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */,
-				D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */,
 				D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */,
 			);
 			path = Login;
@@ -424,6 +423,18 @@
 				E8689D982905550500D2A03F /* UserInfo.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		E8C4A3752906C52700425064 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */,
+				D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */,
+				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
+				D08E27402893A56A00013A12 /* ContentView.swift */,
+				E8C4A37129069A3900425064 /* MainTabBarView.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +540,7 @@
 				E8689D96290554CC00D2A03F /* UserAPI.swift in Sources */,
 				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
 				E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */,
+				E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */,
 				D047BA5129056B21008CA3E4 /* RecentNotice.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D04183E4289D26890045C907 /* UserProfile.swift in Sources */,

@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  MainTabBarView.swift
 //  Plinic
 //
-//  Created by MacBook Air on 2022/07/29.
+//  Created by Jaewon on 2022/10/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainTabBarView: View {
     var body: some View {
         TabView {
             NavigationView{
@@ -17,6 +17,7 @@ struct ContentView: View {
                 Image(systemName: "house")
                 Text("Home")
             }
+            
             NavigationView{
                 SearchContentView()
             }
@@ -24,15 +25,9 @@ struct ContentView: View {
                 Image(systemName: "magnifyingglass")
                 Text("Search")
             }
+            
             NavigationView{
                 postContentView()
-            }
-            .tabItem {
-                Image(systemName: "list.bullet")
-                Text("Post")
-            }
-            NavigationView{
-                LoginContentView()
             }
             .tabItem {
                 Image(systemName: "list.bullet")
@@ -42,12 +37,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainTabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-            ContentView()
-                .previewDevice("iPhone 8")
-        }
+        MainTabBarView()
     }
 }

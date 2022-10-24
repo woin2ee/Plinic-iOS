@@ -20,7 +20,7 @@ struct UserProfile: View {
     @State  var genre3 : String = ""
     // 유저가 선택한 장르
     
-    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM()
+    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
     var body: some View {
         ZStack {
