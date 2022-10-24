@@ -27,7 +27,7 @@ struct VideoBackgroundView : View {
                 switch result {
                 case .success(let success): // 성공했을 때
                     loopingVideoPlayerView.loopingVideoPlayerUIView.videoURL = success
-                    // LoopingVideoPlayerView()에 있는 videoURL 변수에 BackgroundVideo에 디코딩한 backgroundVideo 변수를 대입
+                    // LoopingVideoPlayerView()에 있는 videoURL 변수에 BackgroundVideo에 디코딩한 backgroundVideoURL 변수를 대입
                 case .failure(let failure): // 실패했을 때
                     _ = failure
                 }

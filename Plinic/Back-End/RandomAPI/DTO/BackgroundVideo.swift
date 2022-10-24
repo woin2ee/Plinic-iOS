@@ -9,9 +9,9 @@ import Foundation
 
 struct BackgroundVideo: Codable {
     
-    let backgroundVideo : String
+    let backgroundVideoURL : String
     
     enum CodingKeys: String, CodingKey {
-        case backgroundVideo = "background_url"
+        case backgroundVideoURL = "background_url"
     }
 }

@@ -9,8 +9,8 @@ import Foundation
 
 final class PostAPI: ObservableObject {
     
-    private let postURL: String = "/plinic/posts/" // 게시물 목록(GET)
-    //    private let postDetailURL : String = "/plinic/posts/30" // FIXME: - 게시물 상세(GET)
+    private let postPath: String = "/plinic/posts" // 기본 path
+    
     private let networkService = NetworkService.init()
     
     
@@ -32,7 +32,7 @@ final class PostAPI: ObservableObject {
                 }
             }
         } else {
-            networkService.request(path: postURL) { result in
+            networkService.request(path: postPath) { result in
                 switch result {
                 case .success(let data):
                     do {
@@ -50,34 +50,20 @@ final class PostAPI: ObservableObject {
     
     // MARK: - 게시물 상세(GET)
     func getPostDetail(id: Int, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
-        let postDetailURL = "http:/35.79.181.245:8000/api/v1" + postURL + "\(id)"
+        let requestPath = "/\(postPath)/\(id)"
         
-        guard let url = URL(string: "\(postDetailURL)") else {
-            print("invalid URL")
-            return
-        }
-        let session = URLSession(configuration: .default)
-        let task = session .dataTask(with: url) {(data, response, error) in
-            if error != nil{
-                print(error!)
-                completion(.failure(error!)) // 컴플리션 에러처리
-                return
-            }
-            if let JSONdata = data {
-                print(JSONdata)
-                let dataString = String(data:JSONdata, encoding: .utf8)
-                let decoder = JSONDecoder()
-                do{
-                    let decodeData = try decoder.decode(PostDetail.self, from: JSONdata)
-                    completion(.success(decodeData))
-                    // completion을 함수처럼 사용
-                } catch {
-                    print(error)
+        networkService.request(path: requestPath, method: .get) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let postDetail = try JSONDecoder.init().decode(PostDetail.self, from: data)
+                    completion(.success(postDetail))
+                } catch let error {
                     completion(.failure(error))
-                    // 컴플리션 에러처리
                 }
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
-        task.resume()
     }
 }
