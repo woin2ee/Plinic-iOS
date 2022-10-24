@@ -56,7 +56,7 @@ struct UserInfoView: View {
                         .frame(width: 330, height: 40)
                         .cornerRadius(5)
                     
-                    NavigationLink(destination: UserProfile(profileImg: "random1",
+                    NavigationLink(destination: UserProfile(genres: [""], profileImg: "random1",
                                                             userName: "유재우",
                                                             genre1: "Aucoustic",
                                                             genre2: "Sad",

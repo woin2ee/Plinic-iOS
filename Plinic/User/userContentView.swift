@@ -34,7 +34,7 @@ struct UserContentView: View {
                                 .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.05, alignment: .leading)
                             //유저 이름
                             
-                            NavigationLink(destination: playlistCreate()){
+                            NavigationLink(destination: PlaylistCreateView(genres: [""])){
                                 Image(systemName: "plus.circle")
                                     .font(.system(size: 35))
                                     .foregroundColor(Color.MainColor)

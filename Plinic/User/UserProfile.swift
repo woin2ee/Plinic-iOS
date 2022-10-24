@@ -9,6 +9,9 @@ import SwiftUI
 
 struct UserProfile: View {
     
+    @StateObject var genreAPI: GenreAPI = GenreAPI()
+    @State var genres: [String]
+    
     var profileImg : String // 유저의 프로필 사진
     
     @State var userName: String // 유저의 닉네임
@@ -173,8 +176,8 @@ struct UserProfile: View {
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
-            UserProfile(profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+            UserProfile(genres: [""], profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
+            UserProfile(genres: [""], profileImg: "random1", userName: "유재우", genre1: "Aucoustic", genre2: "Sad", genre3: "Happy")
                 .previewDevice("iPhone SE (3rd generation)")
         }
     }
