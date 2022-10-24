@@ -31,7 +31,7 @@ struct SearchBar: View {
                         .foregroundColor(Color.white)
                         .font(.title2)
                         .keyboardType(.webSearch)
-                        .onSubmit(.search) {
+                        .onSubmit() {
                             self.isActive = true
                             print("\(searchText) (이)가 검색되었습니다. \(isActive)")
                         }
