@@ -9,7 +9,7 @@ import Foundation
 
 final class PostAPI: ObservableObject {
     
-    private let postURL: String = "/plinic/posts/" // 기본 path
+    private let postPath: String = "/plinic/posts/" // 기본 path
     
     private let networkService = NetworkService.init()
     
@@ -50,7 +50,7 @@ final class PostAPI: ObservableObject {
     
     // MARK: - 게시물 상세(GET)
     func getPostDetail(id: Int, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
-        let postDetailURL = "http:/35.79.181.245:8000/api/v1" + postURL + "\(id)"
+        let postDetailURL = "http:/35.79.181.245:8000/api/v1" + postPath + "\(id)"
         
         guard let url = URL(string: "\(postDetailURL)") else {
             print("invalid URL")
