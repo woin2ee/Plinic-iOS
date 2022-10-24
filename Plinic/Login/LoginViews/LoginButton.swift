@@ -8,12 +8,9 @@
 import Foundation
 import SwiftUI
 
-//import KakaoSDKCommon
-//import KakaoSDKAuth
-
 struct LoginButton : View {
     
-    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM()
+    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
     let loginStatusInfo : (Bool) -> String = { isLogedIn in
         return isLogedIn ? "로그인 상태" : "로그아웃 상태"
