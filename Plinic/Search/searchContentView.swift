@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SearchContentView: View {
     
-    var genre = ["Happy", "Sad", "Jazz", "Acoustic", "Blues", "Classical", "Children", "R&B", "K-POP"]
+    @State var genre: Genre = Genre.createMock()
+    
     var columns = [GridItem(.fixed(180)), GridItem(.fixed(180))]
     
     @State private var searchText = ""
@@ -23,12 +24,12 @@ struct SearchContentView: View {
                     .frame(height: 50)
                 ScrollView {
                     LazyVGrid(columns: columns) {
-                        ForEach(genre, id: \.self) {i in
+                        ForEach(genre.names, id: \.self) {name in
                             NavigationLink(destination: postContentView()){
-                                GenreThumbnail(genreImg: "defaultImg", genreName: "\(i)")
+                                GenreThumbnail(genreImg: "defaultImg", genreName: "\(name)")
                             } // NavigationLink
                             .navigationBarTitleDisplayMode(.inline)
-//                            .navigationTitle("\(i)")
+                            //                            .navigationTitle("\(i)")
                         } //Foreach
                     } // VStack
                 } // ScrollView

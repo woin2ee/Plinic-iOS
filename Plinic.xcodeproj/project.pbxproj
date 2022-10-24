@@ -18,6 +18,7 @@
 		914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* SearchDetail.swift */; };
 		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
 		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
+		D0023CBF290662CB006057B3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CBE290662CB006057B3 /* Genre.swift */; };
 		D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeaderView.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostView.swift */; };
@@ -76,6 +77,7 @@
 		914AF7B128D88E640016C38C /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
+		D0023CBE290662CB006057B3 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		D01AE77029011C6B00117432 /* PostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderView.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0023CB92906628F006057B3 /* CommonAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D0023CBC290662A9006057B3 /* DTO */,
+			);
+			path = CommonAPI;
+			sourceTree = "<group>";
+		};
+		D0023CBC290662A9006057B3 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D0023CBE290662CB006057B3 /* Genre.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		D01C63A428A6CF970037813F /* Post */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +178,7 @@
 		D0229E6128FE8DAC00C5F38C /* Back-End */ = {
 			isa = PBXGroup;
 			children = (
+				D0023CB92906628F006057B3 /* CommonAPI */,
 				D047BA52290571B5008CA3E4 /* NoticeAPI */,
 				E84A3E142903B88B007FAA78 /* Network */,
 				E8689D94290554B600D2A03F /* UserAPI */,
@@ -367,8 +386,8 @@
 				D063160428FFE80A00636ED1 /* PostList.swift */,
 				E84A3E0D2903B274007FAA78 /* Post.swift */,
 				E84A3E0F2903B294007FAA78 /* Author.swift */,
-				E84A3E112903B2AD007FAA78 /* Playlist.swift */,
 				D0E6E46929046B0D00BA875A /* PostDetail.swift */,
+				E84A3E112903B2AD007FAA78 /* Playlist.swift */,
 				D0E6E46B29046B6C00BA875A /* PlaylistDetial.swift */,
 			);
 			path = DTO;
@@ -521,6 +540,7 @@
 				D0C176B428BE13EF007CB43F /* SearchContentView.swift in Sources */,
 				91014F182895840500C58E8B /* UserContents.swift in Sources */,
 				9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */,
+				D0023CBF290662CB006057B3 /* Genre.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
 				D08E27552896CC3000013A12 /* WebView.swift in Sources */,
 				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
