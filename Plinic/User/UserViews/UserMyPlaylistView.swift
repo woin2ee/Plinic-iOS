@@ -31,7 +31,7 @@ struct UserMyPlaylistView: View {
                                 ForEach(openPlaylist, id: \.self) {i in
                                     NavigationLink(destination: UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")){
                                         VStack{
-                                            ThumbnailView(thumbnail: "defaultImg")
+                                            ThumbnailView(imageUrl: "defaultImg")
                                                 .padding(.bottom, 5)
                                             Text("\(playlistTitle)")
                                                 .foregroundColor(Color.white)
@@ -59,7 +59,7 @@ struct UserMyPlaylistView: View {
                                     ForEach(unOpenPlaylist, id: \.self) {i in
                                         NavigationLink(destination: UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")){
                                             VStack{
-                                                ThumbnailView(thumbnail: "defaultImg")
+                                                ThumbnailView(imageUrl: "defaultImg")
                                                     .padding(.bottom, 5)
                                                 Text("\(playlistTitle)")
                                                     .foregroundColor(Color.white)

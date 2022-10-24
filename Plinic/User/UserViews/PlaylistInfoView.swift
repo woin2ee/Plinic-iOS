@@ -20,7 +20,7 @@ struct PlaylistInfoView: View {
                 .ignoresSafeArea()
             GeometryReader{ geo in
                 HStack{
-                    ThumbnailView(thumbnail: "defaultImg")
+                    ThumbnailView(imageUrl: "defaultImg")
                         .frame(width: geo.size.width * 0.4, height: geo.size.height * 0.2)
                         .padding(.leading, 10)
                     VStack{

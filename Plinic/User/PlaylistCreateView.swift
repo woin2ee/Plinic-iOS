@@ -25,7 +25,7 @@ struct PlaylistCreateView: View {
             GeometryReader{ geo in
                 VStack {
                     HStack {
-                        ThumbnailView(thumbnail: "defaultImg")
+                        ThumbnailView(imageUrl: "defaultImg")
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.MainColor, lineWidth: 1))
                             .frame(width: geo.size.width * 0.5, height: geo.size.height * 0.25)

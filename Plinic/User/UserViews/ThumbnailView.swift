@@ -9,15 +9,14 @@ import SwiftUI
 
 struct ThumbnailView: View {
     
-    var thumbnail : String // 썸네일 이미지에 대한 변수
-    //    var title : String // 썸네일 타이틀에 대한 변수
+    var imageUrl: String
     
     var body: some View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
             VStack{
-                Image(thumbnail)
+                Image(imageUrl)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .background(Color.green)
@@ -32,6 +31,6 @@ struct ThumbnailView: View {
 
 struct Thumbnail_Previews: PreviewProvider {
     static var previews: some View {
-        ThumbnailView(thumbnail: "defaultImg")
+        ThumbnailView(imageUrl: "defaultImg")
     }
 }
