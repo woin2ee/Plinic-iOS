@@ -10,14 +10,14 @@ import SwiftUI
 
 struct userContents: View {
     
-    var infoTitle : String
-    var infoCount : String
+    var infoTitle: String
+    var infoCount: Int
     
     var body: some View {
         
         VStack{
             //플레이리스트 000
-            Text("\(infoTitle) \n\(infoCount)")
+            Text("\(infoTitle)\n\(infoCount)")
                 .fontWeight(.bold)
                 .font(.system(size: 12))
                 .foregroundColor(Color.white)
@@ -30,7 +30,7 @@ struct userContents: View {
     
     struct userContents_Previews: PreviewProvider {
         static var previews: some View {
-            userContents(infoTitle:"플레이리스트", infoCount: "000")
+            userContents(infoTitle:"플레이리스트", infoCount: 1)
         }
     }
 }

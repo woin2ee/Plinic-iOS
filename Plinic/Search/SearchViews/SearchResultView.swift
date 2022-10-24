@@ -49,9 +49,9 @@ struct SearchResultView: View {
                             .font(.system(size: 15))
                             .frame(minWidth: 300, maxHeight: 20, alignment: .leading)
                             .padding([.top, .leading], 10)
-                        NavigationLink(destination: UserContentView(nickName: "안녕")) {
+                        NavigationLink(destination: UserContentView()) {
                             HStack(alignment: .bottom){
-                                userTopResult(profileImg: "random1", nickName: "Hi", infoCount: "012")
+                                userTopResult(profileImg: "random1", nickName: "Hi", infoCount: 12)
                                 userResult(profileImg: "random1", nickName: "ddddd")
                                     .padding(.leading, 10)
                             }//HStack
