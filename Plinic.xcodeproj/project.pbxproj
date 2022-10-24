@@ -19,6 +19,8 @@
 		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
 		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
 		D0023CBF290662CB006057B3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CBE290662CB006057B3 /* Genre.swift */; };
+		D0023CC12906C5BE006057B3 /* GenreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CC02906C5BD006057B3 /* GenreAPI.swift */; };
+		D0023CC32906D01A006057B3 /* GenreSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CC22906D01A006057B3 /* GenreSearchView.swift */; };
 		D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeaderView.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostView.swift */; };
@@ -79,6 +81,8 @@
 		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
 		D0023CBE290662CB006057B3 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		D0023CC02906C5BD006057B3 /* GenreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreAPI.swift; sourceTree = "<group>"; };
+		D0023CC22906D01A006057B3 /* GenreSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchView.swift; sourceTree = "<group>"; };
 		D01AE77029011C6B00117432 /* PostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderView.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		D0023CB92906628F006057B3 /* CommonAPI */ = {
 			isa = PBXGroup;
 			children = (
+				D0023CC02906C5BD006057B3 /* GenreAPI.swift */,
 				D0023CBC290662A9006057B3 /* DTO */,
 			);
 			path = CommonAPI;
@@ -249,6 +254,7 @@
 				9113807728CF13E0006CD66A /* UserResult.swift */,
 				9113807928CF13F6006CD66A /* UserTopResult.swift */,
 				914AF7B128D88E640016C38C /* SearchDetail.swift */,
+				D0023CC22906D01A006057B3 /* GenreSearchView.swift */,
 			);
 			path = SearchViews;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */,
 				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfoView.swift in Sources */,
+				D0023CC12906C5BE006057B3 /* GenreAPI.swift in Sources */,
 				91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */,
 				D01F104E290452CB001B61D0 /* PlaylistInfo.swift in Sources */,
 				E84A3E102903B294007FAA78 /* Author.swift in Sources */,
@@ -556,6 +563,7 @@
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
 				D08E27552896CC3000013A12 /* WebView.swift in Sources */,
 				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
+				D0023CC32906D01A006057B3 /* GenreSearchView.swift in Sources */,
 				91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
 				E8689D992905550500D2A03F /* UserInfo.swift in Sources */,
