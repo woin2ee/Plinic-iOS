@@ -12,13 +12,13 @@ struct userTopResult: View {
     
     var profileImg : String
     var nickName : String
-    var infoCount : String
+    var infoCount: Int
     
     var body: some View {
         
         HStack{
             userResult(profileImg:"\(profileImg)", nickName: "\(nickName)").scaleEffect(1.2)
-            userContents(infoTitle: "플레이리스트", infoCount: "\(infoCount)")
+            userContents(infoTitle: "플레이리스트", infoCount: infoCount)
                 .padding(.leading, 10)
         }//HStack
 
@@ -26,7 +26,7 @@ struct userTopResult: View {
     
     struct userTopResult_Previews: PreviewProvider {
         static var previews: some View {
-            userTopResult(profileImg:"random1", nickName: "watashi", infoCount: "012")
+            userTopResult(profileImg:"random1", nickName: "watashi", infoCount: 12)
         }
     }
 }

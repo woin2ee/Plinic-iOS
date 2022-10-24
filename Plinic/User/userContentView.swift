@@ -9,8 +9,11 @@ import SwiftUI
 
 struct UserContentView: View {
     
+    let userAPI: UserAPI = .init()
+    
+    @State var userInfo: UserInfo = .createMock()
+    
     @State private var postTransform = true
-    var nickName : String
     
     var body: some View {
         ZStack {
@@ -26,7 +29,7 @@ struct UserContentView: View {
                         
                         HStack(spacing:0) {
                             
-                            Text("\(nickName)")
+                            Text("\(userInfo.nickName)")
                                 .fontWeight(.bold)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color.white)
@@ -57,7 +60,10 @@ struct UserContentView: View {
                         
                         VStack{
                             
-                            UserInfoView(profileImg: "random1")
+                            UserInfoView(
+                                profileImg: "random1",
+                                userInfo: $userInfo
+                            )
                                 .frame(height: geometry.size.height * 0.25)
                                 .padding([.bottom,.top], 10)
                             // 유저 정보 부분
@@ -88,8 +94,8 @@ struct UserContentView: View {
 struct UserContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserContentView(nickName: "안녕")
-            UserContentView(nickName: "안녕하세요~~~입니다")
+            UserContentView()
+            UserContentView()
                 .previewDevice("iPhone 8")
         }
     }
