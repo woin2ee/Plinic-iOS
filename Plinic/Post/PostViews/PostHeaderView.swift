@@ -34,7 +34,7 @@ struct PostHeaderView: View {
                         .cornerRadius(10)
                 }
                 
-                NavigationLink(destination: PostCreate(postName: "", postContext : "")){
+                NavigationLink(destination: PostCreateView(postName: "", postContext : "")){
                     Image(systemName: "plus.circle")
                         .font(.system(size: 35))
                         .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))

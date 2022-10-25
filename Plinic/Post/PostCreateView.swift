@@ -1,5 +1,5 @@
 //
-//  postCreate.swift
+//  PostCreateView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/19.
@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-struct PostCreate: View {
+struct PostCreateView: View {
+    
+    let userAPI: UserAPI = .init()
+    @State var userInfo: UserInfo = .createMock()
     
     @State var postName : String
     @State var postContext : String
-    
     @State var placeholderText: String = "내용을 입력하세요."
     
     let data = Array(1...17)
@@ -86,11 +88,11 @@ struct PostCreate: View {
                     
                     ScrollView(.horizontal) {
                         HStack{
-                            ForEach(data, id: \.self) {i in
+                            ForEach(userInfo.publicPlaylists, id: \.uuid) { playlist in
                                 VStack{
-                                    ThumbnailView(imageUrl: "defaultImg")
+                                    ThumbnailView(imageUrl: playlist.thumbnailUrl)
                                         .frame(height: 190)
-                                    Text("비오는 날 듣기 좋은 노래")
+                                    Text(playlist.title)
                                         .foregroundColor(Color.white)
                                         .font(.system(size: 15))
                                         .fontWeight(.regular)
@@ -109,6 +111,16 @@ struct PostCreate: View {
                 hideKeyboard()
             } // 화면 터치 했을 때 키보드 내리기
         } // ZStack
+        .onAppear(){
+            userAPI.getUserInfo(by: "Lami") { result in
+                switch result {
+                case .success(let userInfo):
+                    self.userInfo = userInfo
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
         
     }
 }
@@ -116,8 +128,8 @@ struct PostCreate: View {
 struct PostCreate_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PostCreate(postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.")
-            PostCreate(postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.")
+            PostCreateView(postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.")
+            PostCreateView(postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.")
                 .previewDevice("iPhone 8")
         }
     }
