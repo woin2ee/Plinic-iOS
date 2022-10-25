@@ -1,5 +1,5 @@
 //
-//  postContentView.swift
+//  PostContentView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/17.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct postContentView: View {
+struct PostContentView: View {
     
     // MARK: - 통신으로 받아오는 데이터
     @StateObject var postAPI: PostAPI = PostAPI()
@@ -27,7 +27,7 @@ struct postContentView: View {
                 ScrollView{
                     LazyVStack{
                         ForEach(postList, id: \.uuid) { post in
-                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, id: post.id)
+                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, postId: post.id)
                                 .onAppear() {
                                     if let last = self.postList.last,
                                        last.id == post.id,
@@ -67,10 +67,10 @@ struct postContentView: View {
 }
 
 
-struct postContentView_Previews: PreviewProvider {
+struct PostContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            postContentView(
+            PostContentView(
                 postData: .createMock(),
                 postList: [
                     .createMock(),
@@ -80,7 +80,7 @@ struct postContentView_Previews: PreviewProvider {
                     .createMock()
                 ]
             )
-            postContentView(
+            PostContentView(
                 postData: .createMock(),
                 postList: [
                     .createMock(),

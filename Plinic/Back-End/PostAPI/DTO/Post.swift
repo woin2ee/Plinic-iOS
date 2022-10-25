@@ -31,7 +31,7 @@ struct Post: Codable {
     
     static func creatEmpty() -> Post {
         return Post(
-            author: Author.init(nickname: "NickName", profilePic: "random1"),
+            author: Author.init(nickname: "NickName", profilePic: "profileDefault"),
             id: -1,
             likerCount: 30,
             title: "Title",

@@ -30,6 +30,7 @@ struct PostDetail: Codable {
         case isLike = "is_like"
         case author
     }
+    
     static func creatEmpty() -> PostDetail {
         return PostDetail(
             id: 30,
@@ -51,6 +52,22 @@ struct PostDetail: Codable {
             content: "This is content",
             isLike: false,
             author: "Nickname"
+        )
+    }
+    
+    static func createMock() -> Self {
+        return .init(
+            id: 1,
+            isUpdated: false,
+            createdAt: "2022.10.24.",
+            updatedAt: "2022.10.25.",
+            tagSet: ["tag1", "tag2"],
+            plInfo: .createMock(),
+            likerCount: 2,
+            title: "포스트 타이틀입니다!",
+            content: "포스트 내용입니다!",
+            isLike: false,
+            author: "Lami"
         )
     }
 }
