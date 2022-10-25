@@ -26,11 +26,11 @@ struct postContentView: View {
                 
                 ScrollView{
                     LazyVStack{
-                        ForEach(postList, id: \.self) { post in
+                        ForEach(postList, id: \.uuid) { post in
                             PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, id: post.id)
                                 .onAppear() {
                                     if let last = self.postList.last,
-                                       last == post,
+                                       last.id == post.id,
                                        post.id >= 0,
                                        postList.count < postData.count
                                     {
@@ -70,8 +70,26 @@ struct postContentView: View {
 struct postContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            postContentView()
-            postContentView()
+            postContentView(
+                postData: .createMock(),
+                postList: [
+                    .createMock(),
+                    .createMock(),
+                    .createMock(),
+                    .createMock(),
+                    .createMock()
+                ]
+            )
+            postContentView(
+                postData: .createMock(),
+                postList: [
+                    .createMock(),
+                    .createMock(),
+                    .createMock(),
+                    .createMock(),
+                    .createMock()
+                ]
+            )
                 .previewDevice("iPhone 8")
         }
     }
