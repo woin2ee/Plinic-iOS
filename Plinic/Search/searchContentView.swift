@@ -10,8 +10,9 @@ import SwiftUI
 struct SearchContentView: View {
     
     @StateObject var genreAPI: GenreAPI = GenreAPI()
-    //    @State var genre: Genre = Genre.createMock()
-    @State var genres: [String]
+    
+    @State var genres: Genres = .createEmpty()
+    
     var columns = [GridItem(.fixed(180)), GridItem(.fixed(180))]
     
     @State private var searchText = ""
@@ -53,6 +54,6 @@ struct SearchContentView: View {
 
 struct SearchContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchContentView(genres: [""])
+        SearchContentView(genres: .createMock())
     }
 }

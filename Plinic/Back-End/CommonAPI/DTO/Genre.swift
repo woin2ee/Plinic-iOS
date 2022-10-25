@@ -23,3 +23,13 @@ typealias Genres = [String]
 //            names: ["acoustic","blues","classical","jazz","children","disney","hip-hop","rock","j-pop","k-pop","new-age","opera","pop","reggae","tango","techno","singer-songwriter","r-n-b","british","disco","new-release","movies","soundtracks","edm","sleep","soul","study","summer","road-trip","rainy-day","dance","holidays","party","work-out","sad","romance"])
 //    }
 //}
+
+extension Genres {
+    static func createEmpty() -> Genres {
+        return []
+    }
+    
+    static func createMock() -> Genres {
+        return ["acoustic","blues","classical","jazz","children","disney","hip-hop","rock","j-pop","k-pop","new-age","opera","pop","reggae","tango","techno","singer-songwriter","r-n-b","british","disco","new-release","movies","soundtracks","edm","sleep","soul","study","summer","road-trip","rainy-day","dance","holidays","party","work-out","sad","romance"]
+    }
+}
