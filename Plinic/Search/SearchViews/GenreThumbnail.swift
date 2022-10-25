@@ -21,7 +21,7 @@ struct GenreThumbnail: View {
             
             Image(genreImg)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(1, contentMode: .fit)
 //                .frame(width: 170, height: 170)
                 .background(Color.green)
                 .cornerRadius(10)

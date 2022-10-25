@@ -32,7 +32,7 @@ struct PostDetailInfoView: View {
                 HStack{
                     Image(profilePic)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(1, contentMode: .fit)
                         .overlay(Circle()
                             .stroke(Color.MainColor, lineWidth: 5))
                         .frame(maxWidth: 44, maxHeight: 44)

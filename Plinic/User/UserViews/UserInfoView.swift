@@ -23,7 +23,7 @@ struct UserInfoView: View {
                 
                 HStack{
                     AsyncImage(url: URL(string: userInfo.profileImageUrl))
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(1, contentMode: .fit)
                         .scaledToFill()
                         .frame(width: 100, height: 100)
                         .overlay(Circle()
