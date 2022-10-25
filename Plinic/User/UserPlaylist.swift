@@ -9,30 +9,43 @@ import SwiftUI
 
 struct UserPlaylist: View {
     
-    var playlistURL : String
+    @StateObject var playlistAPI = PlaylistAPI.init()
+    
+    @State var playlistDetail: PlaylistDetail = .createEmpty()
     
     var body: some View {
         ZStack {
+            
             Color.black
                 .ignoresSafeArea()
+            
             GeometryReader{ geo in
                 VStack{
-                    PlaylistInfoView(playlistTitle: "자기전에 듣기 좋은 노래", songs: "20")
+                    PlaylistInfoView(playlistDetail: $playlistDetail)
                         .frame(height: geo.size.height * 0.25)
-                    WebView(requestURL: "\(playlistURL)")
-                } // VStack
-            } // GeometryReader
-            
-        } // ZStack
+                    WebView(requestURL: playlistDetail.totalURL)
+                }
+            }
+        }
+        .onAppear() {
+            playlistAPI.getPlaylistDetail(by: playlistDetail.id) { result in
+                switch result {
+                case .success(let playlistDetail):
+                    self.playlistDetail = playlistDetail
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }
 
 struct UserPlaylist_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")
-            UserPlaylist(playlistURL: "https://www.youtube.com/watch?v=vadat46yfwg&list=PL7-f8-kndz_d11Enm7ttqXKfqSKzvG60Q&index=1")
-                .previewDevice("iPhone 8")
+            UserPlaylist(playlistDetail: .createMock())
+            UserPlaylist(playlistDetail: .createMock())
+            .previewDevice("iPhone 8")
         }
     }
 }

@@ -9,38 +9,43 @@ import SwiftUI
 
 struct PlaylistInfoView: View {
     
-    var playlistTitle : String
-    var songs : String
-    //    var open : Bool
     @State private var someToggle = true
+    
+    @Binding var playlistDetail: PlaylistDetail
     
     var body: some View {
         ZStack {
+            
             Color.black
                 .ignoresSafeArea()
-            GeometryReader{ geo in
+            
+            GeometryReader { geo in
                 HStack{
-                    ThumbnailView(imageUrl: "defaultImg")
+                    ThumbnailView(imageUrl: playlistDetail.thumbnailImgURL)
                         .frame(width: geo.size.width * 0.4, height: geo.size.height * 0.2)
                         .padding(.leading, 10)
+                    
                     VStack{
-                        Text(playlistTitle)
+                        Text(playlistDetail.title)
                             .font(.system(size: 12))
                             .foregroundColor(Color.white)
                             .fontWeight(.heavy)
                             .frame(width: geo.size.width * 0.5, height: 20, alignment: .leading)
-                        Text(songs + " 곡")
+                        
+                        Text("\(playlistDetail.trackName.count) 곡")
                             .font(.system(size: 12))
                             .foregroundColor(Color.white)
                             .fontWeight(.medium)
                             .frame(width: geo.size.width * 0.5, height: 20, alignment: .leading)
+                        
                         HStack{
-                            GenreTagView(genreName: "Acoustic")
-                            GenreTagView(genreName: "Acoustic")
-                            GenreTagView(genreName: "Acoustic")
-                        } // HStack
+                            GenreTagView(genreName: playlistDetail.genreName)
+                            GenreTagView(genreName: playlistDetail.genreName)
+                            GenreTagView(genreName: playlistDetail.genreName)
+                        }
                         .frame(width: geo.size.width * 0.5, height: 30, alignment: .leading)
                         .padding([.top, .bottom], 10)
+                        
                         HStack{
                             Image(systemName: "square.and.arrow.up")
                                 .font(.system(size: 31))
@@ -48,6 +53,7 @@ struct PlaylistInfoView: View {
                                 .foregroundColor(Color.white)
                             
                             VStack {
+                                // MARK: 아직 API 미구현
                                 Toggle("공개", isOn: $someToggle)
                                     .padding(.leading, 5.0)
                                     .toggleStyle(SwitchToggleStyle(tint: Color.green))
@@ -63,15 +69,12 @@ struct PlaylistInfoView: View {
                     } // VStack
                 } // HStack
             } //ZStack
-            
         }
-        
-        
     }
 }
 
 struct playlistInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistInfoView(playlistTitle: "비가 올때 듣고 싶은 플리", songs: "20")
+        PlaylistInfoView(playlistDetail: .constant(.createMock()))
     }
 }
