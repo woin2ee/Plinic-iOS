@@ -12,6 +12,7 @@ struct GenreThumbnail: View {
     var genreImg : String // 썸네일 이미지에 대한 변수
     var genreName : String
     //    var title : String // 썸네일 타이틀에 대한 변수
+    let genreColor: [Color] = [Color.MainColor, Color.blue, Color.red, Color.brown, Color.green, Color.orange, Color.purple, Color.pink, Color.yellow]
     
     var body: some View {
         ZStack {
@@ -23,7 +24,7 @@ struct GenreThumbnail: View {
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
 //                .frame(width: 170, height: 170)
-                .background(Color.green)
+                .background(genreColor.randomElement())
                 .cornerRadius(10)
                 .padding(.bottom, 15)
                 .brightness(-0.2)

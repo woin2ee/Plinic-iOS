@@ -44,7 +44,7 @@ struct UserMyPostView: View {
                                         .fontWeight(.bold)
                                         .font(.system(size: 15))
                                 }
-                                .padding([.horizontal], 5)
+                                .padding(.horizontal, 5)
                             }
                         }
                         // ForEach

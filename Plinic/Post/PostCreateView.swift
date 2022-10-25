@@ -15,8 +15,7 @@ struct PostCreateView: View {
     @State var postName : String
     @State var postContext : String
     @State var placeholderText: String = "내용을 입력하세요."
-    
-    let data = Array(1...17)
+    @State var playlist : String = ""
     
     var body: some View {
         ZStack {
@@ -86,25 +85,21 @@ struct PostCreateView: View {
                         .padding(.bottom, 5)
                     
                     
-                    ScrollView(.horizontal) {
-                        HStack{
+                    VStack(alignment: .trailing) {
+                        Picker("Choose your Playlist", selection: $playlist) {
                             ForEach(userInfo.publicPlaylists, id: \.uuid) { playlist in
-                                VStack{
-                                    ThumbnailView(imageUrl: playlist.thumbnailUrl)
-                                        .frame(height: 190)
-                                    Text(playlist.title)
-                                        .foregroundColor(Color.white)
-                                        .font(.system(size: 15))
-                                        .fontWeight(.regular)
-                                        .frame(maxWidth: 170, maxHeight: 15)
-                                }
-                                .padding(.trailing, 10)
-                            } //ForEach
-                            
-                        } // 공개된 플레이리스트 정보
-                    } // 스크롤뷰
-                    
-                    
+                                Text(playlist.title)
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 24))
+                                    .foregroundColor(Color.MainColor)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .frame(width: geo.size.width, height: geo.size.height * 0.20)
+                        .background(Color.BackgroundSubColor)
+                        .cornerRadius(5)
+                        .padding([.top, .bottom], 30)
+                    }
                 } // VStack
             }
             .onTapGesture {

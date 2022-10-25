@@ -28,7 +28,7 @@ struct SearchContentView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(genres, id: \.self) { genre in
                             NavigationLink(destination: GenreSearchView(genreName: genre)){
-                                GenreThumbnail(genreImg: "defaultImg", genreName: genre)
+                                GenreThumbnail(genreImg: "", genreName: genre)
                             } // NavigationLink
                         } //Foreach
                         .onAppear(){
