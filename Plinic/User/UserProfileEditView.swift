@@ -1,5 +1,5 @@
 //
-//  userProfile.swift
+//  UserProfileEditView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/05.
@@ -181,7 +181,7 @@ struct UserProfileEditView: View {
 
 
 
-struct UserProfile_Previews: PreviewProvider {
+struct UserProfileEditView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             UserProfileEditView(

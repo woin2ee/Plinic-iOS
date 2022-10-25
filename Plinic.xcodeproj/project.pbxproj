@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91014F162895835C00C58E8B /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F152895835C00C58E8B /* UserInfoView.swift */; };
-		91014F182895840500C58E8B /* UserContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F172895840500C58E8B /* UserContents.swift */; };
+		91014F182895840500C58E8B /* UserCountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F172895840500C58E8B /* UserCountsView.swift */; };
 		91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F192895841F00C58E8B /* GenreTagView.swift */; };
 		91014F1C2895920100C58E8B /* UserContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91014F1B2895920100C58E8B /* UserContentView.swift */; };
 		9113806928AFDDD4006CD66A /* PlaylistCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113806828AFDDD4006CD66A /* PlaylistCreateView.swift */; };
@@ -70,7 +70,7 @@
 
 /* Begin PBXFileReference section */
 		91014F152895835C00C58E8B /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
-		91014F172895840500C58E8B /* UserContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContents.swift; sourceTree = "<group>"; };
+		91014F172895840500C58E8B /* UserCountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCountsView.swift; sourceTree = "<group>"; };
 		91014F192895841F00C58E8B /* GenreTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTagView.swift; sourceTree = "<group>"; };
 		91014F1B2895920100C58E8B /* UserContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentView.swift; sourceTree = "<group>"; };
 		9113806828AFDDD4006CD66A /* PlaylistCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCreateView.swift; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 				91014F1B2895920100C58E8B /* UserContentView.swift */,
 				D08E27582896D70300013A12 /* UserPlaylist.swift */,
 				D04183E3289D26890045C907 /* UserProfileEditView.swift */,
-				9113806828AFDDD4006CD66A /* PlaylistCreate.swift */,
+				9113806828AFDDD4006CD66A /* PlaylistCreateView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 				D08E274E2893C63400013A12 /* ThumbnailView.swift */,
 				D01F104D290452CB001B61D0 /* PlaylistInfoView.swift */,
 				91014F152895835C00C58E8B /* UserInfoView.swift */,
-				91014F172895840500C58E8B /* UserContents.swift */,
+				91014F172895840500C58E8B /* UserCountsView.swift */,
 				91014F192895841F00C58E8B /* GenreTagView.swift */,
 				91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */,
 				91BC78E328A6920F002C38CF /* UserMyPostView.swift */,
@@ -557,7 +557,7 @@
 				E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */,
 				E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */,
 				D0C176B428BE13EF007CB43F /* SearchContentView.swift in Sources */,
-				91014F182895840500C58E8B /* UserContents.swift in Sources */,
+				91014F182895840500C58E8B /* UserCountsView.swift in Sources */,
 				9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */,
 				D0023CBF290662CB006057B3 /* Genre.swift in Sources */,
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
