@@ -18,7 +18,7 @@ final class GenreAPI: ObservableObject {
     // MARK: - 장르 목록(GET)
     func getGenres(_ completion: @escaping ((Result<Genres, Error>) -> Void)) {
         
-        networkService.request(path: genresPath) { result in
+        networkService.request(path: genresPath, headers: nil) { result in
             switch result {
             case .success(let data):
                 do {

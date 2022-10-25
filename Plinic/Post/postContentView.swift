@@ -49,7 +49,7 @@ struct PostContentView: View {
                     } //ForEach
                 }
                 .onLoad() {
-                    postAPI.getPostList(nextURL: self.postData.next) { result in
+                    postAPI.getPostList() { result in
                         switch result {
                         case .success(let success):
                             self.postList = success.results
