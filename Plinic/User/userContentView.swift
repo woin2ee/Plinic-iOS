@@ -60,10 +60,7 @@ struct UserContentView: View {
                         
                         VStack{
                             
-                            UserInfoView(
-                                profileImg: "random1",
-                                userInfo: $userInfo
-                            )
+                            UserInfoView(userInfo: $userInfo)
                             .frame(height: geometry.size.height * 0.25)
                             .padding([.bottom,.top], 10)
                             // 유저 정보 부분

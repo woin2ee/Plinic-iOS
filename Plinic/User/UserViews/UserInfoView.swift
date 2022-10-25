@@ -9,8 +9,6 @@ import SwiftUI
 
 struct UserInfoView: View {
     
-    var profileImg : String // 유저의 프로필 사진
-    
     @Binding var userInfo: UserInfo
     
     var body: some View {
@@ -88,8 +86,8 @@ struct UserInfoView: View {
 struct UserInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserInfoView(profileImg: "random1", userInfo: .constant(.createMock()))
-            UserInfoView(profileImg: "random1", userInfo: .constant(.createMock()))
+            UserInfoView(userInfo: .constant(.createMock()))
+            UserInfoView(userInfo: .constant(.createMock()))
                 .previewDevice("iPhone 8")
                 .previewInterfaceOrientation(.portrait)
         }
