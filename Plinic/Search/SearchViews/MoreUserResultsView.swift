@@ -1,5 +1,5 @@
 //
-//  searchDetail.swift
+//  MoreUserResultsView.swift
 //  Plinic
 //
 //  Created by 유경덕 on 2022/09/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct userDetail: View {
+struct MoreUserResultsView: View {
     
     @State private var sort: Int = 0
     
@@ -87,6 +87,6 @@ struct userDetail: View {
 
 struct userDetail_Previews: PreviewProvider {
     static var previews: some View {
-        userDetail()
+        MoreUserResultsView()
     }
 }

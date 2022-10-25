@@ -15,7 +15,7 @@
 		9113807228C79836006CD66A /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807128C79836006CD66A /* SearchResultView.swift */; };
 		9113807828CF13E0006CD66A /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807728CF13E0006CD66A /* UserResult.swift */; };
 		9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807928CF13F6006CD66A /* UserTopResult.swift */; };
-		914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* SearchDetail.swift */; };
+		914AF7B228D88E640016C38C /* MoreUserResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* MoreUserResultsView.swift */; };
 		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
 		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
 		D0023CBF290662CB006057B3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CBE290662CB006057B3 /* Genre.swift */; };
@@ -78,7 +78,7 @@
 		9113807128C79836006CD66A /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		9113807728CF13E0006CD66A /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
 		9113807928CF13F6006CD66A /* UserTopResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopResult.swift; sourceTree = "<group>"; };
-		914AF7B128D88E640016C38C /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
+		914AF7B128D88E640016C38C /* MoreUserResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUserResultsView.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
 		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
 		D0023CBE290662CB006057B3 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 				9113807128C79836006CD66A /* SearchResultView.swift */,
 				9113807728CF13E0006CD66A /* UserResult.swift */,
 				9113807928CF13F6006CD66A /* UserTopResult.swift */,
-				914AF7B128D88E640016C38C /* SearchDetail.swift */,
+				914AF7B128D88E640016C38C /* MoreUserResultsView.swift */,
 				D0023CC22906D01A006057B3 /* GenreSearchView.swift */,
 			);
 			path = SearchViews;
@@ -533,8 +533,8 @@
 				E84A3E0E2903B274007FAA78 /* Post.swift in Sources */,
 				D08E274F2893C63500013A12 /* ThumbnailView.swift in Sources */,
 				E84A3E0A2903AFDB007FAA78 /* RandomAPI.swift in Sources */,
-				914AF7B228D88E640016C38C /* SearchDetail.swift in Sources */,
 				D06539B728AFCDBF008B5199 /* PostCreateView.swift in Sources */,
+				914AF7B228D88E640016C38C /* MoreUserResultsView.swift in Sources */,
 				D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */,
 				D0E6E46A29046B0D00BA875A /* PostDetail.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
