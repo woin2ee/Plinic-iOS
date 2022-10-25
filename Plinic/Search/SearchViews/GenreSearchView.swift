@@ -24,7 +24,7 @@ struct GenreSearchView: View {
                         thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg",
                         content: post.content,
                         title: post.title,
-                        id: post.id
+                        postId: post.id
                     )
                     .onAppear() {
                         if let last = self.postList.last,

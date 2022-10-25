@@ -33,8 +33,10 @@ struct UserMyPostView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(userInfo.writtenPosts, id: \.uuid) { postInfo in
                             // VStack으로 도형추가
-                            NavigationLink(destination: PostDetailView(id: postInfo.id))
-                            {
+                            NavigationLink(destination: PostDetailView(
+                                postId: postInfo.id,
+                                profileImageUrl: userInfo.profileImageUrl
+                            )) {
                                 VStack {
                                     ThumbnailView(imageUrl: postInfo.thumbnailUrl)
                                     Text("\(postInfo.title)")

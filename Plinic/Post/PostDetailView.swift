@@ -10,8 +10,10 @@ import SwiftUI
 struct PostDetailView: View {
     
     @StateObject var postAPI: PostAPI = PostAPI()
+    
     @State var postDetil : PostDetail = PostDetail.creatEmpty()
-    @State var id: Int
+    @State var postId: Int
+    let profileImageUrl: String
     
     var body: some View {
         ZStack {
@@ -19,7 +21,17 @@ struct PostDetailView: View {
                 .ignoresSafeArea()
             VStack{
                 ScrollView{
-                    PostDetailInfoView(profilePic: "random1", nickname: postDetil.author, content: postDetil.content, title: postDetil.title, createdAt: postDetil.createdAt, updatedAt: postDetil.updatedAt, tagSet: postDetil.tagSet, genreName: postDetil.plInfo.genreName, id: postDetil.id)
+                    PostDetailInfoView(
+                        profilePic: profileImageUrl,
+                        nickname: postDetil.author,
+                        content: postDetil.content,
+                        title: postDetil.title,
+                        createdAt: postDetil.createdAt,
+                        updatedAt: postDetil.updatedAt,
+                        tagSet: postDetil.tagSet,
+                        genreName: postDetil.plInfo.genreName,
+                        id: postDetil.id
+                    )
                     Spacer()
                 } // ScrollView
                 .frame(maxHeight: 200)
@@ -28,7 +40,7 @@ struct PostDetailView: View {
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){
-                postAPI.getPostDetail(id: id){ result in
+                postAPI.getPostDetail(id: postId) { result in
                     switch result {
                     case .success(let success):
                         self.postDetil = success
@@ -48,7 +60,8 @@ struct PostDetail_Previews: PreviewProvider {
         Group {
             PostDetailView(
                 postDetil: .createMock(),
-                id: 1
+                postId: 1,
+                profileImageUrl: "random1"
             )
         }
     }
