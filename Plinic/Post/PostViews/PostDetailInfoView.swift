@@ -36,7 +36,6 @@ struct PostDetailInfoView: View {
                         .overlay(Circle()
                             .stroke(Color.MainColor, lineWidth: 5))
                         .frame(maxWidth: 44, maxHeight: 44)
-                        .background(Color.green)
                         .clipShape(Circle())
                         .padding(.leading, 5)
                     // 유저 프로필 사진
