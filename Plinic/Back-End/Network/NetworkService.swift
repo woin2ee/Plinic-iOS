@@ -36,9 +36,20 @@ final class NetworkService {
     func request(
         path: String,
         method: HttpMethod = .get,
+        headers: [String : String?]? = {
+            let authData = ("Lami" + ":" + "Lami").data(using: .utf8)!.base64EncodedString()
+            let value = "Basic \(authData)"
+            let key = "Authorization"
+            return [key : value]
+        }(),
         _ completion: @escaping (Result<Data, Error>) -> Void
     ) {
-        request(absolutePath: "\(baseURL)\(path)", method: method, completion)
+        request(
+            absolutePath: "\(baseURL)\(path)",
+            method: method,
+            headers: headers,
+            completion
+        )
     }
     
     /// API 요청을 보내고 싶을때 사용하는 함수
@@ -50,6 +61,12 @@ final class NetworkService {
     func request(
         absolutePath: String,
         method: HttpMethod = .get,
+        headers: [String : String?]? = {
+            let authData = ("Lami" + ":" + "Lami").data(using: .utf8)!.base64EncodedString()
+            let value = "Basic \(authData)"
+            let key = "Authorization"
+            return [key : value]
+        }(),
         _ completion: @escaping (Result<Data, Error>) -> Void
     ) {
         guard let url = URL.init(string: absolutePath) else {
@@ -61,8 +78,11 @@ final class NetworkService {
         urlRequest.httpMethod = method.rawValue
         urlRequest.timeoutInterval = .init(10)
         
-        let authData = ("Lami" + ":" + "Lami").data(using: .utf8)!.base64EncodedString()
-        urlRequest.setValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
+        if let headers = headers {
+            headers.forEach { key, value in
+                urlRequest.setValue(value, forHTTPHeaderField: key)
+            }
+        }
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
