@@ -27,7 +27,7 @@ struct SearchResultView: View {
                             
                             Spacer()
                             
-                            NavigationLink(destination: userDetail()){
+                            NavigationLink(destination: MoreUserResultsView()) {
                                 Text("검색결과 더보기 ->")
                                     .fontWeight(.bold)
                                     .font(.system(size: 18))
@@ -124,6 +124,3 @@ struct SearchResultView_Previews: PreviewProvider {
         SearchResultView()
     }
 }
-   
-
-
