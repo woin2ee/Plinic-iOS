@@ -11,8 +11,7 @@ struct PostDetailView: View {
     
     @StateObject var postAPI: PostAPI = PostAPI()
     @State var postDetil : PostDetail = PostDetail.creatEmpty()
-    @State var totalURL: String
-    @State var id : Int
+    @State var id: Int
     
     var body: some View {
         ZStack {
@@ -47,7 +46,10 @@ struct PostDetailView: View {
 struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", id: 30)
+            PostDetailView(
+                postDetil: .createMock(),
+                id: 1
+            )
         }
     }
 }
