@@ -55,3 +55,9 @@ struct GenreSearchView: View {
         }
     }
 }
+
+struct GenreSearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        GenreSearchView(genreName: "sd")
+    }
+}
