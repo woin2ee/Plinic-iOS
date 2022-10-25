@@ -76,6 +76,8 @@ final class NetworkService {
                 return
             }
             
+            print("HTTPURLResponse >>>>> \(response)")
+            
             guard (200..<300).contains(response.statusCode) else {
                 completion(.failure(NetworkError.failureStatusCode))
                 return
