@@ -73,7 +73,7 @@ struct PlaylistInfoView: View {
     }
 }
 
-struct playlistInfo_Previews: PreviewProvider {
+struct PlaylistInfoView_Previews: PreviewProvider {
     static var previews: some View {
         PlaylistInfoView(playlistDetail: .constant(.createMock()))
     }
