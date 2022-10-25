@@ -23,5 +23,26 @@ struct PostList: Codable {
         // FIXME: Refactor
         return .init(count: 0, next: "http://35.79.181.245:8000/api/v1/plinic/posts/", results: [])
     }
+    
+    static func createEmpty() -> Self {
+        return .init(
+            count: -1,
+            next: nil,
+            results: []
+        )
+    }
+    
+    static func createMock() -> Self {
+        return .init(
+            count: 1,
+            next: "",
+            results: [
+                .createMock(),
+                .createMock(),
+                .createMock(),
+                .createMock()
+            ]
+        )
+    }
 }
 

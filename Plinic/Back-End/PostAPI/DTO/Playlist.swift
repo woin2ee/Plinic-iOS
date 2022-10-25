@@ -20,4 +20,13 @@ struct Playlist: Codable {
         case title
         case thumbnailImgURL = "thumbnail_img_url"
     }
+    
+    static func createMock() -> Self {
+        return .init(
+            id: 1,
+            nickname: "Lami",
+            title: "플레이리스트 제목!",
+            thumbnailImgURL: "defaultImg"
+        )
+    }
 }
