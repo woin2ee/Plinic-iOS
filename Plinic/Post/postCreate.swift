@@ -88,7 +88,7 @@ struct PostCreate: View {
                         HStack{
                             ForEach(data, id: \.self) {i in
                                 VStack{
-                                    ThumbnailView(thumbnail: "defaultImg")
+                                    ThumbnailView(imageUrl: "defaultImg")
                                         .frame(height: 190)
                                     Text("비오는 날 듣기 좋은 노래")
                                         .foregroundColor(Color.white)

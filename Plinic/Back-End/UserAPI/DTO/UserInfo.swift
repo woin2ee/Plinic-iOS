@@ -51,14 +51,14 @@ struct UserInfo: Codable {
             nickName: "Lami",
             profileImageUrl: "http://35.79.181.245:8000/media/profiles/2022/10/24/lami_profile.jpg",
             publicPlaylists: [
-                .init(title: "1", thumbnail: "1", id: 1),
-                .init(title: "2", thumbnail: "1", id: 2),
-                .init(title: "3", thumbnail: "1", id: 3)
+                .init(title: "1", thumbnailUrl: "1", id: 1),
+                .init(title: "2", thumbnailUrl: "1", id: 2),
+                .init(title: "3", thumbnailUrl: "1", id: 3)
             ],
             privatePlaylists: [
-                .init(title: "1", thumbnail: "1", id: 1),
-                .init(title: "2", thumbnail: "1", id: 2),
-                .init(title: "3", thumbnail: "1", id: 3)
+                .init(title: "1", thumbnailUrl: "1", id: 1),
+                .init(title: "2", thumbnailUrl: "1", id: 2),
+                .init(title: "3", thumbnailUrl: "1", id: 3)
             ],
             writtenPosts: [
                 .init(id: 1, title: "1", content: "11"),
@@ -75,12 +75,18 @@ struct UserInfo: Codable {
 }
 
 struct briefPlaylistInfo: Codable {
+    
+    var uuid = UUID()
+    
     let title: String
-    let thumbnail: String
+    let thumbnailUrl: String
     let id: Int
 }
 
 struct WrittenPostInfo: Codable {
+    
+    var uuid = UUID()
+    
     let id: Int
     let title: String
     let content: String

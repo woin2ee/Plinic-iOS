@@ -98,7 +98,7 @@ struct SearchResultView: View {
                             HStack(spacing:15) {
                                 ForEach(data, id: \.self) {i in
                                     VStack() {
-                                        ThumbnailView(thumbnail: "defaultImg")
+                                        ThumbnailView(imageUrl: "defaultImg")
                                         Text("\(i)")
                                             .foregroundColor(Color.white)
                                             .fontWeight(.bold)

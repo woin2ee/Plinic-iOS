@@ -9,6 +9,9 @@ import Foundation
 
 enum NetworkError: Error {
     case invaildUrl
+    case noData
+    case failureStatusCode
+    case notHttpUrlResponse
     case commonError
 }
 
@@ -68,15 +71,25 @@ final class NetworkService {
                 return
             }
             
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse,
-                (200..<300).contains(response.statusCode)
-            else {
-                completion(.failure(NetworkError.commonError))
+            guard let response = response as? HTTPURLResponse else {
+                completion(.failure(NetworkError.notHttpUrlResponse))
                 return
             }
+            
+            print("HTTPURLResponse >>>>> \(response)")
+            
+            guard (200..<300).contains(response.statusCode) else {
+                completion(.failure(NetworkError.failureStatusCode))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NetworkError.noData))
+                return
+            }
+            
             completion(.success(data))
+            
         }.resume()
     }
 }

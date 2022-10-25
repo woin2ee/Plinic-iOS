@@ -11,7 +11,7 @@ struct UserContentView: View {
     
     let userAPI: UserAPI = .init()
     
-    @State var userInfo: UserInfo = .createMock()
+    @State var userInfo: UserInfo = .createEmpty()
     
     @State private var postTransform = true
     
@@ -64,12 +64,12 @@ struct UserContentView: View {
                                 profileImg: "random1",
                                 userInfo: $userInfo
                             )
-                                .frame(height: geometry.size.height * 0.25)
-                                .padding([.bottom,.top], 10)
+                            .frame(height: geometry.size.height * 0.25)
+                            .padding([.bottom,.top], 10)
                             // 유저 정보 부분
                             
                             if(self.postTransform) {
-                                UserMyPlaylistView(playlistTitle: "플레이리스트 제목")
+                                UserMyPlaylistView(userInfo: $userInfo)
                                     .frame(height: geometry.size.height * 0.65)
                                 Spacer()
                                     .frame(height: geometry.size.height * 0.15)
@@ -86,6 +86,16 @@ struct UserContentView: View {
                 // GeometryReader
             }
             // VStack
+        }
+        .onAppear() {
+            userAPI.getUserInfo(by: "Lami") { result in
+                switch result {
+                case .success(let userInfo):
+                    self.userInfo = userInfo
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
         // ZStack
     }

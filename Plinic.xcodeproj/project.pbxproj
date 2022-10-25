@@ -66,6 +66,7 @@
 		E86ECD56290472090039D8BF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD55290472090039D8BF /* View+.swift */; };
 		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
+		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		E86ECD55290472090039D8BF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
+		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 		E84A3E062903AF5D007FAA78 /* PlaylistAPI */ = {
 			isa = PBXGroup;
 			children = (
+				E8C4A3762906FCF200425064 /* PlaylistAPI.swift */,
 			);
 			path = PlaylistAPI;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
 				E8689D992905550500D2A03F /* UserInfo.swift in Sources */,
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
+				E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetailView.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfoView.swift in Sources */,
 				D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */,

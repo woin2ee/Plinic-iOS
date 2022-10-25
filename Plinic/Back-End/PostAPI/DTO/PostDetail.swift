@@ -31,6 +31,26 @@ struct PostDetail: Codable {
         case author
     }
     static func creatEmpty() -> PostDetail {
-        return PostDetail(id: 30, isUpdated: false, createdAt: "1111.11.11", updatedAt: "2222.22.22", tagSet: ["test1","test2"], plInfo: PlaylistDetail(id: 12, title: "Title", thumbnailImgURL: "asd", totalURL: "rasd", trackName: ["1", "2"], genreName: "Jazz", isScrapped: false, scrapperCount: 2), likerCount: 1, title: "Title", content: "This is content", isLike: false, author: "Nickname")
+        return PostDetail(
+            id: 30,
+            isUpdated: false,
+            createdAt: "1111.11.11",
+            updatedAt: "2222.22.22",
+            tagSet: ["test1", "test2"],
+            plInfo: PlaylistDetail(id: 12,
+                                   title: "Title",
+                                   thumbnailImgURL: "asd",
+                                   totalURL: "rasd",
+                                   trackName: ["1", "2"],
+                                   genreName: "Jazz",
+                                   isScrapped: false,
+                                   scrapperCount: 2,
+                                   isPublic: true),
+            likerCount: 1,
+            title: "Title",
+            content: "This is content",
+            isLike: false,
+            author: "Nickname"
+        )
     }
 }
