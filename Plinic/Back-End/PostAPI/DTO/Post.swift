@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Post: Hashable ,Codable {
+struct Post: Codable {
+    
+    var uuid: UUID = .init()
     
     var author: Author
     let id : Int
@@ -50,16 +52,4 @@ struct Post: Hashable ,Codable {
             plInfo: .createMock()
         )
     }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(likerCount)
-        hasher.combine(title)
-        hasher.combine(isLike)
-        hasher.combine(content)
-    }
-    
-    static func == (lhs: Post, rhs: Post) -> Bool {
-        return lhs.id == rhs.id
-    } // postID를 1:1 대응 시켜줌
 }
