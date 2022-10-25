@@ -17,7 +17,7 @@ struct UserPlaylist: View {
                 .ignoresSafeArea()
             GeometryReader{ geo in
                 VStack{
-                    PlaylistInfo(playlistTitle: "자기전에 듣기 좋은 노래", songs: "20")
+                    PlaylistInfoView(playlistTitle: "자기전에 듣기 좋은 노래", songs: "20")
                         .frame(height: geo.size.height * 0.25)
                     WebView(requestURL: "\(playlistURL)")
                 } // VStack

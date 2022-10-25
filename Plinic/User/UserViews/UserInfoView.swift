@@ -21,29 +21,28 @@ struct UserInfoView: View {
             
             VStack(spacing: 10) {
                 
-                HStack(spacing: 0) {
-                    
-                    // FIXME: - AsyncImage 로 바꾸니까 프로필 사진에 초록색 테두리가 안보인당...
+                HStack{
                     AsyncImage(url: URL(string: userInfo.profileImageUrl))
+                        .aspectRatio(contentMode: .fill)
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
                         .overlay(Circle()
                             .stroke(Color.MainColor, lineWidth: 5))
-                        .frame(width: 100, height: 100)
-                        .background(Color.green)
                         .clipShape(Circle())
                     //유저 이미지
                     
                     VStack(spacing:5) {
                         
                         HStack(spacing:10){
-                            userContents(
+                            UserCountsView(
                                 infoTitle: "플레이리스트",
                                 infoCount: userInfo.publicPlaylists.count + userInfo.privatePlaylists.count
                             )
-                            userContents(
+                            UserCountsView(
                                 infoTitle: "게시글",
                                 infoCount: userInfo.writtenPosts.count
                             )
-                            userContents(
+                            UserCountsView(
                                 infoTitle: "스크랩",
                                 infoCount: 999
                             )
@@ -59,37 +58,31 @@ struct UserInfoView: View {
                     
                 } // HStack
                 
-                ZStack {
-                    
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.MainColor)
-                        .frame(width: 330, height: 40)
-                        .cornerRadius(5)
-                    
-                    NavigationLink(destination:
-                                    UserProfileEditView(
-                                        userInfo: $userInfo,
-                                        userName: userInfo.nickName,
-                                        genre1: "Aucoustic",
-                                        genre2: "Sad",
-                                        genre3: "Happy"
-                                    )
-                    ) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.BackgroundSubColor)
-                                .frame(width: 330, height: 40)
-                                .cornerRadius(5)
-                            Text("프로필 편집")
-                                .fontWeight(.bold)
-                                .font(.system(size: 12))
-                                .foregroundColor(Color.white)
-                        }
+                NavigationLink(destination:
+                                UserProfileEditView(
+                                    genres: ["String"], userInfo: $userInfo,
+                                    userName: userInfo.nickName,
+                                    genre1: "Aucoustic",
+                                    genre2: "Sad",
+                                    genre3: "Happy"
+                                )
+                ) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color.BackgroundSubColor)
+                            .frame(width: 330, height: 40)
+                        
+                        Text("프로필 편집")
+                            .fontWeight(.bold)
+                            .font(.system(size: 12))
+                            .foregroundColor(Color.white)
                     }
-                } //프로필 편집 버튼
-            } // VStack
-        } // ZStack
-    }
+                }
+                
+            } //프로필 편집 버튼
+        } // VStack
+    } // ZStack
+    
 }
 
 struct UserInfoView_Previews: PreviewProvider {

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Thumbnail: View {
+struct ThumbnailView: View {
     
     var thumbnail : String // 썸네일 이미지에 대한 변수
-//    var title : String // 썸네일 타이틀에 대한 변수
+    //    var title : String // 썸네일 타이틀에 대한 변수
     
     var body: some View {
         ZStack {
@@ -20,11 +20,8 @@ struct Thumbnail: View {
                 Image(thumbnail)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-//                    .frame(width: 170, height: 170)
                     .background(Color.green)
                     .cornerRadius(10)
-//                    .padding(.bottom, 15)
-                    
             } // VStack
         }
         
@@ -35,6 +32,6 @@ struct Thumbnail: View {
 
 struct Thumbnail_Previews: PreviewProvider {
     static var previews: some View {
-        Thumbnail(thumbnail: "defaultImg")
+        ThumbnailView(thumbnail: "defaultImg")
     }
 }

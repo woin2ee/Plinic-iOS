@@ -1,5 +1,5 @@
 //
-//  userProfile.swift
+//  UserProfileEditView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/05.
@@ -9,17 +9,18 @@ import SwiftUI
 
 struct UserProfileEditView: View {
     
+    @StateObject var genreAPI: GenreAPI = GenreAPI()
+    @State var genres: [String]
+    
     @Binding var userInfo: UserInfo
     
     @State var userName: String
     
-    // FIXME: GenreAPI 이용해서 데이터 받아오기
-    var genres = ["aucoustic", "jazz", "sad", "happy"]
-    
     @State var genre1 : String = ""
     @State var genre2 : String = ""
     @State var genre3 : String = ""
-    // 유저가 선택한 장르
+    
+    var chooseGenre = ["genre1", "genre2", "genre3"]
     
     @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
@@ -29,9 +30,11 @@ struct UserProfileEditView: View {
                 .ignoresSafeArea()
             VStack{
                 AsyncImage(url: URL(string: userInfo.profileImageUrl))
+                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
                     .overlay(Circle()
                         .stroke(Color.MainColor, lineWidth: 5))
-                    .frame(width: 100, height: 100)
                     .background(Color.green)
                     .clipShape(Circle())
                     .padding(.bottom, 20)
@@ -47,8 +50,8 @@ struct UserProfileEditView: View {
                         .background(Color.BackgroundSubColor)
                         .font(.system(size: 15))
                         .cornerRadius(5)
-//                        .overlay(RoundedRectangle(cornerRadius: 5)
-//                            .stroke(Color.MainColor, lineWidth: 1))
+                    //                        .overlay(RoundedRectangle(cornerRadius: 5)
+                    //                            .stroke(Color.MainColor, lineWidth: 1))
                         .padding(.bottom, 40)
                 }) // 프로필 사진 변경하고 싶을 때 누르는 버튼
                 
@@ -123,6 +126,16 @@ struct UserProfileEditView: View {
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                 } // 좋아하는 장르 선택 1
+                .onAppear(){
+                    genreAPI.getGenres() { result in
+                        switch result {
+                        case .success(let success):
+                            self.genres = success
+                        case .failure(let failure):
+                            _ = failure
+                        }
+                    }
+                }
                 
                 HStack{
                     Button(action: {
@@ -168,10 +181,11 @@ struct UserProfileEditView: View {
 
 
 
-struct UserProfile_Previews: PreviewProvider {
+struct UserProfileEditView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             UserProfileEditView(
+                genres: [""],
                 userInfo: .constant(.createMock()),
                 userName: "Test",
                 genre1: "Aucoustic",
@@ -179,6 +193,7 @@ struct UserProfile_Previews: PreviewProvider {
                 genre3: "Happy"
             )
             UserProfileEditView(
+                genres: [""],
                 userInfo: .constant(.createMock()),
                 userName: "Test",
                 genre1: "Aucoustic",
