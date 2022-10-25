@@ -61,9 +61,9 @@ struct UserInfo: Codable {
                 .init(title: "3", thumbnailUrl: "1", id: 3)
             ],
             writtenPosts: [
-                .init(id: 1, title: "1", content: "11"),
-                .init(id: 2, title: "2", content: "22"),
-                .init(id: 3, title: "3", content: "33")
+                .init(id: 1, title: "내가 작성한 포스트1", content: "내가 작성한 포스트 내용1"),
+                .init(id: 2, title: "내가 작성한 포스트2", content: "내가 작성한 포스트 내용2"),
+                .init(id: 3, title: "내가 작성한 포스트3", content: "내가 작성한 포스트 내용3")
             ],
             wishGenres: [
                 "장르111",
@@ -81,6 +81,8 @@ struct briefPlaylistInfo: Codable {
     let title: String
     let thumbnailUrl: String
     let id: Int
+    
+    // MARK: CodingKeys?
 }
 
 struct WrittenPostInfo: Codable {
@@ -90,4 +92,7 @@ struct WrittenPostInfo: Codable {
     let id: Int
     let title: String
     let content: String
+    var thumbnailUrl: String = "defaultImg"
+    
+    // MARK: CodingKeys?
 }

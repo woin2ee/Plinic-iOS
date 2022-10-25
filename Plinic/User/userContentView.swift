@@ -74,7 +74,7 @@ struct UserContentView: View {
                                 Spacer()
                                     .frame(height: geometry.size.height * 0.15)
                             } else {
-                                UserMyPostView(postTitle: "게시글 제목")
+                                UserMyPostView(userInfo: $userInfo)
                                     .frame(height: geometry.size.height * 0.65)
                             }
                             
