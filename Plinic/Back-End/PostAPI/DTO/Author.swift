@@ -16,4 +16,11 @@ struct Author: Codable {
         case nickname
         case profilePic = "profile_pic"
     }
+    
+    static func createMock() -> Self {
+        return .init(
+            nickname: "Lami",
+            profilePic: "random1"
+        )
+    }
 }

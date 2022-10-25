@@ -39,6 +39,18 @@ struct Post: Hashable ,Codable {
         )
     }
     
+    static func createMock() -> Self {
+        return .init(
+            author: .createMock(),
+            id: 1,
+            likerCount: 3,
+            title: "포스트 제목입니다",
+            isLike: false,
+            content: "포스트 내용입니다",
+            plInfo: .createMock()
+        )
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(likerCount)
