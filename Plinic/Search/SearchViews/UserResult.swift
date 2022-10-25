@@ -18,7 +18,7 @@ struct userResult: View {
         VStack{
             Image(profileImg)
                  .resizable()
-                 .aspectRatio(contentMode: .fill)
+                 .aspectRatio(1, contentMode: .fit)
                  .clipShape(Circle())
              // 이미지를 동그란형태로 클립하여 백엔드에서 이미지 정보를 주었을 때 profileImg 변수로 동작할수 있게끔 수정 바람
                  .frame(maxWidth: 100, maxHeight: 100, alignment: .center)

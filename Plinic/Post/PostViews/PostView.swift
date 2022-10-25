@@ -36,7 +36,7 @@ struct PostView: View {
                 HStack{
                     Image(profilePic)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(1, contentMode: .fit)
                         .overlay(Circle()
                             .stroke(Color.MainColor, lineWidth: 3.5))
                         .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
@@ -54,7 +54,6 @@ struct PostView: View {
                 NavigationLink(destination: PostDetailView(totalURL: "http://www.youtube.com/watch_videos?video_ids=K2MfpA_4EEs,2vSFVr5Unig,Vc5JNvIq22Q", id: 0)) {
                     Image("\(thumbnailImgURL)")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: 390, maxHeight: 390)
                     // 게시글 썸네일
                 }
@@ -150,7 +149,7 @@ struct PostInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             //            PostInfoView(profileImg: "random1", userName : "userName", thumbnail: "defaultImg", postContext : "ddddsdasdasd asdasasdasd asdasdasd asdasdasdfghjagsdfjkhg asfasdfjlhgasdjkhf  asdfjkhg", postName: "게시글 제목", heartCnt : "200000")
-            PostView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defailImg", content: "this is content", title: "Title", id: 0, likerCount : 12, isLike: false)
+            PostView(profilePic: "random1", nickname: "Hi", thumbnailImgURL: "defaultImg", content: "this is content", title: "Title", id: 0, likerCount : 12, isLike: false)
                 .previewDevice("iPhone 8")
         }
     }

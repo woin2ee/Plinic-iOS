@@ -30,12 +30,11 @@ struct UserProfileEditView: View {
                 .ignoresSafeArea()
             VStack{
                 AsyncImage(url: URL(string: userInfo.profileImageUrl))
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(1, contentMode: .fit)
                     .scaledToFill()
                     .frame(width: 100, height: 100)
                     .overlay(Circle()
                         .stroke(Color.MainColor, lineWidth: 5))
-                    .background(Color.green)
                     .clipShape(Circle())
                     .padding(.bottom, 20)
                 // 프로필 사진을 보여줌

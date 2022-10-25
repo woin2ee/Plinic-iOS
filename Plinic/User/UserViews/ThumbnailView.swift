@@ -19,7 +19,7 @@ struct ThumbnailView: View {
         VStack{
             Image(imageUrl)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(1, contentMode: .fit)
                 .background(Color.green)
                 .cornerRadius(10)
         } // VStack
