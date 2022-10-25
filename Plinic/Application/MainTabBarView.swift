@@ -27,7 +27,7 @@ struct MainTabBarView: View {
             }
             
             NavigationView{
-                postContentView()
+                PostContentView()
             }
             .tabItem {
                 Image(systemName: "list.bullet")

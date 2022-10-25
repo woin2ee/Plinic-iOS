@@ -73,7 +73,7 @@ struct SearchResultView: View {
                             
                             Spacer()
                             
-                            NavigationLink(destination: postContentView()){
+                            NavigationLink(destination: PostContentView()){
                                 Text("검색결과 더보기 ->")
                                     .fontWeight(.bold)
                                     .font(.system(size: 18))
