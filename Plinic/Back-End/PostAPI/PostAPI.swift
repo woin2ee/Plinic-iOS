@@ -16,9 +16,9 @@ final class PostAPI: ObservableObject {
     
     
     // MARK: - 게시물 목록(GET)
-    func getPostList(nextURL: String?, _ completion: @escaping ((Result<PostList, Error>) -> Void)) {
+    func getPostList(nextURL: String? = nil, _ completion: @escaping ((Result<PostList, Error>) -> Void)) {
         if let absoluteURL = nextURL {
-            networkService.request(absolutePath: absoluteURL) { result in
+            networkService.request(absolutePath: absoluteURL, headers: nil) { result in
                 switch result {
                 case .success(let data):
                     do {
@@ -32,7 +32,7 @@ final class PostAPI: ObservableObject {
                 }
             }
         } else {
-            networkService.request(path: postPath) { result in
+            networkService.request(path: postPath, headers: nil) { result in
                 switch result {
                 case .success(let data):
                     do {

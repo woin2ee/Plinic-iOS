@@ -15,7 +15,7 @@ final class RandomAPI: ObservableObject {
     
     /// 백그라운드에서 실행할 비디오를 랜덤으로 가져오는 함수
     func getBackgroundVideo(_ completion: @escaping ((Result<String, Error>) -> Void)) {
-        networkService.request(path: randomBackgroundPath, method: .get) { result in
+        networkService.request(path: randomBackgroundPath, method: .get, headers: nil) { result in
             switch result {
             case .success(let data):
                 do {
