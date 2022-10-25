@@ -14,6 +14,14 @@ struct SearchBar: View {
     
     var body: some View {
         ZStack {
+            NavigationLink(
+                isActive: $isActive,
+                destination: {
+                    SearchResultView()
+                },
+                label: {}
+            )
+            
             Color.black
                 .ignoresSafeArea()
             HStack{
