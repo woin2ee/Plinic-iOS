@@ -29,4 +29,21 @@ final class RandomAPI: ObservableObject {
             }
         }
     }
+    
+    /// 랜덤으로 썸네일 url 을 가져오는 함수
+    func getThumbnail(_ completion: @escaping ((Result<String, Error>) -> Void)) {
+        networkService.request(path: randomBackgroundPath, method: .get, headers: nil) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let thumbnail = try JSONDecoder.init().decode(RandomThumbnail.self, from: data)
+                    completion(.success(thumbnail.imageUrl))
+                } catch let error {
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
