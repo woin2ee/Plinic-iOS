@@ -107,7 +107,7 @@ struct PostCreateView: View {
             } // 화면 터치 했을 때 키보드 내리기
         } // ZStack
         .onAppear(){
-            userAPI.getUserInfo(by: "Lami") { result in
+            userAPI.getUserInfo(by: "plinic") { result in
                 switch result {
                 case .success(let userInfo):
                     self.userInfo = userInfo

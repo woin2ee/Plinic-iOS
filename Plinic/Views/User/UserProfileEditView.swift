@@ -36,7 +36,7 @@ struct UserProfileEditView: View {
             VStack{
                 
                 if profileImage == nil {
-                    AsyncImage(url: URL(string: userInfo.profileImageUrl))
+                    AsyncImage(url: URL(string: userInfo.profileImageUrl ?? ""))
                         .aspectRatio(1, contentMode: .fit)
                         .scaledToFill()
                         .frame(width: 100, height: 100)
@@ -160,7 +160,7 @@ struct UserProfileEditView: View {
                         // 클릭 했을 때 로그아웃이 되는 코드 작성
                     }, label: {
                         Text("로그아웃")
-                            .foregroundColor(Color.MainColor)
+                            .foregroundColor(Color.red)
                             .frame(width: 110, height: 50)
                             .background(Color.BackgroundSubColor)
                             .cornerRadius(30)

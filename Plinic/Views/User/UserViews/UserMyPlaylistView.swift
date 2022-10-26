@@ -67,7 +67,7 @@ struct HorizontalPlaylistView: View {
                     ForEach(displayedPlaylistInfo, id: \.uuid) { info in
                         NavigationLink(destination: PlaylistView(id: info.id)) {
                             VStack{
-                                ThumbnailView(imageUrl: info.thumbnailUrl)
+                                ThumbnailView(imageUrl: info.thumbnailUrl ?? "defaultImg")
                                     .padding(.bottom, 5)
                                 Text(info.title)
                                     .foregroundColor(Color.white)
