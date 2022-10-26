@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct UserProfileEditView: View {
     
@@ -22,6 +23,10 @@ struct UserProfileEditView: View {
     
     var chooseGenre = ["genre1", "genre2", "genre3"]
     
+    @State private var imagePickerPresented = false
+    @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
+    
     @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
     var body: some View {
@@ -29,18 +34,30 @@ struct UserProfileEditView: View {
             Color.black
                 .ignoresSafeArea()
             VStack{
-                AsyncImage(url: URL(string: userInfo.profileImageUrl))
-                    .aspectRatio(1, contentMode: .fit)
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
-                    .overlay(Circle()
-                        .stroke(Color.MainColor, lineWidth: 5))
-                    .clipShape(Circle())
-                    .padding(.bottom, 20)
+                
+                if profileImage == nil {
+                    AsyncImage(url: URL(string: userInfo.profileImageUrl))
+                        .aspectRatio(1, contentMode: .fit)
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .overlay(Circle()
+                            .stroke(Color.MainColor, lineWidth: 5))
+                        .clipShape(Circle())
+                        .padding(.bottom, 20)
+                } else {
+                    profileImage?
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .overlay(Circle()
+                            .stroke(Color.MainColor, lineWidth: 5))
+                        .clipShape(Circle())
+                        .padding(.bottom, 20)
+                }
                 // 프로필 사진을 보여줌
                 
                 Button(action: {
-                    // 이미지피커를 이용하여 작성할 코드
+                    imagePickerPresented.toggle()
                 }, label: {
                     Text("프로필 사진 변경")
                         .frame(width: 102, height: 22)
@@ -49,10 +66,11 @@ struct UserProfileEditView: View {
                         .background(Color.BackgroundSubColor)
                         .font(.system(size: 15))
                         .cornerRadius(5)
-                    //                        .overlay(RoundedRectangle(cornerRadius: 5)
-                    //                            .stroke(Color.MainColor, lineWidth: 1))
                         .padding(.bottom, 40)
                 }) // 프로필 사진 변경하고 싶을 때 누르는 버튼
+                .sheet(isPresented: $imagePickerPresented,
+                       onDismiss: loadImage,
+                       content: { ImagePicker(image: $selectedImage) })
                 
                 
                 ZStack(alignment: .leading){
@@ -159,7 +177,12 @@ struct UserProfileEditView: View {
                     })
                     
                     Button(action: {
-                        // 클릭 했을 때 변경된 정보들을 저장하고 넘어가는 코드 작성
+                        //FIXME: - 바뀐 정보들이 POST 되는 버튼
+                        if profileImage != nil {
+                            // 프로필 사진을 변경 했을 때 실행 되는 코드
+                        }
+                        print(userInfo.profileImageUrl)
+                        
                     }, label: {
                         Text("확인")
                             .foregroundColor(Color.MainColor)
@@ -176,6 +199,10 @@ struct UserProfileEditView: View {
         } // ZStack
     }
     
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        profileImage = Image(uiImage: selectedImage)
+    } // 변경된 프로필사진을 Image 타입으로 profileImage에 저장
 }
 
 

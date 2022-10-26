@@ -34,6 +34,8 @@
 		D047BA5429057212008CA3E4 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047BA5329057212008CA3E4 /* NoticeAPI.swift */; };
 		D04E4A6228AF664700D04543 /* PostDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6128AF664700D04543 /* PostDetailInfoView.swift */; };
 		D04E4A6428AF69E400D04543 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E4A6328AF69E400D04543 /* PostDetailView.swift */; };
+		D04F1B9429090FE30020D80C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F1B9329090FE20020D80C /* ImagePicker.swift */; };
+		D04F1B96290915E80020D80C /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F1B95290915E80020D80C /* UIImage+.swift */; };
 		D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */; };
 		D063160528FFE80A00636ED1 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063160428FFE80A00636ED1 /* PostList.swift */; };
 		D06539B728AFCDBF008B5199 /* PostCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06539B628AFCDBF008B5199 /* PostCreateView.swift */; };
@@ -98,6 +100,8 @@
 		D047BA5329057212008CA3E4 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
 		D04E4A6128AF664700D04543 /* PostDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailInfoView.swift; sourceTree = "<group>"; };
 		D04E4A6328AF69E400D04543 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		D04F1B9329090FE20020D80C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D04F1B95290915E80020D80C /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		D052589228BC8E0300EDF8C4 /* GenreThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreThumbnail.swift; sourceTree = "<group>"; };
 		D063160428FFE80A00636ED1 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		D06539B628AFCDBF008B5199 /* PostCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateView.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 				D0F4D4CE28FD93F90085EB28 /* PlinicColors.swift */,
 				D0F4D4D428FDAEB20085EB28 /* Keyboards.swift */,
 				E86ECD55290472090039D8BF /* View+.swift */,
+				D04F1B95290915E80020D80C /* UIImage+.swift */,
 				E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */,
 			);
 			path = Extensions;
@@ -429,6 +434,7 @@
 		E876C0832909000F00237FF9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D04F1B9329090FE20020D80C /* ImagePicker.swift */,
 				D08E274E2893C63400013A12 /* ThumbnailView.swift */,
 				D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */,
 				D08E27542896CC3000013A12 /* WebView.swift */,
@@ -551,6 +557,7 @@
 				D0E6E46A29046B0D00BA875A /* PostDetail.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
 				91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */,
+				D04F1B9429090FE30020D80C /* ImagePicker.swift in Sources */,
 				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfoView.swift in Sources */,
 				D0023CC12906C5BE006057B3 /* GenreAPI.swift in Sources */,
@@ -565,6 +572,7 @@
 				E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */,
 				D047BA5129056B21008CA3E4 /* RecentNotice.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
+				D04F1B96290915E80020D80C /* UIImage+.swift in Sources */,
 				D04183E4289D26890045C907 /* UserProfileEditView.swift in Sources */,
 				D0F4D4CF28FD93F90085EB28 /* PlinicColors.swift in Sources */,
 				D047BA5429057212008CA3E4 /* NoticeAPI.swift in Sources */,
