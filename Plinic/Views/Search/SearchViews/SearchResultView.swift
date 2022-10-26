@@ -45,8 +45,6 @@ struct SearchResultView: View {
                                     .font(.system(size: 18))
                                     .foregroundColor(Color.blue)
                             }
-                            .navigationTitle("")
-                            .navigationBarTitleDisplayMode(.inline)
                             .padding(.trailing, 15)
                         }//HStack
                         
@@ -65,12 +63,14 @@ struct SearchResultView: View {
                         
                         HStack(alignment: .bottom) {
                             ForEach(displayedUsers, id: \.uuid) { userInfo in
-                                
-                                userResult(
-                                    profileImg: userInfo.profileImageUrl,
-                                    nickName: userInfo.nickName
-                                )
-                                .padding(.leading, 10)
+                                NavigationLink(destination:
+                                                OtherUserView(nickName: userInfo.nickName)){
+                                    userResult(
+                                        profileImg: userInfo.profileImageUrl,
+                                        nickName: userInfo.nickName
+                                    )
+                                    .padding(.leading, 10)
+                                }
 
 //                                userTopResult(
 //                                    profileImg: "",
@@ -100,14 +100,12 @@ struct SearchResultView: View {
                             Spacer()
                             
                             // FIXME: 검색어와 관련된 post list 보여주도록 구현 필요
-                            NavigationLink(destination: PostContentView()){
+                            NavigationLink(destination: PostSearchView(navigationTitle: searchText)){
                                 Text("검색결과 더보기 ->")
                                     .fontWeight(.bold)
                                     .font(.system(size: 18))
                                     .foregroundColor(Color.blue)
                             }
-                            .navigationTitle("")
-                            .navigationBarTitleDisplayMode(.inline)
                             .padding(.trailing, 15)
                         }//HStack
                         Rectangle()
@@ -149,6 +147,8 @@ struct SearchResultView: View {
                 }//HStack
                 .padding(.top, 15)
             }//VStack
+            .navigationTitle(searchText)
+            .navigationBarTitleDisplayMode(.automatic)
         }//ZStack
         .onLoad() {
             searchAPI.getSearchResult(by: searchText) { result in
