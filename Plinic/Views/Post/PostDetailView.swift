@@ -22,15 +22,8 @@ struct PostDetailView: View {
             VStack{
                 ScrollView{
                     PostDetailInfoView(
-                        profilePic: profileImageUrl,
-                        nickname: postDetil.author,
-                        content: postDetil.content,
-                        title: postDetil.title,
-                        createdAt: postDetil.createdAt,
-                        updatedAt: postDetil.updatedAt,
-                        tagSet: postDetil.tagSet,
-                        genreName: postDetil.plInfo.genreName,
-                        id: postDetil.id
+                        postDetil: $postDetil,
+                        profilePic: profileImageUrl
                     )
                     Spacer()
                 } // ScrollView
@@ -42,8 +35,8 @@ struct PostDetailView: View {
             .onAppear(){
                 postAPI.getPostDetail(id: postId) { result in
                     switch result {
-                    case .success(let success):
-                        self.postDetil = success
+                    case .success(let postDetail):
+                        self.postDetil = postDetail
                         print("PostDetailView의 onAppear",postDetil)
                     case .failure(let failure):
                         _ = failure

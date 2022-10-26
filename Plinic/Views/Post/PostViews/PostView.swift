@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostView: View {
     
-    @State var postInfo: Post = .createEmpty()
+    @State var postInfo: Post
     @State private var scrap = false
     
     var body: some View {
