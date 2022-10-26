@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostDetailInfoView: View {
     
-    var profilePic: String // 유저의 프로필 사진
+    var profilePic: String? // 유저의 프로필 사진
     var nickname : String // 유저의 닉네임
     var content: String // 게시글 내용
     let title: String //  게시글 제목
@@ -30,7 +30,7 @@ struct PostDetailInfoView: View {
                 .ignoresSafeArea()
             VStack{
                 HStack{
-                    Image(profilePic)
+                    Image(profilePic ?? "profileDefault")
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                         .overlay(Circle()

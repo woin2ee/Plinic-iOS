@@ -9,14 +9,7 @@ import SwiftUI
 
 struct PostView: View {
     
-    let profilePic : String // 유저의 프로필 사진
-    let nickname  : String // 유저의 닉네임
-    var thumbnailImgURL : String // 게시글 썸네일 이미지
-    var content : String // 게시글 내용
-    let title : String
-    let postId: Int
-    @State var likerCount: Int = 0
-    @State var isLike: Bool = false
+    @State var postInfo: Post = .createEmpty()
     @State private var scrap = false
     
     var body: some View {
@@ -34,7 +27,7 @@ struct PostView: View {
                 // 상단의 게시글 작성자 정보
                     .padding(.bottom, 5)
                 HStack{
-                    Image(profilePic)
+                    Image(postInfo.author.profilePic ?? "profileDefault")
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                         .overlay(Circle()
@@ -43,7 +36,7 @@ struct PostView: View {
                         .clipShape(Circle())
                     
                     VStack{
-                        Text("\(nickname)")
+                        Text("\(postInfo.author.nickname)")
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
                             .frame(minWidth: 100, maxWidth: 300, minHeight: 10, maxHeight: 30, alignment: .leading)
@@ -52,10 +45,10 @@ struct PostView: View {
                     Spacer()
                 }
                 NavigationLink(destination: PostDetailView(
-                    postId: postId,
-                    profileImageUrl: profilePic
+                    postId: postInfo.id,
+                    profileImageUrl: postInfo.author.profilePic
                 )) {
-                    Image("\(thumbnailImgURL)")
+                    Image(postInfo.plInfo.thumbnailImgURL ?? "profileDefault")
                         .resizable()
                         .frame(maxWidth: 390, maxHeight: 390)
                     // 게시글 썸네일
@@ -64,17 +57,17 @@ struct PostView: View {
                 HStack{
                     
                     Button(action: {
-                        self.isLike.toggle()
-                        if isLike == true{
-                            likerCount += 1
+                        postInfo.isLike.toggle()
+                        if postInfo.isLike == true {
+                            postInfo.likerCount += 1
                         } else {
-                            likerCount -= 1
+                            postInfo.likerCount -= 1
                         }
                         
                         // 클릭 했을 때 좋아요 기능 구현
                     }, label: {
                         
-                        Image(systemName: isLike ? "heart.fill" : "heart")
+                        Image(systemName: postInfo.isLike ? "heart.fill" : "heart")
                             .font(.system(size: 31))
                         //                            .padding(.trailing,10)
                             .foregroundColor(Color.white)
@@ -84,7 +77,7 @@ struct PostView: View {
                     //                    .padding(.leading, 5)
                     // 좋아요 버튼
                     
-                    Text("좋아요 \(likerCount)개")
+                    Text("좋아요 \(postInfo.likerCount)개")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .semibold))
                         .frame(maxWidth: 150, maxHeight: 44, alignment: .leading)
@@ -117,7 +110,7 @@ struct PostView: View {
                     // 스크랩 버튼
                 } // 게시글 하단의 버튼
                 
-                Text("\(title)")
+                Text("\(postInfo.title)")
                     .foregroundColor(Color.white)
                     .font(.system(size: 20, weight: .heavy))
                     .multilineTextAlignment(.leading)
@@ -126,7 +119,7 @@ struct PostView: View {
                 // 게시글 제목
                 HStack{
                     
-                    Text("\(content)")
+                    Text("\(postInfo.content)")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .bold))
                         .multilineTextAlignment(.leading)
@@ -138,8 +131,8 @@ struct PostView: View {
                     // 게시글 내용
                     
                     NavigationLink(destination: PostDetailView(
-                        postId: postId,
-                        profileImageUrl: profilePic
+                        postId: postInfo.id,
+                        profileImageUrl: postInfo.author.profilePic
                     )) {
                         Text("더보기")
                             .padding(.trailing, 5)
@@ -155,14 +148,7 @@ struct PostInfoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             PostView(
-                profilePic: "random1",
-                nickname: "Hi",
-                thumbnailImgURL: "defaultImg",
-                content: "this is content",
-                title: "Title",
-                postId: 1,
-                likerCount : 12,
-                isLike: false
+                postInfo: .createMock()
             )
         }
     }

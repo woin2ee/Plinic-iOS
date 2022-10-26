@@ -13,7 +13,7 @@ struct PostDetailView: View {
     
     @State var postDetil : PostDetail = PostDetail.creatEmpty()
     @State var postId: Int
-    let profileImageUrl: String
+    var profileImageUrl: String?
     
     var body: some View {
         ZStack {
