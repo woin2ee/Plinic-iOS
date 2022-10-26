@@ -13,9 +13,9 @@ struct PostDetail: Codable {
     let createdAt, updatedAt: String
     let tagSet: [String]
     var plInfo: PlaylistDetail
-    let likerCount: Int
+    var likerCount: Int
     let title, content: String
-    let isLike: Bool
+    var isLike: Bool
     let author: String
     
     enum CodingKeys: String, CodingKey {

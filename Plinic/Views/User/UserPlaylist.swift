@@ -12,6 +12,7 @@ struct UserPlaylist: View {
     @StateObject var playlistAPI = PlaylistAPI.init()
     
     @State var playlistDetail: PlaylistDetail = .createEmpty()
+    @State var id: Int
     
     var body: some View {
         ZStack {
@@ -28,7 +29,7 @@ struct UserPlaylist: View {
             }
         }
         .onAppear() {
-            playlistAPI.getPlaylistDetail(by: playlistDetail.id) { result in
+            playlistAPI.getPlaylistDetail(by: id) { result in
                 switch result {
                 case .success(let playlistDetail):
                     self.playlistDetail = playlistDetail
@@ -43,8 +44,8 @@ struct UserPlaylist: View {
 struct UserPlaylist_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserPlaylist(playlistDetail: .createMock())
-            UserPlaylist(playlistDetail: .createMock())
+            UserPlaylist(playlistDetail: .createMock(), id: 1)
+            UserPlaylist(playlistDetail: .createMock(), id: 1)
             .previewDevice("iPhone 8")
         }
     }

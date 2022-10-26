@@ -65,7 +65,7 @@ struct HorizontalPlaylistView: View {
             ScrollView(.horizontal) {
                 HStack() {
                     ForEach(displayedPlaylistInfo, id: \.uuid) { info in
-                        NavigationLink(destination: UserPlaylist()) {
+                        NavigationLink(destination: UserPlaylist(id: info.id)) {
                             VStack{
                                 ThumbnailView(imageUrl: info.thumbnailUrl)
                                     .padding(.bottom, 5)

@@ -13,9 +13,9 @@ struct Post: Codable {
     
     var author: Author
     let id : Int
-    let likerCount: Int
+    var likerCount: Int
     let title: String
-    let isLike: Bool
+    var isLike: Bool
     let content: String
     var plInfo: Playlist
     
@@ -29,7 +29,7 @@ struct Post: Codable {
         case plInfo = "playlist_info"
     }
     
-    static func creatEmpty() -> Post {
+    static func createEmpty() -> Post {
         return Post(
             author: Author.init(nickname: "NickName", profilePic: "profileDefault"),
             id: -1,

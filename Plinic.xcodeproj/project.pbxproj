@@ -114,7 +114,7 @@
 		D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
 		D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySceneDelegate.swift; sourceTree = "<group>"; };
 		D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthVM.swift; sourceTree = "<group>"; };
-		D0C176B228BE1360007CB43F /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 1; name = SearchContentView.swift; path = Plinic/search/SearchContentView.swift; sourceTree = SOURCE_ROOT; usesTabs = 0; };
+		D0C176B228BE1360007CB43F /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 1; path = SearchContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		D0C176B528C73418007CB43F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D0C176B828D21A45007CB43F /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
 		D0E6E46929046B0D00BA875A /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
@@ -168,10 +168,8 @@
 		D01C63A428A6CF970037813F /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				D01C63A528A6CFB10037813F /* PostViews */,
 				D0A54AC428ACA8DA0097010B /* PostContentView.swift */,
-				D04E4A6328AF69E400D04543 /* PostDetailView.swift */,
-				D06539B628AFCDBF008B5199 /* PostCreateView.swift */,
+				D01C63A528A6CFB10037813F /* PostViews */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -182,6 +180,8 @@
 				D01C63A628A6D0180037813F /* PostView.swift */,
 				D04E4A6128AF664700D04543 /* PostDetailInfoView.swift */,
 				D01AE77029011C6B00117432 /* PostHeaderView.swift */,
+				D04E4A6328AF69E400D04543 /* PostDetailView.swift */,
+				D06539B628AFCDBF008B5199 /* PostCreateView.swift */,
 			);
 			path = PostViews;
 			sourceTree = "<group>";
@@ -200,20 +200,12 @@
 			path = "Back-End";
 			sourceTree = "<group>";
 		};
-		D022C58428D6FD8500E4EFEA /* VideoBackground */ = {
-			isa = PBXGroup;
-			children = (
-				D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */,
-			);
-			path = VideoBackground;
-			sourceTree = "<group>";
-		};
-		D022C58728D704BC00E4EFEA /* LoginViews */ = {
+		D022C58728D704BC00E4EFEA /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				D022C58828D704DA00E4EFEA /* LoginButton.swift */,
 			);
-			path = LoginViews;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D0461A6E28F45AC500149F92 /* Frameworks */ = {
@@ -243,8 +235,8 @@
 		D052589028BC8BB900EDF8C4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D052589128BC8BE900EDF8C4 /* SearchViews */,
 				D0C176B228BE1360007CB43F /* SearchContentView.swift */,
+				D052589128BC8BE900EDF8C4 /* SearchViews */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -290,12 +282,7 @@
 				D0F4D4CD28FD93BE0085EB28 /* Extensions */,
 				D08E27522896CBCA00013A12 /* Info.plist */,
 				E8C4A3752906C52700425064 /* Application */,
-				D022C58428D6FD8500E4EFEA /* VideoBackground */,
-				D08E27532896CC1000013A12 /* WebViews */,
-				D08E274C2893C5A200013A12 /* User */,
-				D01C63A428A6CF970037813F /* Post */,
-				D052589028BC8BB900EDF8C4 /* Search */,
-				D0C176B728D21A15007CB43F /* Login */,
+				E876C0822908FFE500237FF9 /* Views */,
 				D08E27442893A56F00013A12 /* Preview Content */,
 			);
 			path = Plinic;
@@ -312,8 +299,8 @@
 		D08E274C2893C5A200013A12 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				D08E274D2893C5B100013A12 /* UserViews */,
 				91014F1B2895920100C58E8B /* UserContentView.swift */,
+				D08E274D2893C5B100013A12 /* UserViews */,
 				D08E27582896D70300013A12 /* UserPlaylist.swift */,
 				D04183E3289D26890045C907 /* UserProfileEditView.swift */,
 				9113806828AFDDD4006CD66A /* PlaylistCreateView.swift */,
@@ -324,31 +311,21 @@
 		D08E274D2893C5B100013A12 /* UserViews */ = {
 			isa = PBXGroup;
 			children = (
-				D08E274E2893C63400013A12 /* ThumbnailView.swift */,
 				D01F104D290452CB001B61D0 /* PlaylistInfoView.swift */,
 				91014F152895835C00C58E8B /* UserInfoView.swift */,
 				91014F172895840500C58E8B /* UserCountsView.swift */,
-				91014F192895841F00C58E8B /* GenreTagView.swift */,
 				91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */,
 				91BC78E328A6920F002C38CF /* UserMyPostView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
 		};
-		D08E27532896CC1000013A12 /* WebViews */ = {
-			isa = PBXGroup;
-			children = (
-				D08E27542896CC3000013A12 /* WebView.swift */,
-			);
-			path = WebViews;
-			sourceTree = "<group>";
-		};
 		D0C176B728D21A15007CB43F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D022C58728D704BC00E4EFEA /* LoginViews */,
 				D0C176B828D21A45007CB43F /* LoginContentView.swift */,
-				D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */,
+				E876C0842909031F00237FF9 /* ViewModel */,
+				D022C58728D704BC00E4EFEA /* Components */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -435,6 +412,37 @@
 				E8689D982905550500D2A03F /* UserInfo.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		E876C0822908FFE500237FF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E876C0832909000F00237FF9 /* Common */,
+				D08E274C2893C5A200013A12 /* User */,
+				D01C63A428A6CF970037813F /* Post */,
+				D052589028BC8BB900EDF8C4 /* Search */,
+				D0C176B728D21A15007CB43F /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E876C0832909000F00237FF9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D08E274E2893C63400013A12 /* ThumbnailView.swift */,
+				D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */,
+				D08E27542896CC3000013A12 /* WebView.swift */,
+				91014F192895841F00C58E8B /* GenreTagView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E876C0842909031F00237FF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5D68528F30E7300D07944 /* KakaoAuthVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E8C4A3752906C52700425064 /* Application */ = {

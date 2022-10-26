@@ -13,7 +13,7 @@ struct PostContentView: View {
     @StateObject var postAPI: PostAPI = PostAPI()
 
     @State var postData : PostList = PostList.create()
-    @State var postList: [Post] = [Post.creatEmpty()]
+    @State var postList: [Post] = [Post.createEmpty()]
     
     
     var body: some View {
@@ -27,7 +27,7 @@ struct PostContentView: View {
                 ScrollView{
                     LazyVStack{
                         ForEach(postList, id: \.uuid) { post in
-                            PostView(profilePic: post.author.profilePic ?? "profileDefault", nickname: post.author.nickname, thumbnailImgURL: post.plInfo.thumbnailImgURL ?? "defaultImg", content: post.content, title: post.title, postId: post.id)
+                            PostView(postInfo: post)
                                 .onAppear() {
                                     if let last = self.postList.last,
                                        last.id == post.id,
