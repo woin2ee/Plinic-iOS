@@ -22,22 +22,25 @@ struct PostDetailInfoView: View {
                 .ignoresSafeArea()
             VStack{
                 HStack{
-                    Image(profilePic ?? "profileDefault")
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .overlay(Circle()
-                            .stroke(Color.MainColor, lineWidth: 5))
-                        .frame(maxWidth: 44, maxHeight: 44)
-                        .clipShape(Circle())
-                        .padding(.leading, 5)
-                    // 유저 프로필 사진
-                    
-                    Text("\(postDetail.author)")
-                        .font(.system(size: 17))
-                        .foregroundColor(Color.white)
-                        .frame(maxWidth: 200, maxHeight: 42, alignment: .leading)
-                        .padding(.leading, 5)
-                    // 유저 닉네임
+                    NavigationLink(destination: OtherUserView(nickName: postDetail.author)){
+                        Image(profilePic ?? "profileDefault")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .overlay(Circle()
+                                .stroke(Color.MainColor, lineWidth: 5))
+                            .frame(maxWidth: 44, maxHeight: 44)
+                            .clipShape(Circle())
+                            .padding(.leading, 5)
+                        // 유저 프로필 사진
+                        
+                        Text("\(postDetail.author)")
+                            .font(.system(size: 17))
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: 200, maxHeight: 42, alignment: .leading)
+                            .padding(.leading, 5)
+                        // 유저 닉네임
+                    }
+
                     Button(action: {
                         postDetail.isLike.toggle()
                         if postDetail.isLike == true{

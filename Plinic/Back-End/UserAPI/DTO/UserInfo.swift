@@ -16,7 +16,7 @@ struct UserInfo: Codable {
     
     let publicPlaylists: [briefPlaylistInfo]
     let privatePlaylists: [briefPlaylistInfo]
-    //    let scrappedPlaylists: [briefPlaylistInfo]
+    let scrappedPlaylists: [briefPlaylistInfo]
     
     let writtenPosts: [WrittenPostInfo]
     
@@ -28,7 +28,7 @@ struct UserInfo: Codable {
         
         case publicPlaylists = "public_playlists"
         case privatePlaylists = "private_playlists"
-        //        case scrappedPlaylists = "scrapped_playlists"
+        case scrappedPlaylists = "scrapped_playlists"
         
         case writtenPosts = "written_posts"
         
@@ -37,10 +37,11 @@ struct UserInfo: Codable {
     
     static func createEmpty() -> Self {
         return .init(
-            nickName: "",
+            nickName: "Test",
             profileImageUrl: "",
             publicPlaylists: [],
             privatePlaylists: [],
+            scrappedPlaylists: [],
             writtenPosts: [],
             wishGenres: []
         )
@@ -59,6 +60,11 @@ struct UserInfo: Codable {
                 .init(title: "비공개 플레이 리스트1", thumbnailUrl: "defaultImg", id: 1),
                 .init(title: "비공개 플레이 리스트2", thumbnailUrl: "defaultImg", id: 2),
                 .init(title: "비공개 플레이 리스트3", thumbnailUrl: "defaultImg", id: 3)
+            ],
+            scrappedPlaylists: [
+                .init(title: "스크랩한 플레이 리스트1", thumbnailUrl: "defaultImg", id: 1),
+                .init(title: "스크랩한 플레이 리스트2", thumbnailUrl: "defaultImg", id: 2),
+                .init(title: "스크랩한 플레이 리스트3", thumbnailUrl: "defaultImg", id: 3),
             ],
             writtenPosts: [
                 .init(id: 1, title: "내가 작성한 포스트1", content: "내가 작성한 포스트 내용1"),

@@ -17,10 +17,10 @@
 		9113807A28CF13F6006CD66A /* UserTopResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113807928CF13F6006CD66A /* UserTopResult.swift */; };
 		914AF7B228D88E640016C38C /* MoreUserResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AF7B128D88E640016C38C /* MoreUserResultsView.swift */; };
 		91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */; };
-		91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserMyPostView.swift */; };
+		91BC78E428A6920F002C38CF /* UserPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BC78E328A6920F002C38CF /* UserPostView.swift */; };
 		D0023CBF290662CB006057B3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CBE290662CB006057B3 /* Genre.swift */; };
 		D0023CC12906C5BE006057B3 /* GenreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CC02906C5BD006057B3 /* GenreAPI.swift */; };
-		D0023CC32906D01A006057B3 /* GenreSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CC22906D01A006057B3 /* GenreSearchView.swift */; };
+		D0023CC32906D01A006057B3 /* PostSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0023CC22906D01A006057B3 /* PostSearchView.swift */; };
 		D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AE77029011C6B00117432 /* PostHeaderView.swift */; };
 		D01C63A328A6B2280037813F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D01C63A228A6B2280037813F /* .gitignore */; };
 		D01C63A728A6D0180037813F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C63A628A6D0180037813F /* PostView.swift */; };
@@ -45,7 +45,9 @@
 		D08E27462893A56F00013A12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08E27452893A56F00013A12 /* Preview Assets.xcassets */; };
 		D08E274F2893C63500013A12 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E274E2893C63400013A12 /* ThumbnailView.swift */; };
 		D08E27552896CC3000013A12 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27542896CC3000013A12 /* WebView.swift */; };
-		D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* UserPlaylist.swift */; };
+		D08E27592896D70300013A12 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E27582896D70300013A12 /* PlaylistView.swift */; };
+		D09B08BA29095E8400C0389B /* OtherUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B08B929095E8400C0389B /* OtherUserView.swift */; };
+		D09B08BC29095FAB00C0389B /* OtherUserPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B08BB29095FAB00C0389B /* OtherUserPlaylistView.swift */; };
 		D0A54AC528ACA8DA0097010B /* PostContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A54AC428ACA8DA0097010B /* PostContentView.swift */; };
 		D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */; };
 		D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */; };
@@ -86,10 +88,10 @@
 		9113807928CF13F6006CD66A /* UserTopResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTopResult.swift; sourceTree = "<group>"; };
 		914AF7B128D88E640016C38C /* MoreUserResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUserResultsView.swift; sourceTree = "<group>"; };
 		91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPlaylistView.swift; sourceTree = "<group>"; };
-		91BC78E328A6920F002C38CF /* UserMyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMyPostView.swift; sourceTree = "<group>"; };
+		91BC78E328A6920F002C38CF /* UserPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostView.swift; sourceTree = "<group>"; };
 		D0023CBE290662CB006057B3 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		D0023CC02906C5BD006057B3 /* GenreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreAPI.swift; sourceTree = "<group>"; };
-		D0023CC22906D01A006057B3 /* GenreSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSearchView.swift; sourceTree = "<group>"; };
+		D0023CC22906D01A006057B3 /* PostSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchView.swift; sourceTree = "<group>"; };
 		D01AE77029011C6B00117432 /* PostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderView.swift; sourceTree = "<group>"; };
 		D01C63A228A6B2280037813F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D01C63A628A6D0180037813F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -116,7 +118,9 @@
 		D08E274E2893C63400013A12 /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 		D08E27522896CBCA00013A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D08E27542896CC3000013A12 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		D08E27582896D70300013A12 /* UserPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaylist.swift; sourceTree = "<group>"; };
+		D08E27582896D70300013A12 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
+		D09B08B929095E8400C0389B /* OtherUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserView.swift; sourceTree = "<group>"; };
+		D09B08BB29095FAB00C0389B /* OtherUserPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPlaylistView.swift; sourceTree = "<group>"; };
 		D0A54AC428ACA8DA0097010B /* PostContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentView.swift; sourceTree = "<group>"; };
 		D0B5D67B28F3084C00D07944 /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
 		D0B5D68328F30B2200D07944 /* MySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,7 +265,7 @@
 				9113807728CF13E0006CD66A /* UserResult.swift */,
 				9113807928CF13F6006CD66A /* UserTopResult.swift */,
 				914AF7B128D88E640016C38C /* MoreUserResultsView.swift */,
-				D0023CC22906D01A006057B3 /* GenreSearchView.swift */,
+				D0023CC22906D01A006057B3 /* PostSearchView.swift */,
 			);
 			path = SearchViews;
 			sourceTree = "<group>";
@@ -312,7 +316,8 @@
 			children = (
 				91014F1B2895920100C58E8B /* UserContentView.swift */,
 				D08E274D2893C5B100013A12 /* UserViews */,
-				D08E27582896D70300013A12 /* UserPlaylist.swift */,
+				D08E27582896D70300013A12 /* PlaylistView.swift */,
+				D09B08B929095E8400C0389B /* OtherUserView.swift */,
 				D04183E3289D26890045C907 /* UserProfileEditView.swift */,
 				9113806828AFDDD4006CD66A /* PlaylistCreateView.swift */,
 			);
@@ -326,7 +331,8 @@
 				91014F152895835C00C58E8B /* UserInfoView.swift */,
 				91014F172895840500C58E8B /* UserCountsView.swift */,
 				91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */,
-				91BC78E328A6920F002C38CF /* UserMyPostView.swift */,
+				91BC78E328A6920F002C38CF /* UserPostView.swift */,
+				D09B08BB29095FAB00C0389B /* OtherUserPlaylistView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -581,7 +587,7 @@
 				D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */,
 				D0E6E46A29046B0D00BA875A /* PostDetail.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
-				91BC78E428A6920F002C38CF /* UserMyPostView.swift in Sources */,
+				91BC78E428A6920F002C38CF /* UserPostView.swift in Sources */,
 				D04F1B9429090FE30020D80C /* ImagePicker.swift in Sources */,
 				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfoView.swift in Sources */,
@@ -592,12 +598,14 @@
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreateView.swift in Sources */,
 				E8689D96290554CC00D2A03F /* UserAPI.swift in Sources */,
-				D08E27592896D70300013A12 /* UserPlaylist.swift in Sources */,
+				D08E27592896D70300013A12 /* PlaylistView.swift in Sources */,
+				D09B08BA29095E8400C0389B /* OtherUserView.swift in Sources */,
 				E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */,
 				E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */,
 				D047BA5129056B21008CA3E4 /* RecentNotice.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D04F1B96290915E80020D80C /* UIImage+.swift in Sources */,
+				D09B08BC29095FAB00C0389B /* OtherUserPlaylistView.swift in Sources */,
 				D04183E4289D26890045C907 /* UserProfileEditView.swift in Sources */,
 				D0F4D4CF28FD93F90085EB28 /* PlinicColors.swift in Sources */,
 				E876C08A2909159600237FF9 /* SearchResult.swift in Sources */,
@@ -613,7 +621,7 @@
 				D08E273F2893A56A00013A12 /* PlinicApp.swift in Sources */,
 				D08E27552896CC3000013A12 /* WebView.swift in Sources */,
 				D0B5D67C28F3084C00D07944 /* MyAppDelegate.swift in Sources */,
-				D0023CC32906D01A006057B3 /* GenreSearchView.swift in Sources */,
+				D0023CC32906D01A006057B3 /* PostSearchView.swift in Sources */,
 				91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
 				E876C08C2909602C00237FF9 /* RefreshableScrollView.swift in Sources */,

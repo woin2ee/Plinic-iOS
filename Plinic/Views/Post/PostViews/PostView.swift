@@ -26,24 +26,27 @@ struct PostView: View {
                 
                 // 상단의 게시글 작성자 정보
                     .padding(.bottom, 5)
-                HStack{
-                    Image(postInfo.author.profilePic ?? "profileDefault")
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .overlay(Circle()
-                            .stroke(Color.MainColor, lineWidth: 3.5))
-                        .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
-                        .clipShape(Circle())
-                    
-                    VStack{
-                        Text("\(postInfo.author.nickname)")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.white)
-                            .frame(minWidth: 100, maxWidth: 300, minHeight: 10, maxHeight: 30, alignment: .leading)
-                        // 유저 닉네임
+                NavigationLink(destination: OtherUserView(nickName: postInfo.author.nickname)){
+                    HStack{
+                        Image(postInfo.author.profilePic ?? "profileDefault")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .overlay(Circle()
+                                .stroke(Color.MainColor, lineWidth: 3.5))
+                            .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
+                            .clipShape(Circle())
+                        
+                        VStack{
+                            Text("\(postInfo.author.nickname)")
+                                .font(.system(size: 20))
+                                .foregroundColor(Color.white)
+                                .frame(minWidth: 100, maxWidth: 300, minHeight: 10, maxHeight: 30, alignment: .leading)
+                            // 유저 닉네임
+                        }
+                        Spacer()
                     }
-                    Spacer()
                 }
+                
                 NavigationLink(destination: PostDetailView(
                     postId: postInfo.id,
                     profileImageUrl: postInfo.author.profilePic
