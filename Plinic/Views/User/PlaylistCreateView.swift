@@ -147,7 +147,7 @@ struct PlaylistCreateView: View {
                                     .frame(width: 60, height: 50)
                                     .background(Color.BackgroundSubColor)
                                     .cornerRadius(15)
-
+                                
                             })
                         }//HStack
                     }//VStack

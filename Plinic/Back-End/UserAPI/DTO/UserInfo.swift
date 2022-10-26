@@ -16,7 +16,7 @@ struct UserInfo: Codable {
     
     let publicPlaylists: [briefPlaylistInfo]
     let privatePlaylists: [briefPlaylistInfo]
-//    let scrappedPlaylists: [briefPlaylistInfo]
+    //    let scrappedPlaylists: [briefPlaylistInfo]
     
     let writtenPosts: [WrittenPostInfo]
     
@@ -28,11 +28,11 @@ struct UserInfo: Codable {
         
         case publicPlaylists = "public_playlists"
         case privatePlaylists = "private_playlists"
-//        case scrappedPlaylists = "scrapped_playlists"
+        //        case scrappedPlaylists = "scrapped_playlists"
         
         case writtenPosts = "written_posts"
         
-//        case wishGenres
+        //        case wishGenres
     }
     
     static func createEmpty() -> Self {
