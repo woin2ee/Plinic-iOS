@@ -434,6 +434,7 @@
 		E876C0832909000F00237FF9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D04F1B9329090FE20020D80C /* ImagePicker.swift */,
 				D08E274E2893C63400013A12 /* ThumbnailView.swift */,
 				D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */,
 				D08E27542896CC3000013A12 /* WebView.swift */,
@@ -458,7 +459,6 @@
 				D08E273E2893A56A00013A12 /* PlinicApp.swift */,
 				D08E27402893A56A00013A12 /* ContentView.swift */,
 				E8C4A37129069A3900425064 /* MainTabBarView.swift */,
-				D04F1B9329090FE20020D80C /* ImagePicker.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
