@@ -9,10 +9,10 @@ import Foundation
 
 struct UserInfo: Codable {
     
-    var uuid = UUID()
+    let uuid = UUID()
     
     let nickName: String
-    let profileImageUrl: String
+    let profileImageUrl: String?
     
     let publicPlaylists: [briefPlaylistInfo]
     let privatePlaylists: [briefPlaylistInfo]
@@ -82,23 +82,27 @@ struct UserInfo: Codable {
 
 struct briefPlaylistInfo: Codable {
     
-    var uuid = UUID()
+    let uuid = UUID()
     
     let title: String
-    let thumbnailUrl: String
+    let thumbnailUrl: String?
     let id: Int
     
-    // MARK: CodingKeys?
+    enum CodingKeys: String, CodingKey {
+        case title
+        case thumbnailUrl = "thumbnail"
+        case id
+    }
 }
 
 struct WrittenPostInfo: Codable {
     
-    var uuid = UUID()
+    let uuid = UUID()
     
     let id: Int
     let title: String
     let content: String
-    var thumbnailUrl: String = "defaultImg"
+    let thumbnailUrl: String = "defaultImg"
     
     // MARK: CodingKeys?
 }

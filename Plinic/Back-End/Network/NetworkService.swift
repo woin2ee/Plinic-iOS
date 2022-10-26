@@ -25,9 +25,6 @@ enum HttpMethod: String {
 
 final class NetworkService {
     
-    private let userName: String = "plinic"
-    private let password: String = "plinic"
-    
     private let baseURL = Bundle.main.infoDictionary?["API_REQUEST_BASE_URL"] as! String
     
     /// API 요청을 보내고 싶을때 사용하는 함수
@@ -71,8 +68,7 @@ final class NetworkService {
         urlRequest.httpMethod = method.rawValue
         urlRequest.timeoutInterval = .init(10)
         
-        let authData = ("\(userName)" + ":" + "\(password)").data(using: .utf8)!.base64EncodedString()
-        urlRequest.setValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Basic cGxpbmljOnBsaW5pYw==", forHTTPHeaderField: "Authorization")
         
         if let headers = headers {
             headers.forEach { key, value in

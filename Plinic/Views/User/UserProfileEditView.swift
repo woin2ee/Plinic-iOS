@@ -36,7 +36,7 @@ struct UserProfileEditView: View {
             VStack{
                 
                 if profileImage == nil {
-                    AsyncImage(url: URL(string: userInfo.profileImageUrl))
+                    AsyncImage(url: URL(string: userInfo.profileImageUrl ?? ""))
                         .aspectRatio(1, contentMode: .fit)
                         .scaledToFill()
                         .frame(width: 100, height: 100)
