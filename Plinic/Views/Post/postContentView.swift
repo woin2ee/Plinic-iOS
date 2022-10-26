@@ -18,13 +18,18 @@ struct PostContentView: View {
     
     var body: some View {
         ZStack {
+            
             Color.black
                 .ignoresSafeArea()
+            
             VStack{
                 
                 PostHeaderView()
                 
-                ScrollView{
+                RefreshableScrollView(onRefresh: { done in
+                    updatePostList()
+                    done()
+                }) {
                     LazyVStack{
                         ForEach(postList, id: \.uuid) { post in
                             PostView(postInfo: post)
@@ -46,26 +51,27 @@ struct PostContentView: View {
                                     }
                                 }
                         }
-                    } //ForEach
-                }
-                .onLoad() {
-                    postAPI.getPostList() { result in
-                        switch result {
-                        case .success(let success):
-                            self.postList = success.results
-                            self.postData = success
-                        case .failure(let failure):
-                            _ = failure
-                        }
-                        
+                    }
+                    .onLoad() {
+                        updatePostList()
                     }
                 }
             }
-            
         } // VStack
     } // ZStack
+    
+    private func updatePostList() {
+        postAPI.getPostList() { result in
+            switch result {
+            case .success(let success):
+                self.postList = success.results
+                self.postData = success
+            case .failure(let failure):
+                _ = failure
+            }
+        }
+    }
 }
-
 
 struct PostContentView_Previews: PreviewProvider {
     static var previews: some View {

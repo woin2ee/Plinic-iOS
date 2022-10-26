@@ -69,6 +69,7 @@
 		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
 		E876C088290914B700237FF9 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C087290914B700237FF9 /* SearchAPI.swift */; };
 		E876C08A2909159600237FF9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C0892909159600237FF9 /* SearchResult.swift */; };
+		E876C08C2909602C00237FF9 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
@@ -139,6 +140,7 @@
 		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		E876C087290914B700237FF9 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		E876C0892909159600237FF9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				D022C58528D6FDA300E4EFEA /* VideoBackgroundView.swift */,
 				D08E27542896CC3000013A12 /* WebView.swift */,
 				91014F192895841F00C58E8B /* GenreTagView.swift */,
+				E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				D0023CC32906D01A006057B3 /* GenreSearchView.swift in Sources */,
 				91BC78E228A691CC002C38CF /* UserMyPlaylistView.swift in Sources */,
 				91014F1C2895920100C58E8B /* UserContentView.swift in Sources */,
+				E876C08C2909602C00237FF9 /* RefreshableScrollView.swift in Sources */,
 				E8689D992905550500D2A03F /* UserInfo.swift in Sources */,
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */,
