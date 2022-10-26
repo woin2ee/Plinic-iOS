@@ -107,7 +107,7 @@ struct UserContentView: View {
             // VStack
         }
         .onAppear() {
-            userAPI.getUserInfo(by: "Lami") { result in
+            userAPI.getUserInfo(by: "plinic") { result in
                 switch result {
                 case .success(let userInfo):
                     self.userInfo = userInfo
