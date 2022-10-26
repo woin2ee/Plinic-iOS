@@ -67,6 +67,7 @@
 		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
+		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
+		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				D0229E6228FE8DD800C5F38C /* BackgroundVideo.swift */,
+				E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			files = (
 				D0F4D4D528FDAEB20085EB28 /* Keyboards.swift in Sources */,
 				D0C176B928D21A45007CB43F /* LoginContentView.swift in Sources */,
+				E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */,
 				D0A54AC528ACA8DA0097010B /* PostContentView.swift in Sources */,
 				D0E6E46C29046B6C00BA875A /* PlaylistDetial.swift in Sources */,
 				D0C176B628C73419007CB43F /* SearchBar.swift in Sources */,
