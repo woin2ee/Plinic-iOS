@@ -50,7 +50,7 @@ final class PostAPI: ObservableObject {
     
     // MARK: - 게시물 상세(GET)
     func getPostDetail(id: Int, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
-        let requestPath = "/\(postPath)/\(id)"
+        let requestPath = "\(postPath)/\(id)"
         
         networkService.request(path: requestPath, method: .get) { result in
             switch result {
