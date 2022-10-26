@@ -17,7 +17,7 @@ struct SearchBar: View {
             NavigationLink(
                 isActive: $isActive,
                 destination: {
-                    SearchResultView()
+                    SearchResultView(searchText: $searchText)
                 },
                 label: {}
             )

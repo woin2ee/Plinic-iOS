@@ -11,10 +11,7 @@ struct MoreUserResultsView: View {
     
     @State private var sort: Int = 0
     
-    var users: [UserInfo] = [
-        .createMock(),
-        .createMock()
-    ]
+    @Binding var users: [UserInfo]
     
     var body: some View {
         List{
@@ -87,6 +84,12 @@ struct MoreUserResultsView: View {
 
 struct userDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MoreUserResultsView()
+        MoreUserResultsView(users: .constant([
+            .createMock(),
+            .createMock(),
+            .createMock(),
+            .createMock(),
+            .createMock()
+        ]))
     }
 }

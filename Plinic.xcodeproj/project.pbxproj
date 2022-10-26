@@ -67,6 +67,8 @@
 		E8689D992905550500D2A03F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8689D982905550500D2A03F /* UserInfo.swift */; };
 		E86ECD56290472090039D8BF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD55290472090039D8BF /* View+.swift */; };
 		E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */; };
+		E876C088290914B700237FF9 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C087290914B700237FF9 /* SearchAPI.swift */; };
+		E876C08A2909159600237FF9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C0892909159600237FF9 /* SearchResult.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
@@ -135,6 +137,8 @@
 		E8689D982905550500D2A03F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E86ECD55290472090039D8BF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
+		E876C087290914B700237FF9 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		E876C0892909159600237FF9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			children = (
 				E84A3E142903B88B007FAA78 /* Network */,
 				D0023CB92906628F006057B3 /* CommonAPI */,
+				E876C0852909149900237FF9 /* SearchAPI */,
 				D047BA52290571B5008CA3E4 /* NoticeAPI */,
 				E8689D94290554B600D2A03F /* UserAPI */,
 				E84A3E062903AF5D007FAA78 /* PlaylistAPI */,
@@ -451,6 +456,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E876C0852909149900237FF9 /* SearchAPI */ = {
+			isa = PBXGroup;
+			children = (
+				E876C087290914B700237FF9 /* SearchAPI.swift */,
+				E876C086290914AE00237FF9 /* DTO */,
+			);
+			path = SearchAPI;
+			sourceTree = "<group>";
+		};
+		E876C086290914AE00237FF9 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E876C0892909159600237FF9 /* SearchResult.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		E8C4A3752906C52700425064 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,7 +597,9 @@
 				D04F1B96290915E80020D80C /* UIImage+.swift in Sources */,
 				D04183E4289D26890045C907 /* UserProfileEditView.swift in Sources */,
 				D0F4D4CF28FD93F90085EB28 /* PlinicColors.swift in Sources */,
+				E876C08A2909159600237FF9 /* SearchResult.swift in Sources */,
 				D047BA5429057212008CA3E4 /* NoticeAPI.swift in Sources */,
+				E876C088290914B700237FF9 /* SearchAPI.swift in Sources */,
 				E86ECD56290472090039D8BF /* View+.swift in Sources */,
 				E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */,
 				E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */,
