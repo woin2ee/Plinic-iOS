@@ -170,8 +170,6 @@
 			children = (
 				D0A54AC428ACA8DA0097010B /* PostContentView.swift */,
 				D01C63A528A6CFB10037813F /* PostViews */,
-				D04E4A6328AF69E400D04543 /* PostDetailView.swift */,
-				D06539B628AFCDBF008B5199 /* PostCreateView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -182,6 +180,8 @@
 				D01C63A628A6D0180037813F /* PostView.swift */,
 				D04E4A6128AF664700D04543 /* PostDetailInfoView.swift */,
 				D01AE77029011C6B00117432 /* PostHeaderView.swift */,
+				D04E4A6328AF69E400D04543 /* PostDetailView.swift */,
+				D06539B628AFCDBF008B5199 /* PostCreateView.swift */,
 			);
 			path = PostViews;
 			sourceTree = "<group>";
