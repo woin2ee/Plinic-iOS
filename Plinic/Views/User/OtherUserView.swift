@@ -44,7 +44,7 @@ struct OtherUserView: View {
                     
             } // ZStack
             .onAppear() {
-                userAPI.getUserInfo(by: "Lami") { result in
+                userAPI.getUserInfo(by: nickName) { result in
                     switch result {
                     case .success(let userInfo):
                         self.userInfo = userInfo
