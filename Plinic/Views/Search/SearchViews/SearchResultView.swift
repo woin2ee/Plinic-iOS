@@ -66,7 +66,7 @@ struct SearchResultView: View {
                                 NavigationLink(destination:
                                                 OtherUserView(nickName: userInfo.nickName)){
                                     userResult(
-                                        profileImg: userInfo.profileImageUrl,
+                                        profileImg: userInfo.profileImageUrl ?? "defaultImg",
                                         nickName: userInfo.nickName
                                     )
                                     .padding(.leading, 10)
