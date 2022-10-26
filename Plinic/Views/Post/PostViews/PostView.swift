@@ -48,8 +48,9 @@ struct PostView: View {
                     postId: postInfo.id,
                     profileImageUrl: postInfo.author.profilePic
                 )) {
-                    Image(postInfo.plInfo.thumbnailImgURL ?? "profileDefault")
+                    Image(postInfo.plInfo.thumbnailImgURL ?? "defaultImg")
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 390, maxHeight: 390)
                     // 게시글 썸네일
                 }

@@ -50,7 +50,7 @@ final class PostAPI: ObservableObject {
     
     // MARK: - 게시물 상세(GET)
     func getPostDetail(id: Int, _ completion: @escaping ((Result<PostDetail, Error>) -> Void)) {
-        let requestPath = "/\(postPath)/\(id)"
+        let requestPath = "\(postPath)/\(id)"
         
         networkService.request(path: requestPath, method: .get) { result in
             switch result {
@@ -59,6 +59,7 @@ final class PostAPI: ObservableObject {
                     let postDetail = try JSONDecoder.init().decode(PostDetail.self, from: data)
                     completion(.success(postDetail))
                 } catch let error {
+                    print("json decode 실패")
                     completion(.failure(error))
                 }
             case .failure(let error):

@@ -9,7 +9,6 @@ import Foundation
 
 final class NoticeAPI: ObservableObject {
     
-    // MARK: 500에러 뜨는중 -> 재균 소통
     private let recenctNoticeURL: String = "/plinic/notices/?recent=true"
     private let networkService = NetworkService.init()
     

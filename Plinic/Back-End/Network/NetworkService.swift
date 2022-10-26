@@ -25,6 +25,9 @@ enum HttpMethod: String {
 
 final class NetworkService {
     
+    private let userName: String = "plinic"
+    private let password: String = "plinic"
+    
     private let baseURL = Bundle.main.infoDictionary?["API_REQUEST_BASE_URL"] as! String
     
     /// API 요청을 보내고 싶을때 사용하는 함수
@@ -36,12 +39,7 @@ final class NetworkService {
     func request(
         path: String,
         method: HttpMethod = .get,
-        headers: [String : String?]? = {
-            let authData = ("Lami" + ":" + "Lami").data(using: .utf8)!.base64EncodedString()
-            let value = "Basic \(authData)"
-            let key = "Authorization"
-            return [key : value]
-        }(),
+        headers: [String : String?]? = nil,
         _ completion: @escaping (Result<Data, Error>) -> Void
     ) {
         request(
@@ -61,12 +59,7 @@ final class NetworkService {
     func request(
         absolutePath: String,
         method: HttpMethod = .get,
-        headers: [String : String?]? = {
-            let authData = ("Lami" + ":" + "Lami").data(using: .utf8)!.base64EncodedString()
-            let value = "Basic \(authData)"
-            let key = "Authorization"
-            return [key : value]
-        }(),
+        headers: [String : String?]? = nil,
         _ completion: @escaping (Result<Data, Error>) -> Void
     ) {
         guard let url = URL.init(string: absolutePath) else {
@@ -77,6 +70,9 @@ final class NetworkService {
         var urlRequest = URLRequest.init(url: url)
         urlRequest.httpMethod = method.rawValue
         urlRequest.timeoutInterval = .init(10)
+        
+        let authData = ("\(userName)" + ":" + "\(password)").data(using: .utf8)!.base64EncodedString()
+        urlRequest.setValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
         
         if let headers = headers {
             headers.forEach { key, value in

@@ -21,7 +21,7 @@ struct PlaylistInfoView: View {
             
             GeometryReader { geo in
                 HStack{
-                    ThumbnailView(imageUrl: playlistDetail.thumbnailImgURL)
+                    ThumbnailView(imageUrl: playlistDetail.thumbnailImgURL ?? "defaultImg")
                         .frame(width: geo.size.width * 0.4, height: geo.size.height * 0.2)
                         .padding(.leading, 10)
                     
