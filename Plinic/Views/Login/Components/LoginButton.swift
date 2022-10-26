@@ -10,31 +10,17 @@ import SwiftUI
 
 struct LoginButton : View {
     
-    @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
-    
-    let loginStatusInfo : (Bool) -> String = { isLogedIn in
-        return isLogedIn ? "로그인 상태" : "로그아웃 상태"
-    }
+    @StateObject var kakaoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
     var body: some View{
         VStack{
             Button(action: {
-                kakoAuthVM.handleKakaoLogin()
+                kakaoAuthVM.handleKakaoLogin()
             }, label: {
                 Image("kakao_login_large_wide")
             })
-            Button(action: {
-                kakoAuthVM.KakaoLogout()
-            }, label: {
-                Text("카카오 로그아웃")
-            })
-            Text(loginStatusInfo(kakoAuthVM.isLogedIn))
-                .padding()
-            // 로그인 상태를 보여주는 텍스트
         }
-        
     }
-    
 }
 
 struct LoginButton_Previews: PreviewProvider {
