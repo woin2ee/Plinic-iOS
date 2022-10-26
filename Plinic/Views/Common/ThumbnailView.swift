@@ -14,16 +14,27 @@ struct ThumbnailView: View {
     var body: some View {
         
         VStack{
-            Image(imageUrl)
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-                .cornerRadius(10)
-        } // VStack        
+            AsyncImage(url: URL(string: imageUrl)){ image in
+                image
+                    .resizable()
+                    .frame(minWidth: 170, maxWidth: 200, minHeight: 170 , maxHeight: 200)
+                    .scaledToFit()
+                    .aspectRatio(1, contentMode: .fill)
+                    .cornerRadius(10)
+            } placeholder: { // imageUrl값이 없을 때
+                Image("defaultImg")
+                    .resizable()
+                    .frame(minWidth: 170, maxWidth: 200, minHeight: 170 , maxHeight: 200)
+                    .scaledToFit()
+                    .aspectRatio(1, contentMode: .fill)
+                    .cornerRadius(10)
+            }
+        } // VStack
     }
 }
 
 struct Thumbnail_Previews: PreviewProvider {
     static var previews: some View {
-        ThumbnailView(imageUrl: "defaultImg")
+        ThumbnailView(imageUrl: "")
     }
 }
