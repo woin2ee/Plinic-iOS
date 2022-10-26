@@ -11,7 +11,7 @@ struct PostDetailView: View {
     
     @StateObject var postAPI: PostAPI = PostAPI()
     
-    @State var postDetil : PostDetail = PostDetail.creatEmpty()
+    @State var postDetail : PostDetail = PostDetail.creatEmpty()
     @State var postId: Int
     var profileImageUrl: String?
     
@@ -22,22 +22,22 @@ struct PostDetailView: View {
             VStack{
                 ScrollView{
                     PostDetailInfoView(
-                        postDetil: $postDetil,
+                        postDetail: $postDetail,
                         profilePic: profileImageUrl
                     )
                     Spacer()
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                WebView(requestURL: "\(postDetil.plInfo.totalURL)")
+                WebView(requestURL: "\(postDetail.plInfo.totalURL)")
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){
                 postAPI.getPostDetail(id: postId) { result in
                     switch result {
                     case .success(let postDetail):
-                        self.postDetil = postDetail
-                        print("PostDetailView의 onAppear",postDetil)
+                        self.postDetail = postDetail
+                        print("PostDetailView의 onAppear", postDetail)
                     case .failure(let failure):
                         _ = failure
                     }
@@ -52,7 +52,7 @@ struct PostDetail_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             PostDetailView(
-                postDetil: .createMock(),
+                postDetail: .createMock(),
                 postId: 1,
                 profileImageUrl: "random1"
             )
