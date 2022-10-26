@@ -90,16 +90,6 @@ struct PostView: View {
                     
                     
                     Spacer()
-                    Button(action: {
-                        // 클릭 했을 때 공유기능 구현
-                    }, label: {
-                        Image(systemName: "square.and.arrow.up")
-                            .font(.system(size: 31))
-                        //                            .padding(.trailing,10)
-                            .foregroundColor(Color.white)
-                            .frame(width: 44, height: 44)
-                    })
-                    // 공유 버튼
                     
                     Button(action: {
                         self.scrap.toggle()

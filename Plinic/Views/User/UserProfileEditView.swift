@@ -167,16 +167,6 @@ struct UserProfileEditView: View {
                     })
                     
                     Button(action: {
-                        // 클릭 했을 때 회원 탈퇴 절차를 밟는 코드 작성
-                    }, label: {
-                        Text("회원 탈퇴")
-                            .foregroundColor(Color.MainColor)
-                            .frame(width: 110, height: 50)
-                            .background(Color.BackgroundSubColor)
-                            .cornerRadius(30)
-                    })
-                    
-                    Button(action: {
                         //FIXME: - 바뀐 정보들이 POST 되는 버튼
                         if profileImage != nil {
                             // 프로필 사진을 변경 했을 때 실행 되는 코드

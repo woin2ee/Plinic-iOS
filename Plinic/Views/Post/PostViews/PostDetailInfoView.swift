@@ -58,16 +58,6 @@ struct PostDetailInfoView: View {
                     // 좋아요 버튼
                     
                     Button(action: {
-                        // 클릭 했을 때 공유기능 구현
-                    }, label: {
-                        Image(systemName: "square.and.arrow.up")
-                            .font(.system(size: 31))
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth: 44, maxHeight: 44)
-                    })
-                    // 공유 버튼
-                    
-                    Button(action: {
                         self.isScrapped.toggle()
                         if isScrapped == true{
                             scrapperCount += 1
