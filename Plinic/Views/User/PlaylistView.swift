@@ -1,5 +1,5 @@
 //
-//  userPlaylist.swift
+//  UserPlaylistView.swift
 //  Plinic
 //
 //  Created by MacBook Air on 2022/08/01.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserPlaylist: View {
+struct PlaylistView: View {
     
     @StateObject var playlistAPI = PlaylistAPI.init()
     
@@ -44,8 +44,8 @@ struct UserPlaylist: View {
 struct UserPlaylist_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            UserPlaylist(playlistDetail: .createMock(), id: 1)
-            UserPlaylist(playlistDetail: .createMock(), id: 1)
+            PlaylistView(playlistDetail: .createMock(), id: 1)
+            PlaylistView(playlistDetail: .createMock(), id: 1)
             .previewDevice("iPhone 8")
         }
     }

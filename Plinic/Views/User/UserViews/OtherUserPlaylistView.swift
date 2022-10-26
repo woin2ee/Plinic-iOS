@@ -1,18 +1,18 @@
 //
-//  UserMyPlaylistView.swift
+//  OtherUserPlaylist.swift
 //  Plinic
 //
-//  Created by 유경덕 on 2022/08/12.
+//  Created by MacBook Air on 2022/10/26.
 //
 
 import SwiftUI
 
-enum PlaylistType: String {
+enum OtherPlaylistType: String {
     case publicPlaylist = "공개된 플레이리스트"
-    case privatePlaylist = "비공개된 플레이리스트"
+    case scrabedPlaylist = "스크랩한 플레이리스트"
 }
 
-struct UserMyPlaylistView: View {
+struct OtherUserPlaylistView: View {
     
     @Binding var userInfo: UserInfo
     
@@ -21,18 +21,17 @@ struct UserMyPlaylistView: View {
             
             Color.black
                 .ignoresSafeArea()
-            
             GeometryReader { geo in
                 VStack {
-                    HorizontalPlaylistView(
+                    HorizontalOtherPlaylistView(
                         userInfo: $userInfo,
                         playlistType: .publicPlaylist,
                         geometry: geo
                     )
                     
-                    HorizontalPlaylistView(
+                    HorizontalOtherPlaylistView(
                         userInfo: $userInfo,
-                        playlistType: .privatePlaylist,
+                        playlistType: .scrabedPlaylist,
                         geometry: geo
                     )
                 }
@@ -41,13 +40,13 @@ struct UserMyPlaylistView: View {
     }
 }
 
-struct HorizontalPlaylistView: View {
+struct HorizontalOtherPlaylistView: View {
     
     @Binding var userInfo: UserInfo
-    var playlistType: PlaylistType
+    var playlistType: OtherPlaylistType
     var geometry: GeometryProxy
     var displayedPlaylistInfo: [briefPlaylistInfo] {
-        playlistType == .publicPlaylist ? userInfo.publicPlaylists : userInfo.privatePlaylists
+        playlistType == .publicPlaylist ? userInfo.publicPlaylists : userInfo.scrappedPlaylists
     }
     
     var body: some View {
@@ -88,8 +87,8 @@ struct HorizontalPlaylistView: View {
     }
 }
 
-struct UserMyPlaylistView_Previews: PreviewProvider {
+struct OtherUserPlaylist_Previews: PreviewProvider {
     static var previews: some View {
-        UserMyPlaylistView(userInfo: .constant(.createMock()))
+        OtherUserPlaylistView(userInfo: .constant(.createMock()))
     }
 }

@@ -21,29 +21,31 @@ struct MoreUserResultsView: View {
                 .font(.system(size: 25))
                 .foregroundColor(Color.black)) {
                     ForEach(users, id: \.uuid) { user in
-                        HStack{
-                            Image("\(user.profileImageUrl)")
-                                .resizable()
-                                .clipShape(Circle())
-                                .overlay(Circle()
-                                    .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
-                                .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
-                                .frame(width: 100, height: 100, alignment: .center)
-                            
-                            VStack(alignment: .leading){
-                                Spacer()
-                                Text("\(user.nickName)")
-                                    .foregroundColor(.white)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 25))
-                                    .padding(.bottom, 5)
-                                Text("플레이리스트: \(user.publicPlaylists.count)")
-                                    .foregroundColor(.gray)
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 20))
-                                Spacer()
-                            }//VStack
-                        }//HStack
+                        NavigationLink(destination: OtherUserView(nickName: user.nickName)){
+                            HStack{
+                                Image("\(user.profileImageUrl)")
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .overlay(Circle()
+                                        .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
+                                    .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
+                                    .frame(width: 100, height: 100, alignment: .center)
+                                
+                                VStack(alignment: .leading){
+                                    Spacer()
+                                    Text("\(user.nickName)")
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 25))
+                                        .padding(.bottom, 5)
+                                    Text("플레이리스트: \(user.publicPlaylists.count)")
+                                        .foregroundColor(.gray)
+                                        .fontWeight(.bold)
+                                        .font(.system(size: 20))
+                                    Spacer()
+                                }//VStack
+                            }//HStack
+                        }
                     }//ForEach
                     .padding(.leading, 10)
                     .listRowBackground(Color.black)

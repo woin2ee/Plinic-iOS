@@ -17,7 +17,7 @@ struct UserInfoView: View {
             Color.black
                 .ignoresSafeArea()
             
-            VStack(spacing: 10) {
+            VStack{
                 
                 HStack{
                     AsyncImage(url: URL(string: userInfo.profileImageUrl))
@@ -29,7 +29,7 @@ struct UserInfoView: View {
                         .clipShape(Circle())
                     //유저 이미지
                     
-                    VStack(spacing:5) {
+                    VStack{
                         
                         HStack(spacing:10){
                             UserCountsView(
@@ -42,9 +42,10 @@ struct UserInfoView: View {
                             )
                             UserCountsView(
                                 infoTitle: "스크랩",
-                                infoCount: 999
+                                infoCount: userInfo.scrappedPlaylists.count
                             )
                         }
+                        .padding([.leading, .trailing], 5)
                         
                         HStack(spacing:15){
                             GenreTagView(genreName: "장르1")
@@ -55,29 +56,7 @@ struct UserInfoView: View {
                     } // VStack
                     
                 } // HStack
-                
-                NavigationLink(destination:
-                                UserProfileEditView(
-                                    genres: ["String"], userInfo: $userInfo,
-                                    userName: userInfo.nickName,
-                                    genre1: "Aucoustic",
-                                    genre2: "Sad",
-                                    genre3: "Happy"
-                                )
-                ) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.BackgroundSubColor)
-                            .frame(width: 330, height: 40)
-                        
-                        Text("프로필 편집")
-                            .fontWeight(.bold)
-                            .font(.system(size: 12))
-                            .foregroundColor(Color.white)
-                    }
-                }
-                
-            } //프로필 편집 버튼
+            }
         } // VStack
     } // ZStack
     
