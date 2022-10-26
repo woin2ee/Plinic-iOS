@@ -40,6 +40,7 @@ struct PostDetailView: View {
                         print("PostDetailView의 onAppear", postDetail)
                     case .failure(let failure):
                         _ = failure
+                        print("Failure")
                     }
                 }
             }

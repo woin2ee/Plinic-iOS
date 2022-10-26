@@ -9,7 +9,9 @@ import Foundation
 
 struct PlaylistDetail: Codable {
     let id: Int
-    let title, thumbnailImgURL, totalURL: String
+    let title: String
+    let thumbnailImgURL: String?
+    let totalURL: String
     let trackName: [String]
     let genreName: String
     let isScrapped: Bool

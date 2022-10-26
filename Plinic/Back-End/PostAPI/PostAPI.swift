@@ -59,6 +59,7 @@ final class PostAPI: ObservableObject {
                     let postDetail = try JSONDecoder.init().decode(PostDetail.self, from: data)
                     completion(.success(postDetail))
                 } catch let error {
+                    print("json decode 실패")
                     completion(.failure(error))
                 }
             case .failure(let error):
