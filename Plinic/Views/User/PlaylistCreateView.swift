@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PlaylistCreateView: View {
     
+    @StateObject var randomAPI: RandomAPI = RandomAPI()
+    @State var imageUrl: String?
+    
     @StateObject var genreAPI: GenreAPI = GenreAPI()
     @State var genres: [String]
     
@@ -25,7 +28,7 @@ struct PlaylistCreateView: View {
             GeometryReader{ geo in
                 VStack {
                     HStack {
-                        ThumbnailView(imageUrl: "defaultImg")
+                        ThumbnailView(imageUrl: imageUrl ?? "defaultImg")
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.MainColor, lineWidth: 1))
                             .frame(width: geo.size.width * 0.5, height: geo.size.height * 0.25)
@@ -54,7 +57,14 @@ struct PlaylistCreateView: View {
                             }
                             
                             Button(action: {
-                                // 클릭 했을 때 사진변경
+                                randomAPI.getThumbnail() { result in
+                                    switch result {
+                                    case .success(let success):
+                                        self.imageUrl = success
+                                    case .failure(let failure):
+                                        _ = failure
+                                    }
+                                }
                             }, label: {
                                 Text("사진 변경")
                                     .fontWeight(.bold)
