@@ -37,7 +37,7 @@ struct UserInfo: Codable {
     
     static func createEmpty() -> Self {
         return .init(
-            nickName: "Test",
+            nickName: "",
             profileImageUrl: "",
             publicPlaylists: [],
             privatePlaylists: [],
