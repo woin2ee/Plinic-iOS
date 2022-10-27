@@ -13,6 +13,9 @@ struct PlaylistInfoView: View {
     
     @Binding var playlistDetail: PlaylistDetail
     
+    let userAPI: UserAPI = .init()
+    @State var userInfo: UserInfo = .createEmpty()
+    
     var body: some View {
         ZStack {
             
@@ -32,15 +35,40 @@ struct PlaylistInfoView: View {
                             .fontWeight(.heavy)
                             .frame(width: geo.size.width * 0.5, height: 20, alignment: .leading)
                         
-                        Text("\(playlistDetail.trackName.count) 곡")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color.white)
-                            .fontWeight(.medium)
-                            .frame(width: geo.size.width * 0.5, height: 20, alignment: .leading)
+                        HStack{
+                            Text("\(playlistDetail.trackName.count) 곡")
+                                .font(.system(size: 12))
+                                .foregroundColor(Color.white)
+                                .fontWeight(.medium)
+                                .frame(width: geo.size.width * 0.2, height: 20, alignment: .leading)
+                                .padding(.leading, 10)
+                            Spacer()
+                            //MARK: - 유저 정보에 맞는 수정, 삭제 버튼
+//                            if userInfo.publicPlaylists.contains(where: { $0.id == playlistDetail.id } ) || userInfo.privatePlaylists.contains(where: { $0.id == playlistDetail.id } ) {
+//
+//                                Button(action: {
+//                                    // 수정 구현
+//                                }, label: {
+//                                    Text("수정")
+//                                        .padding(5)
+//                                        .foregroundColor(.MainColor)
+//                                        .cornerRadius(10)
+//                                        .frame(maxWidth: 44, maxHeight: 44, alignment: .trailing)
+//                                })
+//
+//                                Button(action: {
+//                                    // 삭제 구현
+//                                }, label: {
+//                                    Text("삭제")
+//                                        .padding(5)
+//                                        .foregroundColor(.red)
+//                                        .cornerRadius(10)
+//                                        .frame(maxWidth: 44, maxHeight: 44, alignment: .trailing)
+//                                })
+//                            }
+                        }
                         
                         HStack{
-                            GenreTagView(genreName: playlistDetail.genreName)
-                            GenreTagView(genreName: playlistDetail.genreName)
                             GenreTagView(genreName: playlistDetail.genreName)
                         }
                         .frame(width: geo.size.width * 0.5, height: 30, alignment: .leading)
@@ -69,6 +97,16 @@ struct PlaylistInfoView: View {
                     } // VStack
                 } // HStack
             } //ZStack
+            .onAppear() {
+                userAPI.getUserInfo(by: "plinic") { result in
+                    switch result {
+                    case .success(let userInfo):
+                        self.userInfo = userInfo
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
         }
     }
 }

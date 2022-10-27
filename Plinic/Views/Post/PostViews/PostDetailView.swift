@@ -10,10 +10,13 @@ import SwiftUI
 struct PostDetailView: View {
     
     @StateObject var postAPI: PostAPI = PostAPI()
+    @StateObject var playlistAPI: PlaylistAPI = .init()
     
     @State var postDetail : PostDetail = PostDetail.creatEmpty()
     @State var postId: Int
     var profileImageUrl: String?
+    
+    var youtubeUrl: String = YoutubeLinkStorage.randomUrl
     
     var body: some View {
         ZStack {
@@ -29,7 +32,7 @@ struct PostDetailView: View {
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                WebView(requestURL: "\(postDetail.plInfo.totalURL)")
+                WebView(requestURL: youtubeUrl)
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){

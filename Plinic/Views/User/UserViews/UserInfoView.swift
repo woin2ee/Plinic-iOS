@@ -20,13 +20,26 @@ struct UserInfoView: View {
             VStack{
                 
                 HStack{
-                    AsyncImage(url: URL(string: userInfo.profileImageUrl ?? ""))
-                        .aspectRatio(1, contentMode: .fit)
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .overlay(Circle()
-                            .stroke(Color.MainColor, lineWidth: 5))
-                        .clipShape(Circle())
+                    AsyncImage(url: URL(string: userInfo.profileImageUrl ?? "")){ image in
+                        image
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .overlay(Circle()
+                                .stroke(Color.MainColor, lineWidth: 5))
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image("플리닉로고")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .overlay(Circle()
+                                .stroke(Color.MainColor, lineWidth: 5))
+                            .clipShape(Circle())
+                    }
+                    
                     //유저 이미지
                     
                     VStack{
@@ -48,9 +61,9 @@ struct UserInfoView: View {
                         .padding([.leading, .trailing], 5)
                         
                         HStack(spacing:15){
-                            GenreTagView(genreName: "장르1")
-                            GenreTagView(genreName: "장르2")
-                            GenreTagView(genreName: "장르333")
+                            ForEach(userInfo.favoriteGenres, id: \.self) { genreName in
+                                GenreTagView(genreName: genreName)
+                            }
                         }
                         
                     } // VStack

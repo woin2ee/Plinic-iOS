@@ -35,8 +35,7 @@ struct WebView : UIViewRepresentable {
 
 struct PlaylistWebView_Previews: PreviewProvider {
     static var previews: some View {
-        WebView(requestURL: "https://www.naver.com")
-        
+        WebView(requestURL: "http://www.youtube.com/watch_videos?video_ids=cPAbx5kgCJo")
     }
 }
 

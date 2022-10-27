@@ -11,8 +11,10 @@ struct PlaylistView: View {
     
     @StateObject var playlistAPI = PlaylistAPI.init()
     
-    @State var playlistDetail: PlaylistDetail = .createEmpty()
+    @State var playlistDetail: PlaylistDetail = .createMock()
     @State var id: Int
+    
+    var youtubeUrl: String = YoutubeLinkStorage.randomUrl
     
     var body: some View {
         ZStack {
@@ -24,7 +26,7 @@ struct PlaylistView: View {
                 VStack{
                     PlaylistInfoView(playlistDetail: $playlistDetail)
                         .frame(height: geo.size.height * 0.25)
-                    WebView(requestURL: playlistDetail.totalURL)
+                    WebView(requestURL: youtubeUrl)
                 }
             }
         }
@@ -46,7 +48,7 @@ struct UserPlaylist_Previews: PreviewProvider {
         Group {
             PlaylistView(playlistDetail: .createMock(), id: 1)
             PlaylistView(playlistDetail: .createMock(), id: 1)
-            .previewDevice("iPhone 8")
+                .previewDevice("iPhone 8")
         }
     }
 }

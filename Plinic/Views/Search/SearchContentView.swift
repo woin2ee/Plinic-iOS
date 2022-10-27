@@ -31,24 +31,25 @@ struct SearchContentView: View {
                                 GenreThumbnail(genreImg: "", genreName: genre)
                             } // NavigationLink
                         } //Foreach
-                        .onAppear(){
-                            genreAPI.getGenres() { result in
-                                switch result {
-                                case .success(let success):
-                                    self.genres = success
-                                case .failure(let failure):
-                                    _ = failure
-                                }
-                            }
-                        }
                     } // VStack
                 } // ScrollView
             } // VStack
             .onTapGesture {
                 hideKeyboard()
             } // 화면 터치 했을 때 키보드 내리기
-            
         } // ZStack
+        .onAppear(){
+            genreAPI.getGenres() { result in
+                switch result {
+                case .success(let genres):
+                    self.genres = genres
+                    print(self.genres)
+                    print(genres)
+                case .failure(let failure):
+                    _ = failure
+                }
+            }
+        }
     }
 }
 
