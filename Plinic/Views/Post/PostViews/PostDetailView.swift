@@ -46,14 +46,6 @@ struct PostDetailView: View {
                         print("Failure")
                     }
                 }
-                playlistAPI.getPlayListUrl(byYoutubeId: YoutubeIdStorage.randomIds) { result in
-                    switch result {
-                    case .success(let url):
-                        self.youtubeUrl = url
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
             }
         } // ZStack
     }

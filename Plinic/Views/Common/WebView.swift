@@ -12,7 +12,7 @@ struct WebView : UIViewRepresentable {
     
     // UIKit의 UIView를 사용할 수 있게 함
     
-    @Binding var requestURL : String
+    var requestURL : String
     
     func makeUIView(context: Context) -> some WKWebView {
         
