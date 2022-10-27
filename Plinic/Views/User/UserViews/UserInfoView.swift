@@ -61,9 +61,9 @@ struct UserInfoView: View {
                         .padding([.leading, .trailing], 5)
                         
                         HStack(spacing:15){
-                            GenreTagView(genreName: "장르1")
-                            GenreTagView(genreName: "장르2")
-                            GenreTagView(genreName: "장르333")
+                            ForEach(userInfo.favoriteGenres, id: \.self) { genreName in
+                                GenreTagView(genreName: genreName)
+                            }
                         }
                         
                     } // VStack
