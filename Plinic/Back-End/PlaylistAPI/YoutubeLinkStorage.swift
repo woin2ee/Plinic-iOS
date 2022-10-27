@@ -1,5 +1,5 @@
 //
-//  YoutubeIdStorage.swift
+//  YoutubeLinkStorage.swift
 //  Plinic
 //
 //  Created by Jaewon on 2022/10/27.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct YoutubeIdStorage {
+struct YoutubeLinkStorage {
     static let ids: [String] = [
         "T6tTohWiu5A",
         "3YHGEuefsbI",
@@ -34,5 +34,9 @@ struct YoutubeIdStorage {
     
     static var randomIds: String {
         self.ids.randomElement() ?? "XZ868t23Pb4"
+    }
+    
+    static var randomUrl: String {
+        "http://www.youtube.com/watch_videos?video_ids=\(ids.randomElement() ?? "XZ868t23Pb4")"
     }
 }

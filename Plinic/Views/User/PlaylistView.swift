@@ -14,7 +14,7 @@ struct PlaylistView: View {
     @State var playlistDetail: PlaylistDetail = .createMock()
     @State var id: Int
     
-    @State var youtubeUrl: PlaylistUrl = .createMock()
+    var youtubeUrl: String = YoutubeLinkStorage.randomUrl
     
     var body: some View {
         ZStack {
@@ -26,7 +26,7 @@ struct PlaylistView: View {
                 VStack{
                     PlaylistInfoView(playlistDetail: $playlistDetail)
                         .frame(height: geo.size.height * 0.25)
-                    WebView(requestURL: $youtubeUrl.totalUrl)
+                    WebView(requestURL: youtubeUrl)
                 }
             }
         }
@@ -35,14 +35,6 @@ struct PlaylistView: View {
                 switch result {
                 case .success(let playlistDetail):
                     self.playlistDetail = playlistDetail
-                case .failure(let error):
-                    print(error)
-                }
-            }
-            playlistAPI.getPlayListUrl(byYoutubeId: YoutubeIdStorage.randomIds) { result in
-                switch result {
-                case .success(let url):
-                    self.youtubeUrl = url
                 case .failure(let error):
                     print(error)
                 }
