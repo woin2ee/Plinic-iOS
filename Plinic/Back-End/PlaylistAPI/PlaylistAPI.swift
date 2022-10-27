@@ -10,6 +10,7 @@ import Foundation
 final class PlaylistAPI: ObservableObject {
     
     private let playlistPath: String = "/plinic/playlists"
+    private let playlistExample: String = "/plinic/playlist-examples"
     
     private let networkService = NetworkService.init()
     
@@ -35,5 +36,24 @@ final class PlaylistAPI: ObservableObject {
 //                completion(.failure(error))
 //            }
 //        }
+    }
+    
+    /// youtubeId 로 url 가져오는 함수
+    func getPlayListUrl(byYoutubeId youtubeId: String, _ completion: @escaping ((Result<PlaylistUrl, Error>) -> Void)) {
+        let requestPath: String = "\(playlistExample)?ids=\(youtubeId)"
+        
+        networkService.request(path: requestPath) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let playlistUrl = try JSONDecoder.init().decode(PlaylistUrl.self, from: data)
+                    completion(.success(playlistUrl))
+                } catch let error {
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

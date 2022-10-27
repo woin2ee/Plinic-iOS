@@ -10,10 +10,13 @@ import SwiftUI
 struct PostDetailView: View {
     
     @StateObject var postAPI: PostAPI = PostAPI()
+    @StateObject var playlistAPI: PlaylistAPI = .init()
     
     @State var postDetail : PostDetail = PostDetail.creatEmpty()
     @State var postId: Int
     var profileImageUrl: String?
+    
+    @State var youtubeUrl: PlaylistUrl = .createEmpty()
     
     var body: some View {
         ZStack {
@@ -29,7 +32,7 @@ struct PostDetailView: View {
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                WebView(requestURL: "\(postDetail.plInfo.totalURL)")
+                WebView(requestURL: "\(youtubeUrl.totalUrl)")
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){
@@ -41,6 +44,14 @@ struct PostDetailView: View {
                     case .failure(let failure):
                         _ = failure
                         print("Failure")
+                    }
+                }
+                playlistAPI.getPlayListUrl(byYoutubeId: YoutubeIdStorage.randomIds) { result in
+                    switch result {
+                    case .success(let url):
+                        self.youtubeUrl = url
+                    case .failure(let error):
+                        print(error)
                     }
                 }
             }
