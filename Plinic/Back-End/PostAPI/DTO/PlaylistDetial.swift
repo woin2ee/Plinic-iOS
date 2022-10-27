@@ -48,7 +48,7 @@ struct PlaylistDetail: Codable {
             id: 1,
             title: "🎄 Happy Christmas 🎄",
             thumbnailImgURL: "thumbnails/2022/10/24/육회_oxzz6kC.jpeg",
-            totalURL: "https://www.youtube.com/watch?v=hDphjzXZW-4&list=TLGG-gDeQ2YlcRMyNDEwMjAyMg",
+            totalURL: "http://www.youtube.com/watch_videos?video_ids=T6tTohWiu5A,3YHGEuefsbI,u-YGV5xt-jk",
             trackName: ["1", "2"],
             genreName: "study",
             isScrapped: false,
