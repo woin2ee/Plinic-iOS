@@ -20,7 +20,7 @@ struct OtherUserInfoView: View {
             VStack{
                 
                 HStack{
-                    AsyncImage(url: URL(string: otherUserInfo.profileImageUrl ?? "")){ image in
+                    AsyncImage(url: URL(string: "https://plinic-api-server.ml\(otherUserInfo.profileImageUrl ?? "")")){ image in
                         image
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)

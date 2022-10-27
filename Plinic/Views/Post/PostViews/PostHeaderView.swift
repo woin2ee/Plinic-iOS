@@ -14,6 +14,8 @@ struct PostHeaderView: View {
     @StateObject var noticeAPI: NoticeAPI = NoticeAPI()
     @State var recentNotice: RecentNotice = RecentNotice.creatEmpty()
     
+    @State var isEditing: Bool = false
+    
     var body: some View {
         VStack{
             HStack{
@@ -34,13 +36,24 @@ struct PostHeaderView: View {
                         .cornerRadius(10)
                 }
                 
-                NavigationLink(destination: PostCreateView(postName: "", postContext : "")){
-                    Image(systemName: "plus.circle")
-                        .font(.system(size: 35))
-                        .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
-                        .frame(width: 42, height: 42)
-                }
+                NavigationLink(
+                    isActive: $isEditing,
+                    destination: {
+                        PostCreateView(
+                            isEditing: $isEditing,
+                            postName: "",
+                            postContext : ""
+                        )
+                    },
+                    label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 35))
+                            .foregroundColor(Color(red: 0.503, green: 0.928, blue: 0.601))
+                            .frame(width: 42, height: 42)
+                    }
+                )
                 .padding(.trailing, 5)
+                
             } // 상단바 구현
             .frame(maxWidth: 390, maxHeight: 46)
             .foregroundColor(Color.MainColor)

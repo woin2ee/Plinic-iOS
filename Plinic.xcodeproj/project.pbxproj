@@ -77,6 +77,7 @@
 		E87AF4FA290A868E006F02ED /* OtherUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4F9290A868E006F02ED /* OtherUserInfo.swift */; };
 		E87AF4FC290A897C006F02ED /* OtherUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4FB290A897C006F02ED /* OtherUserInfoView.swift */; };
 		E87AF4FE290A8ADA006F02ED /* OtherUserPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4FD290A8ADA006F02ED /* OtherUserPostView.swift */; };
+		E87AF500290AB28D006F02ED /* CreatePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4FF290AB28D006F02ED /* CreatePost.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
@@ -155,6 +156,7 @@
 		E87AF4F9290A868E006F02ED /* OtherUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserInfo.swift; sourceTree = "<group>"; };
 		E87AF4FB290A897C006F02ED /* OtherUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserInfoView.swift; sourceTree = "<group>"; };
 		E87AF4FD290A8ADA006F02ED /* OtherUserPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPostView.swift; sourceTree = "<group>"; };
+		E87AF4FF290AB28D006F02ED /* CreatePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePost.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				D0E6E46929046B0D00BA875A /* PostDetail.swift */,
 				E84A3E112903B2AD007FAA78 /* Playlist.swift */,
 				D0E6E46B29046B6C00BA875A /* PlaylistDetial.swift */,
+				E87AF4FF290AB28D006F02ED /* CreatePost.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				D0B5D68428F30B2200D07944 /* MySceneDelegate.swift in Sources */,
 				E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */,
 				D04E4A6428AF69E400D04543 /* PostDetailView.swift in Sources */,
+				E87AF500290AB28D006F02ED /* CreatePost.swift in Sources */,
 				91014F162895835C00C58E8B /* UserInfoView.swift in Sources */,
 				D01AE77129011C6B00117432 /* PostHeaderView.swift in Sources */,
 				E84A3E082903AFB6007FAA78 /* PostAPI.swift in Sources */,

@@ -27,7 +27,7 @@ struct PostDetailInfoView: View {
                 HStack{
                     NavigationLink(destination: OtherUserView(nickName: postDetail.author)){
                         
-                        AsyncImage(url: URL(string: profilePic ?? "플리닉로고")){ image in
+                        AsyncImage(url: URL(string: "https://plinic-api-server.ml\(profilePic ?? "플리닉로고")")){ image in
                             image
                                 .resizable()
                                 .aspectRatio(1, contentMode: .fit)

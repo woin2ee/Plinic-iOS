@@ -15,6 +15,8 @@ struct UserContentView: View {
     
     @State private var postTransform = true
     
+    @State var isEditing: Bool = false
+    
     var body: some View {
         ZStack {
             
@@ -37,14 +39,6 @@ struct UserContentView: View {
                                 .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.05, alignment: .leading)
                             //유저 이름
                             
-                            NavigationLink(destination: PlaylistCreateView(genres: [""])){
-                                Image(systemName: "plus.circle")
-                                    .font(.system(size: 35))
-                                    .foregroundColor(Color.MainColor)
-                                    .padding(.trailing, 15.0)
-                            }
-                            // 플레이리스트 추가버튼
-                            
                             Button(action: {
                                 self.postTransform.toggle()
                             }, label: {
@@ -65,26 +59,31 @@ struct UserContentView: View {
                                 .padding(.top, 10)
                             // 유저 정보 부분
                             
-                            NavigationLink(destination:
-                                            UserProfileEditView(
-                                                genres: ["String"], userInfo: $userInfo,
-                                                userName: userInfo.nickName,
-                                                genre1: "Aucoustic",
-                                                genre2: "Sad",
-                                                genre3: "Happy"
-                                            )
-                            ) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .fill(Color.BackgroundSubColor)
-                                        .frame(width: 330, height: 40)
-                                    
-                                    Text("프로필 편집")
-                                        .fontWeight(.bold)
-                                        .font(.system(size: 12))
-                                        .foregroundColor(Color.white)
+                            NavigationLink(
+                                isActive: $isEditing,
+                                destination: {
+                                    UserProfileEditView(
+                                        genres: ["String"], userInfo: $userInfo,
+                                        userName: userInfo.nickName,
+                                        genre1: "Aucoustic",
+                                        genre2: "Sad",
+                                        genre3: "Happy",
+                                        isEditing: $isEditing
+                                    )
+                                },
+                                label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .fill(Color.BackgroundSubColor)
+                                            .frame(width: 330, height: 40)
+                                        
+                                        Text("프로필 편집")
+                                            .fontWeight(.bold)
+                                            .font(.system(size: 12))
+                                            .foregroundColor(Color.white)
+                                    }
                                 }
-                            } // 프로필 편집 버튼
+                            )
                             .padding(.bottom, 20)
                             
                             if(self.postTransform) {
