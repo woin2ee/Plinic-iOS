@@ -38,7 +38,7 @@ struct GenreThumbnail: View {
                     .background(genreColor.randomElement())
                     .cornerRadius(10)
                     .padding(.bottom, 15)
-                    .brightness(-0.2)
+                    .brightness(-0.6)
                     .blur(radius: 1)
             }
             
