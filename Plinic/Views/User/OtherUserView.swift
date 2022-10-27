@@ -11,7 +11,7 @@ struct OtherUserView: View {
     
     let userAPI: UserAPI = .init()
     
-    @State var userInfo: UserInfo = .createEmpty()
+    @State var otherUserInfo: OtherUserInfo = .createEmpty()
     
     @State private var postTransform = true
     @State var nickName: String
@@ -69,6 +69,17 @@ struct OtherUserView: View {
                 }
             }
         }
+        .navigationTitle(otherUserInfo.nickName)
+        .navigationBarItems(trailing:
+                                Button(action: {
+            self.postTransform.toggle()
+        }, label: {
+            Image(systemName: "music.note.list")
+                .padding(.trailing, 10.0)
+                .font(.system(size: 20))
+                .foregroundColor(Color.MainColor)
+        }))
+        
         
     }
 }
@@ -77,7 +88,7 @@ struct OtherUserView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OtherUserView(nickName: "Lami")
-            OtherUserView(nickName: "Lami")
+            OtherUserView(nickName: "woin2ee")
                 .previewDevice("iPhone 8")
         }
     }
