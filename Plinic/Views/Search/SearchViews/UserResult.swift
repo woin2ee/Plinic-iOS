@@ -1,5 +1,5 @@
 //
-//  userResult.swift
+//  UserResult.swift
 //  Plinic
 //
 //  Created by 유경덕 on 2022/09/12.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct userResult: View {
+struct UserResult: View {
     
     var profileImg : String
     var nickName : String
@@ -16,7 +16,7 @@ struct userResult: View {
     var body: some View {
         
         VStack{
-            AsyncImage(url: URL(string: profileImg ?? "플리닉로고")){ image in
+            AsyncImage(url: URL(string: profileImg)){ image in
                 image
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
@@ -45,7 +45,7 @@ struct userResult: View {
     
     struct userResult_Previews: PreviewProvider {
         static var previews: some View {
-            userResult(profileImg:"random1", nickName: "watashi")
+            UserResult(profileImg:"random1", nickName: "watashi")
         }
     }
 }

@@ -66,7 +66,7 @@ struct SearchResultView: View {
                             ForEach(displayedUsers, id: \.uuid) { userInfo in
                                 NavigationLink(destination:
                                                 OtherUserView(nickName: userInfo.nickName)){
-                                    userResult(
+                                    UserResult(
                                         profileImg: userInfo.profileImageUrl ?? "defaultImg",
                                         nickName: userInfo.nickName
                                     )

@@ -20,7 +20,7 @@ struct GenreThumbnail: View {
                 .ignoresSafeArea()
             
             
-            AsyncImage(url: URL(string: genreImg ?? "플리닉로고")){ image in
+            AsyncImage(url: URL(string: genreImg)){ image in
                 image
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)

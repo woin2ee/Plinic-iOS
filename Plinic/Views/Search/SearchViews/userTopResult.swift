@@ -17,7 +17,7 @@ struct userTopResult: View {
     var body: some View {
         
         HStack{
-            userResult(profileImg:"\(profileImg)", nickName: "\(nickName)").scaleEffect(1.2)
+            UserResult(profileImg:"\(profileImg)", nickName: "\(nickName)").scaleEffect(1.2)
             UserCountsView(infoTitle: "플레이리스트", infoCount: infoCount)
                 .padding(.leading, 10)
         }//HStack
