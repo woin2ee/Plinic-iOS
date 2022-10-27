@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchResultView: View {
     
     private let searchAPI: SearchAPI = .init()
+    private let postAPI: PostAPI = .init()
     
     @Binding var searchText: String
     @State private var searchResult: SearchResult = .createEmpty()
@@ -21,7 +22,7 @@ struct SearchResultView: View {
         }
     }
     
-    let data = Array(1...3)
+    @State private var tempPostSearchResult: PostList = .createEmpty()
     
     var body: some View {
         ZStack {
@@ -121,7 +122,7 @@ struct SearchResultView: View {
                             .padding([.top, .leading], 10)
                         ScrollView(.horizontal) {
                             HStack(spacing:15) {
-                                ForEach(searchResult.posts, id: \.uuid) { post in
+                                ForEach(tempPostSearchResult.results, id: \.uuid) { post in
                                     NavigationLink(
                                         destination: {
                                             PostDetailView(postId: post.id)
@@ -155,6 +156,14 @@ struct SearchResultView: View {
                 switch result {
                 case .success(let searchResult):
                     self.searchResult = searchResult
+                case .failure(let error):
+                    _ = error
+                }
+            }
+            postAPI.getPostList { result in
+                switch result {
+                case .success(let postList):
+                    self.tempPostSearchResult = postList
                 case .failure(let error):
                     _ = error
                 }
