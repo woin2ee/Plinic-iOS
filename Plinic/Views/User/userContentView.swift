@@ -39,14 +39,6 @@ struct UserContentView: View {
                                 .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.05, alignment: .leading)
                             //유저 이름
                             
-                            NavigationLink(destination: PlaylistCreateView(genres: [""])){
-                                Image(systemName: "plus.circle")
-                                    .font(.system(size: 35))
-                                    .foregroundColor(Color.MainColor)
-                                    .padding(.trailing, 15.0)
-                            }
-                            // 플레이리스트 추가버튼
-                            
                             Button(action: {
                                 self.postTransform.toggle()
                             }, label: {
