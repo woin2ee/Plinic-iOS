@@ -23,13 +23,23 @@ struct MoreUserResultsView: View {
                     ForEach(users, id: \.uuid) { user in
                         NavigationLink(destination: OtherUserView(nickName: user.nickName)){
                             HStack{
-                                Image("\(user.profileImageUrl)")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .overlay(Circle()
-                                        .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
-                                    .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
-                                    .frame(width: 100, height: 100, alignment: .center)
+                                AsyncImage(url: URL(string: user.profileImageUrl)){ image in
+                                    image
+                                        .resizable()
+                                        .clipShape(Circle())
+                                        .overlay(Circle()
+                                            .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
+                                        .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
+                                        .frame(width: 100, height: 100, alignment: .center)
+                                } placeholder: { // imageUrl값이 없을 때
+                                    Image("플리닉로고")
+                                        .resizable()
+                                        .clipShape(Circle())
+                                        .overlay(Circle()
+                                            .stroke(Color(red: 0.501, green: 0.93, blue: 0.601), lineWidth: 3))
+                                        .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
+                                        .frame(width: 100, height: 100, alignment: .center)
+                                }
                                 
                                 VStack(alignment: .leading){
                                     Spacer()

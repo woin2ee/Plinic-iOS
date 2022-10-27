@@ -46,7 +46,6 @@ struct PostView: View {
                                 .clipShape(Circle())
                         }
                         
-                        
                         VStack{
                             Text("\(postInfo.author.nickname)")
                                 .font(.system(size: 20))

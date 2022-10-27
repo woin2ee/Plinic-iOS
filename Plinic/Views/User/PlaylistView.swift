@@ -11,7 +11,7 @@ struct PlaylistView: View {
     
     @StateObject var playlistAPI = PlaylistAPI.init()
     
-    @State var playlistDetail: PlaylistDetail = .createEmpty()
+    @State var playlistDetail: PlaylistDetail = .createMock()
     @State var id: Int
     
     var body: some View {
@@ -46,7 +46,7 @@ struct UserPlaylist_Previews: PreviewProvider {
         Group {
             PlaylistView(playlistDetail: .createMock(), id: 1)
             PlaylistView(playlistDetail: .createMock(), id: 1)
-            .previewDevice("iPhone 8")
+                .previewDevice("iPhone 8")
         }
     }
 }

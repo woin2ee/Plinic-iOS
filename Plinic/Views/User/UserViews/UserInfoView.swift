@@ -20,13 +20,26 @@ struct UserInfoView: View {
             VStack{
                 
                 HStack{
-                    AsyncImage(url: URL(string: userInfo.profileImageUrl ?? ""))
-                        .aspectRatio(1, contentMode: .fit)
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .overlay(Circle()
-                            .stroke(Color.MainColor, lineWidth: 5))
-                        .clipShape(Circle())
+                    AsyncImage(url: URL(string: userInfo.profileImageUrl)){ image in
+                        image
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .overlay(Circle()
+                                .stroke(Color.MainColor, lineWidth: 5))
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image("플리닉로고")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .overlay(Circle()
+                                .stroke(Color.MainColor, lineWidth: 5))
+                            .clipShape(Circle())
+                    }
+                    
                     //유저 이미지
                     
                     VStack{
