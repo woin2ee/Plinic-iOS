@@ -55,7 +55,7 @@ struct UserInfoView: View {
                             )
                             UserCountsView(
                                 infoTitle: "스크랩",
-                                infoCount: userInfo.scrappedPlaylists.count
+                                infoCount: 3
                             )
                         }
                         .padding([.leading, .trailing], 5)
