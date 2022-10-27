@@ -10,7 +10,6 @@ import Foundation
 final class PlaylistAPI: ObservableObject {
     
     private let playlistPath: String = "/plinic/playlists"
-    private let playlistExample: String = "/plinic/playlist-examples"
     
     private let networkService = NetworkService.init()
     
