@@ -32,7 +32,7 @@ struct PostDetailView: View {
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                WebView(requestURL: "\(youtubeUrl.totalUrl)")
+                WebView(requestURL: $youtubeUrl.totalUrl)
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){

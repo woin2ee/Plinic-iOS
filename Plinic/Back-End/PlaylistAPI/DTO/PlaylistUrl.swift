@@ -8,7 +8,7 @@
 import Foundation
 
 struct PlaylistUrl: Codable {
-    let totalUrl: String
+    var totalUrl: String
     
     enum CodingKeys: String, CodingKey {
         case totalUrl = "total_url"
@@ -16,5 +16,9 @@ struct PlaylistUrl: Codable {
     
     static func createEmpty() -> Self {
         return .init(totalUrl: "")
+    }
+    
+    static func createMock() -> Self {
+        return .init(totalUrl: "https://www.youtube.com/watch?v=u-YGV5xt-jk&list=TLGGob0hFMpBKqQyNzEwMjAyMg")
     }
 }

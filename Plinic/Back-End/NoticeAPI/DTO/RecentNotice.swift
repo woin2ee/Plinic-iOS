@@ -8,7 +8,7 @@
 import Foundation
 
 struct RecentNotice: Codable {
-    let id: Int
+    var id: Int
     let title: String
     
     enum CodingKeys: String, CodingKey {

@@ -14,6 +14,9 @@ struct PostHeaderView: View {
     @StateObject var noticeAPI: NoticeAPI = NoticeAPI()
     @State var recentNotice: RecentNotice = RecentNotice.creatEmpty()
     
+    // FIXME: 임시로 넣어놨음 나중에 개선 필요
+    @State var recentNoticeUrl: String = "https://plinic.netlify.app/notices/3"
+    
     var body: some View {
         VStack{
             HStack{
@@ -23,7 +26,7 @@ struct PostHeaderView: View {
                     .frame(width: 42, height: 42)
                     .padding(.leading, 2)
                 
-                NavigationLink(destination: WebView(requestURL: "https://plinic.netlify.app/notices/\(recentNotice.id)")){
+                NavigationLink(destination: WebView(requestURL: $recentNoticeUrl)){
                     Text("\(recentNotice.title)")
                         .font(.system(size: 15))
                         .fontWeight(.bold)
