@@ -14,7 +14,7 @@ enum OtherPlaylistType: String {
 
 struct OtherUserPlaylistView: View {
     
-    @Binding var userInfo: UserInfo
+    @Binding var otherUserInfo: OtherUserInfo
     
     var body: some View {
         ZStack {
@@ -24,13 +24,13 @@ struct OtherUserPlaylistView: View {
             GeometryReader { geo in
                 VStack {
                     HorizontalOtherPlaylistView(
-                        userInfo: $userInfo,
+                        otherUserInfo: $otherUserInfo,
                         playlistType: .publicPlaylist,
                         geometry: geo
                     )
                     
                     HorizontalOtherPlaylistView(
-                        userInfo: $userInfo,
+                        otherUserInfo: $otherUserInfo,
                         playlistType: .scrabedPlaylist,
                         geometry: geo
                     )
@@ -42,11 +42,11 @@ struct OtherUserPlaylistView: View {
 
 struct HorizontalOtherPlaylistView: View {
     
-    @Binding var userInfo: UserInfo
+    @Binding var otherUserInfo: OtherUserInfo
     var playlistType: OtherPlaylistType
     var geometry: GeometryProxy
     var displayedPlaylistInfo: [briefPlaylistInfo] {
-        playlistType == .publicPlaylist ? userInfo.publicPlaylists : userInfo.scrappedPlaylists
+        playlistType == .publicPlaylist ? otherUserInfo.publicPlaylists : otherUserInfo.scrappedPlaylists
     }
     
     var body: some View {
@@ -89,6 +89,6 @@ struct HorizontalOtherPlaylistView: View {
 
 struct OtherUserPlaylist_Previews: PreviewProvider {
     static var previews: some View {
-        OtherUserPlaylistView(userInfo: .constant(.createMock()))
+        OtherUserPlaylistView(otherUserInfo: .constant(.createMock()))
     }
 }

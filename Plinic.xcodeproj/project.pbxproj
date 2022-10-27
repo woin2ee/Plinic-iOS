@@ -74,6 +74,9 @@
 		E876C08C2909602C00237FF9 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */; };
 		E87AF4F5290A1E1E006F02ED /* YoutubeLinkStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4F4290A1E1D006F02ED /* YoutubeLinkStorage.swift */; };
 		E87AF4F8290A1FA1006F02ED /* PlaylistUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4F7290A1FA1006F02ED /* PlaylistUrl.swift */; };
+		E87AF4FA290A868E006F02ED /* OtherUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4F9290A868E006F02ED /* OtherUserInfo.swift */; };
+		E87AF4FC290A897C006F02ED /* OtherUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4FB290A897C006F02ED /* OtherUserInfoView.swift */; };
+		E87AF4FE290A8ADA006F02ED /* OtherUserPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4FD290A8ADA006F02ED /* OtherUserPostView.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
@@ -149,6 +152,9 @@
 		E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		E87AF4F4290A1E1D006F02ED /* YoutubeLinkStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeLinkStorage.swift; sourceTree = "<group>"; };
 		E87AF4F7290A1FA1006F02ED /* PlaylistUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistUrl.swift; sourceTree = "<group>"; };
+		E87AF4F9290A868E006F02ED /* OtherUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserInfo.swift; sourceTree = "<group>"; };
+		E87AF4FB290A897C006F02ED /* OtherUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserInfoView.swift; sourceTree = "<group>"; };
+		E87AF4FD290A8ADA006F02ED /* OtherUserPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPostView.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
@@ -337,6 +343,8 @@
 				91BC78E128A691CC002C38CF /* UserMyPlaylistView.swift */,
 				91BC78E328A6920F002C38CF /* UserPostView.swift */,
 				D09B08BB29095FAB00C0389B /* OtherUserPlaylistView.swift */,
+				E87AF4FB290A897C006F02ED /* OtherUserInfoView.swift */,
+				E87AF4FD290A8ADA006F02ED /* OtherUserPostView.swift */,
 			);
 			path = UserViews;
 			sourceTree = "<group>";
@@ -434,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				E8689D982905550500D2A03F /* UserInfo.swift */,
+				E87AF4F9290A868E006F02ED /* OtherUserInfo.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -597,7 +606,9 @@
 				D08E274F2893C63500013A12 /* ThumbnailView.swift in Sources */,
 				E84A3E0A2903AFDB007FAA78 /* RandomAPI.swift in Sources */,
 				D06539B728AFCDBF008B5199 /* PostCreateView.swift in Sources */,
+				E87AF4FA290A868E006F02ED /* OtherUserInfo.swift in Sources */,
 				914AF7B228D88E640016C38C /* MoreUserResultsView.swift in Sources */,
+				E87AF4FC290A897C006F02ED /* OtherUserInfoView.swift in Sources */,
 				D0B5D68628F30E7300D07944 /* KakaoAuthVM.swift in Sources */,
 				D0E6E46A29046B0D00BA875A /* PostDetail.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
@@ -618,6 +629,7 @@
 				D09B08BA29095E8400C0389B /* OtherUserView.swift in Sources */,
 				E84A3E162903B894007FAA78 /* NetworkService.swift in Sources */,
 				E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */,
+				E87AF4FE290A8ADA006F02ED /* OtherUserPostView.swift in Sources */,
 				D047BA5129056B21008CA3E4 /* RecentNotice.swift in Sources */,
 				D08E27412893A56A00013A12 /* ContentView.swift in Sources */,
 				D04F1B96290915E80020D80C /* UIImage+.swift in Sources */,
