@@ -20,7 +20,7 @@ struct UserInfo: Codable {
     
     let writtenPosts: [WrittenPostInfo]
     
-    var wishGenres: [String] = []
+    let favoriteGenres: [String]
     
     enum CodingKeys: String, CodingKey {
         case nickName = "nickname"
@@ -32,7 +32,7 @@ struct UserInfo: Codable {
         
         case writtenPosts = "written_posts"
         
-        //        case wishGenres
+        case favoriteGenres = "favorite_genres"
     }
     
     static func createEmpty() -> Self {
@@ -43,7 +43,7 @@ struct UserInfo: Codable {
             privatePlaylists: [],
             scrappedPlaylists: [],
             writtenPosts: [],
-            wishGenres: []
+            favoriteGenres: []
         )
     }
     
@@ -71,7 +71,7 @@ struct UserInfo: Codable {
                 .init(id: 2, title: "내가 작성한 포스트2", content: "내가 작성한 포스트 내용2"),
                 .init(id: 3, title: "내가 작성한 포스트3", content: "내가 작성한 포스트 내용3")
             ],
-            wishGenres: [
+            favoriteGenres: [
                 "장르111",
                 "장르222",
                 "장르333"
