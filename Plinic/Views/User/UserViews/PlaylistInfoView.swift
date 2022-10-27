@@ -75,11 +75,6 @@ struct PlaylistInfoView: View {
                         .padding([.top, .bottom], 10)
                         
                         HStack{
-                            Image(systemName: "square.and.arrow.up")
-                                .font(.system(size: 31))
-                                .padding(.trailing,10)
-                                .foregroundColor(Color.white)
-                            
                             VStack {
                                 // MARK: 아직 API 미구현
                                 Toggle("공개", isOn: $someToggle)
