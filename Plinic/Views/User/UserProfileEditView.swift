@@ -29,6 +29,8 @@ struct UserProfileEditView: View {
     
     @StateObject var kakoAuthVM: KakaoAuthVM = KakaoAuthVM.shared
     
+    @Binding var isEditing: Bool
+    
     var body: some View {
         ZStack {
             Color.black
@@ -148,6 +150,9 @@ struct UserProfileEditView: View {
                         switch result {
                         case .success(let success):
                             self.genres = success
+                            self.genre1 = success.randomElement() ?? ""
+                            self.genre2 = success.randomElement() ?? ""
+                            self.genre3 = success.randomElement() ?? ""
                         case .failure(let failure):
                             _ = failure
                         }
@@ -177,10 +182,11 @@ struct UserProfileEditView: View {
                     })
                     
                     Button(action: {
-                        //FIXME: - 바뀐 정보들이 POST 되는 버튼
-                        if profileImage != nil {
-                            // 프로필 사진을 변경 했을 때 실행 되는 코드
-                        }
+//                        //FIXME: - 바뀐 정보들이 POST 되는 버튼
+//                        if profileImage != nil {
+//                            // 프로필 사진을 변경 했을 때 실행 되는 코드
+//                        }
+                        self.isEditing = false
                     }, label: {
                         Text("확인")
                             .foregroundColor(Color.MainColor)
@@ -214,7 +220,8 @@ struct UserProfileEditView_Previews: PreviewProvider {
                 userName: "Test",
                 genre1: "Aucoustic",
                 genre2: "Sad",
-                genre3: "Happy"
+                genre3: "Happy",
+                isEditing: .constant(true)
             )
             UserProfileEditView(
                 genres: [""],
@@ -222,7 +229,8 @@ struct UserProfileEditView_Previews: PreviewProvider {
                 userName: "Test",
                 genre1: "Aucoustic",
                 genre2: "Sad",
-                genre3: "Happy"
+                genre3: "Happy",
+                isEditing: .constant(true)
             )
             .previewDevice("iPhone SE (3rd generation)")
         }
