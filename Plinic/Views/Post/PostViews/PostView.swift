@@ -28,13 +28,24 @@ struct PostView: View {
                     .padding(.bottom, 5)
                 NavigationLink(destination: OtherUserView(nickName: postInfo.author.nickname)){
                     HStack{
-                        Image(postInfo.author.profilePic ?? "profileDefault")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                            .overlay(Circle()
-                                .stroke(Color.MainColor, lineWidth: 3.5))
-                            .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
-                            .clipShape(Circle())
+                        AsyncImage(url: URL(string: postInfo.author.profilePic ?? "플리닉로고")){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fit)
+                                .overlay(Circle()
+                                    .stroke(Color.MainColor, lineWidth: 3.5))
+                                .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
+                                .clipShape(Circle())
+                        } placeholder: { // imageUrl값이 없을 때
+                            Image("플리닉로고")
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fill)
+                                .overlay(Circle()
+                                    .stroke(Color.MainColor, lineWidth: 3.5))
+                                .frame(maxWidth: 50, maxHeight: 50, alignment: .leading)
+                                .clipShape(Circle())
+                        }
+                        
                         
                         VStack{
                             Text("\(postInfo.author.nickname)")
@@ -51,10 +62,17 @@ struct PostView: View {
                     postId: postInfo.id,
                     profileImageUrl: postInfo.author.profilePic
                 )) {
-                    Image(postInfo.plInfo.thumbnailImgURL ?? "defaultImg")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 390, maxHeight: 390)
+                    AsyncImage(url: URL(string: postInfo.plInfo.thumbnailImgURL ?? "플리닉로고")){ image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 390, maxHeight: 390)
+                    } placeholder: { // imageUrl값이 없을 때
+                        Image("플리닉로고")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 390, maxHeight: 390)
+                    }
                     // 게시글 썸네일
                 }
                 
