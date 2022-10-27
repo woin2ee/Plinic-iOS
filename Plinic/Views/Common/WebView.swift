@@ -12,7 +12,7 @@ struct WebView : UIViewRepresentable {
     
     // UIKit의 UIView를 사용할 수 있게 함
     
-    var requestURL : String
+    @Binding var requestURL : String
     
     func makeUIView(context: Context) -> some WKWebView {
         
@@ -35,7 +35,7 @@ struct WebView : UIViewRepresentable {
 
 struct PlaylistWebView_Previews: PreviewProvider {
     static var previews: some View {
-        WebView(requestURL: "http://www.youtube.com/watch_videos?video_ids=cPAbx5kgCJo")
+        WebView(requestURL: .constant("https://www.naver.com"))
     }
 }
 
