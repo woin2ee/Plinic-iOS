@@ -37,6 +37,11 @@ struct YoutubeLinkStorage {
     }
     
     static var randomUrl: String {
-        "http://www.youtube.com/watch_videos?video_ids=\(ids.randomElement() ?? "XZ868t23Pb4")"
+        let musicCount = Int.random(in: 1...9)
+        var resultUrl = "http://www.youtube.com/watch_videos?video_ids=\(ids.randomElement() ?? "XZ868t23Pb4")"
+        for _ in 1..<musicCount {
+            resultUrl += ",\(ids.randomElement() ?? "cPAbx5kgCJo")"
+        }
+        return resultUrl
     }
 }
