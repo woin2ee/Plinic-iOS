@@ -67,4 +67,20 @@ final class PostAPI: ObservableObject {
             }
         }
     }
+    
+    func createPost(by post: CreatePost, _ completion: @escaping ((Result<Void, Error>) -> Void)) {
+        guard let uploadData = try? JSONEncoder().encode(post) else { return }
+        
+        print("!!!!!!!encoding success")
+        
+        networkService.uploadRequest(path: postPath, uploadData: uploadData) { result in
+            switch result {
+            case .success(let data):
+                print(data)
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
