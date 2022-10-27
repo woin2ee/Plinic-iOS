@@ -14,14 +14,12 @@ struct SearchResultView: View {
     
     @Binding var searchText: String
     @State private var searchResult: SearchResult = .createEmpty()
-    private var displayedUsers: [UserInfo] {
-        if searchResult.users.count >= 2 {
-            return .init(searchResult.users[searchResult.users.startIndex..<2])
-        } else {
-            return .init(searchResult.users[searchResult.users.startIndex..<searchResult.users.count])
-        }
-    }
     
+    
+    // MARK: - 베타 버전을 위해 임시로 구현
+    @StateObject private var userAPI: UserAPI = .init()
+    
+    @State private var displayedUsers: [OtherUserInfo] = []
     @State private var tempPostSearchResult: PostList = .createEmpty()
     
     var body: some View {
@@ -40,7 +38,7 @@ struct SearchResultView: View {
                             
                             Spacer()
                             
-                            NavigationLink(destination: MoreUserResultsView(users: $searchResult.users)) {
+                            NavigationLink(destination: MoreUserResultsView(users: $displayedUsers)) {
                                 Text("검색결과 더보기 ->")
                                     .fontWeight(.bold)
                                     .font(.system(size: 18))
@@ -164,6 +162,22 @@ struct SearchResultView: View {
                 switch result {
                 case .success(let postList):
                     self.tempPostSearchResult = postList
+                case .failure(let error):
+                    _ = error
+                }
+            }
+            userAPI.getOtherUserInfo(by: "Lami") { result in
+                switch result {
+                case .success(let userInfo):
+                    self.displayedUsers.append(userInfo)
+                case .failure(let error):
+                    _ = error
+                }
+            }
+            userAPI.getOtherUserInfo(by: "woin2ee") { result in
+                switch result {
+                case .success(let userInfo):
+                    self.displayedUsers.append(userInfo)
                 case .failure(let error):
                     _ = error
                 }

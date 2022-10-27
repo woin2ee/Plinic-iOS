@@ -35,4 +35,21 @@ final class UserAPI: ObservableObject {
             }
         }
     }
+    
+    func getOtherUserInfo(by nickName: String, _ completion: @escaping ((Result<OtherUserInfo, Error>) -> Void)) {
+        networkService.request(absolutePath: "https://plinic-api-server.ml/api/v1/accounts/profiles/\(nickName)/") { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let userInfo = try JSONDecoder.init().decode(OtherUserInfo.self, from: data)
+                    completion(.success(userInfo))
+                } catch let error {
+                    print("JSON decode 실패")
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

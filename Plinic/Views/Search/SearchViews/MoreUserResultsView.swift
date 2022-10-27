@@ -11,7 +11,7 @@ struct MoreUserResultsView: View {
     
     @State private var sort: Int = 0
     
-    @Binding var users: [UserInfo]
+    @Binding var users: [OtherUserInfo]
     
     var body: some View {
         List{
