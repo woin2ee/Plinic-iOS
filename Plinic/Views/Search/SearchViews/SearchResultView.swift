@@ -128,10 +128,12 @@ struct SearchResultView: View {
                                         label: {
                                             VStack() {
                                                 ThumbnailView(imageUrl: post.plInfo.thumbnailImgURL ?? "defaultImg")
+                                                    .frame(width: 170, height: 170)
                                                 Text("\(post.title)")
                                                     .foregroundColor(Color.white)
                                                     .fontWeight(.bold)
                                                     .font(.system(size: 15))
+                                                    .frame(width: 170)
                                             }//VStack
                                         }
                                     )
