@@ -70,8 +70,6 @@ struct PlaylistInfoView: View {
                         
                         HStack{
                             GenreTagView(genreName: playlistDetail.genreName)
-                            GenreTagView(genreName: playlistDetail.genreName)
-                            GenreTagView(genreName: playlistDetail.genreName)
                         }
                         .frame(width: geo.size.width * 0.5, height: 30, alignment: .leading)
                         .padding([.top, .bottom], 10)

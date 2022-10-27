@@ -181,8 +181,6 @@ struct UserProfileEditView: View {
                         if profileImage != nil {
                             // 프로필 사진을 변경 했을 때 실행 되는 코드
                         }
-                        print(userInfo.profileImageUrl)
-                        
                     }, label: {
                         Text("확인")
                             .foregroundColor(Color.MainColor)

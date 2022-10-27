@@ -72,6 +72,8 @@
 		E876C088290914B700237FF9 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C087290914B700237FF9 /* SearchAPI.swift */; };
 		E876C08A2909159600237FF9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C0892909159600237FF9 /* SearchResult.swift */; };
 		E876C08C2909602C00237FF9 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */; };
+		E87AF4F5290A1E1E006F02ED /* YoutubeLinkStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4F4290A1E1D006F02ED /* YoutubeLinkStorage.swift */; };
+		E87AF4F8290A1FA1006F02ED /* PlaylistUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87AF4F7290A1FA1006F02ED /* PlaylistUrl.swift */; };
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
@@ -145,6 +147,8 @@
 		E876C087290914B700237FF9 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		E876C0892909159600237FF9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		E876C08B2909602C00237FF9 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		E87AF4F4290A1E1D006F02ED /* YoutubeLinkStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeLinkStorage.swift; sourceTree = "<group>"; };
+		E87AF4F7290A1FA1006F02ED /* PlaylistUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistUrl.swift; sourceTree = "<group>"; };
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				E8C4A3762906FCF200425064 /* PlaylistAPI.swift */,
+				E87AF4F4290A1E1D006F02ED /* YoutubeLinkStorage.swift */,
+				E87AF4F6290A1F94006F02ED /* DTO */,
 			);
 			path = PlaylistAPI;
 			sourceTree = "<group>";
@@ -478,6 +484,14 @@
 			isa = PBXGroup;
 			children = (
 				E876C0892909159600237FF9 /* SearchResult.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		E87AF4F6290A1F94006F02ED /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E87AF4F7290A1FA1006F02ED /* PlaylistUrl.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -588,6 +602,7 @@
 				D0E6E46A29046B0D00BA875A /* PostDetail.swift in Sources */,
 				D052589328BC8E0300EDF8C4 /* GenreThumbnail.swift in Sources */,
 				91BC78E428A6920F002C38CF /* UserPostView.swift in Sources */,
+				E87AF4F5290A1E1E006F02ED /* YoutubeLinkStorage.swift in Sources */,
 				D04F1B9429090FE30020D80C /* ImagePicker.swift in Sources */,
 				D0229E6328FE8DD800C5F38C /* BackgroundVideo.swift in Sources */,
 				D04E4A6228AF664700D04543 /* PostDetailInfoView.swift in Sources */,
@@ -595,6 +610,7 @@
 				91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */,
 				D01F104E290452CB001B61D0 /* PlaylistInfoView.swift in Sources */,
 				E84A3E102903B294007FAA78 /* Author.swift in Sources */,
+				E87AF4F8290A1FA1006F02ED /* PlaylistUrl.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreateView.swift in Sources */,
 				E8689D96290554CC00D2A03F /* UserAPI.swift in Sources */,

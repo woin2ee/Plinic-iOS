@@ -23,7 +23,7 @@ struct MoreUserResultsView: View {
                     ForEach(users, id: \.uuid) { user in
                         NavigationLink(destination: OtherUserView(nickName: user.nickName)){
                             HStack{
-                                AsyncImage(url: URL(string: user.profileImageUrl)){ image in
+                                AsyncImage(url: URL(string: user.profileImageUrl ?? "")){ image in
                                     image
                                         .resizable()
                                         .clipShape(Circle())
