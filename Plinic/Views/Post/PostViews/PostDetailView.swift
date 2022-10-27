@@ -16,7 +16,7 @@ struct PostDetailView: View {
     @State var postId: Int
     var profileImageUrl: String?
     
-    @State var youtubeUrl: PlaylistUrl = .createEmpty()
+    var youtubeUrl: String = YoutubeLinkStorage.randomUrl
     
     var body: some View {
         ZStack {
@@ -32,7 +32,7 @@ struct PostDetailView: View {
                 } // ScrollView
                 .frame(maxHeight: 200)
                 
-                WebView(requestURL: $youtubeUrl.totalUrl)
+                WebView(requestURL: youtubeUrl)
                     .frame(minHeight: 400)
             } // VStack
             .onAppear(){
@@ -44,14 +44,6 @@ struct PostDetailView: View {
                     case .failure(let failure):
                         _ = failure
                         print("Failure")
-                    }
-                }
-                playlistAPI.getPlayListUrl(byYoutubeId: YoutubeIdStorage.randomIds) { result in
-                    switch result {
-                    case .success(let url):
-                        self.youtubeUrl = url
-                    case .failure(let error):
-                        print(error)
                     }
                 }
             }
