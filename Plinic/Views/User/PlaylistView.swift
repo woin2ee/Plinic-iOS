@@ -14,7 +14,7 @@ struct PlaylistView: View {
     @State var playlistDetail: PlaylistDetail = .createMock()
     @State var id: Int
     
-    @State var youtubeUrl: PlaylistUrl = .createEmpty()
+    @State var youtubeUrl: PlaylistUrl = .createMock()
     
     var body: some View {
         ZStack {
@@ -26,7 +26,7 @@ struct PlaylistView: View {
                 VStack{
                     PlaylistInfoView(playlistDetail: $playlistDetail)
                         .frame(height: geo.size.height * 0.25)
-                    WebView(requestURL: youtubeUrl.totalUrl)
+                    WebView(requestURL: $youtubeUrl.totalUrl)
                 }
             }
         }
