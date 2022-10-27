@@ -16,7 +16,7 @@ struct UserResult: View {
     var body: some View {
         
         VStack{
-            AsyncImage(url: URL(string: profileImg)){ image in
+            AsyncImage(url: URL(string: "https://plinic-api-server.ml\(profileImg)")){ image in
                 image
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)

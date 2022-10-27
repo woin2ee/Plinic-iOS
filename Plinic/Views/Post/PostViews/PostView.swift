@@ -28,7 +28,7 @@ struct PostView: View {
                     .padding(.bottom, 5)
                 NavigationLink(destination: OtherUserView(nickName: postInfo.author.nickname)){
                     HStack{
-                        AsyncImage(url: URL(string: postInfo.author.profilePic ?? "플리닉로고")){ image in
+                        AsyncImage(url: URL(string: "https://plinic-api-server.ml\(postInfo.author.profilePic ?? "플리닉로고")")){ image in
                             image
                                 .resizable()
                                 .aspectRatio(1, contentMode: .fit)
@@ -61,7 +61,7 @@ struct PostView: View {
                     postId: postInfo.id,
                     profileImageUrl: postInfo.author.profilePic
                 )) {
-                    AsyncImage(url: URL(string: postInfo.plInfo.thumbnailImgURL ?? "플리닉로고")){ image in
+                    AsyncImage(url: URL(string: "https://plinic-api-server.ml\(postInfo.plInfo.thumbnailImgURL ?? "플리닉로고")")){ image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
