@@ -20,15 +20,27 @@ struct GenreThumbnail: View {
                 .ignoresSafeArea()
             
             
-            Image(genreImg)
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-//                .frame(width: 170, height: 170)
-                .background(genreColor.randomElement())
-                .cornerRadius(10)
-                .padding(.bottom, 15)
-                .brightness(-0.2)
-                .blur(radius: 1)
+            AsyncImage(url: URL(string: genreImg ?? "플리닉로고")){ image in
+                image
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                //                .frame(width: 170, height: 170)
+                    .background(genreColor.randomElement())
+                    .cornerRadius(10)
+                    .padding(.bottom, 15)
+                    .brightness(-0.2)
+                    .blur(radius: 1)
+            } placeholder: { // imageUrl값이 없을 때
+                Image("플리닉로고")
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                //                .frame(width: 170, height: 170)
+                    .background(genreColor.randomElement())
+                    .cornerRadius(10)
+                    .padding(.bottom, 15)
+                    .brightness(-0.6)
+                    .blur(radius: 1)
+            }
             
             Text(genreName)
                 .font(.system(size: 36))

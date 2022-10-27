@@ -23,14 +23,27 @@ struct PostDetailInfoView: View {
             VStack{
                 HStack{
                     NavigationLink(destination: OtherUserView(nickName: postDetail.author)){
-                        Image(profilePic ?? "profileDefault")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                            .overlay(Circle()
-                                .stroke(Color.MainColor, lineWidth: 5))
-                            .frame(maxWidth: 44, maxHeight: 44)
-                            .clipShape(Circle())
-                            .padding(.leading, 5)
+                        
+                        AsyncImage(url: URL(string: profilePic ?? "플리닉로고")){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fit)
+                                .overlay(Circle()
+                                    .stroke(Color.MainColor, lineWidth: 5))
+                                .frame(maxWidth: 44, maxHeight: 44)
+                                .clipShape(Circle())
+                                .padding(.leading, 5)
+                            
+                        } placeholder: { // imageUrl값이 없을 때
+                            Image("플리닉로고")
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fit)
+                                .overlay(Circle()
+                                    .stroke(Color.MainColor, lineWidth: 5))
+                                .frame(maxWidth: 44, maxHeight: 44)
+                                .clipShape(Circle())
+                                .padding(.leading, 5)
+                        }
                         // 유저 프로필 사진
                         
                         Text("\(postDetail.author)")
@@ -40,7 +53,7 @@ struct PostDetailInfoView: View {
                             .padding(.leading, 5)
                         // 유저 닉네임
                     }
-
+                    
                     Button(action: {
                         postDetail.isLike.toggle()
                         if postDetail.isLike == true{
@@ -109,7 +122,7 @@ struct PostDetailInfoView: View {
                     Text("\(postDetail.content)")
                         .foregroundColor(Color.white)
                         .font(.system(size: 15, weight: .bold))
-//                        .multilineTextAlignment(.leading)
+                    //                        .multilineTextAlignment(.leading)
                         .frame(alignment: .topLeading)
                     // 게시글 내용
                     Spacer()
