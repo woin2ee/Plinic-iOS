@@ -22,14 +22,10 @@ struct UserContentView: View {
             
             Color.black
                 .ignoresSafeArea()
-            
-            VStack{
-                
-                GeometryReader{ geometry in
-                    
-                    VStack(spacing:0) {
-                        
-                        HStack(spacing:0) {
+            GeometryReader{ geometry in
+                VStack{
+                    VStack {
+                        HStack{
                             
                             Text("\(userInfo.nickName)")
                                 .fontWeight(.bold)
@@ -55,8 +51,7 @@ struct UserContentView: View {
                         VStack{
                             
                             UserInfoView(userInfo: $userInfo)
-                                .frame(height: geometry.size.height * 0.25)
-                                .padding(.top, 10)
+                                .frame(height: geometry.size.height * 0.18)
                             // 유저 정보 부분
                             
                             NavigationLink(
@@ -75,7 +70,7 @@ struct UserContentView: View {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 15)
                                             .fill(Color.BackgroundSubColor)
-                                            .frame(width: 330, height: 40)
+                                            .frame(width: 330, height: 30)
                                         
                                         Text("프로필 편집")
                                             .fontWeight(.bold)
@@ -84,7 +79,7 @@ struct UserContentView: View {
                                     }
                                 }
                             )
-                            .padding(.bottom, 20)
+                            .padding(.bottom, 10)
                             
                             if(self.postTransform) {
                                 UserMyPlaylistView(userInfo: $userInfo)
