@@ -46,7 +46,7 @@ struct UserPlaylist_Previews: PreviewProvider {
         Group {
             PlaylistView(playlistDetail: .createMock(), id: 1)
             PlaylistView(playlistDetail: .createMock(), id: 1)
-            .previewDevice("iPhone 8")
+                .previewDevice("iPhone 8")
         }
     }
 }

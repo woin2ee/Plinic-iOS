@@ -16,6 +16,9 @@ struct PostDetailInfoView: View {
     @State var scrapperCount: Int = 0 // 스크랩 개수
     @State var isScrapped: Bool = false // 스크랩 클릭 했는 지 안했는 지
     
+    let userAPI: UserAPI = .init()
+    @State var userInfo: UserInfo = .createEmpty()
+    
     var body: some View {
         ZStack {
             Color.black
@@ -146,11 +149,43 @@ struct PostDetailInfoView: View {
                     .foregroundColor(Color.white)
                     .font(.system(size: 15, weight: .semibold))
                     Spacer()
+                    //MARK: - 유저 정보에 맞는 수정, 삭제 버튼
+//                    if postDetail.author == userInfo.nickName {
+//                        Button(action: {
+//                            // 수정 구현
+//                        }, label: {
+//                            Text("수정")
+//                                .padding(5)
+//                                .foregroundColor(.MainColor)
+//                                .cornerRadius(10)
+//                                .frame(maxWidth: 44, maxHeight: 44, alignment: .trailing)
+//                        })
+//
+//                        Button(action: {
+//                            // 삭제 구현
+//                        }, label: {
+//                            Text("삭제")
+//                                .padding(5)
+//                                .foregroundColor(.red)
+//                                .cornerRadius(10)
+//                                .frame(maxWidth: 44, maxHeight: 44, alignment: .trailing)
+//                        })
+//                    }
                 }
                 .padding(.top, 1)
             } // VStack
             
         } // ZStack
+        .onAppear() {
+            userAPI.getUserInfo(by: "plinic") { result in
+                switch result {
+                case .success(let userInfo):
+                    self.userInfo = userInfo
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }
 
