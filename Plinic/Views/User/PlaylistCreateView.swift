@@ -101,7 +101,7 @@ struct PlaylistCreateView: View {
                             .foregroundColor(Color.MainColor)
                             .padding(.leading, 10)
                     }
-                    .frame(width: geo.size.width, height: geo.size.height * 0.08, alignment: .center)
+                    .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.08, alignment: .center)
                     .background(Color.BackgroundSubColor)
                     .cornerRadius(5)
                     .overlay(RoundedRectangle(cornerRadius: 5)
