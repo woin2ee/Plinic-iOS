@@ -88,6 +88,7 @@ final class NetworkService {
                 return
             }
             
+            print(method.rawValue)
             print("HTTPURLResponse >>>>> \(response)")
             
             guard (200..<300).contains(response.statusCode) else {
@@ -100,6 +101,61 @@ final class NetworkService {
                 return
             }
             
+            completion(.success(data))
+            
+        }.resume()
+    }
+    
+    func uploadRequest(
+        path: String,
+        method: HttpMethod = .post,
+        headers: [String : String?]? = nil,
+        uploadData: Data,
+        _ completion: @escaping (Result<Data, Error>) -> Void
+    ) {
+        guard let url = URL.init(string: "\(baseURL)\(path)") else {
+            completion(.failure(NetworkError.invaildUrl))
+            return
+        }
+        
+        var urlRequest = URLRequest.init(url: url)
+        urlRequest.httpMethod = method.rawValue
+        urlRequest.timeoutInterval = .init(10)
+        
+        urlRequest.setValue("Basic cGxpbmljOnBsaW5pYw==", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let headers = headers {
+            headers.forEach { key, value in
+                urlRequest.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        URLSession.shared.uploadTask(with: urlRequest, from: uploadData) { data, urlResponse, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(.failure(error))
+                return
+            }
+            
+            guard let urlResponse = urlResponse as? HTTPURLResponse else {
+                completion(.failure(NetworkError.notHttpUrlResponse))
+                return
+            }
+            
+            print(method.rawValue)
+            print("HTTPURLResponse >>>>> \(urlResponse)")
+            
+            guard (200..<300).contains(urlResponse.statusCode) else {
+                completion(.failure(NetworkError.failureStatusCode))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NetworkError.noData))
+                return
+            }
+            print(String.init(data: data, encoding: .utf8))
             completion(.success(data))
             
         }.resume()

@@ -10,12 +10,15 @@ import SwiftUI
 struct PostCreateView: View {
     
     let userAPI: UserAPI = .init()
+    private let postAPI: PostAPI = .init()
     @State var userInfo: UserInfo = .createMock()
+    
+    @Binding var isEditing: Bool
     
     @State var postName : String
     @State var postContext : String
     @State var placeholderText: String = "내용을 입력하세요."
-    @State var playlist : String = ""
+    @State var selectedPlaylistId: Int = 0
     
     var body: some View {
         ZStack {
@@ -86,12 +89,13 @@ struct PostCreateView: View {
                     
                     
                     VStack(alignment: .trailing) {
-                        Picker("Choose your Playlist", selection: $playlist) {
+                        Picker("Choose your Playlist", selection: $selectedPlaylistId) {
                             ForEach(userInfo.publicPlaylists, id: \.uuid) { playlist in
                                 Text(playlist.title)
                                     .fontWeight(.bold)
                                     .font(.system(size: 24))
                                     .foregroundColor(Color.MainColor)
+                                    .tag(playlist.id)
                             }
                         }
                         .pickerStyle(.wheel)
@@ -100,6 +104,32 @@ struct PostCreateView: View {
                         .cornerRadius(5)
                         .padding([.top, .bottom], 30)
                     }
+                    VStack(alignment: .trailing) {
+                        Button(action: {
+                            postAPI.createPost(by: .init(
+                                title: postName,
+                                content: postContext,
+                                playlistID: selectedPlaylistId,
+                                tagSet: []
+                            )) { result in
+                                switch result {
+                                case .success(()):
+                                    print("Success create post!")
+                                    self.isEditing = false
+                                case .failure(let error):
+                                    _ = error
+                                    self.isEditing = false
+                                }
+                            }
+                        }, label: {
+                            Text("확인")
+                                .foregroundColor(Color.MainColor)
+                                .frame(width: 110, height: 50)
+                                .background(Color.BackgroundSubColor)
+                                .cornerRadius(30)
+                        })
+                    }
+                    
                 } // VStack
             }
             .onTapGesture {
@@ -123,8 +153,8 @@ struct PostCreateView: View {
 struct PostCreate_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PostCreateView(postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.")
-            PostCreateView(postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.")
+            PostCreateView(isEditing: .constant(true), postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.", selectedPlaylistId: 1)
+            PostCreateView(isEditing: .constant(true), postName: "wpahrdlqslekd", postContext : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus dolor et tortor malesuada, nec vehicula dolor hendrerit. Vivamus interdum nisl ut dolor placerat, viverra porttitor metus commodo. Cras molestie dui nec lacinia luctus. Suspendisse potenti. Quisque sit amet dui vitae ipsum vesti bulums.", selectedPlaylistId: 2)
                 .previewDevice("iPhone 8")
         }
     }
