@@ -13,7 +13,6 @@ final class UserAPI: ObservableObject {
     
     private let networkService = NetworkService.init()
     
-    // MARK: 아직 계정이 없는듯
     /// 특정 유저 정보를 가져오는 함수
     func getUserInfo(by nickName: String, _ completion: @escaping ((Result<UserInfo, Error>) -> Void)) {
 //        let detailPath: String = "/profiles/\(nickName)"
