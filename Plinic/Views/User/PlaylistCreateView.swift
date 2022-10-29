@@ -127,12 +127,9 @@ struct PlaylistCreateView: View {
                         .cornerRadius(5)
                         .padding([.top, .bottom], 30)
                         .onAppear(){
-                            genreAPI.getGenres() { result in
-                                switch result {
-                                case .success(let success):
-                                    self.genres = success
-                                case .failure(let failure):
-                                    _ = failure
+                            genreAPI.getGenres() { genres in
+                                if let genres = genres {
+                                    self.genres = genres
                                 }
                             }
                         }

@@ -145,16 +145,13 @@ struct UserProfileEditView: View {
                     .cornerRadius(15)
                     .padding(.bottom, 10)
                 } // 좋아하는 장르 선택 1
-                .onAppear(){
-                    genreAPI.getGenres() { result in
-                        switch result {
-                        case .success(let success):
-                            self.genres = success
-                            self.genre1 = success.randomElement() ?? ""
-                            self.genre2 = success.randomElement() ?? ""
-                            self.genre3 = success.randomElement() ?? ""
-                        case .failure(let failure):
-                            _ = failure
+                .onAppear() {
+                    genreAPI.getGenres() { genres in
+                        if let genres = genres {
+                            self.genres = genres
+                            self.genre1 = genres.randomElement() ?? ""
+                            self.genre2 = genres.randomElement() ?? ""
+                            self.genre3 = genres.randomElement() ?? ""
                         }
                     }
                 }

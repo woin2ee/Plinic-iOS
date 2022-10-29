@@ -81,6 +81,7 @@
 		E8C4A37229069A3900425064 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A37129069A3900425064 /* MainTabBarView.swift */; };
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
+		E8D0F39B290D105000E32C59 /* DefaultJsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0F39A290D105000E32C59 /* DefaultJsonDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		E8C4A37129069A3900425064 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
+		E8D0F39A290D105000E32C59 /* DefaultJsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJsonDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		D0229E6128FE8DAC00C5F38C /* Back-End */ = {
 			isa = PBXGroup;
 			children = (
+				E8D0F399290D102A00E32C59 /* Common */,
 				E84A3E142903B88B007FAA78 /* Network */,
 				D0023CB92906628F006057B3 /* CommonAPI */,
 				E876C0852909149900237FF9 /* SearchAPI */,
@@ -520,6 +523,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		E8D0F399290D102A00E32C59 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0F39A290D105000E32C59 /* DefaultJsonDecoder.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -644,6 +655,7 @@
 				E876C088290914B700237FF9 /* SearchAPI.swift in Sources */,
 				E86ECD56290472090039D8BF /* View+.swift in Sources */,
 				E84A3E122903B2AD007FAA78 /* Playlist.swift in Sources */,
+				E8D0F39B290D105000E32C59 /* DefaultJsonDecoder.swift in Sources */,
 				E86ECD58290472190039D8BF /* ViewDidLoadModifier.swift in Sources */,
 				D0C176B428BE13EF007CB43F /* SearchContentView.swift in Sources */,
 				91014F182895840500C58E8B /* UserCountsView.swift in Sources */,
