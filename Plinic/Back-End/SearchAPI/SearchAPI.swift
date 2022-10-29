@@ -9,7 +9,8 @@ import Foundation
 
 final class SearchAPI: ObservableObject {
     
-    private let searchURL: String = ""
+    private let basePath: String = ""
+    
     private let networkService = NetworkService.init()
     
     /// 검색 결과에 대한 응답을 가져오는 함수

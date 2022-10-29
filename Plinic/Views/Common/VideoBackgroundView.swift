@@ -23,7 +23,7 @@ struct VideoBackgroundView : View {
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear() {
-            randomAPI.getBackgroundVideo { result in
+            randomAPI.getBackgroundVideoURL { result in
                 switch result {
                 case .success(let success): // 성공했을 때
                     loopingVideoPlayerView.loopingVideoPlayerUIView.videoURL = success
