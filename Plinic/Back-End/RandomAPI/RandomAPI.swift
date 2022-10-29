@@ -13,8 +13,8 @@ final class RandomAPI: ObservableObject {
     private let randomThumbnailPath: String = "/plinic/random-thumbnail/"
     private let networkService = NetworkService.init()
     
-    /// 백그라운드에서 실행할 비디오를 랜덤으로 가져오는 함수
     func getBackgroundVideo(_ completion: @escaping ((Result<String, Error>) -> Void)) {
+    /// API 요청을 보내 백그라운드에서 실행할 비디오 URL 을 랜덤으로 가져온 후 completion 을 호출합니다.
         networkService.request(path: randomBackgroundPath, method: .get, headers: nil) { result in
             switch result {
             case .success(let data):
@@ -30,7 +30,7 @@ final class RandomAPI: ObservableObject {
         }
     }
     
-    /// 랜덤으로 썸네일 url 을 가져오는 함수
+    /// API 요청을 보내 플레이리스트 썸네일에 사용할 수 있는 이미지의 URL 을 랜덤으로 가져온 후 completion 을 호출합니다.
     func getThumbnail(_ completion: @escaping ((Result<String, Error>) -> Void)) {
         networkService.request(path: randomThumbnailPath, method: .get, headers: nil) { result in
             switch result {
