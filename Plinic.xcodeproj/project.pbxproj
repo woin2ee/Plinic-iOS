@@ -82,6 +82,7 @@
 		E8C4A3772906FCF200425064 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4A3762906FCF200425064 /* PlaylistAPI.swift */; };
 		E8C6C58C29082DEF00479BDA /* RandomThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */; };
 		E8D0F39B290D105000E32C59 /* DefaultJsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0F39A290D105000E32C59 /* DefaultJsonDecoder.swift */; };
+		E8D0F398290D0EFE00E32C59 /* Logger+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0F397290D0EFE00E32C59 /* Logger+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 		E8C4A3762906FCF200425064 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
 		E8C6C58B29082DEF00479BDA /* RandomThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomThumbnail.swift; sourceTree = "<group>"; };
 		E8D0F39A290D105000E32C59 /* DefaultJsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultJsonDecoder.swift; sourceTree = "<group>"; };
+		E8D0F397290D0EFE00E32C59 /* Logger+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 				E86ECD55290472090039D8BF /* View+.swift */,
 				D04F1B95290915E80020D80C /* UIImage+.swift */,
 				E86ECD57290472190039D8BF /* ViewDidLoadModifier.swift */,
+				E8D0F397290D0EFE00E32C59 /* Logger+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				91014F1A2895841F00C58E8B /* GenreTagView.swift in Sources */,
 				D01F104E290452CB001B61D0 /* PlaylistInfoView.swift in Sources */,
 				E84A3E102903B294007FAA78 /* Author.swift in Sources */,
+				E8D0F398290D0EFE00E32C59 /* Logger+.swift in Sources */,
 				E87AF4F8290A1FA1006F02ED /* PlaylistUrl.swift in Sources */,
 				9113807828CF13E0006CD66A /* UserResult.swift in Sources */,
 				9113806928AFDDD4006CD66A /* PlaylistCreateView.swift in Sources */,
