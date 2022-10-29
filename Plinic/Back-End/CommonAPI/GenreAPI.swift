@@ -19,10 +19,7 @@ final class GenreAPI: ObservableObject {
         networkService.request(path: basePath, headers: nil) { [self] result in
             switch result {
             case .success(let data):
-                guard let genres = jsonDecoder.decode(Genres.self, from: data) else {
-                    return completion(nil)
-                }
-                return completion(genres)
+                return completion(jsonDecoder.decode(Genres.self, from: data))
             case .failure(let error):
                 return completion(nil)
             }
