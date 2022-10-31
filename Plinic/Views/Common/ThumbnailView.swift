@@ -31,10 +31,6 @@ struct ThumbnailView: View {
                     .aspectRatio(1, contentMode: .fill)
                     .cornerRadius(10)
             }
-            .onAppear() {
-                print("Thumbnail!!!")
-                print("\(baseUrl)\(imageUrl)")
-            }
         } // VStack
     }
 }

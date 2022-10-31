@@ -11,28 +11,21 @@ struct UserPostView: View {
     
     @Binding var userInfo: UserInfo
     
-    // FIXME: 화면 크기가 다른 기종에서는 고정크기가 문제 생길 수 있음.
-    var columns = [GridItem(.fixed(180)), GridItem(.fixed(180))]
+    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         ZStack {
+            Color.black.ignoresSafeArea()
             
-            Color.black
-                .ignoresSafeArea()
-            
-            VStack {
-                
+            VStack(alignment: .leading) {
                 Text("작성한 게시글")
                     .foregroundColor(Color.white)
                     .fontWeight(.bold)
                     .font(.system(size: 20))
-                    .frame(width: 390, height: 20, alignment: .leading)
-                    .padding(.leading, 10.0)
                 
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(userInfo.writtenPosts, id: \.uuid) { postInfo in
-                            // VStack으로 도형추가
                             NavigationLink(destination: PostDetailView(
                                 postId: postInfo.id,
                                 profileImageUrl: userInfo.profileImageUrl
@@ -46,24 +39,19 @@ struct UserPostView: View {
                                 }
                                 .padding(.horizontal, 5)
                             }
-                        }
-                        // ForEach
-                    }
-                    // LazyVGrid
-                }
-                // ScrollView
-            }
-            // VStack
-        }
-        // ZStack
+                        } // ForEach
+                    } // LazyVGrid
+                } // ScrollView
+            } // VStack
+        } // ZStack
     }
 }
 
-
-
-struct UserMyPostView_Previews: PreviewProvider {
+struct UserPostView_Previews: PreviewProvider {
     static var previews: some View {
         UserPostView(userInfo: .constant(.createMock()))
+        UserPostView(userInfo: .constant(.createMock()))
+            .previewDevice("iPhone 13 Pro Max")
         UserPostView(userInfo: .constant(.createMock()))
             .previewDevice("iPhone 8")
     }

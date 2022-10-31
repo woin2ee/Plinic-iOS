@@ -11,7 +11,11 @@ struct UserContentView: View {
     
     let userAPI: UserAPI = .init()
     
+#if RELEASE
     @State var userInfo: UserInfo = .createEmpty()
+#elseif DEBUG
+    @State var userInfo: UserInfo = .createMock()
+#endif
     
     @State private var postTransform = true
     

@@ -39,14 +39,9 @@ struct SearchContentView: View {
             } // 화면 터치 했을 때 키보드 내리기
         } // ZStack
         .onAppear(){
-            genreAPI.getGenres() { result in
-                switch result {
-                case .success(let genres):
+            genreAPI.getGenres() { genres in
+                if let genres = genres {
                     self.genres = genres
-                    print(self.genres)
-                    print(genres)
-                case .failure(let failure):
-                    _ = failure
                 }
             }
         }
